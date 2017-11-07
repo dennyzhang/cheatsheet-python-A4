@@ -13,11 +13,11 @@ Advanced Usage Of Python Syntax
 | :------------------------      | ------------------------------------------------------- |
 | map                            | map(lambda x: str(x), [1, 2, 3])                        |
 | create array with given length | lst = [None] * 5                                        |
-| Insert element to head         | array.insert(0,var)                                     |
+| insert elements to head        | array.insert(0,var)                                     |
 | delete a given element         | del a[1]                                                |
 | list as stack                  | l.pop()                                                 | 
 | sort in descending             | sorted([8, 2, 5], reverse=True)                         |
-| Sort by attribute              | sorted([('ebb', 121),('abc', 148)], key=lambda x: x[1]) |
+| sort by attribute              | sorted([('ebb', 121),('abc', 148)], key=lambda x: x[1]) |
 | generate a-z                   | map(chr, range(ord('a'), ord('z')+1))                   |
 | map/reduce                     | reduce((lambda x, y: "%s %s" % (x, y)), l)              |
   
@@ -27,7 +27,7 @@ Advanced Usage Of Python Syntax
 | :------------------------ | ------------------------------ |
 | return if.. else          | return val if i>0 else 0)      |
 | multiple assignment       | l, r = 2, 3                    |
-| Swap Values               | left, right = right, left      |
+| swap Values               | left, right = right, left      |
 
 - Integer
 
@@ -44,7 +44,7 @@ Advanced Usage Of Python Syntax
 
 | Name                      | Comment                      |
 | :------------------------ | ---------------------------- |
-| Reverse string            | "hello world"[::-1]          |
+| reverse string            | "hello world"[::-1]          |
 | array to string           | ' '.join(['a', 'b'])         |
 | string to array           | list("abc")                  |
 
