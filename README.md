@@ -12,10 +12,10 @@ Advanced Usage Of Python Syntax
 | Name                           | Comment                                                 |
 | :------------------------      | ------------------------------------------------------- |
 | map                            | map(lambda x: str(x), [1, 2, 3])                        |
-| create array with given length | lst = [None] * 5                                        |
+| create array with given length | l = [None] * 5                                          |
 | insert elements to head        | array.insert(0,var)                                     |
 | delete a given element         | del a[1]                                                |
-| list as stack                  | l.pop()                                                 | 
+| list as stack                  | item = l.pop()                                          |
 | sort in descending             | sorted([8, 2, 5], reverse=True)                         |
 | sort by attribute              | sorted([('ebb', 121),('abc', 148)], key=lambda x: x[1]) |
 | generate a-z                   | map(chr, range(ord('a'), ord('z')+1))                   |
