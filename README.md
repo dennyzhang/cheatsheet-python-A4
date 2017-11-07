@@ -49,6 +49,7 @@ Advanced Usage Of Python Syntax
 | string to array           | list("abc")                  |
 
 - Set
+
 | Name                      | Comment                                   |
 | :------------------------ | ----------------------------              |
 | intersection              | list(set(nums1).intersection(set(nums2))) |
