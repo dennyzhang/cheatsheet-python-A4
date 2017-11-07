@@ -19,7 +19,8 @@ Advanced usage of Python Syntax
 | delete a given element         | del a[1]                                                |
 | map                            | map(lambda x: str(x), [1, 2, 3])                        |
 | map/reduce                     | reduce((lambda x, y: "%s %s" % (x, y)), l)              |
-
+| list as stack                  | l.pop()                                                 | 
+  
 - Compact Coding
 
 | Name                      | Comment                                  |
@@ -37,13 +38,29 @@ Advanced usage of Python Syntax
 | generate range                    | for num in xrange(20)                    |
 | get ascii                         | ord('a'), chr(97)                        |
 | mininum integer, maximum interger | sys.maxsize, -sys.maxsize-1              |
+| print integer in binary           | "{0:b}".format(10)                       |
 
 - String
 
-| Name                           | Comment                                                 |
-| :------------------------      | ----------------------------------------                |
-| Reverse string                 | "hello world"[::-1]                                     |
-  
+| Name                      | Comment                                  |
+| :------------------------ | ---------------------------------------- |
+| Reverse string            | "hello world"[::-1]                      |
+| array to string           | ' '.join(['a', 'b'])                     |
+| string to array           | list("abc")                              |
+
+- Bit Operator
+
+| Name            | Comment                   |
+| :-------------  | ------------------------- |
+| mod             | x % 2                     |
+| shift left      | x << 1                    |
+| shift righ      | x >> 2                    |
+| and             | x & y                     |
+| complement      | ~x                        |
+| xor             | x ^ y                     |
+| power           | 2 ** 3                    |
+| bool complement | not x                     |
+
 # License
 - Code is licensed under [MIT License](https://www.dennyzhang.com/wp-content/mit_license.txt).
 
