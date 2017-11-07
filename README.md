@@ -25,7 +25,7 @@ Advanced Usage Of Python Syntax
 
 | Name                      | Comment                        |
 | :------------------------ | ------------------------------ |
-| return if.. else          | return val if i>0 else 0)      |
+| return if.. else          | return val if i>0 else 0       |
 | multiple assignment       | l, r = 2, 3                    |
 | swap values               | left, right = right, left      |
 
