@@ -7,6 +7,8 @@ File me [tickets](https://github.com/DennyZhang/awesome-python-syntax/issues) or
 
 Advanced usage of Python Syntax
 
+- Integer
+
 | Name                              | Comment                                  |
 | :------------------------         | ---------------------------------------- |
 | Swap Values                       | left, right = right, left                |
@@ -17,7 +19,7 @@ Advanced usage of Python Syntax
 
 | Name                           | Comment                                                 |
 | :------------------------      | ----------------------------------------                |
-| Reverse string                 | 'hello world'[::-1]                                     |
+| Reverse string                 | "hello world"[::-1]                                     |
 | sort in descending             | sorted([8, 2, 5], reverse=True)                         |
 | Sort by attribute              | sorted([('ebb', 121),('abc', 148)], key=lambda x: x[1]) |
 | generate a-z                   | map(chr, range(ord('a'), ord('z')+1))                   |
