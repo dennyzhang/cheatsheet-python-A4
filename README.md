@@ -9,21 +9,21 @@ Advanced Usage Of Python Syntax
   
 - List
 
-| Name                           | Comment                                                 |
-| :------------------------      | ------------------------------------------------------- |
-| map                            | map(lambda x: str(x), [1, 2, 3])                        |
-| create array with given length | l = [None] * 5                                          |
-| insert elements to head        | array.insert(0,var)                                     |
-| delete a given element         | del a[1]                                                |
-| list as stack                  | item = l.pop()                                          |
-| sort in descending             | sorted([8, 2, 5], reverse=True)                         |
-| sort by attribute              | sorted([('ebb', 121),('abc', 148)], key=lambda x: x[1]) |
-| generate a-z                   | map(chr, range(ord('a'), ord('z')+1))                   |
-| map/reduce                     | reduce((lambda x, y: "%s %s" % (x, y)), l)              |
-| return all but the last        | list[:-1]                                               |
-| replace ith to jth element     | list[i:j] = otherlist                                   |
-| combine two list               | list1 + list2                                           |
-| get sum                        | sum(list)                                               |
+| Name                    | Comment                                             |
+| :---------------------- | --------------------------------------------------  |
+| map                     | map(lambda x: str(x), [1, 2, 3])                    |
+| create fixed size array | l = [None] * 5                                      |
+| insert elements to head | array.insert(0,var)                                 |
+| delete a given element  | del a[1]                                            |
+| list as stack           | item = l.pop()                                      |
+| sort in descending      | sorted([8, 2, 5], reverse=True)                     |
+| sort by attribute       | sorted([('ebb',12),('abc',14)], key=lambda x: x[1]) |
+| generate a-z            | map(chr, range(ord('a'), ord('z')+1))               |
+| map/reduce              | reduce((lambda x, y: "%s %s" % (x, y)), l)          |
+| return all but last     | list[:-1]                                           |
+| replace ith to jth      | list[i:j] = otherlist                               |
+| combine two list        | list1 + list2                                       |
+| get sum                 | sum(list)                                           |
   
 - Compact Coding
 
@@ -35,14 +35,14 @@ Advanced Usage Of Python Syntax
 
 - Integer
 
-| Name                              | Comment                        |
-| :------------------------         | ------------------------------ |
-| min, max                          | min(2, 3), max(5, 6, 2)        |
-| generate range                    | for num in range(10,20)        |
-| generate range                    | for num in xrange(20)          |
-| get ascii                         | ord('a'), chr(97)              |
-| mininum integer, maximum interger | sys.maxsize, -sys.maxsize-1    |
-| print integer in binary           | "{0:b}".format(10)             |
+| Name                      | Comment                        |
+| :------------------------ | ------------------------------ |
+| min, max                  | min(2, 3), max(5, 6, 2)        |
+| generate range            | for num in range(10,20)        |
+| generate range            | for num in xrange(20)          |
+| get ascii                 | ord('a'), chr(97)              |
+| mininum, maximum in       | sys.maxsize, -sys.maxsize-1    |
+| print integer in binary   | "{0:b}".format(10)             |
 
 - String
 
@@ -54,15 +54,15 @@ Advanced Usage Of Python Syntax
 
 - Set
 
-| Name                      | Comment                                   |
-| :------------------------ | ----------------------------              |
-| intersection              | list(set(nums1).intersection(set(nums2))) |
-| list to set               | set(list1)                                |
+| Name          | Comment                             |
+| :------------ | ----------------------------------- |
+| intersection  | list(set(l1).intersection(set(l2))) |
+| list to set   | set(list1)                          |
 
 - Bit Operator
 
 | Name            | Comment          |
-| :-------------  | --------------   |
+| :-------------  | ---------------- |
 | mod             | x % 2            |
 | shift left      | x << 1 ; a <<= 2 |
 | shift righ      | x >> 2           |
