@@ -6,7 +6,9 @@
 File me [tickets](https://github.com/DennyZhang/awesome-python-syntax/issues) or star [the repo](https://github.com/DennyZhang/awesome-python-syntax).
 
 Advanced Usage Of Python Syntax
-  
+
+Printable version on A4 page: [python_advanced_syntax.pdf](python_advanced_syntax.pdf)
+
 - List
 
 | Name                    | Comment                                             |
