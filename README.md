@@ -20,6 +20,10 @@ Advanced Usage Of Python Syntax
 | sort by attribute              | sorted([('ebb', 121),('abc', 148)], key=lambda x: x[1]) |
 | generate a-z                   | map(chr, range(ord('a'), ord('z')+1))                   |
 | map/reduce                     | reduce((lambda x, y: "%s %s" % (x, y)), l)              |
+| return all but the last        | list[:-1]                                               |
+| replace ith to jth element     | list[i:j] = otherlist                                   |
+| combine two list               | list1 + list2                                           |
+| get sum                        | sum(list)                                               |
   
 - Compact Coding
 
@@ -53,6 +57,7 @@ Advanced Usage Of Python Syntax
 | Name                      | Comment                                   |
 | :------------------------ | ----------------------------              |
 | intersection              | list(set(nums1).intersection(set(nums2))) |
+| list to set               | set(list1)                                |
 
 - Bit Operator
 
@@ -66,6 +71,9 @@ Advanced Usage Of Python Syntax
 | xor             | x ^ y            |
 | power           | 2 ** 3           |
 | bool complement | not x            |
+
+# More links
+- https://devhints.io/python
 
 # License
 - Code is licensed under [MIT License](https://www.dennyzhang.com/wp-content/mit_license.txt).
