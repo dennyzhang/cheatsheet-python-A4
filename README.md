@@ -77,6 +77,8 @@ Printable version on A4 page: [python_advanced_syntax.pdf](python_advanced_synta
 # More links
 - https://devhints.io/python
 
+- TODO: use latex to generate a better format
+
 # License
 - Code is licensed under [MIT License](https://www.dennyzhang.com/wp-content/mit_license.txt).
 
