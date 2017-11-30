@@ -9,6 +9,8 @@ Advanced Usage Of Python Syntax
 
 Printable version on A4 page: [python_advanced_syntax.pdf](python_advanced_syntax.pdf)
 
+See more CheatSheets from Denny: https://github.com/topics/denny-cheatsheets
+
 - List
 
 | Name                    | Comment                                             |
