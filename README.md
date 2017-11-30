@@ -13,48 +13,48 @@ See more CheatSheets from Denny: https://github.com/topics/denny-cheatsheets
 
 - List
 
-| Name                    | Comment                                             |
-| :---------------------- | --------------------------------------------------  |
-| map                     | map(lambda x: str(x), [1, 2, 3])                    |
-| create fixed size array | l = [None] * 5                                      |
-| insert elements to head | array.insert(0,var)                                 |
-| delete a given element  | del a[1]                                            |
-| list as stack           | item = l.pop()                                      |
-| sort in descending      | sorted([8, 2, 5], reverse=True)                     |
-| sort by attribute       | sorted([('ebb',12),('abc',14)], key=lambda x: x[1]) |
-| generate a-z            | map(chr, range(ord('a'), ord('z')+1))               |
-| map/reduce              | reduce((lambda x, y: "%s %s" % (x, y)), l)          |
-| return all but last     | list[:-1]                                           |
-| replace ith to jth      | list[i:j] = otherlist                               |
-| combine two list        | list1 + list2                                       |
-| get sum                 | sum(list)                                           |
+| Name                    | Comment                                               |
+| :---------------------- | --------------------------------------------------    |
+| map                     | `map(lambda x: str(x), [1, 2, 3])`                    |
+| create fixed size array | `l = [None] * 5`                                      |
+| insert elements to head | `array.insert(0,var)`                                 |
+| delete a given element  | `del a[1]`                                            |
+| list as stack           | `item = l.pop()`                                      |
+| sort in descending      | `sorted([8, 2, 5], reverse=True)`                     |
+| sort by attribute       | `sorted([('ebb',12),('abc',14)], key=lambda x: x[1])` |
+| generate a-z            | `map(chr, range(ord('a'), ord('z')+1))`               |
+| map/reduce              | `reduce((lambda x, y: "%s %s" % (x, y)), l)`          |
+| return all but last     | `list[:-1]`                                           |
+| replace ith to jth      | `list[i:j] = otherlist`                               |
+| combine two list        | `list1 + list2`                                       |
+| get sum                 | `sum(list)`                                           |
   
 - Compact Coding
 
 | Name                      | Comment                        |
 | :------------------------ | ------------------------------ |
-| return if.. else          | return val if i>0 else 0       |
-| multiple assignment       | l, r = 2, 3                    |
-| swap values               | left, right = right, left      |
+| return if.. else          | `return val if i>0 else 0`     |
+| multiple assignment       | `l, r = 2, 3`                  |
+| swap values               | `left, right = right, left`    |
 
 - Integer
 
 | Name                      | Comment                        |
 | :------------------------ | ------------------------------ |
-| min, max                  | min(2, 3), max(5, 6, 2)        |
-| generate range            | for num in range(10,20)        |
-| generate range            | for num in xrange(20)          |
-| get ascii                 | ord('a'), chr(97)              |
-| mininum, maximum in       | sys.maxsize, -sys.maxsize-1    |
-| print integer in binary   | "{0:b}".format(10)             |
+| min, max                  | `min(2, 3), max(5, 6, 2)`      |
+| generate range            | `for num in range(10,20)`      |
+| generate range            | `for num in xrange(20)`        |
+| get ascii                 | `ord('a'), chr(97)`            |
+| mininum, maximum in       | `sys.maxsize, -sys.maxsize-1`  |
+| print integer in binary   | `"{0:b}".format(10)`           |
 
 - String
 
 | Name                      | Comment                      |
 | :------------------------ | ---------------------------- |
-| reverse string            | "hello world"[::-1]          |
-| array to string           | ' '.join(['a', 'b'])         |
-| string to array           | list("abc")                  |
+| reverse string            | `"hello world"[::-1]`        |
+| array to string           | `' '.join(['a', 'b'])`       |
+| string to array           | `list("abc")`                |
 
 - Set
 
