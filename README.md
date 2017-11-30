@@ -52,29 +52,29 @@ See more CheatSheets from Denny: https://github.com/topics/denny-cheatsheets
 
 | Name                      | Comment                      |
 | :------------------------ | ---------------------------- |
-| reverse string            | `"hello world"[::-1]`        |
-| array to string           | `' '.join(['a', 'b'])`       |
-| string to array           | `list("abc")`                |
+| reverse string            |`"hello world"[::-1]`        |
+| array to string           |`' '.join(['a', 'b'])`       |
+| string to array           |`list("abc")`                |
 
 - Set
 
-| Name          | Comment                             |
-| :------------ | ----------------------------------- |
-| intersection  | list(set(l1).intersection(set(l2))) |
-| list to set   | set(list1)                          |
+| Name          | Comment                               |
+| :------------ | -----------------------------------   |
+| intersection  | `list(set(l1).intersection(set(l2)))` |
+| list to set   | `set(list1)`                          |
 
 - Bit Operator
 
-| Name            | Comment          |
-| :-------------  | ---------------- |
-| mod             | x % 2            |
-| shift left      | x << 1 ; a <<= 2 |
-| shift righ      | x >> 2           |
-| and             | x & y            |
-| complement      | ~x               |
-| xor             | x ^ y            |
-| power           | 2 ** 3           |
-| bool complement | not x            |
+| Name            | Comment            |
+| :-------------  | ----------------   |
+| mod             | `x % 2`            |
+| shift left      | `x << 1 ; a <<= 2` |
+| shift righ      | `x >> 2`           |
+| and             | `x & y`            |
+| complement      | `~x`               |
+| xor             | `x ^ y`            |
+| power           | `2 ** 3`           |
+| bool complement | `not x`            |
 
 # More links
 - https://devhints.io/python
