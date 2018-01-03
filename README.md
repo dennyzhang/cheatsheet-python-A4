@@ -78,6 +78,15 @@ See more CheatSheets from Denny: [here](https://github.com/topics/denny-cheatshe
 | power           | `2 ** 3`           |
 | bool complement | `not x`            |
 
+# Misc
+```
+    def printListNode(self, head):
+        print("printListnode")
+        while head:
+            print("%d" % (head.val))
+            head = head.next
+```
+
 # More links
 - https://devhints.io/python
 
