@@ -54,9 +54,10 @@ See more CheatSheets from Denny: [here](https://github.com/topics/denny-cheatshe
 
 | Name                      | Comment                      |
 | :------------------------ | ---------------------------- |
-| reverse string            |`"hello world"[::-1]`        |
-| array to string           |`' '.join(['a', 'b'])`       |
-| string to array           |`list("abc")`                |
+| reverse string            | `"hello world"[::-1]`        |
+| array to string           | `' '.join(['a', 'b'])`       |
+| string to array           | `list("abc")`                |
+| Format to 2 digits        | `print "%02d" % (13)`        |
 
 - Set
 
@@ -77,6 +78,7 @@ See more CheatSheets from Denny: [here](https://github.com/topics/denny-cheatshe
 | xor             | `x ^ y`            |
 | power           | `2 ** 3`           |
 | bool complement | `not x`            |
+| binary format   | `bin(3)`           |
 
 # Misc
 ```
