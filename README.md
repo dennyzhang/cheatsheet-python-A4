@@ -68,17 +68,18 @@ See more CheatSheets from Denny: [here](https://github.com/topics/denny-cheatshe
 
 - Bit Operator
 
-| Name            | Comment            |
-| :-------------  | ----------------   |
-| mod             | `x % 2`            |
-| shift left      | `x << 1 ; a <<= 2` |
-| shift righ      | `x >> 2`           |
-| and             | `x & y`            |
-| complement      | `~x`               |
-| xor             | `x ^ y`            |
-| power           | `2 ** 3`           |
-| bool complement | `not x`            |
-| binary format   | `bin(3)`           |
+| Name                  | Comment             |
+| :-------------        | ----------------    |
+| mod                   | `x % 2`             |
+| shift left            | `x << 1 ; a <<= 2`  |
+| shift righ            | `x >> 2`            |
+| and                   | `x & y`             |
+| complement            | `~x`                |
+| xor                   | `x ^ y`             |
+| power                 | `2 ** 3`            |
+| bool complement       | `not x`             |
+| binary format         | `bin(3)`            |
+| count 1 inside binary | `bin(3).count('1')` |
 
 # Misc
 ```
