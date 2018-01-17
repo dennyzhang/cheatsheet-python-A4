@@ -33,17 +33,6 @@ See more CheatSheets from Denny: [here](https://github.com/topics/denny-cheatshe
 | multiple assignment       | `l, r = 2, 3`                  |
 | swap values               | `left, right = right, left`    |
 
-- Integer
-
-| Name                      | Comment                        |
-| :------------------------ | ------------------------------ |
-| min, max                  | `min(2, 3), max(5, 6, 2)`      |
-| generate range            | `for num in range(10,20)`      |
-| generate range            | `for num in xrange(20)`        |
-| get ascii                 | `ord('a'), chr(97)`            |
-| mininum, maximum in       | `sys.maxsize, -sys.maxsize-1`  |
-| print integer in binary   | `"{0:b}".format(10)`           |
-
 - String
 
 | Name                       | Comment                                |
@@ -57,6 +46,17 @@ See more CheatSheets from Denny: [here](https://github.com/topics/denny-cheatshe
 | capitalize string          | `"this is a new world".upper()`        |
 | upper string               | `"aBc".upper()`                        |
 | count substring            | `"2-5g-3-J".count('-')`                |
+
+- Integer
+
+| Name                      | Comment                        |
+| :------------------------ | ------------------------------ |
+| min, max                  | `min(2, 3), max(5, 6, 2)`      |
+| generate range            | `for num in range(10,20)`      |
+| generate range            | `for num in xrange(20)`        |
+| get ascii                 | `ord('a'), chr(97)`            |
+| mininum, maximum in       | `sys.maxsize, -sys.maxsize-1`  |
+| print integer in binary   | `"{0:b}".format(10)`           |
   
 - Set
 
