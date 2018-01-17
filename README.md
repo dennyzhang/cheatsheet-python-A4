@@ -82,25 +82,25 @@ See more CheatSheets from Denny: [here](https://github.com/topics/denny-cheatshe
 
 # ListNode
 ```
-    def initListNodeFromArray(self, nums):
-        head = ListNode(None)
-        prev, p = head, head
-        for num in nums:
-            pre = p
-            p.val = num
-            q = ListNode(None)
-            p.next = q
-            p = p.next
-        pre.next = None
-        return head
+def initListNodeFromArray(self, nums):
+    head = ListNode(None)
+    prev, p = head, head
+    for num in nums:
+        pre = p
+        p.val = num
+        q = ListNode(None)
+        p.next = q
+        p = p.next
+    pre.next = None
+    return head
 ```
 
 ```
-    def printListNode(self, head):
-        print("printListnode")
-        while head:
-            print("%d" % (head.val))
-            head = head.next
+def printListNode(self, head):
+    print("printListnode")
+    while head:
+        print("%d" % (head.val))
+        head = head.next
 ```
 
 # More links
