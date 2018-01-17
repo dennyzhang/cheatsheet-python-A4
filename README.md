@@ -52,13 +52,18 @@ See more CheatSheets from Denny: [here](https://github.com/topics/denny-cheatshe
 
 - String
 
-| Name                      | Comment                      |
-| :------------------------ | ---------------------------- |
-| reverse string            | `"hello world"[::-1]`        |
-| array to string           | `' '.join(['a', 'b'])`       |
-| string to array           | `list("abc")`                |
-| Format to 2 digits        | `print "%02d" % (13)`        |
-
+| Name                       | Comment                                |
+| :------------------------  | -------------------------------------  |
+| reverse string             | `"hello world"[::-1]`                  |
+| array to string            | `' '.join(['a', 'b'])`                 |
+| string to array            | `list("abc")`                          |
+| Format to 2 digits         | `print "%02d" % (13)`                  |
+| Find location of substring | `'Position of a character'.find('s')`  |
+| Find location of substring | `'Position of a character'.index('s')` |
+| Capitalize string          | `"this is a new world".upper()`        |
+| Upper string               | `"aBc".upper()`                        |
+| Count string               | `"2-5g-3-J".count('-')`                |
+  
 - Set
 
 | Name          | Comment                               |
