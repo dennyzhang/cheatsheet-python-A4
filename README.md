@@ -99,7 +99,9 @@ See more CheatSheets from Denny: [here](https://github.com/topics/denny-cheatshe
             p = p.next
         pre.next = None
         return head
+```
 
+```
     def printListNode(self, head):
         print("printListnode")
         while head:
