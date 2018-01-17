@@ -62,7 +62,7 @@ See more CheatSheets from Denny: [here](https://github.com/topics/denny-cheatshe
 | Find location of substring | `'Position of a character'.index('s')` |
 | Capitalize string          | `"this is a new world".upper()`        |
 | Upper string               | `"aBc".upper()`                        |
-| Count string               | `"2-5g-3-J".count('-')`                |
+| Count substring            | `"2-5g-3-J".count('-')`                |
   
 - Set
 
