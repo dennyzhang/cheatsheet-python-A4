@@ -57,12 +57,12 @@ See more CheatSheets from Denny: [here](https://github.com/topics/denny-cheatshe
 | reverse string             | `"hello world"[::-1]`                  |
 | array to string            | `' '.join(['a', 'b'])`                 |
 | string to array            | `list("abc")`                          |
-| Format to 2 digits         | `print "%02d" % (13)`                  |
-| Find location of substring | `'Position of a character'.find('s')`  |
-| Find location of substring | `'Position of a character'.index('s')` |
-| Capitalize string          | `"this is a new world".upper()`        |
-| Upper string               | `"aBc".upper()`                        |
-| Count substring            | `"2-5g-3-J".count('-')`                |
+| format to 2 digits         | `print "%02d" % (13)`                  |
+| find location of substring | `'Position of a character'.find('s')`  |
+| find location of substring | `'Position of a character'.index('s')` |
+| capitalize string          | `"this is a new world".upper()`        |
+| upper string               | `"aBc".upper()`                        |
+| count substring            | `"2-5g-3-J".count('-')`                |
   
 - Set
 
@@ -86,8 +86,20 @@ See more CheatSheets from Denny: [here](https://github.com/topics/denny-cheatshe
 | binary format         | `bin(3)`            |
 | count 1 inside binary | `bin(3).count('1')` |
 
-# Misc
+# ListNode
 ```
+    def initListNodeFromArray(self, nums):
+        head = ListNode(None)
+        prev, p = head, head
+        for num in nums:
+            pre = p
+            p.val = num
+            q = ListNode(None)
+            p.next = q
+            p = p.next
+        pre.next = None
+        return head
+
     def printListNode(self, head):
         print("printListnode")
         while head:
