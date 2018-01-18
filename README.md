@@ -32,6 +32,7 @@ See more CheatSheets from Denny: [here](https://github.com/topics/denny-cheatshe
 | return if.. else          | `return val if i>0 else 0`     |
 | multiple assignment       | `l, r = 2, 3`                  |
 | swap values               | `left, right = right, left`    |
+| if... continue            | if index == icol: continue     |
 
 - String
 
@@ -79,6 +80,13 @@ See more CheatSheets from Denny: [here](https://github.com/topics/denny-cheatshe
 | bool complement       | `not x`             |
 | binary format         | `bin(3)`            |
 | count 1 inside binary | `bin(3).count('1')` |
+
+- Math
+
+| Name          | Comment                             |
+| :------------ | ----------------------------------- |
+| sqrt          | `import math; math.sqrt(5)`         |
+| power         | `import math; math.pow(2, 3)`       |
 
 # ListNode
 ```
