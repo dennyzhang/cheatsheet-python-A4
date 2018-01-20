@@ -33,7 +33,8 @@ See more CheatSheets from Denny: [here](https://github.com/topics/denny-cheatshe
 | if ... return             | `if k == 0: return False`      |
 | multiple assignment       | `l, r = 2, 3`                  |
 | swap values               | `left, right = right, left`    |
-| if... continue            | if index == icol: continue     |
+| if... continue            | `if index == icol: continue`   |
+| assign with check of none | `a = None and 1`               |
 
 - String
 
@@ -43,6 +44,7 @@ See more CheatSheets from Denny: [here](https://github.com/topics/denny-cheatshe
 | array to string            | `' '.join(['a', 'b'])`                 |
 | string to array            | `list("abc")`                          |
 | format to 2 digits         | `print "%02d" % (13)`                  |
+| pad leading zero           | `'101'.zfill(10)`                      |
 | find location of substring | `'Position of a character'.find('s')`  |
 | find location of substring | `'Position of a character'.index('s')` |
 | capitalize string          | `"this is a new world".upper()`        |
@@ -60,12 +62,13 @@ See more CheatSheets from Denny: [here](https://github.com/topics/denny-cheatshe
 | mininum, maximum in       | `sys.maxsize, -sys.maxsize-1`  |
 | print integer in binary   | `"{0:b}".format(10)`           |
   
-- Set
+- Dict & Set
 
-| Name          | Comment                               |
-| :------------ | -----------------------------------   |
-| intersection  | `list(set(l1).intersection(set(l2)))` |
-| list to set   | `set(list1)`                          |
+| Name                   | Comment                               |
+| :--------------------- | -----------------------------------   |
+| dict get first element | `m[m.keys()[0]]`                      |
+| intersection           | `list(set(l1).intersection(set(l2)))` |
+| list to set            | `set(list1)`                          |
 
 - Bit Operator
 
