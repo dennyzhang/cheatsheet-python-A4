@@ -43,14 +43,15 @@ Table of Contents
   
 ## Compact Coding
 
-| Name                      | Comment                        |
-| :------------------------ | ------------------------------ |
-| if ... return             | `if k == 0: return False`      |
-| if... continue            | `if index == icol: continue`   |
-| multiple assignment       | `l, r = 2, 3`                  |
-| return if.. else          | `return val if i>0 else 0`     |
-| assign with check of none | `a = None and 1`               |
-| swap values               | `left, right = right, left`    |
+| Name                      | Comment                                  |
+| :------------------------ | ------------------------------           |
+| if ... return             | `if k == 0: return False`                |
+| if... continue            | `if index == icol: continue`             |
+| multiple assignment       | `l, r = 2, 3`                            |
+| return if.. else          | `return val if i>0 else 0`               |
+| assign with check of none | `a = None and 1`                         |
+| swap values               | `left, right = right, left`              |
+| dictionary with defaults  | `m = collections.defaultdict(lambda: 1)` |
 
 ## String
 
