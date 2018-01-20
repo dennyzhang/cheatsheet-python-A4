@@ -89,28 +89,51 @@ See more CheatSheets from Denny: [here](https://github.com/topics/denny-cheatshe
 | sqrt          | `import math; math.sqrt(5)`         |
 | power         | `import math; math.pow(2, 3)`       |
 
-# ListNode
+# Code snippets
+- Initialize Linkedlist from array
 ```
-def initListNodeFromArray(self, nums):
-    head = ListNode(None)
-    prev, p = head, head
-    for num in nums:
-        pre = p
-        p.val = num
-        q = ListNode(None)
-        p.next = q
-        p = p.next
-    pre.next = None
-    return head
+    def initListNodeFromArray(self, nums):
+        head = ListNode(None)
+        prev, p = head, head
+        for num in nums:
+            pre = p
+            p.val = num
+            q = ListNode(None)
+            p.next = q
+            p = p.next
+        pre.next = None
+        return head
 ```
 
+- Print linkedlist
 ```
-def printListNode(self, head):
-    print("printListnode")
-    while head:
-        print("%d" % (head.val))
-        head = head.next
+    def printListNode(self, head):
+        print("printListnode")
+        while head:
+            print("%d" % (head.val))
+            head = head.next
 ```
+
+- Print Trie Tree in level order
+```
+    def printTrieTreeLevelOrder(self, node):
+        print("printTrieTreeLevelOrder")
+        if node.is_word:
+            print("Node is a word")
+        queue = []
+        queue.append(node)
+        while len(queue) != 0:
+            s = ''
+            for i in xrange(len(queue)):
+                node = queue[0]
+                del queue[0]
+                for child_key in node.children:
+                    s = '%s %s' % (s, child_key)
+                    queue.append(node.children[child_key])
+            if s != '':
+                print 'print level children: %s' % (s)
+```
+
 
 # More links
 - https://devhints.io/python
