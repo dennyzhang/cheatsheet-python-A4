@@ -1,3 +1,19 @@
+Table of Contents
+=================
+
+   * [awesome-python-syntax](#awesome-python-syntax)
+      * [List](#list)
+      * [Compact Coding](#compact-coding)
+      * [String](#string)
+      * [Integer](#integer)
+      * [Dict &amp; Set](#dict--set)
+      * [Bit Operator](#bit-operator)
+      * [Math](#math)
+   * [Code snippets](#code-snippets)
+   * [More links](#more-links)
+
+<a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+
 # awesome-python-syntax
 <a href="https://github.com/DennyZhang?tab=followers"><img align="right" width="200" height="183" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/fork_github.png" /></a>
 
@@ -7,7 +23,7 @@ File me [tickets](https://github.com/DennyZhang/awesome-python-syntax/issues) or
 
 See more CheatSheets from Denny: [here](https://github.com/topics/denny-cheatsheets)
 
-- List
+## List
 
 | Name                    | Comment                                               |
 | :---------------------- | --------------------------------------------------    |
@@ -25,7 +41,7 @@ See more CheatSheets from Denny: [here](https://github.com/topics/denny-cheatshe
 | combine two list        | `list1 + list2`                                       |
 | get sum                 | `sum(list)`                                           |
   
-- Compact Coding
+## Compact Coding
 
 | Name                      | Comment                        |
 | :------------------------ | ------------------------------ |
@@ -36,7 +52,7 @@ See more CheatSheets from Denny: [here](https://github.com/topics/denny-cheatshe
 | if... continue            | `if index == icol: continue`   |
 | assign with check of none | `a = None and 1`               |
 
-- String
+## String
 
 | Name                       | Comment                                |
 | :------------------------  | -------------------------------------  |
@@ -51,7 +67,7 @@ See more CheatSheets from Denny: [here](https://github.com/topics/denny-cheatshe
 | upper string               | `"aBc".upper()`                        |
 | count substring            | `"2-5g-3-J".count('-')`                |
 
-- Integer
+## Integer
 
 | Name                      | Comment                        |
 | :------------------------ | ------------------------------ |
@@ -62,7 +78,7 @@ See more CheatSheets from Denny: [here](https://github.com/topics/denny-cheatshe
 | mininum, maximum in       | `sys.maxsize, -sys.maxsize-1`  |
 | print integer in binary   | `"{0:b}".format(10)`           |
   
-- Dict & Set
+## Dict & Set
 
 | Name                   | Comment                               |
 | :--------------------- | -----------------------------------   |
@@ -70,7 +86,7 @@ See more CheatSheets from Denny: [here](https://github.com/topics/denny-cheatshe
 | intersection           | `list(set(l1).intersection(set(l2)))` |
 | list to set            | `set(list1)`                          |
 
-- Bit Operator
+## Bit Operator
 
 | Name                  | Comment             |
 | :-------------        | ----------------    |
@@ -85,7 +101,7 @@ See more CheatSheets from Denny: [here](https://github.com/topics/denny-cheatshe
 | binary format         | `bin(3)`            |
 | count 1 inside binary | `bin(3).count('1')` |
 
-- Math
+## Math
 
 | Name          | Comment                             |
 | :------------ | ----------------------------------- |
@@ -143,7 +159,7 @@ See more CheatSheets from Denny: [here](https://github.com/topics/denny-cheatshe
 
 - TODO: use latex to generate a better format
 
-# License
+- License
 - Code is licensed under [MIT License](https://www.dennyzhang.com/wp-content/mit_license.txt).
 
 <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
