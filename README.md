@@ -87,6 +87,8 @@ Table of Contents
 | dict get first element | `m[m.keys()[0]]`                      |
 | intersection           | `list(set(l1).intersection(set(l2)))` |
 | list to set            | `set(list1)`                          |
+| sort dict by values    | `sorted(dict1, key=dict1.get)`        |
+| deep copy dict         | `import copy; m2=copy.deepcopy(m1)`   |
 
 ## Bit Operator
 
