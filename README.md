@@ -55,18 +55,18 @@ Table of Contents
 
 ## String
 
-| Name                       | Comment                                |
-| :------------------------  | -------------------------------------  |
-| reverse string             | `"hello world"[::-1]`                  |
-| array to string            | `' '.join(['a', 'b'])`                 |
-| string to array            | `list("abc")`                          |
-| format to 2 digits         | `print "%02d" % (13)`                  |
-| pad leading zero           | `'101'.zfill(10)`                      |
-| find location of substring | `'Position of a character'.find('s')`  |
-| find location of substring | `'Position of a character'.index('s')` |
-| capitalize string          | `"this is a new world".capitalize()`   |
-| upper string               | `"aBc".upper()`                        |
-| count substring            | `"2-5g-3-J".count('-')`                |
+| Name                       | Comment                               |
+| :------------------------  | ------------------------------------- |
+| reverse string             | `"hello world"[::-1]`                 |
+| array to string            | `' '.join(['a', 'b'])`                |
+| string to array            | `list("abc")`                         |
+| format to 2 digits         | `print "%02d" % (13)`                 |
+| pad leading zero           | `'101'.zfill(10)`                     |
+| find location of substring | `'abc'.find('d')`                     |
+| find location of substring | `'abc'.index('d')`                    |
+| capitalize string          | `"this is a new world".capitalize()`  |
+| upper string               | `"aBc".upper()`                       |
+| count substring            | `"2-5g-3-J".count('-')`               |
 
 ## Integer
 
