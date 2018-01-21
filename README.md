@@ -62,8 +62,8 @@ Table of Contents
 | string to array            | `list("abc")`                         |
 | format to 2 digits         | `print "%02d" % (13)`                 |
 | pad leading zero           | `'101'.zfill(10)`                     |
-| find location of substring | `'abc'.find('d')` # returns -1        |
-| find location of substring | `'abc'.index('d')` # raise exception  |
+| find location of substring | `'abc'.find('d')` (returns -1)        |
+| find location of substring | `'abc'.index('d')` (raise exception)  |
 | capitalize string          | `"this is a new world".capitalize()`  |
 | upper string               | `"aBc".upper()`                       |
 | count substring            | `"2-5g-3-J".count('-')`               |
