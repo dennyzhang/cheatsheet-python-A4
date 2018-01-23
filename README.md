@@ -54,6 +54,7 @@ Table of Contents
 | dictionary with defaults   | `m = collections.defaultdict(lambda: 1)` |
 | loop with single statement | while p.left: p = p.left                 |
 | assignments                | `l[1]=l[0]=0`                            |
+| print multiple values      | print x, y                               |
 
 ## String
 
