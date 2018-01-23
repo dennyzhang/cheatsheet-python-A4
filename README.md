@@ -53,6 +53,7 @@ Table of Contents
 | swap values                | `left, right = right, left`              |
 | dictionary with defaults   | `m = collections.defaultdict(lambda: 1)` |
 | loop with single statement | while p.left: p = p.left                 |
+| assignments                | `l[1]=l[0]=0`                            |
 
 ## String
 
