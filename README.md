@@ -43,18 +43,19 @@ Table of Contents
   
 ## Compact Coding
 
-| Name                       | Comment                                  |
-| :------------------------  | ------------------------------           |
-| if ... return              | `if k == 0: return False`                |
-| if... continue             | `if index == icol: continue`             |
-| multiple assignment        | `l, r = 2, 3`                            |
-| return if.. else           | `return val if i>0 else 0`               |
-| assign with check of none  | `a = b or 1` (b might be None)           |
-| swap values                | `left, right = right, left`              |
-| dictionary with defaults   | `m = collections.defaultdict(lambda: 1)` |
-| loop with single statement | while p.left: p = p.left                 |
-| assignments                | `l[1]=l[0]=0`                            |
-| print multiple values      | print x, y                               |
+| Name                          | Comment                                  |
+| :------------------------     | ------------------------------           |
+| if ... return                 | `if k == 0: return False`                |
+| if... continue                | `if index == icol: continue`             |
+| multiple assignment           | `l, r = 2, 3`                            |
+| return if.. else              | `return val if i>0 else 0`               |
+| assign with check of none     | `a = b or 1` (b might be None)           |
+| swap values                   | `left, right = right, left`              |
+| dictionary with defaults      | `m = collections.defaultdict(lambda: 1)` |
+| loop with single statement    | while p.left: p = p.left                 |
+| assignments                   | `l[1]=l[0]=0`                            |
+| print multiple values         | `print x, y`                             |
+| Sort list in descending order | `sorted(nums)[::-1]`                     |
 
 ## String
 
