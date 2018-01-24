@@ -107,6 +107,13 @@ Table of Contents
 | binary format         | `bin(3)`            |
 | count 1 inside binary | `bin(3).count('1')` |
 
+## Type
+
+| Name                              | Comment                        |
+| :------------------------         | ------------------------------ |
+| Check if string represent integer | `'123'.isdigit()`              |
+| Check if string alphabetic        | `'abc'.isalpha()`              |
+
 ## Math
 
 | Name          | Comment                             |
