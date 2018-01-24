@@ -58,18 +58,20 @@ Table of Contents
 
 ## String
 
-| Name                       | Comment                               |
-| :------------------------  | ------------------------------------- |
-| reverse string             | `'hello world'[::-1]`                 |
-| array to string            | `' '.join(['a', 'b'])`                |
-| string to array            | `list('abc')`                         |
-| format to 2 digits         | `print "%02d" % (13)`                 |
-| pad leading zero           | `'101'.zfill(10)`                     |
-| find location of substring | `'abc'.find('d')` (returns -1)        |
-| find location of substring | `'abc'.index('d')` (raise exception)  |
-| capitalize string          | `'hello world'.capitalize()`          |
-| upper string               | `'aBc'.upper()`                       |
-| count substring            | `'2-5g-3-J'.count('-')`               |
+| Name                              | Comment                               |
+| :------------------------         | ------------------------------------- |
+| reverse string                    | `'hello world'[::-1]`                 |
+| array to string                   | `' '.join(['a', 'b'])`                |
+| string to array                   | `list('abc')`                         |
+| format to 2 digits                | `print "%02d" % (13)`                 |
+| pad leading zero                  | `'101'.zfill(10)`                     |
+| find location of substring        | `'abc'.find('d')` (returns -1)        |
+| find location of substring        | `'abc'.index('d')` (raise exception)  |
+| capitalize string                 | `'hello world'.capitalize()`          |
+| upper string                      | `'aBc'.upper()`                       |
+| count substring                   | `'2-5g-3-J'.count('-')`               |
+| Check if string represent integer | `'123'.isdigit()`                     |
+| Check if string alphabetic        | `'abc'.isalpha()`                     |
 
 ## Integer
 
@@ -106,13 +108,6 @@ Table of Contents
 | bool complement       | `not x`             |
 | binary format         | `bin(3)`            |
 | count 1 inside binary | `bin(3).count('1')` |
-
-## Type
-
-| Name                              | Comment                        |
-| :------------------------         | ------------------------------ |
-| Check if string represent integer | `'123'.isdigit()`              |
-| Check if string alphabetic        | `'abc'.isalpha()`              |
 
 ## Math
 
