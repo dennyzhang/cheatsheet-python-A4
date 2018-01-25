@@ -30,10 +30,11 @@ Table of Contents
 | map                     | `map(lambda x: str(x), [1, 2, 3])`                    |
 | create fixed size array | `l = [None] * 5`                                      |
 | insert elements to head | `array.insert(0,var)`                                 |
-| delete a given element  | `del a[1]`                                            |
+| delete element by index | `del a[1]`                                            |
 | list as stack           | `item = l.pop()`                                      |
 | sort in descending      | `sorted([8, 2, 5], reverse=True)`                     |
 | sort by attribute       | `sorted([('ebb',12),('abc',14)], key=lambda x: x[1])` |
+| in-place sort           | `l.sort()`                                            |
 | generate a-z            | `map(chr, range(ord('a'), ord('z')+1))`               |
 | map/reduce              | `reduce((lambda x, y: "%s %s" % (x, y)), l)`          |
 | return all but last     | `list[:-1]`                                           |
