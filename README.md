@@ -56,7 +56,7 @@ Table of Contents
 | loop with single statement    | while p.left: p = p.left                 |
 | assignments                   | `l[1]=l[0]=0`                            |
 | print multiple values         | `print x, y`                             |
-| Sort list in descending order | `sorted(nums)[::-1]`                     |
+| sort list in descending order | `sorted(nums)[::-1]`                     |
 
 ## String
 
