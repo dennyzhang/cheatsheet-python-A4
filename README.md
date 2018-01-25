@@ -71,8 +71,9 @@ Table of Contents
 | capitalize string                 | `'hello world'.capitalize()`          |
 | upper string                      | `'aBc'.upper()`                       |
 | count substring                   | `'2-5g-3-J'.count('-')`               |
-| Check if string represent integer | `'123'.isdigit()`                     |
-| Check if string alphabetic        | `'abc'.isalpha()`                     |
+| check if string represent integer | `'123'.isdigit()`                     |
+| check if string alphabetic        | `'abc'.isalpha()`                     |
+| replace string                    | `'ab cd'.replace(' ', '')`            |
 
 ## Integer
 
