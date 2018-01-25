@@ -41,6 +41,7 @@ Table of Contents
 | replace ith to jth      | `list[i:j] = otherlist`                               |
 | combine two list        | `list1 + list2`                                       |
 | get sum                 | `sum(list)`                                           |
+| unique list             | `set(["Blah", "foo", "foo", 1, 1, 2, 3])`             |
   
 ## Compact Coding
 
