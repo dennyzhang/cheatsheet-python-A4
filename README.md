@@ -165,6 +165,16 @@ Table of Contents
                 print 'print level children: %s' % (s)
 ```
 
+- python sort with customized cmp function: -1 first
+```
+nums = [3, 2, 6]
+def myCompare(v1, v2):
+    return -1
+
+sorted_nums = sorted(nums, cmp=myCompare)
+print nums # [3, 2, 6]
+print sorted_nums # [6, 3, 2]
+```
 
 # More links
 - https://devhints.io/python
