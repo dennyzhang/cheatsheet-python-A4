@@ -120,6 +120,12 @@ Table of Contents
 | sqrt          | `import math; math.sqrt(5)`         |
 | power         | `import math; math.pow(2, 3)`       |
 
+## heapq: priority queue. (min heap)
+| Name             | Comment                               |
+| :------------    | -----------------------------------   |
+| heappush a tuple | `q=[]; heapq.heappush(li, (5, 'ab'))` |
+| print heapq      | `print list(q)`                       |
+
 # Code snippets
 - Initialize Linkedlist from array
 ```
