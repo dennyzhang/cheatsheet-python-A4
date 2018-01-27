@@ -182,6 +182,13 @@ print nums # [3, 2, 6]
 print sorted_nums # [6, 3, 2]
 ```
 
+- Initialize m*n matrix
+```
+col_count, row_count = 3, 2
+matrix = [[None for x in xrange(col_count)] for y in xrange(row_count)]
+print matrix
+```
+
 # More links
 - https://devhints.io/python
 
