@@ -85,7 +85,7 @@ Table of Contents
 | generate range            | `for num in range(10,20)`      |
 | generate range            | `for num in xrange(20)`        |
 | get ascii                 | `ord('a'), chr(97)`            |
-| mininum, maximum in       | `sys.maxsize, -sys.maxsize-1`  |
+| max, min                  | `sys.maxsize, -sys.maxsize-1`  |
 | print integer in binary   | `"{0:b}".format(10)`           |
   
 ## Dict & Set
@@ -185,7 +185,7 @@ print sorted_nums # [6, 3, 2]
 - Initialize m*n matrix
 ```
 col_count, row_count = 3, 2
-matrix = [[None for x in xrange(col_count)] for y in xrange(row_count)]
+matrix = [[None for j in xrange(col_count)] for i in xrange(row_count)]
 print matrix
 ```
 
