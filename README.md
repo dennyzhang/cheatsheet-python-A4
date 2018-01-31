@@ -115,10 +115,11 @@ Table of Contents
 
 ## Math
 
-| Name          | Comment                             |
-| :------------ | ----------------------------------- |
-| sqrt          | `import math; math.sqrt(5)`         |
-| power         | `import math; math.pow(2, 3)`       |
+| Name          | Comment                                   |
+| :------------ | -----------------------------------       |
+| sqrt          | `import math; math.sqrt(5)`               |
+| power         | `import math; math.pow(2, 3)`             |
+| random        | `random.randint(1, 10)` 1 and 10 included |
 
 ## heapq: priority queue. (min heap)
 | Name             | Comment                               |
