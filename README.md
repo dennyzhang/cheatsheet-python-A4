@@ -83,7 +83,6 @@ Table of Contents
 | :------------------------ | ------------------------------ |
 | min, max                  | `min(2, 3), max(5, 6, 2)`      |
 | generate range            | `for num in range(10,20)`      |
-| generate range            | `for num in xrange(20)`        |
 | get ascii                 | `ord('a'), chr(97)`            |
 | max, min                  | `sys.maxsize, -sys.maxsize-1`  |
 | print integer in binary   | `"{0:b}".format(10)`           |
