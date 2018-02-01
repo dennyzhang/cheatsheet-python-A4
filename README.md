@@ -58,6 +58,7 @@ Table of Contents
 | assignments                   | `l[1]=l[0]=0`                            |
 | print multiple values         | `print x, y`                             |
 | sort list in descending order | `sorted(nums)[::-1]`                     |
+| Sum a subarray                | `sum(nums[0:k])`                         |
 
 ## String
 
