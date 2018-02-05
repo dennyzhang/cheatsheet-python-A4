@@ -82,10 +82,10 @@ Table of Contents
 
 | Name                      | Comment                        |
 | :------------------------ | ------------------------------ |
+| max, min                  | `sys.maxsize, -sys.maxsize-1`  |
 | min, max                  | `min(2, 3), max(5, 6, 2)`      |
 | generate range            | `for num in range(10,20)`      |
 | get ascii                 | `ord('a'), chr(97)`            |
-| max, min                  | `sys.maxsize, -sys.maxsize-1`  |
 | print integer in binary   | `"{0:b}".format(10)`           |
   
 ## Dict & Set
@@ -122,10 +122,12 @@ Table of Contents
 | random        | `random.randint(1, 10)` 1 and 10 included |
 
 ## heapq: priority queue. (min heap)
-| Name             | Comment                               |
-| :------------    | -----------------------------------   |
-| heappush a tuple | `q=[]; heapq.heappush(li, (5, 'ab'))` |
-| print heapq      | `print list(q)`                       |
+| Name                | Comment                              |
+| :-----------------  | -----------------------------------  |
+| Initialize min heap | `heapq.heapify(q)`                   |
+| heappush a tuple    | `q=[]; heapq.heappush(q, (5, 'ab'))` |
+| pop                 | `print (heapq.heappop(q))`           |
+| print heapq         | `print list(q)`                      |
 
 # Code snippets
 - Initialize Linkedlist from array
