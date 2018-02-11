@@ -201,8 +201,6 @@ print matrix
 ```
 
 # More links
-- https://devhints.io/python
-
 - TODO: use latex to generate a better format
 
 - License: Code is licensed under [MIT License](https://www.dennyzhang.com/wp-content/mit_license.txt).
