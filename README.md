@@ -18,6 +18,7 @@ Table of Contents
       * [Dict &amp; Set](#dict--set)
       * [Bit Operator](#bit-operator)
       * [Math](#math)
+      * [queue/heapq](#queueheapq)
    * [Code snippets](#code-snippets)
    * [More links](#more-links)
 
