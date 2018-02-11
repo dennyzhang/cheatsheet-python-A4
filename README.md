@@ -123,13 +123,16 @@ Table of Contents
 | power         | `import math; math.pow(2, 3)`             |
 | random        | `random.randint(1, 10)` 1 and 10 included |
 
-## heapq: priority queue. (min heap)
-| Name                | Comment                              |
-| :-----------------  | -----------------------------------  |
-| Initialize min heap | `heapq.heapify(q)`                   |
-| heappush a tuple    | `q=[]; heapq.heappush(q, (5, 'ab'))` |
-| pop                 | `print (heapq.heappop(q))`           |
-| print heapq         | `print list(q)`                      |
+## queue/heapq
+| Name                | Comment                                                   |
+| :-----------------  | --------------------------------------------------------- |
+| Initialize min heap | `heapq.heapify(q)`                                        |
+| heappush a tuple    | `q=[]; heapq.heappush(q, (5, 'ab'))`                      |
+| pop                 | `print (heapq.heappop(q))`                                |
+| print heapq         | `print list(q)`                                           |
+| create a queue      | `from collections import deque; queue = deque([1,5,8,9])` |
+| append queue        | `queue.append(7)`                                         |
+| pop queue from head | `element = queue.popleft()`                               |
 
 # Code snippets
 - Initialize Linkedlist from array
