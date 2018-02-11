@@ -134,7 +134,7 @@ Table of Contents
 | append queue        | `queue.append(7)`                                         |
 | pop queue from head | `element = queue.popleft()`                               |
 
-Queue: [link](https://www.pythoncentral.io/use-queue-beginners-guide/)
+Links: [queue](https://www.pythoncentral.io/use-queue-beginners-guide/)
 
 # Code snippets
 - Initialize Linkedlist from array
