@@ -125,6 +125,7 @@ Table of Contents
 | random        | `random.randint(1, 10)` 1 and 10 included |
 
 ## queue/heapq
+
 | Name                | Comment                                                   |
 | :-----------------  | --------------------------------------------------------- |
 | Initialize min heap | `heapq.heapify(q)`                                        |
