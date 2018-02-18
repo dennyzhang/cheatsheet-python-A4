@@ -73,10 +73,10 @@ Table of Contents
 | find location of substring        | `'abc'.find('d')` (returns -1)        |
 | find location of substring        | `'abc'.index('d')` (raise exception)  |
 | capitalize string                 | `'hello world'.capitalize()`          |
-| upper string                      | `'aBc'.upper()`                       |
+| upper/lower string                | `'aBc'.upper()`, `'aBc'.lower()`      |
 | count substring                   | `'2-5g-3-J'.count('-')`               |
 | check if string represent integer | `'123'.isdigit()`                     |
-| check if string alphabetic        | `'abc'.isalpha()`                     |
+| check if string alphabetic        | `'abc'.isalpha()`, `'aBc'.isalpha()`  |
 | replace string                    | `'ab cd'.replace(' ', '')`            |
 
 ## Integer
