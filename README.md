@@ -69,7 +69,6 @@ Table of Contents
 | array to string                   | `' '.join(['a', 'b'])`                |
 | string to array                   | `list('abc')`                         |
 | format to 2 digits                | `print "%02d" % (13)`                 |
-| pad leading zero                  | `'101'.zfill(10)`                     |
 | find location of substring        | `'abc'.find('d')` (returns -1)        |
 | find location of substring        | `'abc'.index('d')` (raise exception)  |
 | capitalize string                 | `'hello world'.capitalize()`          |
@@ -78,6 +77,9 @@ Table of Contents
 | check if string represent integer | `'123'.isdigit()`                     |
 | check if string alphabetic        | `'abc'.isalpha()`, `'aBc'.isalpha()`  |
 | replace string                    | `'ab cd'.replace(' ', '')`            |
+| pad leading zero                  | `'101'.zfill(10)`                     |
+| padd whitespace to the left       | `'a'.ljust(10, ' ')`                  |
+| padd whitespace to the right      | `'a'.rjust(10, ' ')`                  |
 
 ## Integer
 
