@@ -80,6 +80,8 @@ Table of Contents
 | padd whitespace to the left       | `'a'.ljust(10, ' ')`                  |
 | padd whitespace to the right      | `'a'.rjust(10, ' ')`                  |
 | pad leading zero                  | `'101'.zfill(10)`                     |
+| string remove tailing '0'         | `'0023'.rstrip('0')`                  |
+| string remove leading '0'         | `'0023'.lstrip('0')`                  |
 
 ## Integer
 
