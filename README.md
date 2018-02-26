@@ -120,6 +120,14 @@ Table of Contents
 | binary format         | `bin(5)` (get 101)  |
 | count 1 inside binary | `bin(5).count('1')` |
 
+## File
+| Name           | Comment                                         |
+| :------------- | ----------------                                |
+| Append file    | `open("/tmp/test.txt", "ab").write("\ntest:")`  |
+| Write file     | `open("/tmp/test.txt", "wab").write("\ntest:")` |
+| Read files     | `f.readlines()`                                 |
+| Check file     | `os.path.exists("/tmp/test.txt")`               |
+  
 ## Math
 
 | Name          | Comment                                   |
