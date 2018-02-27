@@ -60,6 +60,7 @@ Table of Contents
 | print multiple values         | `print x, y`                             |
 | sort list in descending order | `sorted(nums)[::-1]`                     |
 | Sum a subarray                | `sum(nums[0:k])`                         |
+| Build a list                  | `dp = [1] + [0]*3`                       |
 
 ## String
 
