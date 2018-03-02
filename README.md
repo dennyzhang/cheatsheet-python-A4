@@ -28,6 +28,8 @@ Table of Contents
 
 | Name                    | Comment                                               |
 | :---------------------- | --------------------------------------------------    |
+| return all but last     | `list[:-1]`                                           |
+| The second last item    | `list[-2]` or `list[~1]`                              |
 | map                     | `map(lambda x: str(x), [1, 2, 3])`                    |
 | create fixed size array | `l = [None] * 5`                                      |
 | insert elements to head | `array.insert(0,var)`                                 |
@@ -38,11 +40,11 @@ Table of Contents
 | in-place sort           | `l.sort()`                                            |
 | generate a-z            | `map(chr, range(ord('a'), ord('z')+1))`               |
 | map/reduce              | `reduce((lambda x, y: "%s %s" % (x, y)), l)`          |
-| return all but last     | `list[:-1]`                                           |
 | replace ith to jth      | `list[i:j] = otherlist`                               |
 | combine two list        | `list1 + list2`                                       |
 | get sum                 | `sum(list)`                                           |
 | unique list             | `set(["Blah", "foo", "foo", 1, 1, 2, 3])`             |
+| Insert to sorted list   | `bisect.insort(l, 3)`                                 | 
   
 ## Compact Coding
 
@@ -61,6 +63,7 @@ Table of Contents
 | sort list in descending order | `sorted(nums)[::-1]`                     |
 | Sum a subarray                | `sum(nums[0:k])`                         |
 | Build a list                  | `dp = [1] + [0]*3`                       |
+| Use zip                       | `for a, b in zip(nums, nums[3:])`        |
 
 ## String
 
