@@ -77,6 +77,7 @@ Table of Contents
 | count substring                   | `'2-5g-3-J'.count('-')`               |
 | check if string represent integer | `'123'.isdigit()`                     |
 | check if string alphabetic        | `'abc'.isalpha()`, `'aBc'.isalpha()`  |
+| Check if string alphanumeric      | `'a1b'.isalnum()`                     |
 | replace string                    | `'ab cd'.replace(' ', '')`            |
 | padd whitespace to the left       | `'a'.ljust(10, ' ')`                  |
 | padd whitespace to the right      | `'a'.rjust(10, ' ')`                  |
@@ -144,6 +145,7 @@ Table of Contents
 | Initialize min heap | `heapq.heapify(q)`                                        |
 | heappush a tuple    | `q=[]; heapq.heappush(q, (5, 'ab'))`                      |
 | pop                 | `print (heapq.heappop(q))`                                |
+| first item          | `q[0]`                                                    |
 | print heapq         | `print list(q)`                                           |
 | create a queue      | `from collections import deque; queue = deque([1,5,8,9])` |
 | append queue        | `queue.append(7)`                                         |
