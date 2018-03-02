@@ -151,7 +151,9 @@ Table of Contents
 | append queue        | `queue.append(7)`                                         |
 | pop queue from head | `element = queue.popleft()`                               |
 
-Links: [queue](https://www.pythoncentral.io/use-queue-beginners-guide/)
+- TODO: how to delete an item from heap
+
+Links: [Review: Heap Problems](https://brain.dennyzhang.com/review-heap)
 
 # Code snippets
 - Initialize Linkedlist from array
