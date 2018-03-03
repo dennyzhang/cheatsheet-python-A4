@@ -60,10 +60,10 @@ Table of Contents
 | swap values                   | `left, right = right, left`               |
 |-------------------------------|-------------------------------------------|
 | list Comprehensions           | `l = [2, 3, 5]; [2*x for x in l if x>2]`  |
-| sort list in descending order | `sorted(nums)[::-1]`                      |
-| sum a subarray                | `sum(nums[0:k])`                          |
-| build a list                  | `dp = [1] + [0]*3`                        |
 | use zip                       | `for a, b in zip(nums, nums[3:])`         |
+| build a list                  | `dp = [1] + [0]*3`                        |
+| sum a subarray                | `sum(nums[0:k])`                          |
+| sort list in descending order | `sorted(nums)[::-1]`                      |
 |-------------------------------|-------------------------------------------|
 | dictionary with defaults      | `m = collections.defaultdict(lambda: 1)`  |
 | loop with single statement    | `while p.left: p = p.left`                |
