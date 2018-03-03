@@ -53,19 +53,16 @@ Table of Contents
 | if ... return                 | `if k == 0: return False`                 |
 | if... continue                | `if index == icol: continue`              |
 | return if.. else              | `return val if i>0 else 0`                |
-|-------------------------------+-------------------------------------------|
 | multiple assignment           | `l, r = 2, 3`                             |
 | assign with check of none     | `a = b or 1` (b might be None)            |
 | assignments                   | `l[1]=l[0]=0`                             |
 | swap values                   | `left, right = right, left`               |
-|-------------------------------+-------------------------------------------|
 | list Comprehensions           | `[x*x for x in range(1, 1001)]`           |
 | list Comprehensions           | `l = [2, 3, 5]; [2*x for x in l if x>2]`  |
 | use zip                       | `for a, b in zip(nums, nums[3:])`         |
 | build a list                  | `dp = [1] + [0]*3`                        |
 | sum a subarray                | `sum(nums[0:k])`                          |
 | sort list in descending order | `sorted(nums)[::-1]`                      |
-|-------------------------------+-------------------------------------------|
 | dictionary with defaults      | `m = collections.defaultdict(lambda: 1)`  |
 | loop with single statement    | `while p.left: p = p.left`                |
 | print multiple values         | `print(x, y)`                             |
