@@ -46,7 +46,7 @@ Table of Contents
 | unique list             | `set(["Blah", "foo", "foo", 1, 1, 2, 3])`             |
 | Insert to sorted list   | `bisect.insort(l, 3)`                                 | 
   
-## Compact Coding
+## Python Compact Coding
 
 | Name                          | Comment                                   |
 | :---------------------------- | ----------------------------------------- |
