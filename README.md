@@ -62,7 +62,7 @@ Table of Contents
 | use zip                       | `for a, b in zip(nums, nums[3:])`         |
 | build a list                  | `dp = [1] + [0]*3`                        |
 | sum a subarray                | `sum(nums[0:k])`                          |
-| sort list in descending order | `sorted(nums, reverse=True`               |
+| sort list in descending order | `sorted(nums, reverse=True)`              |
 | dictionary with defaults      | `m = collections.defaultdict(lambda: 1)`  |
 | loop with single statement    | `while p.left: p = p.left`                |
 | print multiple values         | `print(x, y)`                             |
