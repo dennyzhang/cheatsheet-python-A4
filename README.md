@@ -142,6 +142,7 @@ Table of Contents
 | sqrt          | `import math; math.sqrt(5)`               |
 | power         | `import math; math.pow(2, 3)`             |
 | random        | `random.randint(1, 10)` 1 and 10 included |
+| eval string   | `eval("2-11*2")`                          |
 
 ## queue/heapq
 
