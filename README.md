@@ -82,15 +82,15 @@ Table of Contents
 | capitalize string                 | `'hello world'.capitalize()`          |
 | upper/lower string                | `'aBc'.upper()`, `'aBc'.lower()`      |
 | count substring                   | `'2-5g-3-J'.count('-')`               |
-| check if string represent integer | `'123'.isdigit()`                     |
-| check if string alphabetic        | `'abc'.isalpha()`, `'aBc'.isalpha()`  |
-| Check if string alphanumeric      | `'a1b'.isalnum()`                     |
 | replace string                    | `'ab cd'.replace(' ', '')`            |
 | padd whitespace to the left       | `'a'.ljust(10, ' ')`                  |
 | padd whitespace to the right      | `'a'.rjust(10, ' ')`                  |
 | pad leading zero                  | `'101'.zfill(10)`                     |
 | string remove tailing '0'         | `'0023'.rstrip('0')`                  |
 | string remove leading '0'         | `'0023'.lstrip('0')`                  |
+| check if string represent integer | `'123'.isdigit()`                     |
+| check if string alphabetic        | `'abc'.isalpha()`, `'aBc'.isalpha()`  |
+| Check if string alphanumeric      | `'a1b'.isalnum()`                     |
 
 ## Integer
 
