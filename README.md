@@ -49,25 +49,25 @@ Table of Contents
 
 ## List
 
-| Name                    | Comment                                               |
-| :---------------------- | --------------------------------------------------    |
-| return all but last     | `list[:-1]`                                           |
-| The second last item    | `list[-2]` or `list[~1]`                              |
-| map                     | `map(lambda x: str(x), [1, 2, 3])`                    |
-| create fixed size array | `l = [None] * 5`                                      |
-| insert elements to head | `array.insert(0,var)`                                 |
-| delete element by index | `del a[1]`                                            |
-| list as stack           | `item = l.pop()`                                      |
-| sort in descending      | `sorted([8, 2, 5], reverse=True)`                     |
-| sort by attribute       | `sorted([('ebb',12),('abc',14)], key=lambda x: x[1])` |
-| in-place sort           | `l.sort()`                                            |
-| generate a-z            | `map(chr, range(ord('a'), ord('z')+1))`               |
-| map/reduce              | `reduce((lambda x, y: "%s %s" % (x, y)), l)`          |
-| replace ith to jth      | `list[i:j] = otherlist`                               |
-| combine two list        | `list1 + list2`                                       |
-| get sum                 | `sum(list)`                                           |
-| unique list             | `set(["Blah", "foo", "foo", 1, 1, 2, 3])`             |
-| Insert to sorted list   | `bisect.insort(l, 3)`                                 | 
+| Name                    | Comment                                                |
+| :---------------------- | --------------------------------------------------     |
+| return all but last     | `list[:-1]`                                            |
+| The second last item    | `list[-2]` or `list[~1]`                               |
+| map                     | `map(lambda x: str(x), [1, 2, 3])`                     |
+| create fixed size array | `l = [None] * 5`                                       |
+| insert elements to head | `array.insert(0,var)`                                  |
+| delete element by index | `del a[1]`                                             |
+| list as stack           | `item = l.pop()`                                       |
+| sort in descending      | `sorted([8, 2, 5], reverse=True)`                      |
+| sort by attribute       | `sorted([('ebb',12),('abc',14)], key=lambda x: x[1])`  |
+| in-place sort           | `l.sort()`                                             |
+| generate a-z            | `map(chr, range(ord('a'), ord('z')+1))`                |
+| map/reduce              | `functools.reduce((lambda x, y: "%s %s" % (x, y)), l)` |
+| replace ith to jth      | `list[i:j] = otherlist`                                |
+| combine two list        | `list1 + list2`                                        |
+| get sum                 | `sum(list)`                                            |
+| unique list             | `set(["Blah", "foo", "foo", 1, 1, 2, 3])`              |
+| Insert to sorted list   | `bisect.insort(l, 3)`                                  |
 
 ## String
 
@@ -89,7 +89,7 @@ Table of Contents
 | string remove tailing '0'         | `'0023'.rstrip('0')`                  |
 | string remove leading '0'         | `'0023'.lstrip('0')`                  |
 | check if string represent integer | `'123'.isdigit()`                     |
-| check if string alphabetic        | `'abc'.isalpha()`, `'aBc'.isalpha()`  |
+| check if string alphabetic        | `'aBc'.isalpha()`                     |
 | Check if string alphanumeric      | `'a1b'.isalnum()`                     |
 
 ## Integer
