@@ -210,20 +210,20 @@ Links: [Review: Heap Problems](https://brain.dennyzhang.com/review-heap)
 
 - python sort with customized cmp function: -1 first
 ```
-nums = [3, 2, 6]
-def myCompare(v1, v2):
-    return -1
+    nums = [3, 2, 6]
+    def myCompare(v1, v2):
+        return -1
 
-sorted_nums = sorted(nums, cmp=myCompare)
-print nums # [3, 2, 6]
-print sorted_nums # [6, 3, 2]
+    sorted_nums = sorted(nums, cmp=myCompare)
+    print nums # [3, 2, 6]
+    print sorted_nums # [6, 3, 2]
 ```
 
 - Initialize m*n matrix
 ```
-col_count, row_count = 3, 2
-matrix = [[None for j in xrange(col_count)] for i in xrange(row_count)]
-print matrix
+    col_count, row_count = 3, 2
+    matrix = [[None for j in xrange(col_count)] for i in xrange(row_count)]
+    print matrix
 ```
 
 # More links
