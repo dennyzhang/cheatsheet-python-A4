@@ -159,8 +159,6 @@ Table of Contents
 | append queue        | `queue.append(7)`                                         |
 | pop queue from head | `element = queue.popleft()`                               |
 
-- TODO: how to delete an item from heap
-
 Links: [Review: Heap Problems](https://brain.dennyzhang.com/review-heap)
 
 # Code snippets
