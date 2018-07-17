@@ -68,6 +68,7 @@ Table of Contents
 | get sum                 | `sum(list)`                                            |
 | unique list             | `set(["Blah", "foo", "foo", 1, 1, 2, 3])`              |
 | Insert to sorted list   | `bisect.insort(l, 3)`                                  |
+| Reverse a list          | `l[::-1]`                                              |
 
 ## String
 
