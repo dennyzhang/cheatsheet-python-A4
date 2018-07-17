@@ -1,16 +1,16 @@
-# awesome-python-syntax
+# cheatsheet-python-A4
 <a href="https://github.com/DennyZhang?tab=followers"><img align="right" width="200" height="183" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/fork_github.png" /></a>
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![LinkedIn](https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/linkedin.png)](https://www.linkedin.com/in/dennyzhang001) <a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="http://slack.dennyzhang.com/badge.svg" alt="slack"/></a> [![Github](https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/github.png)](https://github.com/DennyZhang)
 
-File me [tickets](https://github.com/DennyZhang/awesome-python-syntax/issues) or star [the repo](https://github.com/DennyZhang/awesome-python-syntax).
+File me [tickets](https://github.com/DennyZhang/cheatsheet-python-A4/issues) or star [the repo](https://github.com/DennyZhang/cheatsheet-python-A4).
 
 See more CheatSheets from Denny: [here](https://github.com/topics/denny-cheatsheets)
 
 Table of Contents
 =================
 
-   * [awesome-python-syntax](#awesome-python-syntax)
+   * [cheatsheet-python-A4](#cheatsheet-python-A4)
       * [List](#list)
       * [Compact Coding](#compact-coding)
       * [String](#string)
