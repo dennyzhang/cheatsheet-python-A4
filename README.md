@@ -76,6 +76,7 @@ Table of Contents
 | :------------------------         | ------------------------------------- |
 | reverse string                    | `'hello world'[::-1]`                 |
 | array to string                   | `' '.join(['a', 'b'])`                |
+| split string to array             | `"hello, python".split(",")`          |
 | string to array                   | `list('abc')`                         |
 | format to 2 digits                | `print "%02d" % (13)`                 |
 | find location of substring        | `'abc'.find('d')` (returns -1)        |
