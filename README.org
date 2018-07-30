@@ -1,14 +1,225 @@
--*- mode:org; fill-column:70; coding:utf-8; -*-
-* org-mode configuration
+* org-mode configuration                                           :noexport:
 #+STARTUP: overview customtime noalign logdone hidestars
-#+TAGS: ARCHIVE(a) WORK(w) LIFE(l) EMACS(e) IMPORTANT(i) Difficult(d) Communication(c) RECOMMENDATE(r) Tool(t) Habit(h) noexport(n) Share (s) BLOG(b)
-#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
-#+DRAWERS: HIDDEN CODE CONF EMAIL WEBPAGE SNIP
+#+TITLE:  Python CheatSheet
+#+DESCRIPTION:
+#+KEYWORDS:
+#+AUTHOR: Denny Zhang
+#+EMAIL:  denny@dennyzhang.com
+#+TAGS: noexport(n)
 #+PRIORITIES: A D C
-#+ARCHIVE: %s_done::** Finished Tasks
-#+AUTHOR: dennyzhang.com (denny@dennyzhang.com)
-#+OPTIONS: toc:2 \n:t ^:nil creator:nil d:nil
-* [#A] Python                                               :Coding:Personal:
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+LINK_UP:
+#+LINK_HOME:
+* Summary
+#+BEGIN_HTML
+<a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a>
+<a href="https://github.com/DennyZhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a>
+<a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="http://slack.dennyzhang.com/badge.svg" alt="slack"/></a>
+<a href="https://github.com/DennyZhang"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+
+<br/><br/>
+
+<a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
+#+END_HTML
+* CheatSheet
+File me [[https://github.com/DennyZhang/cheatsheet-python-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-python-A4][this repo]].
+
+See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+** Python Compact Coding
+| Name                          | Comment                                                 |
+|-------------------------------+---------------------------------------------------------|
+| if ... return                 | =if k == 0: return False=                               |
+| if... continue                | =if index == icol: continue=                            |
+| return if.. else              | =return val if i>0 else 0=                              |
+| multiple assignment           | =l, r = 2, 3=                                           |
+| assign with check of none     | =a = b if b else 1=                                     |
+| assignments                   | =l[1]=l[0]=0=                                           |
+| swap values                   | =left, right = right, left=                             |
+| list Comprehensions           | =[x*x for x in range(1, 1001)]=                         |
+| list Comprehensions           | =l = [2, 3, 5]; [2*x for x in l if x>2]=                |
+| use zip                       | =for a, b in zip(nums, nums[3:])=                       |
+| build a list                  | =dp = [1] + [0]*3=                                      |
+| sum a subarray                | =sum(nums[0:k])=                                        |
+| sort list in descending order | =sorted(nums, reverse=True)=                            |
+| dictionary with defaults      | =m = collections.defaultdict(lambda: 1)=                |
+| loop with single statement    | =while p.left: p = p.left=                              |
+| print multiple values         | =print(x, y)=                                           |
+| get both index and item       | =for i, ch in enumerate(["a", "b", "c"]): print(i, ch)= |
+| mod negative                  | =(-2)%5=                                                |
+** List
+| Name                    | Comment                                                |
+|-------------------------+--------------------------------------------------------|
+| return all but last     | =list[:-1]=                                            |
+| The second last item    | =list[-2]= or =list[~1]=                               |
+| map                     | =map(lambda x: str(x), [1, 2, 3])=                     |
+| create fixed size array | =l = [None] * 5=                                       |
+| insert elements to head | =array.insert(0,var)=                                  |
+| delete element by index | =del a[1]=                                             |
+| list as stack           | =item = l.pop()=                                       |
+| sort in descending      | =sorted([8, 2, 5], reverse=True)=                      |
+| sort by attribute       | =sorted([('ebb',12),('abc',14)], key=lambda x: x[1])=  |
+| in-place sort           | =l.sort()=                                             |
+| generate a-z            | =map(chr, range(ord('a'), ord('z')+1))=                |
+| map/reduce              | =functools.reduce((lambda x, y: "%s %s" % (x, y)), l)= |
+| replace ith to jth      | =list[i:j] = otherlist=                                |
+| combine two list        | =list1 + list2=                                        |
+| get sum                 | =sum(list)=                                            |
+| unique list             | =set(["Blah", "foo", "foo", 1, 1, 2, 3])=              |
+| Insert to sorted list   | =bisect.insort(l, 3)=                                  |
+| Reverse a list          | =l[::-1]=                                              |
+** String
+| Name                              | Comment                              |
+|-----------------------------------+--------------------------------------|
+| reverse string                    | ='hello world'[::-1]=                |
+| array to string                   | =' '.join(['a', 'b'])=               |
+| split string to array             | ="hello, python".split(",")=         |
+| string to array                   | =list('abc')=                        |
+| format to 2 digits                | =print "%02d" % (13)=                |
+| find location of substring        | ='abc'.find('d')= (returns -1)       |
+| find location of substring        | ='abc'.index('d')= (raise exception) |
+| capitalize string                 | ='hello world'.capitalize()=         |
+| upper/lower string                | ='aBc'.upper()=, ='aBc'.lower()=     |
+| count substring                   | ='2-5g-3-J'.count('-')=              |
+| replace string                    | ='ab cd'.replace(' ', '')=           |
+| padd whitespace to the left       | ='a'.ljust(10, ' ')=                 |
+| padd whitespace to the right      | ='a'.rjust(10, ' ')=                 |
+| pad leading zero                  | ='101'.zfill(10)=                    |
+| string remove tailing '0'         | ='0023'.rstrip('0')=                 |
+| string remove leading '0'         | ='0023'.lstrip('0')=                 |
+| check if string represent integer | ='123'.isdigit()=                    |
+| check if string alphabetic        | ='aBc'.isalpha()=                    |
+| Check if string alphanumeric      | ='a1b'.isalnum()=                    |
+** Integer
+| Name                    | Comment                       |
+|-------------------------+-------------------------------|
+| max, min                | =sys.maxsize, -sys.maxsize-1= |
+| min, max                | =min(2, 3), max(5, 6, 2)=     |
+| generate range          | =for num in range(10,20)=     |
+| get ascii               | =ord('a'), chr(97)=           |
+| print integer in binary | ="{0:b}".format(10)=          |
+
+** Dict & Set
+| Name                      | Comment                               |
+|---------------------------+---------------------------------------|
+| dict get first element    | =m[m.keys()[0]]=                      |
+| intersection              | =list(set(l1).intersection(set(l2)))= |
+| list to set               | =set(list1)=                          |
+| remove from set           | =s.remove(2)=                         |
+| remove the first from set | =s.pop()=                             |
+| sort dict by values       | =sorted(dict1, key=dict1.get)=        |
+| deep copy dict            | =import copy; m2=copy.deepcopy(m1)=   |
+** Bit Operator
+| Name                  | Comment             |
+|-----------------------+---------------------|
+| mod                   | =x % 2=             |
+| shift left            | =x << 1 ; a <<= 2=  |
+| shift righ            | =x >> 2=            |
+| and                   | =x & y=             |
+| complement            | =~x=                |
+| xor                   | =x ^ y=             |
+| power                 | =2 ** 3=            |
+| bool complement       | =not x=             |
+| binary format         | =bin(5)= (get 101)  |
+| count 1 inside binary | =bin(5).count('1')= |
+** File
+| Name        | Comment                                         |
+|-------------+-------------------------------------------------|
+| Append file | =open("/tmp/test.txt", "ab").write("\ntest:")=  |
+| Write file  | =open("/tmp/test.txt", "wab").write("\ntest:")= |
+| Read files  | =f.readlines()=                                 |
+| Check file  | =os.path.exists("/tmp/test.txt")=               |
+
+** Math
+| Name        | Comment                                   |
+|-------------+-------------------------------------------|
+| sqrt        | =import math; math.sqrt(5)=               |
+| power       | =import math; math.pow(2, 3)=             |
+| random      | =random.randint(1, 10)= 1 and 10 included |
+| eval string | =eval("2-11*2")=                          |
+** queue/heapq
+| Name                | Comment                                                   |
+|---------------------+-----------------------------------------------------------|
+| Initialize min heap | =heapq.heapify(q)=                                        |
+| heappush a tuple    | =q=[]; heapq.heappush(q, (5, 'ab'))=                      |
+| pop                 | =print (heapq.heappop(q))=                                |
+| first item          | =q[0]=                                                    |
+| print heapq         | =print list(q)=                                           |
+| create a queue      | =from collections import deque; queue = deque([1,5,8,9])= |
+| append queue        | =queue.append(7)=                                         |
+| pop queue from head | =element = queue.popleft()=                               |
+[[https://brain.dennyzhang.com/review-heap][Review: Heap Problems]]
+# Code snippets
+- Initialize Linkedlist from array
+#+BEGIN_SRC python
+    def initListNodeFromArray(self, nums):
+        head = ListNode(None)
+        prev, p = head, head
+        for num in nums:
+            pre = p
+            p.val = num
+            q = ListNode(None)
+            p.next = q
+            p = p.next
+        pre.next = None
+        return head
+#+END_SRC
+- Print linkedlist
+#+BEGIN_SRC python
+    def printListNode(self, head):
+        print("printListnode")
+        while head:
+            print("%d" % (head.val))
+            head = head.next
+#+END_SRC
+
+- Print Trie Tree in level order
+#+BEGIN_SRC python
+    def printTrieTreeLevelOrder(self, node):
+        print("printTrieTreeLevelOrder")
+        if node.is_word:
+            print("Node is a word")
+        queue = []
+        queue.append(node)
+        while len(queue) != 0:
+            s = ''
+            for i in xrange(len(queue)):
+                node = queue[0]
+                del queue[0]
+                for child_key in node.children:
+                    s = '%s %s' % (s, child_key)
+                    queue.append(node.children[child_key])
+            if s != '':
+                print 'print level children: %s' % (s)
+#+END_SRC
+
+- python sort with customized cmp function: -1 first
+#+BEGIN_SRC python
+    nums = [3, 2, 6]
+    def myCompare(v1, v2):
+        return -1
+    sorted_nums = sorted(nums, cmp=myCompare)
+    print nums # [3, 2, 6]
+    print sorted_nums # [6, 3, 2]
+#+END_SRC
+
+- Initialize m*n matrix
+#+BEGIN_SRC python
+    col_count, row_count = 3, 2
+    matrix = [[None for j in xrange(col_count)] for i in xrange(row_count)]
+    print matrix
+#+END_SRC
+* More Resources
+License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
+#+BEGIN_HTML
+<a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
+
+<a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+#+END_HTML
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* [#A] Python                                      :noexport:Coding:Personal:
 :PROPERTIES:
 :type:   Language
 :END:
@@ -3328,7 +3539,623 @@ Pass the function.
 fun = dork1
 ned = doIt(3, fun, 4, 9)
 print (ned)
-* [#A] Python Multi-Threading and Multi-Processing
+** TODO [#A] 用python生成一个快速mvc的查询界面, 自适应的
+  :PROPERTIES:
+  :ID:       00F3C19C-2F09-42CB-BD92-87DB8762B492
+  :END:
+** TODO python performance tuning
+| Name    | Comment                                                                       |
+|---------+-------------------------------------------------------------------------------|
+| timeit  | a crude but effective way to see the impact of optimizations on a macro level |
+| hotshot | true profiler, logging function entry/exit                                    |
+*** timeit
+#+begin_src python
+import timeit
+timeit.Timer('neknek_1.solve(neknek_1.Puzzle("9x9.txt"))', 'import neknek_1').timeit(number=10)/10
+#+end_src
+*** hotshot
+#+begin_src python
+import hotshot
+import neknek_1
+prof = hotshot.Profile('hotshot_nn_stats')
+prof.run('neknek_1.solve(neknek_1.Puzzle("9x9.txt"))').close()
+
+
+import hotshot.stats
+hotshot.stats.load('hotshot_nn_stats').strip_dirs().sort_stats('time').print_stats()
+
+#+end_src
+*** useful link
+http://www.mlsite.net/blog/?p=97
+
+http://stackoverflow.com/questions/1913906/python-performance-characteristics
+** DONE python3 convert bytes to string: b"abcde".decode("utf-8")
+  CLOSED: [2017-07-11 Tue 19:47]
+https://stackoverflow.com/questions/606191/convert-bytes-to-a-python-string
+** DONE Get last n lines of a file with Python, similar to tail
+  CLOSED: [2017-07-13 Thu 17:22]
+https://stackoverflow.com/questions/136168/get-last-n-lines-of-a-file-with-python-similar-to-tail
+https://stackoverflow.com/questions/260273/most-efficient-way-to-search-the-last-x-lines-of-a-file-in-python
+
+with open(log_file,'r') as f:
+    message = tail(f, tail_log_num)
+
+#+BEGIN_SRC python
+def tail(f, lines=20):
+    total_lines_wanted = lines
+
+    BLOCK_SIZE = 1024
+    f.seek(0, 2)
+    block_end_byte = f.tell()
+    lines_to_go = total_lines_wanted
+    block_number = -1
+    blocks = [] # blocks of size BLOCK_SIZE, in reverse order starting
+                # from the end of the file
+    while lines_to_go > 0 and block_end_byte > 0:
+        if (block_end_byte - BLOCK_SIZE > 0):
+            # read the last block we haven't yet read
+            f.seek(block_number*BLOCK_SIZE, 2)
+            blocks.append(f.read(BLOCK_SIZE))
+        else:
+            # file too small, start from begining
+            f.seek(0,0)
+            # only read what was not read
+            blocks.append(f.read(block_end_byte))
+        lines_found = blocks[-1].count('\n')
+        lines_to_go -= lines_found
+        block_end_byte -= BLOCK_SIZE
+        block_number -= 1
+    all_read_text = ''.join(reversed(blocks))
+    return '\n'.join(all_read_text.splitlines()[-total_lines_wanted:])
+#+END_SRC
+** HALF python escape string for json
+https://stackoverflow.com/questions/5997029/escape-double-quotes-for-json-in-python
+https://msftstack.wordpress.com/2016/01/18/convert-json-to-escaped-string-in-python/
+
+json.dumps(s)
+
+outstr = jsonstr.replace('"', '\\"').replace('\n', '\\n')
+** TODO python paramiko upload a file by ssh
+** TODO paramiko SSHClient connect less verbose output
+        ssh = paramiko.SSHClient()
+        ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+        key = paramiko.RSAKey.from_private_key_file(ssh_key_file, password=key_passphrase)
+        ssh.connect(server_ip, username=username, port=ssh_port, pkey=key)
+        stdin, stdout, stderr = ssh.exec_command(ssh_command)
+        output = "\n".join(stdout.readlines())
+** DONE python: Convert a string to preexisting variable names: print eval('self.post.id')
+  CLOSED: [2017-08-15 Tue 18:42]
+https://stackoverflow.com/questions/295058/convert-a-string-to-preexisting-variable-names
+** DONE python pdb set a break point at a given line of code: b 3
+  CLOSED: [2017-08-15 Tue 19:34]
+https://stackoverflow.com/questions/5769382/can-i-put-a-breakpoint-in-a-running-python-program-that-drops-to-the-interactive
+** DONE python pdb add breakpoint for function: b hosts_origin.remove_all_matching
+  CLOSED: [2017-08-15 Tue 22:51]
+** DONE python requests query socket file
+  CLOSED: [2017-08-27 Sun 15:18]
+curl -XGET --unix-socket "/var/run/docker.sock" \
+    http://localhost/containers/json | jq '.[].Names[], .[].Status'
+
+https://pypi.python.org/pypi/requests-unixsocket
+#+BEGIN_EXAMPLE
+import requests_unixsocket
+
+session = requests_unixsocket.Session()
+
+# Access /path/to/page from /tmp/profilesvc.sock
+r = session.get('http+unix://%2Ftmp%2Fprofilesvc.sock/path/to/page')
+assert r.status_code == 200
+#+END_EXAMPLE
+** DONE python send slack message
+  CLOSED: [2017-08-27 Sun 17:33]
+https://github.com/slackapi/python-slackclient
+** TODO python argparse require argument not empty string
+** DONE SSH Paramiko get return code
+  CLOSED: [2017-09-07 Thu 17:14]
+https://stackoverflow.com/questions/3562403/how-can-you-get-the-ssh-return-code-using-paramiko
+stdin, stdout, stderr = client.exec_command("uptime")
+print stdout.channel.recv_exit_status()    # status is 0
+** DONE python2 install paramiko: ImportError: No module named cryptography.hazmat.backends
+  CLOSED: [2017-09-08 Fri 17:45]
+https://stackoverflow.com/questions/31569339/importerror-no-module-named-cryptography-hazmat-backends-boxsdk-on-mac
+apt-get install libffi-dev
+
+pip install cryptography==2.0.3
+pip install paramiko==2.1.2
+** DONE python print is buffered IO
+  CLOSED: [2017-09-11 Mon 18:47]
+Python's standard out is buffered (meaning that it collects some of the data "written" to standard out before it writes it to the terminal). Calling sys.stdout.flush() forces it to "flush" the buffer, meaning that it will write everything in the buffer to the terminal, even if normally it would wait before doing so.
+https://stackoverflow.com/questions/10019456/usage-of-sys-stdout-flush-method
+
+https://www.turnkeylinux.org/blog/unix-buffering
+
+#+BEGIN_EXAMPLE
+Since Python 3.3, you can force the normal print() function to flush without the need to use sys.stdout.flush(); just set the "flush" keyword argument to true. From the documentation:
+
+print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False)
+#+END_EXAMPLE
+** DONE python get current filename: os.path.basename(__file__).strip(".py")
+  CLOSED: [2017-09-13 Wed 11:02]
+https://stackoverflow.com/questions/4152963/get-the-name-of-current-script-with-python
+** DONE python get current pid: os.getpid()
+  CLOSED: [2017-09-13 Wed 11:02]
+https://stackoverflow.com/questions/3761639/how-do-you-get-the-process-id-of-a-program-in-unix-or-linux-using-python
+** TODO paramiko copy file via ssh
+https://stackoverflow.com/questions/250283/how-to-scp-in-python
+You could also check out paramiko. There's no scp module (yet), but it fully supports sftp.
+https://stackoverflow.com/questions/250283/how-to-scp-in-python
+** TODO [#A] python unit testing: coverage.py
+https://coverage.readthedocs.io/en/coverage-4.4.1/
+
+https://stackoverflow.com/questions/36517137/how-to-properly-use-coverage-py-in-python
+coverage report -m
+
+| Name            | Summary |
+|-----------------+---------|
+| coverage run    |         |
+| coverage report |         |
+| coverage html   |         |
+*** TODO python coverage run: no tests
+#+BEGIN_EXAMPLE
+Denny-mac:remote-commands-servers mac$ coverage run --source=remote-commands-servers setup.py test
+running test
+running egg_info
+writing pbr to remote_commands_servers.egg-info/pbr.json
+writing requirements to remote_commands_servers.egg-info/requires.txt
+writing remote_commands_servers.egg-info/PKG-INFO
+writing top-level names to remote_commands_servers.egg-info/top_level.txt
+writing dependency_links to remote_commands_servers.egg-info/dependency_links.txt
+reading manifest file 'remote_commands_servers.egg-info/SOURCES.txt'
+writing manifest file 'remote_commands_servers.egg-info/SOURCES.txt'
+running build_ext
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.000s
+
+OK
+Coverage.py warning: No data was collected. (no-data-collected)
+#+END_EXAMPLE
+** DONE __init__.py file makes Python treat directories containing it as modules.
+  CLOSED: [2017-09-13 Wed 17:23]
+https://stackoverflow.com/questions/448271/what-is-init-py-for
+** DONE python setup.py: Python's answer to a multi-platform installer and make file.
+  CLOSED: [2017-09-13 Wed 17:31]
+https://stackoverflow.com/questions/1471994/what-is-setup-py
+** TODO paramiko ssh command get realtime output
+https://stackoverflow.com/questions/35944912/using-paramiko-how-could-i-get-the-stdout-of-exec-command-in-real-time-instea
+https://stackoverflow.com/questions/31834743/get-output-from-a-paramiko-ssh-exec-command-continuously
+https://stackoverflow.com/questions/37857859/printing-real-time-ssh-output-using-python-3-x
+
+python /usr/sbin/jenkins/scripts/remote-commands-servers.py --server_list 138.197.215.132:2702,165.227.5.192:2702,165.227.17.43:2702,138.68.46.170:2702,165.227.21.77:2702,165.227.21.128:2702,138.68.30.61:2702,138.197.221.191:2702,138.197.221.161:2702,138.197.200.214:2702,165.227.27.184:2702,138.68.23.132:2702,138.68.230.220:2702,165.227.13.42:2702,165.227.31.102:2702,165.227.25.149:2702,138.197.205.85:2702,165.227.24.213:2702,138.68.246.50:2702,165.227.22.228:2702,138.68.21.77:2702,138.68.233.86:2702,165.227.19.254:2702,138.197.208.182:2702,165.227.30.31:2702 --command_list 'date
+hostname
+' --ssh_username root --ssh_key_file /var/jenkins_home/.ssh/tmp_id_rsa --key_passphrase sophia1
+** TODO python print the output of multiple return value
+#+BEGIN_EXAMPLE
+    def get_element_from_stack(self, stack):
+        print("get_element_from_stack: stack: %s" % stack)
+        if len(stack) == 0:
+            return (None, [])
+
+        if stack[-1] in self.uppercase_list:
+            return (str(stack[-1]), stack[:-2])
+
+        for i in range(len(stack)-1, -1,-1):
+            if stack[i] in self.lowercase_list:
+                continue
+            else:
+                break
+
+        return (str(stack[i:]), stack[:i-1])
+#+END_EXAMPLE
+** DONE python ListNode: p.next, p.val
+#!/usr/bin/env python
+##-------------------------------------------------------------------
+## @copyright 2017 DennyZhang.com
+## Licensed under MIT
+##   https://www.dennyzhang.com/wp-content/mit_license.txt
+##
+## File: test.py
+## Author : Denny <contact@dennyzhang.com>
+## Description:
+##     https://leetcode.com/problems/merge-two-sorted-lists/description/
+## Tags:
+## --
+## Created : <2017-10-16>
+## Updated: Time-stamp: <2017-10-23 22:57:20>
+##-------------------------------------------------------------------
+class Solution(object):
+    def mergeTwoLists(self, l1, l2):
+        """
+        :type l1: ListNode
+        :type l2: ListNode
+        :rtype: ListNode
+        """
+        ## Basic Idea:
+        ##    l1: 1 -> 3 -> 5
+        ##        p   r
+        ##    l2: 2 -> 3 -> 6 -> 7
+        ##        q   s
+        ## Complexity:
+        ## recursive
+        if l1 is None:
+            return l2
+
+        if l2 is None:
+            return l1
+
+        if l1.val < l2.val:
+            head = l1
+            p = l1
+            q = l2
+        else:
+            head = l2
+            p = l2
+            q = l1
+
+        while (p.next is not None) and (q is not None):
+            r = p.next
+            s = q.next
+            if q.val <= r.val:
+                p.next = q
+                q.next = r
+                p = q
+                q = s
+            else:
+                p = r
+
+        if p.next is None:
+            p.next = q
+
+        return head
+## File: test.py ends
+** DONE python math
+  CLOSED: [2017-10-27 Fri 18:46]
+https://docs.python.org/2/library/math.html
+#+BEGIN_EXAMPLE
+math.ceil(x)
+Return the ceiling of x as a float, the smallest integer value greater than or equal to x.
+
+math.copysign(x, y)
+Return x with the sign of y. On a platform that supports signed zeros, copysign(1.0, -0.0) returns -1.0.
+
+New in version 2.6.
+
+math.fabs(x)
+Return the absolute value of x.
+
+math.factorial(x)
+Return x factorial. Raises ValueError if x is not integral or is negative.
+
+New in version 2.6.
+
+math.floor(x)
+Return the floor of x as a float, the largest integer value less than or equal to x.
+
+math.fmod(x, y)
+Return fmod(x, y), as defined by the platform C library. Note that the Python expression x % y may not return the same result. The intent of the C standard is that fmod(x, y) be exactly (mathematically; to infinite precision) equal to x - n*y for some integer n such that the result has the same sign as x and magnitude less than abs(y). Python’s x % y returns a result with the sign of y instead, and may not be exactly computable for float arguments. For example, fmod(-1e-100, 1e100) is -1e-100, but the result of Python’s -1e-100 % 1e100 is 1e100-1e-100, which cannot be represented exactly as a float, and rounds to the surprising 1e100. For this reason, function fmod() is generally preferred when working with floats, while Python’s x % y is preferred when working with integers.
+
+math.frexp(x)
+Return the mantissa and exponent of x as the pair (m, e). m is a float and e is an integer such that x == m * 2**e exactly. If x is zero, returns (0.0, 0), otherwise 0.5 <= abs(m) < 1. This is used to “pick apart” the internal representation of a float in a portable way.
+
+math.fsum(iterable)
+
+#+END_EXAMPLE
+** DONE python create const: CONST_NAME
+  CLOSED: [2017-10-22 Sun 22:28]
+** DONE python str(['a', 'b']) is different from ''.join(['a', 'b'])
+  CLOSED: [2017-11-12 Sun 15:43]
+** DONE python print line number
+  CLOSED: [2017-11-12 Sun 18:05]
+http://code.activestate.com/recipes/145297-grabbing-the-current-line-number-easily/
+import inspect
+def lineno():
+    return inspect.currentframe().f_back.f_lineno
+
+print("[L: %s] " % (lineno()))
+** DONE [#A] python 6/132 = 0, 6/(-132) = -1, -6/123: -1
+  CLOSED: [2018-01-14 Sun 16:24]
+** DONE python dict vs defaultdict
+  CLOSED: [2018-01-19 Fri 11:57]
+https://www.accelebrate.com/blog/using-defaultdict-python/
+http://stupidpythonideas.blogspot.com/2013/08/defaultdict-vs-setdefault.html
+
+defaultdict: If I don't have the key in the dict, it will create a new item with default value.
+             Instead of throwing an exception
+
+#+BEGIN_SRC python
+from collections import defaultdict
+>>> ice_cream = defaultdict(lambda: 'Vanilla')
+>>>
+>>> ice_cream = defaultdict(lambda: 'Vanilla')
+>>> ice_cream['Sarah'] = 'Chunky Monkey'
+>>> ice_cream['Abdul'] = 'Butter Pecan'
+>>> print ice_cream['Sarah']
+Chunky Monkey
+>>> print ice_cream['Joe']
+Vanilla
+#+END_SRC
+** DONE python deep copy a dict
+  CLOSED: [2018-01-19 Fri 15:37]
+https://stackoverflow.com/questions/5105517/deep-copy-of-a-dict-in-python
+- reference copy
+#+BEGIN_SRC python
+m = {}
+m['a'] = 2
+m2 = m
+m2['a'] = 1
+print m['a'] # 1
+print m2['a'] # 1
+#+END_SRC
+
+- deep copy
+#+BEGIN_SRC python
+import copy
+m = {}
+m['a'] = 2
+m2 = copy.deepcopy(m)
+m2['a'] = 1
+print m['a'] # 2
+print m2['a'] # 1
+#+END_SRC
+** DONE python heapq
+  CLOSED: [2018-01-25 Thu 22:03]
+http://www.koderdojo.com/blog/binary-heap-and-heapq-in-python
+
+import heapq
+
+# initializing list
+li = [5, 7, 9, 1, 3]
+
+# using heapify to convert list into heap
+heapq.heapify(li) # a minheap
+heapq._heapify_max(li) # for a maxheap!
+
+# printing created heap
+print (list(li))
+
+# using heappush() to push elements into heap
+# pushes 4
+heapq.heappush(li,4)
+
+# printing modified heap
+print (list(li))
+
+# using heappop() to pop smallest element
+print (heapq.heappop(li))
+
+print (list(li))
+*** 2 attributes
+import heapq
+li = []
+heapq._heapify_max(li)
+heapq.heappush(li, (5, 'write code'))
+heapq.heappush(li, (7, 'release product'))
+heapq.heappush(li, (1, 'write spec'))
+heapq.heappush(li, (3, 'create tests'))
+print (list(li))
+
+heapq.heappop(li)
+*** more sample
+#+BEGIN_SRC python
+import heapq
+
+heap = [12, 19, 88, 62, 2, 14, 92]
+
+heapq.heapify(heap)
+
+heapq.heappush(heap, 3)
+
+while len(heap) > 0:
+    print(heapq.heappop(heap), end=' ')
+
+# 2 3 12 14 19 62 88 92
+#+END_SRC
+** DONE [#B] elasticsearch python libary
+  CLOSED: [2018-02-07 Wed 11:12]
+172.17.0.2
+
+from elasticsearch import Elasticsearch
+
+es_ip="172.17.0.2"
+es_port="9200"
+es_instance = Elasticsearch(["%s:%s"%(es_ip, es_port)])
+
+es_instance.indices.close(index="config-index-8cd6e43115e9416eb23609486fa053e3")
+
+es_instance.client.IndicesClient.close(index="config-index-8cd6e43115e9416eb23609486fa053e3")
+*** close index
+output = es_instance.indices.close(index="staging-index-13a1f8adbec032ed68f3d035449ef48d")
+print output # {u'acknowledged': True}
+*** delete index
+output = es_instance.indices.delete(index="master-index-46078234297e400a1648d9c427dc8c4b")
+print output
+*** list all closed index
+es_instance.indices.get(index='*', expand_wildcards='closed')
+es_instance.indices.get(index='*', expand_wildcards='closed', include_defaults=False)
+*** check whether index exists
+es_instance.indices.exists(index='staging-index-13a1f8adbec032ed68f3d035449ef48d')
+*** get health status
+es_instance.cluster.health()
+es_instance.cluster.state()
+*** get status
+es_instance.indices.stats(index='staging-index-13a1f8adbec032ed68f3d035449ef48d')
+*** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+*** TODO check whether index is open
+es_instance.indices.get(index='staging-index-13a1f8adbec032ed68f3d035449ef48d', expand_wildcards='open')
+*** TODO get index without mapping and setting, since it's too big
+** DONE python http json request: http://docs.python-requests.org/en/master/
+  CLOSED: [2018-02-15 Thu 16:21]
+** DONE python check http exit code and output
+  CLOSED: [2018-02-15 Thu 16:40]
+#+BEGIN_SRC python
+        r = requests.get(url)
+        if r.status_code != 200:
+            print("Error: url(%s) runs into error. errms: %s" % (url, r.text))
+            err_list.append(url)
+#+END_SRC
+** DONE python bisect: insert into a sorted list with binary search
+  CLOSED: [2018-03-02 Fri 11:28]
+https://www.cnblogs.com/beiluowuzheng/p/8452671.html
+http://www.jb51.net/article/55543.htm
+** DONE [#A] python zip: two lists don't need to have equal items
+  CLOSED: [2018-03-02 Fri 11:28]
+def medianSlidingWindow(self, nums, k):
+    window = sorted(nums[:k])
+    medians = []
+    for a, b in zip(nums, nums[k:] + [0]):
+        medians.append((window[k/2] + window[~(k/2)]) / 2.)
+        window.remove(a)
+        bisect.insort(window, b)
+    return medians
+** DONE python Python WSGI HTTP Server for UNIX
+  CLOSED: [2018-03-07 Wed 18:46]
+http://gunicorn.org/
+https://github.com/svenstaro/flamejam
+** DONE Creating a python logger to stdout
+  CLOSED: [2018-03-08 Thu 16:36]
+https://coderwall.com/p/_fg97w/creating-a-python-logger-to-stdout
+#+BEGIN_SRC python
+import logging
+import sys
+log = logging.getLogger(__name__)
+out_hdlr = logging.StreamHandler(sys.stdout)
+out_hdlr.setFormatter(logging.Formatter('%(asctime)s %(message)s'))
+out_hdlr.setLevel(logging.INFO)
+log.addHandler(out_hdlr)
+log.setLevel(logging.INFO)
+Then you can do:
+
+log.debug("NO")
+log.error("THIS IS AN ERROR")
+#+END_SRC
+** TODO gunicorn reload
+** DONE python requests.post
+  CLOSED: [2018-03-09 Fri 15:59]
+http://docs.python-requests.org/en/master/user/quickstart/
+r = requests.post('http://httpbin.org/post', data = {'key':'value'})
+** DONE python sleep
+  CLOSED: [2018-03-09 Fri 16:10]
+https://stackoverflow.com/questions/510348/how-can-i-make-a-time-delay-in-python
+import time
+time.sleep(5)   # delays for 5 seconds. You can Also Use Float Value.
+** HALF [#A] flask_restplus
+http://michal.karzynski.pl/blog/2016/06/19/building-beautiful-restful-apis-using-flask-swagger-ui-flask-restplus/
+*** DONE change http://localhost:8080/api/projects/ to http://localhost:8080/api/projects
+   CLOSED: [2018-03-19 Mon 11:02]
+*** DONE from flask_restplus import Api
+   CLOSED: [2018-03-19 Mon 11:15]
+*** DONE add real logic
+  CLOSED: [2018-03-19 Mon 10:47]
+curl -H "content-type: application/json" -d "{\"summary\": \"summary1\", \"description\": \"description1\", \"budget\": 1000, \"seller_id\": 1, \"deadline\": \"2017-01-01\"}" "http://localhost:8080/v1/projects"
+
+curl -H "content-type: application/json" -d "{\"summary\": \"summary1\", \"description\": \"description1\", \"budget\": 1000, \"seller_id\": 1, \"deadline\": \"2017-01-01\"}" "http://localhost:8080/api/projects"
+
+{"summary": "summary1", "description": "description1", "budget": 1000, "seller_id": 1, "deadline": "2017-01-01"}
+
+curl -H "content-type: application/json" "http://localhost:8080/api/projects/1"
+*** DONE GET /projects/{id}: return not found
+   CLOSED: [2018-03-19 Mon 11:21]
+*** DONE bid project
+  CLOSED: [2018-03-19 Mon 11:26]
+curl -H "content-type: application/json" -d "{\"buyer_id\": 1, \"amount\": 400}" "http://localhost:8080/api/projects/1/bid"
+{
+  "message": "'dict' object is not callable"
+}
+
+{"buyer_id": 1, "amount": 400}
+
+curl -H "content-type: application/json" -d "{\"buyer_id\": 1, \"amount\": 400}" "http://localhost:8080/api/projects/1/bid"
+*** DONE [#A] python use swagger
+  CLOSED: [2018-03-19 Mon 11:35]
+https://medium.com/@ssola/building-microservices-with-python-part-i-5240a8dcc2fb
+https://github.com/elgris/microservice-app-example
+
+http://michal.karzynski.pl/blog/2016/06/19/building-beautiful-restful-apis-using-flask-swagger-ui-flask-restplus/
+
+     75:@app.route('/<string:protocol_version>/projects/<int:id>/bid', methods=['POST'])
+    100:@app.route('/<string:protocol_version>/projects', methods=['GET'])
+
+curl -H "content-type: application/json" "http://localhost:8080/v1/projects/id=1"
+*** DONE for post requests, add marshal with
+   CLOSED: [2018-03-19 Mon 11:35]
+*** flask Blueprint
+http://flask.pocoo.org/docs/0.12/blueprints/
+http://exploreflask.com/en/latest/blueprints.html
+*** DONE [#A] move files into directories; add __init__.py
+   CLOSED: [2018-03-19 Mon 15:16]
+*** DONE list projects with paging
+   CLOSED: [2018-03-19 Mon 17:34]
+*** DONE paging doesn't work
+  CLOSED: [2018-03-19 Mon 17:34]
+Denny-Laptop:~ DennyZhang$  curl -H "content-type: application/json" "http://localhost:8080/api/projects?page=2&per_page=2"
+{
+    "message": "The browser (or proxy) sent a request that this server could not understand."
+}
+Denny-Laptop:~ DennyZhang$ curl -X GET --header 'Accept: application/json' 'http://localhost:8080/api/projects?per_page=10&page=1&bool=true'
+{
+    "projects": null,
+    "pages": 1,
+    "total": 6,
+    "per_page": 10,
+    "page": 1
+}
+*** DONE change back the endpoint bash
+   CLOSED: [2018-03-19 Mon 17:35]
+*** DONE Update README.md for the sample output
+   CLOSED: [2018-03-19 Mon 17:40]
+*** DONE flask add a hello world page
+   CLOSED: [2018-03-19 Mon 17:59]
+*** DONE add api version: update blog
+   CLOSED: [2018-03-20 Tue 07:26]
+** DONE bfs: https://code.dennyzhang.com/binary-tree-level-order-traversal
+  CLOSED: [2018-07-03 Tue 16:52]
+class Solution(object):
+    def levelOrder(self, root):
+        """
+        :type root: TreeNode
+        :rtype: List[List[int]]
+        """
+
+        if root is None: return []
+        res = []
+        queue = collections.deque()
+        queue.append(root)
+        while len(queue) != 0:
+            level_elements = []
+            for i in xrange(len(queue)):
+                element = queue.popleft()
+                level_elements.append(element.val)
+                if element.left:
+                    queue.append(element.left)
+                if element.right:
+                    queue.append(element.right)
+            res.append(level_elements)
+        return res
+** DONE python get current work directory: os.getcwd()
+  CLOSED: [2018-07-03 Tue 16:47]
+** DONE python list files and folders: os.listdir()
+  CLOSED: [2018-07-03 Tue 16:47]
+** DONE python check whether it's a file or a folder: os.path.isfile("bob.txt")
+  CLOSED: [2018-07-03 Tue 17:20]
+** DONE python loop a folder: os.listdir("/tmp/")
+  CLOSED: [2017-06-30 Fri 16:44]
+** DONE python check if a path is a file or folder: os.path.isfile("/tmp/Dockerfile_rubocop_1_0")
+  CLOSED: [2017-06-30 Fri 16:46]
+** DONE convert epoch to human readable date in elasticsearch
+  CLOSED: [2017-06-30 Fri 22:52]
+https://stackoverflow.com/questions/21787496/converting-epoch-time-with-milliseconds-to-datetime
+
+https://stackoverflow.com/questions/41465038/convert-milliseconds-since-the-epoch-to-human-readable-date-in-json
+https://stackoverflow.com/questions/10716435/elasticsearch-index-unix-timestamp
+https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-date-format.html
+
+#+BEGIN_EXAMPLE
+>>> import datetime
+>>> s = 1236472051807 / 1000.0
+>>> datetime.datetime.fromtimestamp(s).strftime('%Y-%m-%d %H:%M:%S.%f')
+'2009-03-08 09:27:31.807000'
+#+END_EXAMPLE
+* [#A] Python Multi-Threading and Multi-Processing                 :noexport:
 ** DONE python multi-threading use queue: python2
   CLOSED: [2017-06-06 Tue 22:51]
 https://docs.python.org/2/library/queue.html
@@ -3376,7 +4203,7 @@ print s
 #+END_SRC
 ** TODO python Multiprocessing vs Threading Python
 https://stackoverflow.com/questions/3044580/multiprocessing-vs-threading-python
-* [#A] python virtualenv                                     :IMPORTANT:
+* [#A] python virtualenv                                 :noexport:IMPORTANT:
 https://github.com/slackapi/Slack-Python-Onboarding-Tutorial
 
 If you're using virtualenv run the following commands from the root of your project directory:
@@ -3410,7 +4237,7 @@ $ pip install virtualenv
 $ pip install virtualenvwrapper
 
 virtualenv -p /usr/local/Cellar/python3/3.6.3/bin/python3 env
-* Python parse command arguemnt: argparse
+* Python parse command arguemnt: argparse                          :noexport:
   CLOSED: [2016-08-06 Sat 08:58]
 #+BEGIN_SRC python
 # -*- coding: utf-8 -*-
@@ -3451,7 +4278,7 @@ python /tmp/cleanup_old_files.py --working_dir "/var/www/repo" --filename_patter
                     --cleanup_type directory --min_copies 2 --examine_only
 tail /var/log/cleanup_old_files.log
 #+END_EXAMPLE
-* Python concurrency & Interoperability
+* Python concurrency & Interoperability                            :noexport:
 ** python run command
 https://stackoverflow.com/questions/23420990/subprocess-check-output-return-code
 #+BEGIN_SRC python
@@ -3572,8 +4399,7 @@ def build_docker_image(docker_file, image_name):
 
     if p.returncode != 0:
         FAILED_BUILD_LIST.append(docker_file)
-* #  --8<-------------------------- separator ------------------------>8--
-* Python git
+* Python git                                                       :noexport:
 http://gitpython.readthedocs.io/en/stable/tutorial.html
 ** DONE python run git pull: git.cmd.Git(code_dir), g.pull()
    CLOSED: [2017-03-24 Fri 16:27]
@@ -3588,7 +4414,7 @@ The following code seems doing the right thing:
     new_tag = repo.create_tag(tag, message='Automatic tag "{0}"'.format(tag))
 
     repo.remotes.origin.push(new_tag)
-* [#A] python uwsgi                                          :IMPORTANT:
+* [#A] python uwsgi                                      :noexport:IMPORTANT:
 ** DONE chatops server stucks: Flask: Server becomes unresponsive after some time
   CLOSED: [2017-06-02 Fri 12:22]
 https://uwsgi-docs.readthedocs.io/en/latest/Install.html
@@ -3642,7 +4468,7 @@ uwsgi --http :8081 --wsgi-file ./wsgi.py
 uwsgi --socket 0.0.0.0:8081 --protocol=http -w wsgi
 
 uwsgi --ini wsgi.ini
-* [#B] docker python sdk
+* [#B] docker python sdk                                           :noexport:
 https://docker-py.readthedocs.io/en/stable/
 ** basic installation
 # Install python pip
@@ -3669,7 +4495,7 @@ You may need to uninstall the docker-py package as it may be conflicting with th
 pip uninstall docker docker-py
 pip install docker
 Let me know if it helps.
-* Python aiml
+* Python aiml                                                      :noexport:
 https://github.com/andelf/PyAIML
 http://eishn.blog.163.com/blog/static/652318200693053734267/
 http://lcllcl987.iteye.com/blog/473256
@@ -4169,508 +4995,7 @@ TOP
       + xkins (RSS)
 
 #+end_example
-* #  --8<-------------------------- separator ------------------------>8--
-* TODO [#A] 用python生成一个快速mvc的查询界面, 自适应的
-  :PROPERTIES:
-  :ID:       00F3C19C-2F09-42CB-BD92-87DB8762B492
-  :END:
-* TODO python performance tuning
-| Name    | Comment                                                                       |
-|---------+-------------------------------------------------------------------------------|
-| timeit  | a crude but effective way to see the impact of optimizations on a macro level |
-| hotshot | true profiler, logging function entry/exit                                    |
-** timeit
-#+begin_src python
-import timeit
-timeit.Timer('neknek_1.solve(neknek_1.Puzzle("9x9.txt"))', 'import neknek_1').timeit(number=10)/10
-#+end_src
-** hotshot
-#+begin_src python
-import hotshot
-import neknek_1
-prof = hotshot.Profile('hotshot_nn_stats')
-prof.run('neknek_1.solve(neknek_1.Puzzle("9x9.txt"))').close()
-
-
-import hotshot.stats
-hotshot.stats.load('hotshot_nn_stats').strip_dirs().sort_stats('time').print_stats()
-
-#+end_src
-** useful link
-http://www.mlsite.net/blog/?p=97
-
-http://stackoverflow.com/questions/1913906/python-performance-characteristics
-* DevOps choose language: Python vs Golang
-http://odino.org/things-i-ask-during-interviews/
-* #  --8<-------------------------- separator ------------------------>8--
-* DONE python loop a folder: os.listdir("/tmp/")
-  CLOSED: [2017-06-30 Fri 16:44]
-* DONE python check if a path is a file or folder: os.path.isfile("/tmp/Dockerfile_rubocop_1_0")
-  CLOSED: [2017-06-30 Fri 16:46]
-* DONE convert epoch to human readable date in elasticsearch
-  CLOSED: [2017-06-30 Fri 22:52]
-https://stackoverflow.com/questions/21787496/converting-epoch-time-with-milliseconds-to-datetime
-
-https://stackoverflow.com/questions/41465038/convert-milliseconds-since-the-epoch-to-human-readable-date-in-json
-https://stackoverflow.com/questions/10716435/elasticsearch-index-unix-timestamp
-https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-date-format.html
-
-#+BEGIN_EXAMPLE
->>> import datetime
->>> s = 1236472051807 / 1000.0
->>> datetime.datetime.fromtimestamp(s).strftime('%Y-%m-%d %H:%M:%S.%f')
-'2009-03-08 09:27:31.807000'
-#+END_EXAMPLE
-* DONE python3 convert bytes to string: b"abcde".decode("utf-8")
-  CLOSED: [2017-07-11 Tue 19:47]
-https://stackoverflow.com/questions/606191/convert-bytes-to-a-python-string
-* DONE Get last n lines of a file with Python, similar to tail
-  CLOSED: [2017-07-13 Thu 17:22]
-https://stackoverflow.com/questions/136168/get-last-n-lines-of-a-file-with-python-similar-to-tail
-https://stackoverflow.com/questions/260273/most-efficient-way-to-search-the-last-x-lines-of-a-file-in-python
-
-with open(log_file,'r') as f:
-    message = tail(f, tail_log_num)
-
-#+BEGIN_SRC python
-def tail(f, lines=20):
-    total_lines_wanted = lines
-
-    BLOCK_SIZE = 1024
-    f.seek(0, 2)
-    block_end_byte = f.tell()
-    lines_to_go = total_lines_wanted
-    block_number = -1
-    blocks = [] # blocks of size BLOCK_SIZE, in reverse order starting
-                # from the end of the file
-    while lines_to_go > 0 and block_end_byte > 0:
-        if (block_end_byte - BLOCK_SIZE > 0):
-            # read the last block we haven't yet read
-            f.seek(block_number*BLOCK_SIZE, 2)
-            blocks.append(f.read(BLOCK_SIZE))
-        else:
-            # file too small, start from begining
-            f.seek(0,0)
-            # only read what was not read
-            blocks.append(f.read(block_end_byte))
-        lines_found = blocks[-1].count('\n')
-        lines_to_go -= lines_found
-        block_end_byte -= BLOCK_SIZE
-        block_number -= 1
-    all_read_text = ''.join(reversed(blocks))
-    return '\n'.join(all_read_text.splitlines()[-total_lines_wanted:])
-#+END_SRC
-* HALF python escape string for json
-https://stackoverflow.com/questions/5997029/escape-double-quotes-for-json-in-python
-https://msftstack.wordpress.com/2016/01/18/convert-json-to-escaped-string-in-python/
-
-json.dumps(s)
-
-outstr = jsonstr.replace('"', '\\"').replace('\n', '\\n')
-* #  --8<-------------------------- separator ------------------------>8--
-* TODO python paramiko upload a file by ssh
-* TODO paramiko SSHClient connect less verbose output
-        ssh = paramiko.SSHClient()
-        ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        key = paramiko.RSAKey.from_private_key_file(ssh_key_file, password=key_passphrase)
-        ssh.connect(server_ip, username=username, port=ssh_port, pkey=key)
-        stdin, stdout, stderr = ssh.exec_command(ssh_command)
-        output = "\n".join(stdout.readlines())
-* #  --8<-------------------------- separator ------------------------>8--
-* DONE python: Convert a string to preexisting variable names: print eval('self.post.id')
-  CLOSED: [2017-08-15 Tue 18:42]
-https://stackoverflow.com/questions/295058/convert-a-string-to-preexisting-variable-names
-* DONE python pdb set a break point at a given line of code: b 3
-  CLOSED: [2017-08-15 Tue 19:34]
-https://stackoverflow.com/questions/5769382/can-i-put-a-breakpoint-in-a-running-python-program-that-drops-to-the-interactive
-* DONE python pdb add breakpoint for function: b hosts_origin.remove_all_matching
-  CLOSED: [2017-08-15 Tue 22:51]
-* DONE python requests query socket file
-  CLOSED: [2017-08-27 Sun 15:18]
-curl -XGET --unix-socket "/var/run/docker.sock" \
-    http://localhost/containers/json | jq '.[].Names[], .[].Status'
-
-https://pypi.python.org/pypi/requests-unixsocket
-#+BEGIN_EXAMPLE
-import requests_unixsocket
-
-session = requests_unixsocket.Session()
-
-# Access /path/to/page from /tmp/profilesvc.sock
-r = session.get('http+unix://%2Ftmp%2Fprofilesvc.sock/path/to/page')
-assert r.status_code == 200
-#+END_EXAMPLE
-* DONE python send slack message
-  CLOSED: [2017-08-27 Sun 17:33]
-https://github.com/slackapi/python-slackclient
-* TODO python argparse require argument not empty string
-* DONE SSH Paramiko get return code
-  CLOSED: [2017-09-07 Thu 17:14]
-https://stackoverflow.com/questions/3562403/how-can-you-get-the-ssh-return-code-using-paramiko
-stdin, stdout, stderr = client.exec_command("uptime")
-print stdout.channel.recv_exit_status()    # status is 0
-* DONE python2 install paramiko: ImportError: No module named cryptography.hazmat.backends
-  CLOSED: [2017-09-08 Fri 17:45]
-https://stackoverflow.com/questions/31569339/importerror-no-module-named-cryptography-hazmat-backends-boxsdk-on-mac
-apt-get install libffi-dev
-
-pip install cryptography==2.0.3
-pip install paramiko==2.1.2
-* DONE python print is buffered IO
-  CLOSED: [2017-09-11 Mon 18:47]
-Python's standard out is buffered (meaning that it collects some of the data "written" to standard out before it writes it to the terminal). Calling sys.stdout.flush() forces it to "flush" the buffer, meaning that it will write everything in the buffer to the terminal, even if normally it would wait before doing so.
-https://stackoverflow.com/questions/10019456/usage-of-sys-stdout-flush-method
-
-https://www.turnkeylinux.org/blog/unix-buffering
-
-#+BEGIN_EXAMPLE
-Since Python 3.3, you can force the normal print() function to flush without the need to use sys.stdout.flush(); just set the "flush" keyword argument to true. From the documentation:
-
-print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False)
-#+END_EXAMPLE
-* #  --8<-------------------------- separator ------------------------>8--
-* DONE python get current filename: os.path.basename(__file__).strip(".py")
-  CLOSED: [2017-09-13 Wed 11:02]
-https://stackoverflow.com/questions/4152963/get-the-name-of-current-script-with-python
-* DONE python get current pid: os.getpid()
-  CLOSED: [2017-09-13 Wed 11:02]
-https://stackoverflow.com/questions/3761639/how-do-you-get-the-process-id-of-a-program-in-unix-or-linux-using-python
-* #  --8<-------------------------- separator ------------------------>8--
-* TODO paramiko copy file via ssh
-https://stackoverflow.com/questions/250283/how-to-scp-in-python
-You could also check out paramiko. There's no scp module (yet), but it fully supports sftp.
-https://stackoverflow.com/questions/250283/how-to-scp-in-python
-* #  --8<-------------------------- separator ------------------------>8--
-* TODO [#A] python unit testing: coverage.py
-https://coverage.readthedocs.io/en/coverage-4.4.1/
-
-https://stackoverflow.com/questions/36517137/how-to-properly-use-coverage-py-in-python
-coverage report -m
-
-| Name            | Summary |
-|-----------------+---------|
-| coverage run    |         |
-| coverage report |         |
-| coverage html   |         |
-** TODO python coverage run: no tests
-#+BEGIN_EXAMPLE
-Denny-mac:remote-commands-servers mac$ coverage run --source=remote-commands-servers setup.py test
-running test
-running egg_info
-writing pbr to remote_commands_servers.egg-info/pbr.json
-writing requirements to remote_commands_servers.egg-info/requires.txt
-writing remote_commands_servers.egg-info/PKG-INFO
-writing top-level names to remote_commands_servers.egg-info/top_level.txt
-writing dependency_links to remote_commands_servers.egg-info/dependency_links.txt
-reading manifest file 'remote_commands_servers.egg-info/SOURCES.txt'
-writing manifest file 'remote_commands_servers.egg-info/SOURCES.txt'
-running build_ext
-
-----------------------------------------------------------------------
-Ran 0 tests in 0.000s
-
-OK
-Coverage.py warning: No data was collected. (no-data-collected)
-#+END_EXAMPLE
-* DONE __init__.py file makes Python treat directories containing it as modules.
-  CLOSED: [2017-09-13 Wed 17:23]
-https://stackoverflow.com/questions/448271/what-is-init-py-for
-* DONE python setup.py: Python's answer to a multi-platform installer and make file.
-  CLOSED: [2017-09-13 Wed 17:31]
-https://stackoverflow.com/questions/1471994/what-is-setup-py
-* TODO paramiko ssh command get realtime output
-https://stackoverflow.com/questions/35944912/using-paramiko-how-could-i-get-the-stdout-of-exec-command-in-real-time-instea
-https://stackoverflow.com/questions/31834743/get-output-from-a-paramiko-ssh-exec-command-continuously
-https://stackoverflow.com/questions/37857859/printing-real-time-ssh-output-using-python-3-x
-
-python /usr/sbin/jenkins/scripts/remote-commands-servers.py --server_list 138.197.215.132:2702,165.227.5.192:2702,165.227.17.43:2702,138.68.46.170:2702,165.227.21.77:2702,165.227.21.128:2702,138.68.30.61:2702,138.197.221.191:2702,138.197.221.161:2702,138.197.200.214:2702,165.227.27.184:2702,138.68.23.132:2702,138.68.230.220:2702,165.227.13.42:2702,165.227.31.102:2702,165.227.25.149:2702,138.197.205.85:2702,165.227.24.213:2702,138.68.246.50:2702,165.227.22.228:2702,138.68.21.77:2702,138.68.233.86:2702,165.227.19.254:2702,138.197.208.182:2702,165.227.30.31:2702 --command_list 'date
-hostname
-' --ssh_username root --ssh_key_file /var/jenkins_home/.ssh/tmp_id_rsa --key_passphrase sophia1
-* TODO python print the output of multiple return value
-#+BEGIN_EXAMPLE
-    def get_element_from_stack(self, stack):
-        print("get_element_from_stack: stack: %s" % stack)
-        if len(stack) == 0:
-            return (None, [])
-
-        if stack[-1] in self.uppercase_list:
-            return (str(stack[-1]), stack[:-2])
-
-        for i in range(len(stack)-1, -1,-1):
-            if stack[i] in self.lowercase_list:
-                continue
-            else:
-                break
-
-        return (str(stack[i:]), stack[:i-1])
-#+END_EXAMPLE
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* DONE python ListNode: p.next, p.val
-#!/usr/bin/env python
-##-------------------------------------------------------------------
-## @copyright 2017 DennyZhang.com
-## Licensed under MIT
-##   https://www.dennyzhang.com/wp-content/mit_license.txt
-##
-## File: test.py
-## Author : Denny <contact@dennyzhang.com>
-## Description:
-##     https://leetcode.com/problems/merge-two-sorted-lists/description/
-## Tags:
-## --
-## Created : <2017-10-16>
-## Updated: Time-stamp: <2017-10-23 22:57:20>
-##-------------------------------------------------------------------
-class Solution(object):
-    def mergeTwoLists(self, l1, l2):
-        """
-        :type l1: ListNode
-        :type l2: ListNode
-        :rtype: ListNode
-        """
-        ## Basic Idea:
-        ##    l1: 1 -> 3 -> 5
-        ##        p   r
-        ##    l2: 2 -> 3 -> 6 -> 7
-        ##        q   s
-        ## Complexity:
-        ## recursive
-        if l1 is None:
-            return l2
-
-        if l2 is None:
-            return l1
-
-        if l1.val < l2.val:
-            head = l1
-            p = l1
-            q = l2
-        else:
-            head = l2
-            p = l2
-            q = l1
-
-        while (p.next is not None) and (q is not None):
-            r = p.next
-            s = q.next
-            if q.val <= r.val:
-                p.next = q
-                q.next = r
-                p = q
-                q = s
-            else:
-                p = r
-
-        if p.next is None:
-            p.next = q
-
-        return head
-## File: test.py ends
-* DONE python math
-  CLOSED: [2017-10-27 Fri 18:46]
-https://docs.python.org/2/library/math.html
-#+BEGIN_EXAMPLE
-math.ceil(x)
-Return the ceiling of x as a float, the smallest integer value greater than or equal to x.
-
-math.copysign(x, y)
-Return x with the sign of y. On a platform that supports signed zeros, copysign(1.0, -0.0) returns -1.0.
-
-New in version 2.6.
-
-math.fabs(x)
-Return the absolute value of x.
-
-math.factorial(x)
-Return x factorial. Raises ValueError if x is not integral or is negative.
-
-New in version 2.6.
-
-math.floor(x)
-Return the floor of x as a float, the largest integer value less than or equal to x.
-
-math.fmod(x, y)
-Return fmod(x, y), as defined by the platform C library. Note that the Python expression x % y may not return the same result. The intent of the C standard is that fmod(x, y) be exactly (mathematically; to infinite precision) equal to x - n*y for some integer n such that the result has the same sign as x and magnitude less than abs(y). Python’s x % y returns a result with the sign of y instead, and may not be exactly computable for float arguments. For example, fmod(-1e-100, 1e100) is -1e-100, but the result of Python’s -1e-100 % 1e100 is 1e100-1e-100, which cannot be represented exactly as a float, and rounds to the surprising 1e100. For this reason, function fmod() is generally preferred when working with floats, while Python’s x % y is preferred when working with integers.
-
-math.frexp(x)
-Return the mantissa and exponent of x as the pair (m, e). m is a float and e is an integer such that x == m * 2**e exactly. If x is zero, returns (0.0, 0), otherwise 0.5 <= abs(m) < 1. This is used to “pick apart” the internal representation of a float in a portable way.
-
-math.fsum(iterable)
-
-#+END_EXAMPLE
-* DONE python create const: CONST_NAME
-  CLOSED: [2017-10-22 Sun 22:28]
-* DONE python str(['a', 'b']) is different from ''.join(['a', 'b'])
-  CLOSED: [2017-11-12 Sun 15:43]
-* DONE python print line number
-  CLOSED: [2017-11-12 Sun 18:05]
-http://code.activestate.com/recipes/145297-grabbing-the-current-line-number-easily/
-import inspect
-def lineno():
-    return inspect.currentframe().f_back.f_lineno
-
-print("[L: %s] " % (lineno()))
-* DONE [#A] python 6/132 = 0, 6/(-132) = -1, -6/123: -1
-  CLOSED: [2018-01-14 Sun 16:24]
-* DONE python dict vs defaultdict
-  CLOSED: [2018-01-19 Fri 11:57]
-https://www.accelebrate.com/blog/using-defaultdict-python/
-http://stupidpythonideas.blogspot.com/2013/08/defaultdict-vs-setdefault.html
-
-defaultdict: If I don't have the key in the dict, it will create a new item with default value.
-             Instead of throwing an exception
-
-#+BEGIN_SRC python
-from collections import defaultdict
->>> ice_cream = defaultdict(lambda: 'Vanilla')
->>>
->>> ice_cream = defaultdict(lambda: 'Vanilla')
->>> ice_cream['Sarah'] = 'Chunky Monkey'
->>> ice_cream['Abdul'] = 'Butter Pecan'
->>> print ice_cream['Sarah']
-Chunky Monkey
->>> print ice_cream['Joe']
-Vanilla
-#+END_SRC
-
-* DONE python deep copy a dict
-  CLOSED: [2018-01-19 Fri 15:37]
-https://stackoverflow.com/questions/5105517/deep-copy-of-a-dict-in-python
-- reference copy
-#+BEGIN_SRC python
-m = {}
-m['a'] = 2
-m2 = m
-m2['a'] = 1
-print m['a'] # 1
-print m2['a'] # 1
-#+END_SRC
-
-- deep copy
-#+BEGIN_SRC python
-import copy
-m = {}
-m['a'] = 2
-m2 = copy.deepcopy(m)
-m2['a'] = 1
-print m['a'] # 2
-print m2['a'] # 1
-#+END_SRC
-
-* DONE python heapq
-  CLOSED: [2018-01-25 Thu 22:03]
-http://www.koderdojo.com/blog/binary-heap-and-heapq-in-python
-
-import heapq
- 
-# initializing list
-li = [5, 7, 9, 1, 3]
- 
-# using heapify to convert list into heap
-heapq.heapify(li) # a minheap
-heapq._heapify_max(li) # for a maxheap! 
-
-# printing created heap
-print (list(li))
- 
-# using heappush() to push elements into heap
-# pushes 4
-heapq.heappush(li,4)
-
-# printing modified heap
-print (list(li))
- 
-# using heappop() to pop smallest element
-print (heapq.heappop(li))
-
-print (list(li))
-** 2 attributes
-import heapq
-li = []
-heapq._heapify_max(li) 
-heapq.heappush(li, (5, 'write code'))
-heapq.heappush(li, (7, 'release product'))
-heapq.heappush(li, (1, 'write spec'))
-heapq.heappush(li, (3, 'create tests'))
-print (list(li))
-
-heapq.heappop(li)
-** more sample
-#+BEGIN_SRC python
-import heapq
-
-heap = [12, 19, 88, 62, 2, 14, 92]
-
-heapq.heapify(heap)
-
-heapq.heappush(heap, 3)
-
-while len(heap) > 0:
-    print(heapq.heappop(heap), end=' ')
-
-# 2 3 12 14 19 62 88 92
-#+END_SRC
-
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* DONE [#B] elasticsearch python libary
-  CLOSED: [2018-02-07 Wed 11:12]
-172.17.0.2
-
-from elasticsearch import Elasticsearch
-
-es_ip="172.17.0.2"
-es_port="9200"
-es_instance = Elasticsearch(["%s:%s"%(es_ip, es_port)])
-
-es_instance.indices.close(index="config-index-8cd6e43115e9416eb23609486fa053e3")
-
-es_instance.client.IndicesClient.close(index="config-index-8cd6e43115e9416eb23609486fa053e3")
-** close index
-output = es_instance.indices.close(index="staging-index-13a1f8adbec032ed68f3d035449ef48d")
-print output # {u'acknowledged': True}
-** delete index
-output = es_instance.indices.delete(index="master-index-46078234297e400a1648d9c427dc8c4b")
-print output
-** list all closed index
-es_instance.indices.get(index='*', expand_wildcards='closed')
-es_instance.indices.get(index='*', expand_wildcards='closed', include_defaults=False)
-** check whether index exists
-es_instance.indices.exists(index='staging-index-13a1f8adbec032ed68f3d035449ef48d')
-** get health status
-es_instance.cluster.health()
-es_instance.cluster.state()
-** get status
-es_instance.indices.stats(index='staging-index-13a1f8adbec032ed68f3d035449ef48d')
-** #  --8<-------------------------- separator ------------------------>8-- :noexport:
-** TODO check whether index is open
-es_instance.indices.get(index='staging-index-13a1f8adbec032ed68f3d035449ef48d', expand_wildcards='open')
-** TODO get index without mapping and setting, since it's too big
-* DONE python http json request: http://docs.python-requests.org/en/master/
-  CLOSED: [2018-02-15 Thu 16:21]
-* DONE python check http exit code and output
-  CLOSED: [2018-02-15 Thu 16:40]
-#+BEGIN_SRC python
-        r = requests.get(url)
-        if r.status_code != 200:
-            print("Error: url(%s) runs into error. errms: %s" % (url, r.text))
-            err_list.append(url)
-#+END_SRC
-* DONE python bisect: insert into a sorted list with binary search
-  CLOSED: [2018-03-02 Fri 11:28]
-https://www.cnblogs.com/beiluowuzheng/p/8452671.html
-http://www.jb51.net/article/55543.htm
-* DONE [#A] python zip: two lists don't need to have equal items
-  CLOSED: [2018-03-02 Fri 11:28]
-def medianSlidingWindow(self, nums, k):
-    window = sorted(nums[:k])
-    medians = []
-    for a, b in zip(nums, nums[k:] + [0]):
-        medians.append((window[k/2] + window[~(k/2)]) / 2.)
-        window.remove(a)
-        bisect.insort(window, b)
-    return medians
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* [#A] python flask
+* [#A] python flask                                                :noexport:
 ** flask json
 http://flask-json.readthedocs.io/en/latest/
 ** flask hello world
@@ -4807,7 +5132,6 @@ python  13602 root    8u  IPv4 17917178      0t0  TCP *:9180 (LISTEN)
 #+end_example
 ** DONE python flask get client ip: request.remote_addr
    CLOSED: [2014-03-29 Sat 09:09]
-
 ** #  --8<-------------------------- separator ------------------------>8-- :noexport:
 ** DONE flask response json with customize status code
   CLOSED: [2018-03-07 Wed 23:47]
@@ -4834,7 +5158,6 @@ curl -H "content-type: application/json" "http://localhost:8000/v1/projects"
 <h1>Method Not Allowed</h1>
 <p>The method is not allowed for the requested URL.</p>
 #+END_EXAMPLE
-
 ** DONE add functional test: CRUD test
    CLOSED: [2018-03-07 Wed 19:14]
 ** DONE [#A] jsonify({"Error" : "Access restricted"}), 403
@@ -4866,13 +5189,11 @@ def handle_bad_request(e):
     logging.exception("Unexpected error: %s" % str(e))
     return jsonify({'message': str(e)}), 500
 #+END_SRC
-
-* [#A] SQLAlchemy
+* [#A] SQLAlchemy                                                  :noexport:
 https://www.codementor.io/sheena/understanding-sqlalchemy-cheat-sheet-du107lawl
 http://flask-sqlalchemy.pocoo.org/2.3/queries/
 ** DONE SQLAlchemy check whether a table exists
    CLOSED: [2018-03-07 Wed 18:15]
-
 ** DONE pylint error: E: 17, 0: No name 'sqlalchemy' in module 'flask.ext' (no-name-in-module)
   CLOSED: [2018-03-07 Wed 18:06]
 https://stackoverflow.com/questions/16061514/pylint-pylint-unable-to-import-flask-ext-wtf
@@ -4888,154 +5209,16 @@ No config file found, using default configuration
   CLOSED: [2018-03-08 Thu 18:09]
 https://www.codementor.io/sheena/understanding-sqlalchemy-cheat-sheet-du107lawl
 #+BEGIN_SRC python
-class Book(Base):  #<------------------------- 
+class Book(Base):  #<-------------------------
     __tablename__  = "books"    #matches the name of the actual database table
     id             = Column(Integer,Sequence('book_seq'),primary_key=True) # plays nice with all major database engines
     name           = Column(String(50))                                    # string column need lengths
     author_id      = Column(Integer,ForeignKey('authors.id'))              # assumes there is a table in the database called 'authors' that has an 'id' column
     price          = Column(Float)
     date_added     = Column(DateTime, default=datetime.datetime.now)       # defaults can be specified as functions
-    promote        = Column(Boolean,default=False) 
+    promote        = Column(Boolean,default=False)
 #+END_SRC
 ** TODO SqlAlchemy: filter() vs filter_by()
 https://stackoverflow.com/questions/24762664/sqlalchemy-typeerror-filter-by-takes-exactly-1-argument-2-given
-
-* DONE python Python WSGI HTTP Server for UNIX
-  CLOSED: [2018-03-07 Wed 18:46]
-http://gunicorn.org/
-https://github.com/svenstaro/flamejam
-
-* DONE Creating a python logger to stdout
-  CLOSED: [2018-03-08 Thu 16:36]
-https://coderwall.com/p/_fg97w/creating-a-python-logger-to-stdout
-#+BEGIN_SRC python
-import logging
-import sys
-log = logging.getLogger(__name__)
-out_hdlr = logging.StreamHandler(sys.stdout)
-out_hdlr.setFormatter(logging.Formatter('%(asctime)s %(message)s'))
-out_hdlr.setLevel(logging.INFO)
-log.addHandler(out_hdlr)
-log.setLevel(logging.INFO)
-Then you can do:
-
-log.debug("NO")
-log.error("THIS IS AN ERROR")
-#+END_SRC
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO gunicorn reload
-* DONE python requests.post
-  CLOSED: [2018-03-09 Fri 15:59]
-http://docs.python-requests.org/en/master/user/quickstart/
-r = requests.post('http://httpbin.org/post', data = {'key':'value'})
-* DONE python sleep
-  CLOSED: [2018-03-09 Fri 16:10]
-https://stackoverflow.com/questions/510348/how-can-i-make-a-time-delay-in-python
-import time
-time.sleep(5)   # delays for 5 seconds. You can Also Use Float Value.
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* HALF [#A] flask_restplus
-http://michal.karzynski.pl/blog/2016/06/19/building-beautiful-restful-apis-using-flask-swagger-ui-flask-restplus/
-** DONE change http://localhost:8080/api/projects/ to http://localhost:8080/api/projects
-   CLOSED: [2018-03-19 Mon 11:02]
-** DONE from flask_restplus import Api
-   CLOSED: [2018-03-19 Mon 11:15]
-** DONE add real logic
-  CLOSED: [2018-03-19 Mon 10:47]
-curl -H "content-type: application/json" -d "{\"summary\": \"summary1\", \"description\": \"description1\", \"budget\": 1000, \"seller_id\": 1, \"deadline\": \"2017-01-01\"}" "http://localhost:8080/v1/projects"
-
-curl -H "content-type: application/json" -d "{\"summary\": \"summary1\", \"description\": \"description1\", \"budget\": 1000, \"seller_id\": 1, \"deadline\": \"2017-01-01\"}" "http://localhost:8080/api/projects"
-
-{"summary": "summary1", "description": "description1", "budget": 1000, "seller_id": 1, "deadline": "2017-01-01"}
-
-curl -H "content-type: application/json" "http://localhost:8080/api/projects/1"
-** DONE GET /projects/{id}: return not found
-   CLOSED: [2018-03-19 Mon 11:21]
-** DONE bid project
-  CLOSED: [2018-03-19 Mon 11:26]
-curl -H "content-type: application/json" -d "{\"buyer_id\": 1, \"amount\": 400}" "http://localhost:8080/api/projects/1/bid"
-{
-  "message": "'dict' object is not callable"
-}
-
-{"buyer_id": 1, "amount": 400}
-
-curl -H "content-type: application/json" -d "{\"buyer_id\": 1, \"amount\": 400}" "http://localhost:8080/api/projects/1/bid"
-
-** DONE [#A] python use swagger
-  CLOSED: [2018-03-19 Mon 11:35]
-https://medium.com/@ssola/building-microservices-with-python-part-i-5240a8dcc2fb
-https://github.com/elgris/microservice-app-example
-
-http://michal.karzynski.pl/blog/2016/06/19/building-beautiful-restful-apis-using-flask-swagger-ui-flask-restplus/
-
-     75:@app.route('/<string:protocol_version>/projects/<int:id>/bid', methods=['POST'])
-    100:@app.route('/<string:protocol_version>/projects', methods=['GET'])
-
-curl -H "content-type: application/json" "http://localhost:8080/v1/projects/id=1"
-** DONE for post requests, add marshal with
-   CLOSED: [2018-03-19 Mon 11:35]
-** flask Blueprint
-http://flask.pocoo.org/docs/0.12/blueprints/
-http://exploreflask.com/en/latest/blueprints.html
-** DONE [#A] move files into directories; add __init__.py
-   CLOSED: [2018-03-19 Mon 15:16]
-** DONE list projects with paging
-   CLOSED: [2018-03-19 Mon 17:34]
-** DONE paging doesn't work
-  CLOSED: [2018-03-19 Mon 17:34]
-Denny-Laptop:~ DennyZhang$  curl -H "content-type: application/json" "http://localhost:8080/api/projects?page=2&per_page=2"
-{
-    "message": "The browser (or proxy) sent a request that this server could not understand."
-}
-Denny-Laptop:~ DennyZhang$ curl -X GET --header 'Accept: application/json' 'http://localhost:8080/api/projects?per_page=10&page=1&bool=true'
-{
-    "projects": null,
-    "pages": 1,
-    "total": 6,
-    "per_page": 10,
-    "page": 1
-}
-
-** DONE change back the endpoint bash
-   CLOSED: [2018-03-19 Mon 17:35]
-** DONE Update README.md for the sample output
-   CLOSED: [2018-03-19 Mon 17:40]
-
-** DONE flask add a hello world page
-   CLOSED: [2018-03-19 Mon 17:59]
-
-** DONE add api version: update blog
-   CLOSED: [2018-03-20 Tue 07:26]
-
-* DONE bfs: https://code.dennyzhang.com/binary-tree-level-order-traversal
-  CLOSED: [2018-07-03 Tue 16:52]
-class Solution(object):
-    def levelOrder(self, root):
-        """
-        :type root: TreeNode
-        :rtype: List[List[int]]
-        """
-
-        if root is None: return []
-        res = []
-        queue = collections.deque()
-        queue.append(root)
-        while len(queue) != 0:
-            level_elements = []
-            for i in xrange(len(queue)):
-                element = queue.popleft()
-                level_elements.append(element.val)
-                if element.left:
-                    queue.append(element.left)
-                if element.right:
-                    queue.append(element.right)
-            res.append(level_elements)
-        return res
-* DONE python get current work directory: os.getcwd()
-  CLOSED: [2018-07-03 Tue 16:47]
-* DONE python list files and folders: os.listdir()
-  CLOSED: [2018-07-03 Tue 16:47]
-* DONE python check whether it's a file or a folder: os.path.isfile("bob.txt")
-  CLOSED: [2018-07-03 Tue 17:20]
-
+* DevOps choose language: Python vs Golang                         :noexport:
+http://odino.org/things-i-ask-during-interviews/
