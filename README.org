@@ -31,8 +31,8 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 ** Python Compact Coding
 | Name                          | Comment                                                 |
 |-------------------------------+---------------------------------------------------------|
-| if ... return                 | =if k == 0: return False=                               |
-| if... continue                | =if index == icol: continue=                            |
+| if ... return                 | if k == 0: return False                                 |
+| if... continue                | if index == icol: continue                              |
 | return if.. else              | =return val if i>0 else 0=                              |
 | multiple assignment           | =l, r = 2, 3=                                           |
 | assign with check of none     | =a = b if b else 1=                                     |
@@ -71,27 +71,27 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Insert to sorted list   | =bisect.insort(l, 3)=                                  |
 | Reverse a list          | =l[::-1]=                                              |
 ** String
-| Name                              | Comment                              |
-|-----------------------------------+--------------------------------------|
-| reverse string                    | ='hello world'[::-1]=                |
-| array to string                   | =' '.join(['a', 'b'])=               |
-| split string to array             | ="hello, python".split(",")=         |
-| string to array                   | =list('abc')=                        |
-| format to 2 digits                | =print "%02d" % (13)=                |
-| find location of substring        | ='abc'.find('d')= (returns -1)       |
-| find location of substring        | ='abc'.index('d')= (raise exception) |
-| capitalize string                 | ='hello world'.capitalize()=         |
-| upper/lower string                | ='aBc'.upper()=, ='aBc'.lower()=     |
-| count substring                   | ='2-5g-3-J'.count('-')=              |
-| replace string                    | ='ab cd'.replace(' ', '')=           |
-| padd whitespace to the left       | ='a'.ljust(10, ' ')=                 |
-| padd whitespace to the right      | ='a'.rjust(10, ' ')=                 |
-| pad leading zero                  | ='101'.zfill(10)=                    |
-| string remove tailing '0'         | ='0023'.rstrip('0')=                 |
-| string remove leading '0'         | ='0023'.lstrip('0')=                 |
-| check if string represent integer | ='123'.isdigit()=                    |
-| check if string alphabetic        | ='aBc'.isalpha()=                    |
-| Check if string alphanumeric      | ='a1b'.isalnum()=                    |
+| Name                              | Comment                             |
+|-----------------------------------+-------------------------------------|
+| reverse string                    | 'hello world'[::-1]                 |
+| array to string                   | ' '.join(['a', 'b'])                |
+| split string to array             | "hello, python".split(",")          |
+| string to array                   | =list('abc')=                       |
+| format to 2 digits                | =print "%02d" % (13)=               |
+| find location of substring        | 'abc'.find('d')= (returns -1)       |
+| find location of substring        | 'abc'.index('d')= (raise exception) |
+| capitalize string                 | 'hello world'.capitalize()          |
+| upper/lower string                | 'aBc'.upper()=, 'aBc'.lower()       |
+| count substring                   | '2-5g-3-J'.count('-')               |
+| replace string                    | 'ab cd'.replace(' ', '')            |
+| padd whitespace to the left       | 'a'.ljust(10, ' ')                  |
+| padd whitespace to the right      | 'a'.rjust(10, ' ')                  |
+| pad leading zero                  | '101'.zfill(10)                     |
+| string remove tailing '0'         | '0023'.rstrip('0')                  |
+| string remove leading '0'         | '0023'.lstrip('0')                  |
+| check if string represent integer | '123'.isdigit()                     |
+| check if string alphabetic        | 'aBc'.isalpha()                     |
+| Check if string alphanumeric      | 'a1b'.isalnum()                     |
 ** Integer
 | Name                    | Comment                       |
 |-------------------------+-------------------------------|
