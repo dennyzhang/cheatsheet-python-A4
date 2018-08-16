@@ -1,30 +1,21 @@
-* org-mode configuration                                           :noexport:
-#+STARTUP: overview customtime noalign logdone showall
-#+TITLE:  Python CheatSheet
-#+DESCRIPTION:
-#+KEYWORDS:
-#+AUTHOR: Denny Zhang
-#+EMAIL:  denny@dennyzhang.com
-#+TAGS: noexport(n)
-#+PRIORITIES: A D C
-#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
-#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
-#+EXPORT_EXCLUDE_TAGS: exclude noexport
-#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
-#+LINK_UP:
-#+LINK_HOME:
-* Summary
+* Python CheatSheet                                                     :Languages:
+:PROPERTIES:
+:type:     python
+:END:
+
+Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-python, Category: [[https://cheatsheet.dennyzhang.com/category/languages][languages]]
+
 #+BEGIN_HTML
 <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a>
 <a href="https://github.com/DennyZhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a>
 <a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://slack.dennyzhang.com/badge.svg" alt="slack"/></a>
-<a href="https://github.com/DennyZhang"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<a href="https://github.com/DennyZhang/cheatsheet-python-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
 
 <br/><br/>
 
 <a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 #+END_HTML
-* CheatSheet
+
 File me [[https://github.com/DennyZhang/cheatsheet-python-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-python-A4][this repo]].
 
 See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
@@ -131,7 +122,6 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Write file  | =open("/tmp/test.txt", "wab").write("\ntest:")= |
 | Read files  | =f.readlines()=                                 |
 | Check file  | =os.path.exists("/tmp/test.txt")=               |
-
 ** Math
 | Name        | Comment                                   |
 |-------------+-------------------------------------------|
@@ -211,7 +201,7 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
     matrix = [[None for j in xrange(col_count)] for i in xrange(row_count)]
     print matrix
 #+END_SRC
-* More Resources
+** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 #+BEGIN_HTML
 <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
@@ -221,6 +211,21 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 <a href="https://github.com/DennyZhang"><img align="bottom"src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a>
 <a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img align="bottom" src="https://slack.dennyzhang.com/badge.svg" alt="slack"/></a>
 #+END_HTML
+* org-mode configuration                                           :noexport:
+#+STARTUP: overview customtime noalign logdone showall
+#+TITLE:  Python CheatSheet
+#+DESCRIPTION:
+#+KEYWORDS:
+#+AUTHOR: Denny Zhang
+#+EMAIL:  denny@dennyzhang.com
+#+TAGS: noexport(n)
+#+PRIORITIES: A D C
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+LINK_UP:
+#+LINK_HOME:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * [#A] Python                                      :noexport:Coding:Personal:
 :PROPERTIES:
@@ -4498,506 +4503,6 @@ You may need to uninstall the docker-py package as it may be conflicting with th
 pip uninstall docker docker-py
 pip install docker
 Let me know if it helps.
-* Python aiml                                                      :noexport:
-https://github.com/andelf/PyAIML
-http://eishn.blog.163.com/blog/static/652318200693053734267/
-http://lcllcl987.iteye.com/blog/473256
-
-- AIML的常用标签
-| pattern tag      | 支持模式匹配(正则表达式，模糊匹配),及基于template的返回      |
-| random tag       | 支持随机回答（一对多）                                       |
-| think,system tag | 支持简单逻辑记忆及自定义函数                                 |
-| javascript tag   | 支持嵌入js脚本(适用于web chat开发，比如根据情绪改变表情等)。 |
-| srai tag         | 支持多对一回答.                                              |
-** installation
-git clone https://github.com/andelf/PyAIML.git
-cd PyAIML
-sudo python ./setup.py install
-** TODO [#A] 聊天机器人如何机器学习
-** TODO [#B] 机器人如何有记忆能力
-#+begin_example
- think元素
-型如： <think><set name="topic">Me</set></think>
-
-放置在template元素里面，表示一旦用户的输入匹配到该category时，再回复应
-答的同时，给一个变量赋值，这里也就是把Me记再脑子里，以后就可以用<get
-name=”topic”/>来取出先前记住的内容。
-#+end_example
-** TODO [#A] 能更方便地train这个机器人，而不是人肉编辑xml         :IMPORTANT:
-** TODO 聊天时，从数据库中读取属性
-** # --8<-------------------------- separator ------------------------>8--
-** [#A] web page: aiml规范研究文档 - 永远的黑山 - 博客频道 - CSDN.NET
-http://blog.csdn.net/woowindice/article/details/302298
-*** webcontent                                                     :noexport:
-#+begin_example
-Location: http://blog.csdn.net/woowindice/article/details/302298
-永远的黑山
-
---黑山
-
-  * [ico_list]目录视图
-  * [ico_summar]摘要视图
-  * [ico_rss]订阅
-
-有奖征集活动系列——【HTML5游戏编程之旅】        专访贺炘：软件测试应讲究策略和方法      低价抢购开源
-中国论坛门票      有奖投票：由您决定“中国十大优秀开源项目”归属      英特尔的智慧眼
-
-aiml规范研究文档
-
-分类：操作系统 2005-02-25 20:52 3681人阅读评论(5) 收藏举报
-randomencodinginputxml文档敏捷
-
-Aiml就是一个xml兼容的文本文档，现简单介绍一下xml规范：
-xml每一个型如<aiml topic=”电影”>叫做一个元素，每个元素都是闭合的，也就是说要只要有<aiml>开头就必定
-有</aiml>相对应与之闭合；topic=”电影”称为改元素的属性，一个元素可以有多个属性没有限制。元素和元素之
-间可以嵌套，但必须闭合。
-
-一个最简单的aiml文件如下：
-<?xml version="1.0" encoding="GB2312"?>
-<aiml>
-<category>
-    <pattern>你好</pattern>
-    <template>好</template>
-</category>
-
-</aiml>
-
-1.        <?xml version="1.0" encoding="GB2312"?>这个是所有xml文档都必须申明的，如果是中文这里要申
-明编码为：GB2312，如果是英文则一般申明为：UTF-8
-
-2.        category表示一个目录，表示一个一问一答匹配和一问多种应答匹配，但不允许多中提问匹配。
-
-3.        pattern表示匹配模式，表示用户的输入匹配，以上例子，用户一旦输入你好，那机器人就找到这个匹
-配，然后取出应答“好”；
-
-4.        template表示应答，这里应答一个“好”字。
-
-有了这几个简单的元素理论上就可以写出任意匹配模式，达到一定智能，但实际应用当中只有这些元素是不够的
-，接下去将作进一步介绍。
-
-注意：aiml所有元素属性都是大小写敏感的！！！
-        aiml的pattern元素里面的英文必须大写！！！
-
-4、详细说明
-
-1.        think元素
-
-型如： <think><set name="topic">Me</set></think>
-放置在template元素里面，表示一旦用户的输入匹配到该category时，再回复应答的同时，给一个变量赋值，这
-里也就是把Me记再脑子里，以后就可以用<get name=”topic”/>来取出先前记住的内容。
-
-2.        <star/>表示*，比如有一个匹配模式是<pattern>* 你好 *<pattern>；注意，由于机器人解析器是外
-国人写的；而外国人每个单词之间一个空格，因为，我们写匹配的时候也要再每个汉字之间加上空格。这里
-pattern元素里的匹配模式是用*号表示任意匹配的，但在其他元素里面不能用*号，而用<star/>这个元素来表示
-。
-
-3.        <srai>元素，刺激回复人工智能，表示<srai>里面的话会被当作是用户输入，从新查找匹配模式，直
-到找到非<srai>定义的回复。例如：
-<srai>我是 <star/></srai>，那么机器人会把“我是 *”当作是用户输入来从新查找匹配模式。
-
-4.        <condition>元素，放在template元素里面，可以有多个condition元素，但不能嵌套（目前还不支持
-），有3种形式：
- <condition name="name" value="value">你好 </condition>
-<condition name="name" contains="value"> 你好</condition>
-<condition name="name" exists="value">你好 </condition>
-
-Name是预先定义的变量，第一种表示name变量的值如果和value相等，回复内容就包括”你好”；第二种表示name变
-量的值如果里面包含value这个字符串，回复内容就包括“你好”；第三种表示name变量的值如果存在value的值，
-回复内容就包括“你好”（这个什么意思还不明确）
-举个使用例子：
-<category>
-<pattern>你好</pattern>
-<template>
-你好阿！
-<condition name="用户名字" value="张三">
-你又来了阿：）
-</condition>
-</template>
-
-</category>
-
-a.      情况一：如果事先用think设置了变量“用户名字”，而且等于“张三”，那么用户接受到的回复内容是：你
-好阿！你又来了阿；）
-b.情况二：如果事先没有定义或者变量“用户名字”的值不等于“张三”，那么用户接受到的回复内容是：你好阿！
-写法有一下几种：
-<category>
-<pattern>我头发的颜色是蓝色 *</pattern>
-<template>哇塞，你很
-<condition name="用户性别" value="女"> 漂亮阿！</condition>
-<condition name="用户性别" value="男">英俊阿！</condition>
-</template>
-</category>
-
-<category>
-<pattern>我头发的颜色是蓝色 *</pattern>
-<template>哇塞，你很
-<condition>
-<li name="用户性别" value="女">漂亮阿！</li>
-<li name="用户性别" value="男">英俊阿！</li>
-</condition>
-</template>
-</category>
-
-<category>
-<pattern>我头发的颜色是蓝色 *</pattern>
-<template>哇塞，你很
-<condition name="用户性别">
-<li value="女"> 漂亮阿！</li>
-<li value="男"> 英俊阿！</li>
-</condition>
-</template>
-</category>
-
-<category>
-<pattern>我头发的颜色是蓝色 *</pattern>
-<template>哇塞，你很
-<condition>
-<li name="用户性别" value="女"> 漂亮阿！</li>
-<li>好看！</li>
-</condition>
-</template>
-</category>
-这里最后一个li元素表示默认的情况；即找不到condition相匹配时，就用默认的。
-
-5．<formal>元素，用来格式化输出，例如：<formal>jon baer</formal>
-那么回复将被格式化成首字母大写输出：Jon Baer，对中文无效。
-
-6．<gender>元素，替换性别以及代名词，例如：
-<gender>She told him to take a hike.</gender>
-将被替换成：He told her to take a hike，跟性别有关的单词都将被替换，中文怎么处理不是很清楚。
-
-7．<get name=””名字/>,即得到name的值。
-
-8．<gossip>元素用来把改元素里面的内容保存到gossip.log文件里。
-
-9．<if>元素，判断元素，有以下形式：
-<if name="topic" value="cars"></if>
-<if name="topic" contains="cars"></if>
-<if name="topic" exists="true"></if>
-例子：
-<template>
-<if name="用户名称" exists="true">
-你的名字叫 <get name=”用户名称”/>.
-<else/>
-你叫什么名字？
-</if>
-</template>
-
-10. <input>表示用户输入，例如：
-<input index="2"/>将输出用户倒数第2次的输入，看如下对话：
-用户：好阿
-机器人：你也好，你叫什么名字？
-用户：我叫黑山
-机器人：呵呵，你好黑山。
-如果有aiml文件里有片断：
-<category>
-
-<pattern>嘿嘿</pattern>
-
-<template>
-
-<gossip>你刚才说：“<input index="2"/>”？</gossip>
-
-</template>
-
-</category>
-
-如果这个时候用户输入“嘿嘿”，那么机器人将回复：你刚才说：“我叫黑山”？
-
-Index属性的数字表示倒数第几句话，1：倒数第一句，2：倒数第2句，依此类推。
-
-11．<learen filename=”xxx.aiml”>元素表示让机器人学习某个aiml文件。
-
-12．<li></li>元素可以在random元素或condition等元素当中使用；表是一个列表；
-
-13．<lowcase></lowcase>表示把中间的内容变成小写，对应的是<upcase>把内容变成大写
-           中文无效。
-
-14．<pattern>表示匹配模式，里面的内容必须大写，可以有星号* 或下划线_，但必须空格隔开，星号表示匹配
-所有，任意情况；下划线的意义跟星号一样，除了不能匹配字典里面Z后面的字母。
-
-15．<person>和<person2> 第一个是把第一人称转换成第3人称；第2个是把第一人称转成第2人称。<person/>等
-于 <person><star/></person>
-
-16．<random>随机元素，一般和<li>一起使用，表示从列表里随机取一个。
-
-17．<sentence>元素用来格式化句子，比如：
-<sentence>this is some kind of sentence test.</sentence>
-可以格式化成：This is some kind of sentence test.即把句子首字母大写。
-
-18．<star/>表示星号，已经不推荐使用，只针对0。9版本，目前一般要加index属性来使用，例如：<star index
-="1"/>，看如下对话：
-用户：我的名字叫黑山！
-
-<pattern>* 名字叫 *</pattern>
-<template>呵呵，我知道了，你的名字叫<star index="2"/>。
-</template>
-
-19。<system><system>元素表示调用系统函数，例如：
-<system>date</system>表示取系统当前日期
-警告：使用这个元素要千万小心，因为有可能使用户运行你的系统命令。
-
-20．<template>定义回复的模板。
-
-21．<that>元素表示先前机器人说的话，例如：
-<category>
-<pattern>好</pattern>
-<that>一起聊聊电影好吗 *</that>
-<template>那你喜欢什么电影那？</template>
-</category>
-即:如果机器人先前问用户“一起聊聊电影好吗?”，而且现在用户回答了“好”，那么匹配正确，回复内容为：“那你
-喜欢什么电影那？”
-如果要取前面的前面机器人的话，可以用：<that index=”nx,ny”>,例如：<that index=”2,1”>
- 表示取机器人倒数第2句的话，<that index=”2,1”>也等于<justbeforethat/>
-
-22．<thatstar index=”n”>元素先前第n个机器人说过的星号部分的话，<thatstar/>等于<thatstar index="1"
-/>.看个例子：
-<category>
-<pattern>你好</pattern>
-<template>
-计算机的型号是什么
-</template>
-</category>
-
-<category>
-<pattern>*</pattern>
-<that>*  的型号是什么</that>
-<template><star/>
-这个型号是<thatstar/>里面
-<random>
-<li>很好的商品</li>
-<li>很流行的商品</li>
-<li>很华丽的商品</li>
-<random>。
-</template>
-</category>
-对话场景：
-用户：你好
-机器人：计算机的型号是什么
-用户：p4
-机器人：p4这个型号是计算机里面很好的商品
-
-23.<think>记录用户输入且里面的内容不回复给用户。例如：
-<category>
-<pattern>I AM FEMALE</pattern>
-<template>Thanks for telling me your gender.
-<think>
-<set name＝gender>female</set>
-</think>
-</template>
-</category>
-这里把female这个值保存到gender这个变量里，且回复内容不包括female。
-
-24。<Topic name=”film”>元素用来设置主题，例如：
-<aiml>
-<topic name="功夫">
-    <category>
-    <pattern> phrase </pattern>
-    <that> phrase </that>
-    <template> phrase </template>
-    </category>
-</topic>
-</aiml>
-
-只有当前的topic系统变量是“功夫”时才会匹配到这里。
-
-25．<topicstar index=”n”>元素用来得到先前倒数第n次谈论的主题。
-
-26．<upcase>xiaoxie</upcase>元素用来把xiaoxie转换成大写形式：XIAOXIE
-
-附录：
-
-有一位亲戚，脾胃虚弱，消化吸收功能很差，面色腊黄，体重日益下降，整天没精打采。我将少林饭后罗汉卧功
-介绍给他，他治病心切，认真练习，20余日就初见成效，饭量增加了，人也有了精神。见了效果，练得更认真了
-，两个多月后，我去看他，只见他面色红润，说话铿锵有力，体重也增加了，与过去判若两人。这个功很简单，
-一学就会，现简介于下。
-
-　　饭后斜卧床上或躺在沙发上，使上身与地面成30至45度的斜角，放松裤带，两腿散盘，舌抵上腭，自然呼吸
-，两掌相叠于腹部丹田上，意想腹内有水旋涡转动，然后用右掌以肚脐为圆心，在肚皮上方约10厘米处顺时针方
-向转圈180次；再用左掌依法逆时针方向转圈180次。手掌带动腹内内气运转，是靠意念去指挥的，是靠手掌的感
-应去引动的，应做到手掌不能太用力，也不能完全不用力，而是稍带暗力，力与意结合将内气引动运转起来。当
-丹田真气充实，真气会循经下行至会阴，会阴即出现跳动、热、凉、麻等感觉，还会出现性欲感，此时应加以克
-制，排除杂念。
-
-　　此少林饭后罗汉卧功是少林寺第33代俗家弟子李森堂老师于1986年编入“少林广成气功”内的，几乎所有功法
-在饭后半小时内是禁练的，而此功是吃过饭马上就练，可以借谷气而增强内气，所以能迅速培养内气，在较短期
-内打通任脉和督脉，使小周天运转起来。通过导引行气，脾胃之气运转起来后，带动肝、肺、肾等脏腑之气同时
-运转，从而调动五脏六腑潜在的健身、防病治病的能力，所以除了能防治消化系统慢性病外，对气管炎、哮喘、
-妇女月经不调和男性阳痿早泄、肾虚尿频尿急等也有可喜效果。一个极简单的动作就能使五脏俱和、六腑皆安，
-符合“大道至简”的原则，因而嵩山少林寺主持德祥法师称赞这一功法“为少林增辉”。我常练此功以代替午睡，功
-后神情爽朗、思路敏捷，对下午的工作、学习有很大的帮助。过去常患感冒，自练此功后，从未患过病，精神饱
-满，步履轻捷，大有行百里而不倦之精神，有意者一试便知
-
-上一篇：Jbuilder总是不能启动的问题
-下一篇：weblogic性能读书笔记
-查看评论
-# 以上用户言论只代表其个人观点，不代表CSDN网站的观点或立场
-TOP
-
-    个人资料
-
-    [1_woowindi]
-    woowindice
-
-      + 访问：193881次
-      + 积分：2997分
-      + 排名：第2112名
-      + 原创：102篇
-      + 转载：10篇
-      + 译文：0篇
-      + 评论：96条
-
-    文章搜索
-
-    [                    ]  搜索
-
-    文章分类
-
-  * c#(3)
-  * J2EE(3)
-  * java(17)
-  * Jsp servlet(10)
-  * Open Source(2)
-  * ROR技术(2)
-  * SP技术相关(0)
-  * visual c++(6)
-  * weblogic(8)
-  * 其他(3)
-  * 手机相关(2)
-  * 操作系统(32)
-  * 数据库(5)
-
-    文章存档
-
-  * 2009年09月(1)
-  * 2009年06月(2)
-  * 2009年04月(3)
-  * 2009年03月(4)
-  * 2009年02月(3)
-  * 2009年01月(3)
-  * 2008年11月(1)
-  * 2008年06月(1)
-  * 2008年04月(1)
-  * 2007年11月(2)
-  * 2007年07月(3)
-  * 2007年06月(1)
-  * 2007年05月(2)
-  * 2007年04月(3)
-  * 2007年03月(7)
-  * 2007年02月(2)
-  * 2007年01月(3)
-  * 2006年12月(1)
-  * 2006年11月(5)
-  * 2006年10月(1)
-  * 2006年09月(6)
-  * 2006年08月(1)
-  * 2006年06月(3)
-  * 2006年05月(3)
-  * 2006年04月(2)
-  * 2006年03月(1)
-  * 2006年02月(3)
-  * 2006年01月(1)
-  * 2005年12月(4)
-  * 2005年11月(1)
-  * 2005年09月(2)
-  * 2005年07月(2)
-  * 2005年06月(6)
-  * 2005年05月(1)
-  * 2005年04月(2)
-  * 2005年03月(3)
-  * 2005年02月(4)
-  * 2005年01月(1)
-  * 2004年12月(2)
-  * 2004年11月(2)
-  * 2004年10月(11)
-  * 2002年05月(1)
-  * 2002年03月(1)
-
-    阅读排行
-
-  * CString TCHAR的互相转换(14148)
-  * Could not write to output file 'c:/WINDOWS/Microsoft.NET/Framework/v2.0.5072的处理 (6203)
-  * Default storage engine (InnoDB) is not available解决办法(5937)
-  * ubuntu 安装 3D桌面(5479)
-  * 网络掉包检查方法(4974)
-  * 80072f19 MSN无法登录(4440)
-  * Linux上 Can't connect to X11 window server 错误解决方法(4298)
-  * Error occurred during initialization of VM(3789)
-  * aiml规范研究文档(3680)
-  * 用java实现简单url负载均衡以及容错 (3543)
-
-    评论排行
-
-  * Linux上 Can't connect to X11 window server 错误解决方法(7)
-  * java简单的获取windows系统网卡mac地址(6)
-  * mysql数据库乱码问题(6)
-  * Automation 服务器不能创建对象"　的解决方案 (5)
-  * aiml规范研究文档(5)
-  * Default storage engine (InnoDB) is not available解决办法(5)
-  * apache httpclient测试(5)
-  * CString TCHAR的互相转换(4)
-  * ServletResponseFilter对HTML加密,保护美工的劳动果实。(4)
-  * log4net1.2.10 在asp.net 2.0当中的使用(3)
-
-    推荐文章
-
-    最新评论
-
-  * 使用TrueLicense来保护我们的JAVA软件产品
-
-    lxit_1201: 你好！我是个新手！有些关于license的问题请教！我在测试阶段老是报有Can't find bun...
-
-  * aiml规范研究文档
-
-    wuhancitys: AIML中文的解释程序演示可以看小豆机器人 http://xiao.douqq.com/ 机器人交...
-
-  * aiml规范研究文档
-
-    hxq130: mark
-
-  * CString TCHAR的互相转换
-
-    aa_qq110: 误导他人
-
-  * extjs + json缺少分号的问题
-
-    rav009: 我顶啊,我也搞了一天了
-
-  * 80072f19 MSN无法登录
-
-    shanleichicheng: 什么话都不说了，万分感谢！
-
-  * mysql数据库乱码问题
-
-    lchg66:
-
-  * mysql数据库乱码问题
-
-    vivi704132: 请问在哪里更改mysql数据库连接字符串？
-
-  * extjs + json缺少分号的问题
-
-    zhou7530167: 嗯人啊！！！
-
-  * aiml规范研究文档
-
-    jyw110408: 回复永远的黑山：您好我有加您的MSN 想請教您有關AIML的事情:)
-
-    DAO
-
-      + cayenne (RSS)
-      + hibernate (RSS)
-      + hibernate中文网 (RSS)
-      + ibatis (RSS)
-      + windows hook (RSS)
-
-    Template Engine
-
-      + freemarker (RSS)
-      + velocity (RSS)
-      + xkins (RSS)
-
-#+end_example
 * [#A] python flask                                                :noexport:
 ** flask json
 http://flask-json.readthedocs.io/en/latest/
