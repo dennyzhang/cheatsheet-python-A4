@@ -1322,7 +1322,7 @@ python项目加一个makefile来支持hudson做每日的静态代码检查吧。
 | 2. 试用pylint: pylint -e ./data.py
 | 3. makefile的示例
 |    下面代码中，有一个makefile的示例
-|     https://github.com/dennyzhang/xiaozibao/tree/master/code/webserver
+|     https://github.com/dennyzhang/xiaozibao/tree/master/cheatsheet-python-A4][challenges-leetcode-interesting]]
 `-----------
 
 --
@@ -3765,7 +3765,7 @@ hostname
 ## File: test.py
 ## Author : Denny <contact@dennyzhang.com>
 ## Description:
-##     https://leetcode.com/problems/merge-two-sorted-lists/description/
+##     https://leetcode.com/problems/cheatsheet-python-A4/description/][leetcode.com]]
 ## Tags:
 ## --
 ## Created : <2017-10-16>
