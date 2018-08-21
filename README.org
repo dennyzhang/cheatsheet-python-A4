@@ -1,4 +1,4 @@
-* Python CheatSheet                                                     :Languages:
+* Python CheatSheet                                               :Languages:
 :PROPERTIES:
 :type:     python
 :END:
@@ -51,8 +51,8 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | insert elements to head | =array.insert(0,var)=                                  |
 | delete element by index | =del a[1]=                                             |
 | list as stack           | =item = l.pop()=                                       |
-| sort in descending      | =sorted([8, 2, 5], reverse=True)=                      |
-| sort by attribute       | =sorted([('ebb',12),('abc',14)], key=lambda x: x[1])=  |
+| sort in descending      | l = sorted([8, 2, 5], reverse=True)                    |
+| sort by attribute       | l=sorted([('ebb',12),('abc',14)], key=lambda x: x[1])  |
 | in-place sort           | =l.sort()=                                             |
 | generate a-z            | =map(chr, range(ord('a'), ord('z')+1))=                |
 | map/reduce              | =functools.reduce((lambda x, y: "%s %s" % (x, y)), l)= |
