@@ -4738,3 +4738,6 @@ class Book(Base):  #<-------------------------
 https://stackoverflow.com/questions/24762664/sqlalchemy-typeerror-filter-by-takes-exactly-1-argument-2-given
 * DevOps choose language: Python vs Golang                         :noexport:
 http://odino.org/things-i-ask-during-interviews/
+* TODO Role Model                                                  :noexport:
+https://awesome-python.com/
+* TODO [#A] Generate A4 form                                       :noexport:
