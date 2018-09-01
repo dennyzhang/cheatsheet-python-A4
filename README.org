@@ -261,7 +261,7 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 :PROPERTIES:
 :type:   Language
 :END:
-- Python为程序员提供了丰富的编程范型,包括过程式、函数式与面向对象式
+- Python为程序员提供了丰富的编程范型,包括过程式`函数式与面向对象式
 - easy_install pymongo
 
 | Name                                                    | Summary                                                   |
@@ -293,13 +293,13 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 | dir(obj1)                                               |                                                           |
 | LD_LIBRARY_PATH, PATH; PYTHONPATH, PYTHONHOME           | python environments                                       |
 | repr(object)                                            | repr函数用来取得对象的规范字符串表示. representation      |
-| __repr__                                                | compute the “official” string representation of an object |
-| __str__                                                 | compute the “informal” string representation of an object |
+| __repr__                                                | compute the "official" string representation of an object |
+| __str__                                                 | compute the "informal" string representation of an object |
 | eval("{\"createtime\":\"2013-07-16\"}")                 | python convert str to dictionary                          |
 ** question
 *** [question] python MySQLdb reuse db connection
 - 交互式加载下面这个模块
-- 运行some_query('user1')，可以取出一些sql查询值
+- 运行some_query('user1'),可以取出一些sql查询值
 - 手动通过sql语句, update一下test表中这条记录
 - 再次调用some_query('user1', 发现取出来的结果还是老的
 #+begin_src python
@@ -375,7 +375,7 @@ print str(a)
        |           |            |           |
        +-----------+            +-----------+
 #+end_example
-** python交互式执行的常见问题：如何动态加载更新的模块; 定义函数等
+** python交互式执行的常见问题:如何动态加载更新的模块; 定义函数等
 #+begin_example
 bash-3.2$  python
 Python 2.7.2 (default, Oct 11 2012, 20:14:37)
@@ -454,9 +454,9 @@ http://stackoverflow.com/questions/68645/static-class-variables-in-python
 #+end_example
 ** python 可变与不可变
 #+begin_example
-Python的类型有可变和不可变之分。可变与不可变的区分标准是是否可以改变其值。
-数字、字符串、元组、frozenset属于不可变类型
-列表、字典、集合(set)属于可变类型
+Python的类型有可变和不可变之分.可变与不可变的区分标准是是否可以改变其值.
+数字`字符串`元组`frozenset属于不可变类型
+列表`字典`集合(set)属于可变类型
 #+end_example
 ** python string
 *** DONE python format: "%s,%d,%s" % ("2012", 12, "12")
@@ -1115,12 +1115,12 @@ http://webpy.org/static/web.py-0.37.tar.gz
 *** Tornado即是一个webserve,同时又是一个类web.py的micro-framework
 #+begin_example
 Tornado即是一个webserve(r对此本文不作详述),同时又是一个类web.py的micro-framework,作为框架Tornado 的思想主要来源于 web.py,大家在 web.py 的网站首页也可以看到 Tornado 的大佬 Bret Taylor 的这么一段话(他 这里说的 FriendFeed 用的框架跟 Tornado 可以看作是一个东西):
-“[web.py inspired the] web framework we use at FriendFeed [and] the webapp framework that ships with App Engine...”
+"[web.py inspired the] web framework we use at FriendFeed [and] the webapp framework that ships with App Engine..."
 ￼
-因为有这层关系,后面不再单独讨论 Tornado。
-web.py 的设计理念力求精简(Keep it simple and powerful),总共就没多少行代码,也不像 Pylons 那样依赖大量 的第三方模块,而是只提供的一个框架所必须的一些东西,如:URL 路由、Template、数据库访问,其它的就交 给用户自己去做好了。
-一个框架精简的好处在于你可以聚焦在业务逻辑上,而不用太多的去关心框架本身或受框架的干扰,同时缺点也很 明显,许多事情你得自己操刀上。 我个人比较偏好这种精简的框架,因为你很容易通过阅读源码弄明白整个框架的工作机制,如果框架那一块不是很 合意的话,我完全可以 Monkey patch 一下按自己的要求来。
-早期的 reddit 是用 web.py 写的,Tornado 的案例有 friendfeed.com、bit.ly、quora.com 和我的开源站点 poweredsites.org 等。
+因为有这层关系,后面不再单独讨论 Tornado.
+web.py 的设计理念力求精简(Keep it simple and powerful),总共就没多少行代码,也不像 Pylons 那样依赖大量 的第三方模块,而是只提供的一个框架所必须的一些东西,如:URL 路由`Template`数据库访问,其它的就交 给用户自己去做好了.
+一个框架精简的好处在于你可以聚焦在业务逻辑上,而不用太多的去关心框架本身或受框架的干扰,同时缺点也很 明显,许多事情你得自己操刀上. 我个人比较偏好这种精简的框架,因为你很容易通过阅读源码弄明白整个框架的工作机制,如果框架那一块不是很 合意的话,我完全可以 Monkey patch 一下按自己的要求来.
+早期的 reddit 是用 web.py 写的,Tornado 的案例有 friendfeed.com`bit.ly`quora.com 和我的开源站点 poweredsites.org 等.
 #+end_example
 *** Bottle 和 Flask 作为新生一代 Python 框架的代表,挺有意思的是都采用了 decorator 的方式配置 URL 路由
 #+begin_example
@@ -1130,8 +1130,8 @@ from bottle import route, run
 def index(name='World'):
 return '&lt;b&gt;Hello %s!&lt;/b&gt;' % name run(host='localhost', port=8080)
 
-Bottle、Flask 跟 web.py 一样,都非常精简,Bottle 甚至所有的代码都在那一个两千来行的.py 文件里。另外 Flask 和 Pylons 一样,可以跟 Jinja2、SQLAlchemy 之类结合的很好。
-不过目前不管是 Bottle 还是 Flask 成功案例都还很少。
+Bottle`Flask 跟 web.py 一样,都非常精简,Bottle 甚至所有的代码都在那一个两千来行的.py 文件里.另外 Flask 和 Pylons 一样,可以跟 Jinja2`SQLAlchemy 之类结合的很好.
+不过目前不管是 Bottle 还是 Flask 成功案例都还很少.
 #+end_example
 *** python http request
 #+begin_src python
@@ -1340,18 +1340,18 @@ User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/24.3 (darwin)
 
 hi 金杰
 
-python项目加一个makefile来支持hudson做每日的静态代码检查吧。
+python项目加一个makefile来支持hudson做每日的静态代码检查吧.
 
 ,-----------
-| 通过pylint我们可以对python代码做一些静态代码检查。
-| 写一个makefile来对项目工程所有python代码调用pylint。
+| 通过pylint我们可以对python代码做一些静态代码检查.
+| 写一个makefile来对项目工程所有python代码调用pylint.
 |
-| 这样，hudson就能很方便地每天帮我们做代码检查。
+| 这样,hudson就能很方便地每天帮我们做代码检查.
 |
 | 1. pylint的安装: sudo easy_install pylint
 | 2. 试用pylint: pylint -e ./data.py
 | 3. makefile的示例
-|    下面代码中，有一个makefile的示例
+|    下面代码中,有一个makefile的示例
 |     https://github.com/dennyzhang/xiaozibao/tree/master/cheatsheet-python-A4][challenges-leetcode-interesting]]
 `-----------
 
@@ -1633,7 +1633,7 @@ Directive	Meaning
 %y	Year without century as a decimal number [00,99].
 %Y	Year with century as a decimal number.
 %Z	Time zone name (no characters if no time zone exists).
-%%	A literal ‘%’ character.
+%%	A literal '%' character.
 ** python funcy features
 *** DONE python把字符串当代码执行
   CLOSED: [2013-06-05 Wed 22:18]
@@ -1663,7 +1663,7 @@ exec c
 8
 9
 #+end_example
-*** CANCELED python的return if: 将下面fun1的第两行和第三行，改成一行: 不支持
+*** CANCELED python的return if: 将下面fun1的第两行和第三行,改成一行: 不支持
     CLOSED: [2013-06-20 Thu 10:22]
 #+begin_src python
 def fun1():
@@ -1760,7 +1760,7 @@ http://www.cnblogs.com/Jerry-Chou/archive/2012/05/23/python-decorator-explain.ht
 | login()  #make the calling point more intuitive
 `-----------
 
-这个机制蛮不错的。与lisp的defadivce相似。
+这个机制蛮不错的.与lisp的defadivce相似.
 ,----------- lisp
 | (defadvice org-meta-return (after cond activate)
 |   (when (= 1 (org-current-level))
@@ -1768,8 +1768,8 @@ http://www.cnblogs.com/Jerry-Chou/archive/2012/05/23/python-decorator-explain.ht
 |   )
 `-----------
 
-不过python这里，login是作为一个整体传进来的。只能在它前后加一些额外功能
-而lisp中，可以在login这函数内部任何代码中插入一些额外功能。
+不过python这里,login是作为一个整体传进来的.只能在它前后加一些额外功能
+而lisp中,可以在login这函数内部任何代码中插入一些额外功能.
 
 --
 Denny Zhang(张巍)
@@ -1823,70 +1823,70 @@ print(md5sum('utils.py'))
 ** python的各类框架介绍
 *** [#B] python Django框架的是与非
 #+begin_example
-Python 框架虽然说是百花齐放,但仍然有那么一家是最大的,它就是 Django。要说 Django 是 Python 框架里最好 的,有人同意也有人坚决反对,但说 Django 的文档最完善、市场占有率最高、招聘职位最多估计大家都没什么意 见。Django 为人所称道的地方主要有:
- 完美的文档,Django 的成功,我觉得很大一部分原因要归功于 Django 近乎完美的官方文档(包括 Django book)。
- 全套的解决方案,Django 象 Rails 一样,提供全套的解决方案(full-stack framework + batteries included),基 本要什么有什么(比如:cache、session、feed、orm、geo、auth),而且全部 Django 自己造,开发网站应手 的工具 Django 基本都给你做好了,因此开发效率是不用说的,出了问题也算好找,不在你的代码里就在 Django
-的源码里。
+Python 框架虽然说是百花齐放,但仍然有那么一家是最大的,它就是 Django.要说 Django 是 Python 框架里最好 的,有人同意也有人坚决反对,但说 Django 的文档最完善`市场占有率最高`招聘职位最多估计大家都没什么意 见.Django 为人所称道的地方主要有:
+ 完美的文档,Django 的成功,我觉得很大一部分原因要归功于 Django 近乎完美的官方文档(包括 Django book).
+ 全套的解决方案,Django 象 Rails 一样,提供全套的解决方案(full-stack framework + batteries included),基 本要什么有什么(比如:cache`session`feed`orm`geo`auth),而且全部 Django 自己造,开发网站应手 的工具 Django 基本都给你做好了,因此开发效率是不用说的,出了问题也算好找,不在你的代码里就在 Django
+的源码里.
  强大的 URL 路由配置,Django 让你可以设计出非常优雅的 URL,在 Django 里你基本可以跟丑陋的 GET 参数
-说拜拜。
+说拜拜.
  自助管理后台,admin interface 是 Django 里比较吸引眼球的一项 contrib,让你几乎不用写一行代码就拥有一
-个完整的后台管理界面。
+个完整的后台管理界面.
 而 Django 的缺点主要源自 Django 坚持自己造所有的轮子,整个系统相对封闭,Django 最为人诟病的地方有:
- 系统紧耦合,如果你觉得 Django 内置的某项功能不是很好,想用喜欢的第三方库来代替是很难的,比如下面 将要说的 ORM、Template。要在 Django 里用 SQLAlchemy 或 Mako 几乎是不可能,即使打了一些补丁用上了 也会让你觉得非常非常别扭。
+ 系统紧耦合,如果你觉得 Django 内置的某项功能不是很好,想用喜欢的第三方库来代替是很难的,比如下面 将要说的 ORM`Template.要在 Django 里用 SQLAlchemy 或 Mako 几乎是不可能,即使打了一些补丁用上了 也会让你觉得非常非常别扭.
  Django 自带的 ORM 远不如 SQLAlchemy 强大,除了在 Django 这一亩三分地,SQLAlchemy 是 Python 世界
 ￼
-里事实上的 ORM 标准,其它框架都支持 SQLAlchemy 了,唯独 Django 仍然坚持自己的那一套。Django 的开 发人员对 SQLAlchemy 的支持也是有过讨论和尝试的,不过最终还是放弃了,估计是代价太高且跟 Django 其 它的模块很难合到一块。
- Template 功能比较弱,不能插入 Python 代码,要写复杂一点的逻辑需要另外用 Python 实现 Tag 或 Filter。关 于模板这一点,一直以来争论比较多,最近有两篇关于 Python 模板的比较有意思的文章可供参考:
+里事实上的 ORM 标准,其它框架都支持 SQLAlchemy 了,唯独 Django 仍然坚持自己的那一套.Django 的开 发人员对 SQLAlchemy 的支持也是有过讨论和尝试的,不过最终还是放弃了,估计是代价太高且跟 Django 其 它的模块很难合到一块.
+ Template 功能比较弱,不能插入 Python 代码,要写复杂一点的逻辑需要另外用 Python 实现 Tag 或 Filter.关 于模板这一点,一直以来争论比较多,最近有两篇关于 Python 模板的比较有意思的文章可供参考:
 1. http://pydanny.blogspot.com/2010/12/stupid-template-languages.html(需翻墙)
 2. http://techspot.zzzeek.org/2010/12/04/in-response-to-stupid-template-languages/
  URL 配置虽然强大,但全部要手写,这一点跟 Rails 的 Convention over configuration 的理念完全相左,高手
-￼￼和初识 Django 的人配出来的 URL 会有很大差异。
+￼￼和初识 Django 的人配出来的 URL 会有很大差异.
 
- 让人纠结的 auth 模块,Django 的 auth 跟其它模块结合紧密,功能也挺强的,就是做的有点过了,用户的数据 库 schema 都给你定好了,这样问题就来了,比如很多网站要求 email 地址唯一,可 schema 里这个字段的值 不是唯一的,纠结是必须的了。
- Python 文件做配置文件,而不是更常见的 ini、xml 或 yaml 等形式。这本身不是什么问题,可是因为理论上来 说 settings 的值是能够动态的改变的(虽然大家不会这么干),但这不是最佳实践的体现。
-总的来说,Django 大包大揽,用它来快速开发一些 Web 运用是很不错的。如果你顺着 Django 的设计哲学来,你 会觉得 Django 很好用,越用越爽;相反,你如果不能融入或接受 Django 的设计哲学,你用 Django 一定会很痛苦, 趁早放弃的好。所以说在有些人眼里 Django 无异于仙丹,但对有一些人来说它又是毒药且剧毒。 Django
-Python 框架虽然说是百花齐放,但仍然有那么一家是最大的,它就是 Django。要说 Django 是 Python 框架里最好 的,有人同意也有人坚决反对,但说 Django 的文档最完善、市场占有率最高、招聘职位最多估计大家都没什么意 见。Django 为人所称道的地方主要有:
- 完美的文档,Django 的成功,我觉得很大一部分原因要归功于 Django 近乎完美的官方文档(包括 Django book)。
- 全套的解决方案,Django 象 Rails 一样,提供全套的解决方案(full-stack framework + batteries included),基 本要什么有什么(比如:cache、session、feed、orm、geo、auth),而且全部 Django 自己造,开发网站应手 的工具 Django 基本都给你做好了,因此开发效率是不用说的,出了问题也算好找,不在你的代码里就在 Django
-的源码里。
+ 让人纠结的 auth 模块,Django 的 auth 跟其它模块结合紧密,功能也挺强的,就是做的有点过了,用户的数据 库 schema 都给你定好了,这样问题就来了,比如很多网站要求 email 地址唯一,可 schema 里这个字段的值 不是唯一的,纠结是必须的了.
+ Python 文件做配置文件,而不是更常见的 ini`xml 或 yaml 等形式.这本身不是什么问题,可是因为理论上来 说 settings 的值是能够动态的改变的(虽然大家不会这么干),但这不是最佳实践的体现.
+总的来说,Django 大包大揽,用它来快速开发一些 Web 运用是很不错的.如果你顺着 Django 的设计哲学来,你 会觉得 Django 很好用,越用越爽;相反,你如果不能融入或接受 Django 的设计哲学,你用 Django 一定会很痛苦, 趁早放弃的好.所以说在有些人眼里 Django 无异于仙丹,但对有一些人来说它又是毒药且剧毒. Django
+Python 框架虽然说是百花齐放,但仍然有那么一家是最大的,它就是 Django.要说 Django 是 Python 框架里最好 的,有人同意也有人坚决反对,但说 Django 的文档最完善`市场占有率最高`招聘职位最多估计大家都没什么意 见.Django 为人所称道的地方主要有:
+ 完美的文档,Django 的成功,我觉得很大一部分原因要归功于 Django 近乎完美的官方文档(包括 Django book).
+ 全套的解决方案,Django 象 Rails 一样,提供全套的解决方案(full-stack framework + batteries included),基 本要什么有什么(比如:cache`session`feed`orm`geo`auth),而且全部 Django 自己造,开发网站应手 的工具 Django 基本都给你做好了,因此开发效率是不用说的,出了问题也算好找,不在你的代码里就在 Django
+的源码里.
  强大的 URL 路由配置,Django 让你可以设计出非常优雅的 URL,在 Django 里你基本可以跟丑陋的 GET 参数
-说拜拜。
+说拜拜.
  自助管理后台,admin interface 是 Django 里比较吸引眼球的一项 contrib,让你几乎不用写一行代码就拥有一
-个完整的后台管理界面。
+个完整的后台管理界面.
 而 Django 的缺点主要源自 Django 坚持自己造所有的轮子,整个系统相对封闭,Django 最为人诟病的地方有:
- 系统紧耦合,如果你觉得 Django 内置的某项功能不是很好,想用喜欢的第三方库来代替是很难的,比如下面 将要说的 ORM、Template。要在 Django 里用 SQLAlchemy 或 Mako 几乎是不可能,即使打了一些补丁用上了 也会让你觉得非常非常别扭。
+ 系统紧耦合,如果你觉得 Django 内置的某项功能不是很好,想用喜欢的第三方库来代替是很难的,比如下面 将要说的 ORM`Template.要在 Django 里用 SQLAlchemy 或 Mako 几乎是不可能,即使打了一些补丁用上了 也会让你觉得非常非常别扭.
  Django 自带的 ORM 远不如 SQLAlchemy 强大,除了在 Django 这一亩三分地,SQLAlchemy 是 Python 世界
 ￼
-里事实上的 ORM 标准,其它框架都支持 SQLAlchemy 了,唯独 Django 仍然坚持自己的那一套。Django 的开 发人员对 SQLAlchemy 的支持也是有过讨论和尝试的,不过最终还是放弃了,估计是代价太高且跟 Django 其 它的模块很难合到一块。
- Template 功能比较弱,不能插入 Python 代码,要写复杂一点的逻辑需要另外用 Python 实现 Tag 或 Filter。关 于模板这一点,一直以来争论比较多,最近有两篇关于 Python 模板的比较有意思的文章可供参考:
+里事实上的 ORM 标准,其它框架都支持 SQLAlchemy 了,唯独 Django 仍然坚持自己的那一套.Django 的开 发人员对 SQLAlchemy 的支持也是有过讨论和尝试的,不过最终还是放弃了,估计是代价太高且跟 Django 其 它的模块很难合到一块.
+ Template 功能比较弱,不能插入 Python 代码,要写复杂一点的逻辑需要另外用 Python 实现 Tag 或 Filter.关 于模板这一点,一直以来争论比较多,最近有两篇关于 Python 模板的比较有意思的文章可供参考:
 1. http://pydanny.blogspot.com/2010/12/stupid-template-languages.html(需翻墙)
 2. http://techspot.zzzeek.org/2010/12/04/in-response-to-stupid-template-languages/
  URL 配置虽然强大,但全部要手写,这一点跟 Rails 的 Convention over configuration 的理念完全相左,高手
-￼￼和初识 Django 的人配出来的 URL 会有很大差异。
+￼￼和初识 Django 的人配出来的 URL 会有很大差异.
 
- 让人纠结的 auth 模块,Django 的 auth 跟其它模块结合紧密,功能也挺强的,就是做的有点过了,用户的数据 库 schema 都给你定好了,这样问题就来了,比如很多网站要求 email 地址唯一,可 schema 里这个字段的值 不是唯一的,纠结是必须的了。
- Python 文件做配置文件,而不是更常见的 ini、xml 或 yaml 等形式。这本身不是什么问题,可是因为理论上来 说 settings 的值是能够动态的改变的(虽然大家不会这么干),但这不是最佳实践的体现。
-总的来说,Django 大包大揽,用它来快速开发一些 Web 运用是很不错的。如果你顺着 Django 的设计哲学来,你 会觉得 Django 很好用,越用越爽;相反,你如果不能融入或接受 Django 的设计哲学,你用 Django 一定会很痛苦, 趁早放弃的好。所以说在有些人眼里 Django 无异于仙丹,但对有一些人来说它又是毒药且剧毒。
+ 让人纠结的 auth 模块,Django 的 auth 跟其它模块结合紧密,功能也挺强的,就是做的有点过了,用户的数据 库 schema 都给你定好了,这样问题就来了,比如很多网站要求 email 地址唯一,可 schema 里这个字段的值 不是唯一的,纠结是必须的了.
+ Python 文件做配置文件,而不是更常见的 ini`xml 或 yaml 等形式.这本身不是什么问题,可是因为理论上来 说 settings 的值是能够动态的改变的(虽然大家不会这么干),但这不是最佳实践的体现.
+总的来说,Django 大包大揽,用它来快速开发一些 Web 运用是很不错的.如果你顺着 Django 的设计哲学来,你 会觉得 Django 很好用,越用越爽;相反,你如果不能融入或接受 Django 的设计哲学,你用 Django 一定会很痛苦, 趁早放弃的好.所以说在有些人眼里 Django 无异于仙丹,但对有一些人来说它又是毒药且剧毒.
 #+end_example
 *** Pylons 就是一个用胶水语言设计的胶水框架
 #+begin_example
-除了 Django 另一个大头就是 Pylons 了,因为 TurboGears2.x 是基于 Pylons 来做的,而 repoze.bfg 也已经并入 Pylons project 里这个大的项目里,后面不再单独讨论 TurboGears 和 repoze.bfg 了。
-Pylons 和 Django 的设计理念完全不同,Pylons 本身只有两千行左右的 Python 代码,不过它还附带有一些几乎就 是 Pylons 御用的第三方模块。Pylons 只提供一个架子和可选方案,你可以根据自己的喜好自由的选择 Template、 ORM、form、auth 等组件,系统高度可定制。我们常说 Python 是一个胶水语言(glue language),那么我们完全可 以说 Pylons 就是一个用胶水语言设计的胶水框架:)
+除了 Django 另一个大头就是 Pylons 了,因为 TurboGears2.x 是基于 Pylons 来做的,而 repoze.bfg 也已经并入 Pylons project 里这个大的项目里,后面不再单独讨论 TurboGears 和 repoze.bfg 了.
+Pylons 和 Django 的设计理念完全不同,Pylons 本身只有两千行左右的 Python 代码,不过它还附带有一些几乎就 是 Pylons 御用的第三方模块.Pylons 只提供一个架子和可选方案,你可以根据自己的喜好自由的选择 Template` ORM`form`auth 等组件,系统高度可定制.我们常说 Python 是一个胶水语言(glue language),那么我们完全可 以说 Pylons 就是一个用胶水语言设计的胶水框架:)
 选择 Pylons 多是选择了它的自由,选择了自由的同时也预示着你选择了噩梦:
- 学习噩梦,Pylons 依赖于许多第三方库,它们并不是 Pylons 造,你学 Pylons 的同时还得学这些库怎么使用, 关键有些时候你都不知道你要学什么。Pylons 的学习曲线相对比 Django 要高的多,而之前 Pylons 的官方文档 也一直是人批评的对象,好在后来出了 The Definitive Guide to Pylons 这本书,这一局面有所改观。因为这个 原因,Pylons 一度被誉为只适合高手使用的 Python 框架。
- 调试噩梦,因为牵涉到的模块多,一旦有错误发生就比较难定位问题处在哪里。可能是你写的程序的错、也可 能是 Pylons 出错了、再或是 SQLAlchemy 出错了、搞不好是 formencode 有 bug,反正很凌乱了。这个只有用 的很熟了才能解决这个问题。
- 升级噩梦,安装 Pylons 大大小小共要安装近 20 个 Python 模块,各有各自的版本号,要升级 Pylons 的版本, 哪个模块出了不兼容的问题都有可能,升级基本上很难很难。至今 reddit 的 Pylons 还停留在古董的 0.9.6 上, SQLAlchemy 也还是 0.5.3 的版本,应该跟这条有关系。所以大家玩 Pylons 一定要结合 virtualenv 来玩,给自 己留条后路,不然会死得很惨。
-Pylons 和 repoze.bfg 的融合可能会催生下一个能挑战 Django 地位的框架。 Pylons 的案例有 reddit.com、dropbox.com、quora.com 等。
+ 学习噩梦,Pylons 依赖于许多第三方库,它们并不是 Pylons 造,你学 Pylons 的同时还得学这些库怎么使用, 关键有些时候你都不知道你要学什么.Pylons 的学习曲线相对比 Django 要高的多,而之前 Pylons 的官方文档 也一直是人批评的对象,好在后来出了 The Definitive Guide to Pylons 这本书,这一局面有所改观.因为这个 原因,Pylons 一度被誉为只适合高手使用的 Python 框架.
+ 调试噩梦,因为牵涉到的模块多,一旦有错误发生就比较难定位问题处在哪里.可能是你写的程序的错`也可 能是 Pylons 出错了`再或是 SQLAlchemy 出错了`搞不好是 formencode 有 bug,反正很凌乱了.这个只有用 的很熟了才能解决这个问题.
+ 升级噩梦,安装 Pylons 大大小小共要安装近 20 个 Python 模块,各有各自的版本号,要升级 Pylons 的版本, 哪个模块出了不兼容的问题都有可能,升级基本上很难很难.至今 reddit 的 Pylons 还停留在古董的 0.9.6 上, SQLAlchemy 也还是 0.5.3 的版本,应该跟这条有关系.所以大家玩 Pylons 一定要结合 virtualenv 来玩,给自 己留条后路,不然会死得很惨.
+Pylons 和 repoze.bfg 的融合可能会催生下一个能挑战 Django 地位的框架. Pylons 的案例有 reddit.com`dropbox.com`quora.com 等.
 #+end_example
 ** # --8<-------------------------- separator ------------------------>8--
 ** python generator
 关键字 yield
 
-生成器也可迭代，但只能取一次，它没有把所有值加载到内存中。
+生成器也可迭代,但只能取一次,它没有把所有值加载到内存中.
 
-示例-1（表达式形式）：print (i * 10 for i in range(12) if i%2)
+示例-1（表达式形式）:print (i * 10 for i in range(12) if i%2)
 
-示例-2：
+示例-2:
 
 #+begin_src py
 def generator():
@@ -1968,7 +1968,7 @@ def start(self):
     else:
         raise RuntimeError("%s start failed" % self.service)
 #+end_src
-** TODO [#A] python多线程，来把串行的操作改成并行操作             :IMPORTANT:
+** TODO [#A] python多线程,来把串行的操作改成并行操作             :IMPORTANT:
 ** TODO [#B] python协程
 ** [#A] Major differences for python 2 and python 3
 - Some functions(apply, long) are removed
@@ -2317,7 +2317,7 @@ http://www.yucoat.com/linux_opensource/uwsgi_nginx_web-py.html
 http://stackoverflow.com/questions/1485841/behaviour-of-increment-and-decrement-operators-in-python
 ** TODO What's the difference between list and tuples in Python?
 http://stackoverflow.com/questions/626759/whats-the-difference-between-list-and-tuples-in-python
-** TODO [#A] python多线程，来把串行的操作改成并行操作             :IMPORTANT:
+** TODO [#A] python多线程,来把串行的操作改成并行操作             :IMPORTANT:
 ** TODO The Python yield keyword explained
 http://stackoverflow.com/questions/231767/the-python-yield-keyword-explained
 ** TODO What is a metaclass in Python?
@@ -2745,7 +2745,7 @@ http://my.oschina.net/zhangdapeng89/blog/53644
 #+begin_example
 Location: http://my.oschina.net/zhangdapeng89/blog/53644
 开源中国社区
-JetBrains 开发工具全场3折，详情»
+JetBrains 开发工具全场3折,详情»
 
   * 软件
   * 讨论
@@ -2756,7 +2756,7 @@ JetBrains 开发工具全场3折，详情»
   * Android
   * 招聘
 
-当前访客身份：游客 [ 登录 | 加入开源中国 ] 你有0新留言
+当前访客身份:游客 [ 登录 | 加入开源中国 ] 你有0新留言
 [在 25250 款开源软件 ]
 [软件  ]
 软件
@@ -2801,7 +2801,7 @@ JetBrains 开发工具全场3折，详情»
 
 阅读排行
 
- 1. 1. python---解决“Unable to find vcvarsall.bat”错误
+ 1. 1. python---解决"Unable to find vcvarsall.bat"错误
  2. 2. 在 Ubuntu 12.04 安装 Sun Java
  3. 3. python---linux下升级python的版本
  4. 4. windows下nodejs开发环境的安装与配置
@@ -2812,93 +2812,93 @@ JetBrains 开发工具全场3折，详情»
 
 最新评论
 
-  * @yinheli：然后继续报这个错误： gcc: error: unrecognized... 查看»
-  * @张大鹏：引用来自“choose0or7”的评论关于必须要装vs2... 查看»
-  * @choose0or7：关于必须要装vs2008这一点不是必要的，毕竟vs占地... 查看»
-  * @张大鹏：引用来自“老杜还在”的评论如何实现每个线程使... 查看»
-  * @老杜还在：如何实现每个线程使用不同的代理？给个思路谢谢！查看»
-  * @LL：如果安装了VS2010或是VS2012可以使用下面的方法解... 查看»
-  * @张大鹏：引用来自“根号2”的评论我也是提示这个问题，好... 查看»
-  * @根号2：我也是提示这个问题，好像是说给的网站地址变更了... 查看»
-  * @张大鹏：引用来自“zhangyou1010”的评论引用来自“张大... 查看»
-  * @programtic：引用来自“张大鹏”的评论引用来自“zhangyou1... 查看»
+  * @yinheli:然后继续报这个错误: gcc: error: unrecognized... 查看»
+  * @张大鹏:引用来自"choose0or7"的评论关于必须要装vs2... 查看»
+  * @choose0or7:关于必须要装vs2008这一点不是必要的,毕竟vs占地... 查看»
+  * @张大鹏:引用来自"老杜还在"的评论如何实现每个线程使... 查看»
+  * @老杜还在:如何实现每个线程使用不同的代理？给个思路谢谢！查看»
+  * @LL:如果安装了VS2010或是VS2012可以使用下面的方法解... 查看»
+  * @张大鹏:引用来自"根号2"的评论我也是提示这个问题,好... 查看»
+  * @根号2:我也是提示这个问题,好像是说给的网站地址变更了... 查看»
+  * @张大鹏:引用来自"zhangyou1010"的评论引用来自"张大... 查看»
+  * @programtic:引用来自"张大鹏"的评论引用来自"zhangyou1... 查看»
 
 访客统计
 
-  * 今日访问：62
-  * 昨日访问：90
-  * 本周访问：359
-  * 本月访问：2227
-  * 所有访问：56494
+  * 今日访问:62
+  * 昨日访问:90
+  * 本周访问:359
+  * 本月访问:2227
+  * 所有访问:56494
 
 空间 » 博客 » Python分类 » 博客正文
 
 [b4] python---linux下升级python的版本
 
-0人收藏此文章, 发表于1年前(2012-04-15 20:29) , 已有1650次阅读，共0个评论
+0人收藏此文章, 发表于1年前(2012-04-15 20:29) , 已有1650次阅读,共0个评论
 
-我的linux系统：centos5.5
+我的linux系统:centos5.5
 
-我要升级的版本是：2.7.3（目前我更新操作的最新版本【是在2这个系列中的，你也可以安装3系列的】）
+我要升级的版本是:2.7.3（目前我更新操作的最新版本【是在2这个系列中的,你也可以安装3系列的】）
 
 升级python的步骤
 
-参考资料如下：
+参考资料如下:
 
 http://liluo.org/2010/08/centos-5-5-% E4% B8% AD-python-% E5%8D%87% E7% BA% A7% E5%88% B0-2-6-5/
 
-1、下载
+1`下载
 
 wget http://www.python.org/ftp/python/2.7.3/Python-2.7.3.tar.bz2
-2、解压
+2`解压
 tar jxvf Python-2.7.3.tar.bz2
-3、编译安装
+3`编译安装
 cd Python-2.7.3
 ./configure
 make && make install
 Python 默认安装目录在/usr/local/lib/python2.7
-查看一下刚才安装的版本 /usr/local/bin/python -V，看到了 2.7.3 吧
-4、更改系统默认版本
-之前查看版本使用 /usr/local/lib/python2.7 -V，现在来把系统默认的Python指向刚才安装的Python2.6。
-(如果有人问为什么不把2.4.3卸载呢？呃，貌似网上有讲yum是基于2.4.3，所以我也就没那样折腾)
+查看一下刚才安装的版本 /usr/local/bin/python -V,看到了 2.7.3 吧
+4`更改系统默认版本
+之前查看版本使用 /usr/local/lib/python2.7 -V,现在来把系统默认的Python指向刚才安装的Python2.6.
+(如果有人问为什么不把2.4.3卸载呢？呃,貌似网上有讲yum是基于2.4.3,所以我也就没那样折腾)
 mv /usr/bin/python /usr/bin/python.bak
 ln -s /usr/local/bin/python2.7 /usr/bin/python
-敲入 python -V 查看是否成功。
-5、修复不能正常工作的yum
-在完成了上面4步之后，如果有使用yum的话会发现出错，这是因为yum 依赖2.4.3而现在默认的 Python 版本是
-2.7.3 。
+敲入 python -V 查看是否成功.
+5`修复不能正常工作的yum
+在完成了上面4步之后,如果有使用yum的话会发现出错,这是因为yum 依赖2.4.3而现在默认的 Python 版本是
+2.7.3 .
 vim /usr/bin/yum
 将首行显示的 !#/usr/bin/python 修改为 !#/usr/bin/python2.4
 
-我的建议是：无需这样做，如果需要同时使用多个版本的话，就不得不进行多次设置，我的建议是，根据不同的
-版本在python加上对应的版本号（原因是：我是用来学习python和测试用的）
+我的建议是:无需这样做,如果需要同时使用多个版本的话,就不得不进行多次设置,我的建议是,根据不同的
+版本在python加上对应的版本号（原因是:我是用来学习python和测试用的）
 
-原文地址：http://liluo.org/2010/08/centos-5-5-% E4% B8% AD-python-% E5%8D%87% E7% BA% A7% E5%88% B0-2-6-5/
+原文地址:http://liluo.org/2010/08/centos-5-5-% E4% B8% AD-python-% E5%8D%87% E7% BA% A7% E5%88% B0-2-6-5/
 
   * « python beautifulsoup多线程分析抓取网页
   * python---练习---即时标记 »
 
-开源中国-程序员在线工具：API文档大全(120+) JS在线编辑演示二维码更多>>
-分享到： 顶已有 0人顶
+开源中国-程序员在线工具:API文档大全(120+) JS在线编辑演示二维码更多>>
+分享到: 顶已有 0人顶
 
 共有 0 条网友评论
 
 尚无网友评论
 
 [                    ]
- 回复  关闭   文明上网，理性发言
+ 回复  关闭   文明上网,理性发言
 [                    ]
- 发表评论  [loading] 文明上网，理性发言
+ 发表评论  [loading] 文明上网,理性发言
 回到页首 | 回到评论列表
 关闭相关文章阅读
 
   * 2012/08/21 ubuntu升级出错
   * 2012/10/16 Alfresco 升级指南（中文）
   * 2011/10/06 升级fedora16beta遇到的问题...
-  * 2012/07/11 ubuntu版本升级—桌面版
+  * 2012/07/11 ubuntu版本升级-桌面版
   * 2012/09/11 CentOS内核升级
 
-© 开源中国(OsChina.NET) | 关于我们 | 广告联系 | @新浪微博 | 开源中国 开源中国手机客户端： Android
+© 开源中国(OsChina.NET) | 关于我们 | 广告联系 | @新浪微博 | 开源中国 开源中国手机客户端: Android
 手机版 | 粤ICP备12009483号-3                                           iPhone WP7
 
 #+end_example
@@ -3273,7 +3273,7 @@ https://docs.python.org/3/howto/logging-cookbook.html
 
 Logging to a file
 
-A very common situation is that of recording logging events in a file, so let’s look at that next. Be sure to try the following in a newly-started Python interpreter, and don’t just continue from the session described above:
+A very common situation is that of recording logging events in a file, so let's look at that next. Be sure to try the following in a newly-started Python interpreter, and don't just continue from the session described above:
 
 import logging
 logging.basicConfig(filename='example.log',level=logging.DEBUG, format='%(asctime)s %(message)s')
@@ -3870,10 +3870,10 @@ math.floor(x)
 Return the floor of x as a float, the largest integer value less than or equal to x.
 
 math.fmod(x, y)
-Return fmod(x, y), as defined by the platform C library. Note that the Python expression x % y may not return the same result. The intent of the C standard is that fmod(x, y) be exactly (mathematically; to infinite precision) equal to x - n*y for some integer n such that the result has the same sign as x and magnitude less than abs(y). Python’s x % y returns a result with the sign of y instead, and may not be exactly computable for float arguments. For example, fmod(-1e-100, 1e100) is -1e-100, but the result of Python’s -1e-100 % 1e100 is 1e100-1e-100, which cannot be represented exactly as a float, and rounds to the surprising 1e100. For this reason, function fmod() is generally preferred when working with floats, while Python’s x % y is preferred when working with integers.
+Return fmod(x, y), as defined by the platform C library. Note that the Python expression x % y may not return the same result. The intent of the C standard is that fmod(x, y) be exactly (mathematically; to infinite precision) equal to x - n*y for some integer n such that the result has the same sign as x and magnitude less than abs(y). Python's x % y returns a result with the sign of y instead, and may not be exactly computable for float arguments. For example, fmod(-1e-100, 1e100) is -1e-100, but the result of Python's -1e-100 % 1e100 is 1e100-1e-100, which cannot be represented exactly as a float, and rounds to the surprising 1e100. For this reason, function fmod() is generally preferred when working with floats, while Python's x % y is preferred when working with integers.
 
 math.frexp(x)
-Return the mantissa and exponent of x as the pair (m, e). m is a float and e is an integer such that x == m * 2**e exactly. If x is zero, returns (0.0, 0), otherwise 0.5 <= abs(m) < 1. This is used to “pick apart” the internal representation of a float in a portable way.
+Return the mantissa and exponent of x as the pair (m, e). m is a float and e is an integer such that x == m * 2**e exactly. If x is zero, returns (0.0, 0), otherwise 0.5 <= abs(m) < 1. This is used to "pick apart" the internal representation of a float in a portable way.
 
 math.fsum(iterable)
 
