@@ -131,7 +131,7 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | random      | =random.randint(1, 10)= 1 and 10 included |
 | eval string | =eval("2-11*2")=                          |
 
-** queue/heapq
+** Queue/heapq
 | Name                | Comment                                                   |
 |---------------------+-----------------------------------------------------------|
 | Initialize min heap | =heapq.heapify(q)=                                        |
@@ -145,7 +145,7 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 
 [[https://code.dennyzhang.com/review-heap][Review: Heap Problems]]
 
-[[http://www.koderdojo.com/blog/binary-heap-and-heapq-in-python][link]]
+[[http://www.koderdojo.com/blog/binary-heap-and-heapq-in-python][link: BINARY HEAP AND HEAPQ IN PYTHON]]
 *** minheap & maxheap
 #+BEGIN_SRC python
 import heapq
