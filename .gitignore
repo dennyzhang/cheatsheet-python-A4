@@ -1,3 +1,4 @@
+.DS_Store
 *.tex
 README.pdf
 test.py
