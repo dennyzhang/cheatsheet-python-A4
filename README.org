@@ -257,7 +257,7 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+LATEX_HEADER: \fancyhf{}
 #+LATEX_HEADER: \rhead{Updated: \today}
 #+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
-#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/.*cheatsheet-python-A4}{GitHub: https://github.com/dennyzhang/.*cheatsheet-python-A4}}
+#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet-python-A4}{GitHub: https://github.com/dennyzhang/cheatsheet-python-A4}}
 #+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-python-A4}}
 #+AUTHOR: Denny Zhang
 #+EMAIL:  denny@dennyzhang.com
@@ -4752,4 +4752,90 @@ https://stackoverflow.com/questions/24762664/sqlalchemy-typeerror-filter-by-take
 http://odino.org/things-i-ask-during-interviews/
 * TODO Role Model                                                  :noexport:
 https://awesome-python.com/
-* TODO [#A] Generate A4 form                                       :noexport:
+* more content                                                     :noexport:
+** python
+# Desc: Python is a high-level programming language.
+
+# Basic example of server with python
+# Will start a Web Server in the current directory on port 8000
+# go to http://127.0.0.1:8000
+
+# Python v2.7
+python -m SimpleHTTPServer
+# Python 3
+python -m http.server 8000
+
+# SMTP-Server for debugging, messages will be discarded, and printed on stdout.
+python -m smtpd -n -c DebuggingServer localhost:1025
+
+# Pretty print a json
+python -mjson.tool
+** pip
+# Search for packages
+pip search SomePackage
+
+# Install some packages
+pip install SomePackage
+
+# Install some package in user space
+pip install --user SomePackage
+
+# Upgrade some package
+pip install --upgrade SomePackage
+
+# Output and install packages in a requirement file
+pip freeze > requirements.txt
+pip install -r requirements.txt
+
+# Show details of a package
+pip show SomePackage
+
+# List outdated packages
+pip list --outdated
+
+# Upgrade all outdated packages, thanks to http://stackoverflow.com/a/3452888
+pip freeze --local | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip install -U
+
+# Upgrade outdated packages on latest version of pip
+pip list --outdated --format=freeze | cut -d = -f 1 | xargs -n1 pip install -U
+
+# Install specific version of a package
+pip install -I SomePackage1==1.1.0 'SomePackage2>=1.0.4'
+** virtualenv
+# Create new environment
+virtualenv /path/to/project/env_name
+
+# Create new environment and inherit already installed Python libraries
+virtualenv --system-site-package /path/to/project/env_name
+
+# Create new environment with a given Python interpreter
+virtualenv /path/to/project/env_name -p /usr/bin/python/3.4
+
+# Activate environnment
+source /path/to/project/env_name/bin/activate
+
+# Quit environment
+deactivate
+
+
+# virtualenvwrapper (wrapper for virtualenv)
+# installation
+pip install --user virtualenvwrapper
+# configuration
+# add in ~/.bashrc or similar
+export WORKON_HOME=~/.virtualenvs
+mkdir -p $WORKON_HOME
+source ~/.local/bin/virtualenvwrapper.sh
+
+# Create new environmment (with virtualenvwrapper)
+mkvirtualenv env_name
+# new environmment is stored in ~/.virtualenvs
+
+# Activate environmment (with virtualenvwrapper)
+workon env_name
+
+# Quit environmment (with virtualenvwrapper)
+deactivate
+
+# Delete environmment (with virtualenvwrapper)
+rmvirtualenv env_name
