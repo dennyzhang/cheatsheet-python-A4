@@ -94,7 +94,6 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | generate range          | =for num in range(10,20)=     |
 | get ascii               | =ord('a'), chr(97)=           |
 | print integer in binary | ="{0:b}".format(10)=          |
-
 ** Dict & Set
 | Name                      | Comment                               |
 |---------------------------+---------------------------------------|
@@ -132,7 +131,11 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | power       | =import math; math.pow(2, 3)=             |
 | random      | =random.randint(1, 10)= 1 and 10 included |
 | eval string | =eval("2-11*2")=                          |
-
+** Golang Common Datastructure
+| Name      | Comment           |
+|-----------+-------------------|
+| bfs       | [[https://github.com/dennyzhang/cheatsheet-python-A4/blob/master/code/tree-bfs.py][code/tree-bfs.py]]  |
+| trie tree | [[https://github.com/dennyzhang/cheatsheet-python-A4/blob/master/code/tree-trie.py][code/tree-trie.py]] |
 ** Queue/heapq
 | Name                | Comment                                                   |
 |---------------------+-----------------------------------------------------------|
@@ -147,7 +150,7 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 
 [[https://code.dennyzhang.com/review-heap][Review: Heap Problems]]
 
-[[http://www.koderdojo.com/blog/binary-heap-and-heapq-in-python][link: BINARY HEAP AND HEAPQ IN PYTHON]]
+[[http://www.koderdojo.com/blog/binary-heap-and-heapq-in-python][Link: BINARY HEAP AND HEAPQ IN PYTHON]]
 *** minheap & maxheap
 #+BEGIN_SRC python
 import heapq
@@ -3950,8 +3953,6 @@ print m2['a'] # 1
 #+END_SRC
 ** DONE python heapq
   CLOSED: [2018-01-25 Thu 22:03]
-
-
 *** 2 attributes
 import heapq
 li = []
