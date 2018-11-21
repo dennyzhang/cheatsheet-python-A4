@@ -100,6 +100,9 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | generate range          | =for num in range(10,20)=     |
 | get ascii               | =ord('a'), chr(97)=           |
 | print integer in binary | ="{0:b}".format(10)=          |
+#+BEGIN_HTML
+<a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+#+END_HTML
 ** Dict & Set
 | Name                      | Comment                               |
 |---------------------------+---------------------------------------|
