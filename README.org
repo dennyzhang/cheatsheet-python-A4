@@ -140,6 +140,10 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | power       | =import math; math.pow(2, 3)=             |
 | random      | =random.randint(1, 10)= 1 and 10 included |
 | eval string | =eval("2-11*2")=                          |
+** Networking
+| Name                       | Comment                                    |
+|----------------------------+--------------------------------------------|
+| Start a simple HTTP server | =python -m SimpleHTTPServer <port_number>= |
 ** Queue/heapq
 | Name                | Comment                                                   |
 |---------------------+-----------------------------------------------------------|
@@ -4845,3 +4849,5 @@ deactivate
 # Delete environmment (with virtualenvwrapper)
 rmvirtualenv env_name
 * TODO Use virtualenv to install Python3                           :noexport:
+* TODO Format json output                                          :noexport:
+cat output.json|python -m json.tool
