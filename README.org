@@ -101,7 +101,7 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | get ascii               | =ord('a'), chr(97)=           |
 | print integer in binary | ="{0:b}".format(10)=          |
 #+BEGIN_HTML
-<a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
 #+END_HTML
 ** Dict & Set
 | Name                      | Comment                               |
@@ -248,8 +248,8 @@ print (list(li))
 ** More Resources
 License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
 #+BEGIN_HTML
-<a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
-<a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
 
 <a href="https://www.linkedin.com/in/dennyzhang001"><img align="bottom" src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a>
 <a href="https://github.com/dennyzhang"><img align="bottom"src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a>
@@ -4851,3 +4851,37 @@ rmvirtualenv env_name
 * TODO Use virtualenv to install Python3                           :noexport:
 * TODO Format json output                                          :noexport:
 cat output.json|python -m json.tool
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* HALF ubuntu 16.04 install python 3.7                             :noexport:
+https://websiteforstudents.com/installing-the-latest-python-3-7-on-ubuntu-16-04-18-04/
+
+#+BEGIN_EXAMPLE
+sudo apt update
+sudo apt install software-properties-common
+After that run the commands to add the PPA..
+
+sudo add-apt-repository ppa:deadsnakes/ppa
+
+Finally, run the commands below to install Python 3.7
+
+sudo apt update
+sudo apt install python3.7
+#+END_EXAMPLE
+* HALF doc: python nested function                                 :noexport:
+https://realpython.com/primer-on-python-decorators/
+
+Because of the first-class nature of functions in Python, you can define functions inside other functions. Such functions are called nested functions.
+
+#+BEGIN_SRC python
+def parent():
+    print("Printing from the parent() function.")
+
+    def first_child():
+        return "Printing from the first_child() function."
+
+    def second_child():
+        return "Printing from the second_child() function."
+
+    print(first_child())
+    print(second_child())
+#+END_SRC
