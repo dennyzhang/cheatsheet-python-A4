@@ -73,25 +73,25 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 ** String
 | Name                              | Comment                             |
 |-----------------------------------+-------------------------------------|
-| reverse string                    | 'hello world'[::-1]                 |
-| array to string                   | ' '.join(['a', 'b'])                |
-| split string to array             | "hello, python".split(",")          |
+| reverse string                    | ='hello world'[::-1]=               |
+| array to string                   | =' '.join(['a', 'b'])=              |
+| split string to array             | ="hello, python".split(",")=        |
 | string to array                   | =list('abc')=                       |
 | format to 2 digits                | =print "%02d" % (13)=               |
+| capitalize string                 | ='hello world'.capitalize()=        |
+| upper/lower string                | ='aBc'.upper()=, ='aBc'.lower()=    |
+| count substring                   | ='2-5g-3-J'.count('-')=             |
+| pad leading zero                  | ='101'.zfill(10)=                   |
+| string remove tailing='0'         | ='0023'.rstrip('0')=                |
+| string remove leading='0'         | ='0023'.lstrip('0')=                |
+| check if string represent integer | ='123'.isdigit()=                   |
+| check if string alphabetic        | ='aBc'.isalpha()=                   |
+| Check if string alphanumeric      | ='a1b'.isalnum()=                   |
 | find location of substring        | 'abc'.find('d')= (returns -1)       |
 | find location of substring        | 'abc'.index('d')= (raise exception) |
-| capitalize string                 | 'hello world'.capitalize()          |
-| upper/lower string                | 'aBc'.upper()=, 'aBc'.lower()       |
-| count substring                   | '2-5g-3-J'.count('-')               |
-| replace string                    | 'ab cd'.replace(' ', '')            |
-| padd whitespace to the left       | 'a'.ljust(10, ' ')                  |
-| padd whitespace to the right      | 'a'.rjust(10, ' ')                  |
-| pad leading zero                  | '101'.zfill(10)                     |
-| string remove tailing '0'         | '0023'.rstrip('0')                  |
-| string remove leading '0'         | '0023'.lstrip('0')                  |
-| check if string represent integer | '123'.isdigit()                     |
-| check if string alphabetic        | 'aBc'.isalpha()                     |
-| Check if string alphanumeric      | 'a1b'.isalnum()                     |
+| replace string                    | 'ab cd'.replace('=',='')            |
+| padd whitespace to the left       | 'a'.ljust(10,='=')                  |
+| padd whitespace to the right      | 'a'.rjust(10,='=')                  |
 ** Integer
 | Name                    | Comment                       |
 |-------------------------+-------------------------------|
