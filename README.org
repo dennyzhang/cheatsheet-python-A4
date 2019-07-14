@@ -1,6 +1,6 @@
 * Python CheatSheet                                               :Languages:
 :PROPERTIES:
-:type:     python
+:type:     language
 :export_file_name: cheatsheet-python-A4.pdf
 :END:
 
@@ -20,78 +20,134 @@
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-python-A4
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-golang-A4][Golang CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-ruby-A4][Ruby CheatSheet]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
-File me [[https://github.com/DennyZhang/cheatsheet-python-A4/issues][Issues]] or star [[https://github.com/DennyZhang/cheatsheet-python-A4][this repo]].
+File me [[https://github.com/dennyzhang/cheatsheet-python-A4/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet-python-A4][this repo]].
 
 See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 ** Python Compact Coding
-| Name                          | Comment                                                 |
-|-------------------------------+---------------------------------------------------------|
-| if ... return                 | if k == 0: return False                                 |
-| if... continue                | if index == icol: continue                              |
-| return if.. else              | =return val if i>0 else 0=                              |
-| multiple assignment           | =l, r = 2, 3=                                           |
-| assign with check of none     | =a = b if b else 1=                                     |
-| assignments                   | =l[1]=l[0]=0=                                           |
-| swap values                   | =left, right = right, left=                             |
-| list Comprehensions           | =[x*x for x in range(1, 1001)]=                         |
-| list Comprehensions           | =l = [2, 3, 5]; [2*x for x in l if x>2]=                |
-| use zip                       | =for a, b in zip(nums, nums[3:])=                       |
-| build a list                  | =dp = [1] + [0]*3=                                      |
-| sum a subarray                | =sum(nums[0:k])=                                        |
-| sort list in descending order | =sorted(nums, reverse=True)=                            |
-| dictionary with defaults      | =m = collections.defaultdict(lambda: 1)=                |
-| loop with single statement    | =while p.left: p = p.left=                              |
-| print multiple values         | =print(x, y)=                                           |
-| get both index and item       | =for i, ch in enumerate(["a", "b", "c"]): print(i, ch)= |
-| mod negative                  | =(-2)%5=                                                |
+| Name                          | Comment                                                               |
+|-------------------------------+-----------------------------------------------------------------------|
+| if ... return                 | if k == 0: return False                                               |
+| if... continue                | if index == icol: continue                                            |
+| return if.. else              | =return val if i>0 else 0=                                            |
+| multiple assignment           | =l, r = 2, 3=                                                         |
+| assign with check of none     | =a = b if b else 1=                                                   |
+| assignments                   | =l[1]=l[0]=0=                                                         |
+| swap values                   | =left, right = right, left=                                           |
+| list Comprehensions           | =[x*x for x in range(1, 1001)]=                                       |
+| list Comprehensions           | =l = [2, 3, 5]; [2*x for x in l if x>2]=                              |
+| use zip                       | =for a, b in zip(nums, nums[3:])=                                     |
+| build a list                  | =dp = [1] + [0]*3=                                                    |
+| sum a subarray                | =sum(nums[0:k])=                                                      |
+| sort list in descending order | =sorted(nums, reverse=True)=                                          |
+| dictionary with defaults      | =m = collections.defaultdict(lambda: 1)=                              |
+| loop with single statement    | =while p.left: p = p.left=                                            |
+| print multiple values         | =print(x, y)=                                                         |
+| get both index and item       | =for i, ch in enumerate(["a", "b", "c"]): print(i, ch)=               |
+| mod negative                  | =(-2)%5=                                                              |
+| Compare values                | =if 0<=i<n and 0<=j<m and grid[i][j]=                                 |
+| list comprehensive            | areas = [dfs(i, j) for i in range(m) for j in range(n) if grid[i][j]] |
+** Python Concepts & Internals
+| Name                                    | Comment                                                                                                   |
+|-----------------------------------------+-----------------------------------------------------------------------------------------------------------|
+| [[https://realpython.com/python-gil/][Python Global Interpreter Lock]]          | For Garbage Collection. A mutex (or a lock) that allows only one thread to control of Python interpreter. |
+| Python tuples vs lists                  | tuple is immutable                                                                                        |
+| Would enumerate hashmap/set make sense? | No. Use enumerate mainly when you care about index                                                        |
+| lambda/an anonymous function            |                                                                                                           |
+| How to check the type of one object?    | use type function, e.g, =type(enumerate([1, 2, 3]))=                                                      |
+| Reference                               | [[https://docs.python.org/3/faq/design.html][Python Design and History FAQ]]                                                                             |
+
 ** Python Common Algorithms
-| Name      | Comment           |
-|-----------+-------------------|
-| bfs       | [[https://github.com/dennyzhang/cheatsheet-python-A4/blob/master/code/tree-bfs.py][code/tree-bfs.py]]  |
-| trie tree | [[https://github.com/dennyzhang/cheatsheet-python-A4/blob/master/code/tree-trie.py][code/tree-trie.py]] |
+| Num | Category/Tag                       | Example                                                       |
+|-----+------------------------------------+---------------------------------------------------------------|
+|   1 | [[https://code.dennyzhang.com/review-bfs][#bfs]]                               | [[https://code.dennyzhang.com/max-area-of-island][Leetcode: Max Area of Island]]                                  |
+|   2 | [[https://code.dennyzhang.com/review-dfs][#dfs]]                               | [[https://code.dennyzhang.com/surrounded-regions][LeetCode: Surrounded Regions]]                                  |
+|   3 | [[https://code.dennyzhang.com/review-binarysearch][#binarysearch]]                      | [[https://code.dennyzhang.com/search-insert-position][LeetCode: Search Insert Position]]                              |
+|   4 | [[https://code.dennyzhang.com/review-interval][#interval]], [[https://code.dennyzhang.com/followup-mergelist][#mergelist]]              | [[https://code.dennyzhang.com/interval-list-intersections][LeetCode: Interval List Intersections]]                         |
+|   5 | [[https://code.dennyzhang.com/review-twopointer][#twopointer]], [[https://code.dennyzhang.com/tag/array][#array]]                | [[https://code.dennyzhang.com/reverse-words-in-a-string-ii][LeetCode: Reverse Words in a String II]]                        |
+|   6 | [[https://code.dennyzhang.com/review-twopointer][#twopointer]]                        | [[https://code.dennyzhang.com/two-sum][LeetCode: Two Sum]]                                             |
+|   7 | [[https://code.dennyzhang.com/review-backtracking][#backtracking]], [[https://code.dennyzhang.com/tag/subset][#subset]]             | [[https://code.dennyzhang.com/subsets-ii][LeetCode: Subsets II]]                                          |
+|   8 | [[https://code.dennyzhang.com/review-linkedlist][#linkedlist]], [[https://code.dennyzhang.com/followup-presum][#presum]]               | [[https://code.dennyzhang.com/remove-zero-sum-consecutive-nodes-from-linked-list][LeetCode: Remove Zero Sum Consecutive Nodes from Linked List]]  |
+|   9 | [[https://code.dennyzhang.com/review-unionfind][#unionfind]]                         | [[https://code.dennyzhang.com/accounts-merge][LeetCode: Accounts Merge]]                                      |
+|  10 | [[https://code.dennyzhang.com/review-trie][#trie]]                              | [[https://code.dennyzhang.com/longest-word-in-dictionary][LeetCode: Longest Word in Dictionary]]                          |
+|  11 | [[https://code.dennyzhang.com/review-stack][#stack]]                             | [[https://code.dennyzhang.com/valid-parentheses][LeetCode: Valid Parentheses]]                                   |
+|  12 | [[https://code.dennyzhang.com/review-stack][#stack]]                             | [[https://code.dennyzhang.com/reverse-substrings-between-each-pair-of-parentheses][LeetCode: Reverse Substrings Between Each Pair of Parentheses]] |
+|  13 | [[https://code.dennyzhang.com/review-heap][#heap]]                              | [[https://code.dennyzhang.com/top-k-frequent-elements][LeetCode: Top K Frequent Elements]]                             |
+|  14 | [[https://code.dennyzhang.com/followup-baseconversion][#baseconversion]]                    | [[https://code.dennyzhang.com/base-7][LeetCode: Base 7]], [[https://code.dennyzhang.com/convert-to-base-2][LeetCode: Convert to Base -2]]                |
+|  15 | [[https://code.dennyzhang.com/review-interval][#interval]]                          | [[https://code.dennyzhang.com/meeting-rooms-ii][LeetCode: Meeting Rooms II]], [[https://code.dennyzhang.com/my-calendar-i][LeetCode: My Calendar I]]           |
+|  16 | [[https://code.dennyzhang.com/review-monotone][#monotone]]                          | [[https://code.dennyzhang.com/daily-temperatures][LeetCode: Daily Temperatures]]                                  |
+|  17 | [[https://code.dennyzhang.com/review-knapsack][#knapsack]]                          | [[https://code.dennyzhang.com/coin-change][LeetCode: Coin Change]]                                         |
+|  18 | [[https://code.dennyzhang.com/tag/sortbyfunction][#sortbyfunction]]                    | [[https://code.dennyzhang.com/relative-sort-array][LeetCode: Relative Sort Array]]                                 |
+|  19 | [[https://code.dennyzhang.com/review-slidingwindow][#slidingwindow]]                     | [[https://code.dennyzhang.com/longest-substring-without-repeating-characters][LeetCode: Longest Substring Without Repeating Characters]]      |
+|  20 | [[https://code.dennyzhang.com/followup-editdistance][#editdistance]], [[https://code.dennyzhang.com/review-dynamicprogramming][#dynamicprogramming]] | [[https://code.dennyzhang.com/longest-common-subsequence][LeetCode: Longest Common Subsequence]]                          |
+|  21 | [[https://code.dennyzhang.com/review-twopointer][#twopointer]], [[https://code.dennyzhang.com/tag/mergetwolist][#mergetwolist]]         | [[https://code.dennyzhang.com/merge-sorted-array][LeetCode: Merge Sorted Array]]                                  |
+|  22 | [[https://code.dennyzhang.com/review-topologicalsort][#topologicalsort]]                   | [[https://code.dennyzhang.com/course-schedule][LeetCode: Course Schedule]]                                     |
+|  23 | [[https://code.dennyzhang.com/review-bfs][#bfs]], [[https://code.dennyzhang.com/review-bfs][bidirectional bfs]]            | [[https://code.dennyzhang.com/word-ladder][LeetCode: Word Ladder]]                                         |
+|  24 | [[https://code.dennyzhang.com/tag/monotonicfunc][#monotonicfunc]], [[https://code.dennyzhang.com/review-binarysearch][#binarysearch]]      | [[https://code.dennyzhang.com/kth-smallest-number-in-multiplication-table][LeetCode: Kth Smallest Number in Multiplication Table]]         |
+|  25 | [[https://code.dennyzhang.com/review-divideconquer][#divideconquer]], [[https://code.dennyzhang.com/review-recursive][#recursive]]         | [[https://code.dennyzhang.com/count-of-smaller-numbers-after-self][Leetcode: Count of Smaller Numbers After Self]]                 |
+|  26 | [[https://docs.python.org/2.0/lib/semaphore-objects.html][python semaphore]]                   | [[https://code.dennyzhang.com/print-zero-even-odd][LeetCode: Print Zero Even Odd]]                                 |
+#+TBLFM: $1=@-1$1+1;N
 ** List
-| Name                    | Comment                                                |
-|-------------------------+--------------------------------------------------------|
-| return all but last     | =list[:-1]=                                            |
-| The second last item    | =list[-2]= or =list[~1]=                               |
-| map                     | =map(lambda x: str(x), [1, 2, 3])=                     |
-| create fixed size array | =l = [None] * 5=                                       |
-| insert elements to head | =array.insert(0,var)=                                  |
-| delete element by index | =del a[1]=                                             |
-| list as stack           | =item = l.pop()=                                       |
-| sort in descending      | l = sorted([8, 2, 5], reverse=True)                    |
-| sort by attribute       | l=sorted([('ebb',12),('abc',14)], key=lambda x: x[1])  |
-| in-place sort           | =l.sort()=                                             |
-| generate a-z            | =map(chr, range(ord('a'), ord('z')+1))=                |
-| map/reduce              | =functools.reduce((lambda x, y: "%s %s" % (x, y)), l)= |
-| replace ith to jth      | =list[i:j] = otherlist=                                |
-| combine two list        | =list1 + list2=                                        |
-| get sum                 | =sum(list)=                                            |
-| unique list             | =set(["Blah", "foo", "foo", 1, 1, 2, 3])=              |
-| Insert to sorted list   | =bisect.insort(l, 3)=                                  |
-| Reverse a list          | =l[::-1]=                                              |
+| Name                               | Comment                                                     |
+|------------------------------------+-------------------------------------------------------------|
+| [[https://stackoverflow.com/questions/10617045/how-to-create-a-fix-size-list-in-python/10617340][Create a fixed size array]]          | =[None]*5=                                                  |
+| Create a fixed size matrix         | =[[sys.maxsize for j in range(2)] for i in range(3)]=       |
+| [[https://developers.google.com/edu/python/lists][Iterate over a list]]                | =for v in l:=                                               |
+| [[https://www.geeksforgeeks.org/python-accessing-index-and-value-in-list/][Iterate over a list with index+val]] | =for i, v in enumerate(l):=                                 |
+| zip two lists as one               | l = sorted(zip(nums, range(len(nums))))                     |
+| sort in descending                 | l=sorted([8, 2, 5], reverse=True)                           |
+| sort list by a lambda key          | l=sorted([('ebb',12),('abc',14)], key=lambda x: x[1])       |
+| sort list by a lambda function     | l.sort(lambda x,y: int(y['key'][0:8]) - int(x['key'][0:8])) |
+| In-place sort                      | =l.sort()=                                                  |
+| Return all but last                | =list[:-1]=                                                 |
+| The second last item               | =list[-2]= or =list[~1]=                                    |
+| Generate a-z                       | =map(chr, range(ord('a'), ord('z')+1))=                     |
+| Reverse a list                     | =["ab", "cd", "ef"][::-1]=                                  |
+| map                                | =map(lambda x: str(x), [1, 2, 3])=                          |
+| Copy a range to another range      | nums1[:k+1] = nums2[:j+1]                                   |
+| append an element                  | =array.append(var)=                                         |
+| insert elements to head            | =array.insert(0,var)=                                       |
+| delete element by index            | =del a[1]=                                                  |
+| list as stack                      | =item = l.pop()=                                            |
+| map/reduce                         | =functools.reduce((lambda x, y: "%s %s" % (x, y)), l)=      |
+| replace ith to jth                 | =list[i:j] = otherlist=                                     |
+| combine two list                   | =list1 + list2=                                             |
+| get sum                            | =sum(list)=                                                 |
+| unique list                        | =set(["Blah", "foo", "foo", 1, 1, 2, 3])=                   |
+| Insert to sorted list              | =bisect.insort(l, 3)=                                       |
+| Reverse a list                     | =l[::-1]=                                                   |
 ** String
 | Name                              | Comment                             |
 |-----------------------------------+-------------------------------------|
-| reverse string                    | ='hello world'[::-1]=               |
-| array to string                   | =' '.join(['a', 'b'])=              |
-| split string to array             | ="hello, python".split(",")=        |
+| reverse string                    | 'hello world'[::-1]                 |
+| array to string                   | ' '.join(['a', 'b'])                |
+| split string to array             | "hello, python".split(",")          |
 | string to array                   | =list('abc')=                       |
 | format to 2 digits                | =print "%02d" % (13)=               |
-| capitalize string                 | ='hello world'.capitalize()=        |
-| upper/lower string                | ='aBc'.upper()=, ='aBc'.lower()=    |
-| count substring                   | ='2-5g-3-J'.count('-')=             |
-| pad leading zero                  | ='101'.zfill(10)=                   |
-| string remove tailing='0'         | ='0023'.rstrip('0')=                |
-| string remove leading='0'         | ='0023'.lstrip('0')=                |
-| check if string represent integer | ='123'.isdigit()=                   |
-| check if string alphabetic        | ='aBc'.isalpha()=                   |
-| Check if string alphanumeric      | ='a1b'.isalnum()=                   |
+| capitalize string                 | 'hello world'.capitalize()          |
+| upper/lower string                | 'aBc'.upper(), 'aBc'.lower()        |
+| count substring                   | '2-5g-3-J'.count('-')               |
+| pad leading zero                  | '101'.zfill(10)                     |
+| string remove tailing '0'         | '0023'.rstrip('0')                  |
+| string remove leading '0'         | '0023'.lstrip('0')                  |
+| check if string represent integer | '123'.isdigit()                     |
+| check if string alphabetic        | 'aBc'.isalpha()                     |
+| Check if string alphanumeric      | 'a1b'.isalnum()                     |
 | find location of substring        | 'abc'.find('d')= (returns -1)       |
 | find location of substring        | 'abc'.index('d')= (raise exception) |
 | replace string                    | 'ab cd'.replace('=',='')            |
 | padd whitespace to the left       | 'a'.ljust(10,='=')                  |
 | padd whitespace to the right      | 'a'.rjust(10,='=')                  |
+** Python Basic
+| Name                      | Comment                                                                    |
+|---------------------------+----------------------------------------------------------------------------|
+| [[https://linuxize.com/post/how-to-install-python-3-7-on-ubuntu-18-04/][Install python3 in Ubuntu]] | =sudo add-apt-repository ppa:deadsnakes/ppa=, =sudo apt install python3.7= |
+** Common Errors
+| Name                                  | Comment                   |
+|---------------------------------------+---------------------------|
+| Error: i++                            | i += 1                    |
+| Error: i<len(A) && j<len(B):          | i<len(A) and j<len(B):    |
+| Error: for i>=0 and j>=0:             | while i>=0 and j>=0:      |
+| [[https://stackoverflow.com/questions/57505071/nameerror-name-list-is-not-defined][NameError: name 'List' is not defined]] | =from typing import List= |
 ** Integer
 | Name                    | Comment                       |
 |-------------------------+-------------------------------|
@@ -99,25 +155,27 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | min, max                | =min(2, 3), max(5, 6, 2)=     |
 | generate range          | =for num in range(10,20)=     |
 | get ascii               | =ord('a'), chr(97)=           |
-| print integer in binary | ="{0:b}".format(10)=          |
+| print integer in binary | "{0:b}".format(10)            |
 #+BEGIN_HTML
 <a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
 #+END_HTML
 ** Dict & Set
-| Name                      | Comment                               |
-|---------------------------+---------------------------------------|
-| dict get first element    | =m[m.keys()[0]]=                      |
-| intersection              | =list(set(l1).intersection(set(l2)))= |
-| list to set               | =set(list1)=                          |
-| remove from set           | =s.remove(2)=                         |
-| remove the first from set | =s.pop()=                             |
-| sort dict by values       | =sorted(dict1, key=dict1.get)=        |
-| deep copy dict            | =import copy; m2=copy.deepcopy(m1)=   |
+| Name                          | Comment                               |
+|-------------------------------+---------------------------------------|
+| dict get first element        | =m[m.keys()[0]]=                      |
+| [[https://www.programiz.com/python-programming/methods/dictionary/get][get by key with default value]] | =m.get(x, -1)=                        |
+| Check whether key in hashmap  | =if k in m:=                          |
+| intersection                  | =list(set(l1).intersection(set(l2)))= |
+| list to set                   | =set(list1)=                          |
+| remove from set               | =s.remove(2)=                         |
+| deep copy dict                | =import copy; m2=copy.deepcopy(m1)=   |
+| remove the first from set     | =s.pop()=                             |
+| sort dict by values           | =sorted(dict1, key=dict1.get)=        |
 ** Bit Operator
 | Name                  | Comment             |
 |-----------------------+---------------------|
 | mod                   | =x % 2=             |
-| shift left            | =x << 1 ; a <<= 2=  |
+| shift left            | =x << 1=; =a << 2=  |
 | shift righ            | =x >> 2=            |
 | and                   | =x & y=             |
 | complement            | =~x=                |
@@ -148,17 +206,14 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Name                | Comment                                                   |
 |---------------------+-----------------------------------------------------------|
 | Initialize min heap | =heapq.heapify(q)=                                        |
-| heappush a tuple    | =q=[]; heapq.heappush(q, (5, 'ab'))=                      |
+| heappush a tuple    | q=[]; heapq.heappush(q, (5, 'ab'))                        |
 | pop                 | =print (heapq.heappop(q))=                                |
 | first item          | =q[0]=                                                    |
 | print heapq         | =print list(q)=                                           |
 | create a queue      | =from collections import deque; queue = deque([1,5,8,9])= |
 | append queue        | =queue.append(7)=                                         |
 | pop queue from head | =element = queue.popleft()=                               |
-
-[[https://code.dennyzhang.com/review-heap][Review: Heap Problems]]
-
-[[http://www.koderdojo.com/blog/binary-heap-and-heapq-in-python][Link: BINARY HEAP AND HEAPQ IN PYTHON]]
+| Reference           | [[https://www.techbeamers.com/python-heapq/][Link: Python Heapq]]                                        |
 *** minheap & maxheap
 #+BEGIN_SRC python
 import heapq
@@ -269,7 +324,7 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 #+LATEX_HEADER: \rhead{Updated: \today}
 #+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
 #+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet-python-A4}{GitHub: https://github.com/dennyzhang/cheatsheet-python-A4}}
-#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-python-A4}}
+#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-python-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-python-A4}}
 #+AUTHOR: Denny Zhang
 #+EMAIL:  denny@dennyzhang.com
 #+TAGS: noexport(n)
