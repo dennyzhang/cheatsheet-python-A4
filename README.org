@@ -24,108 +24,128 @@ File me [[https://github.com/dennyzhang/cheatsheet-python-A4/issues][Issues]] or
 
 See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 ** Python Compact Coding
-| Name                          | Comment                                                               |
-|-------------------------------+-----------------------------------------------------------------------|
-| if ... return                 | if k == 0: return False                                               |
-| if... continue                | if index == icol: continue                                            |
-| Return if.. else              | =return val if i>0 else 0=                                            |
-| Multiple assignment           | =l, r = 2, 3=                                                         |
-| Assign with check of none     | =a = b if b else 1=                                                   |
-| Assignments                   | =l[1]=l[0]=0=                                                         |
-| Swap values                   | =left, right = right, left=                                           |
-| List Comprehensions           | =[x*x for x in range(1, 1001)]=                                       |
-| List Comprehensions           | =l = [2, 3, 5]; [2*x for x in l if x>2]=                              |
-| Use zip                       | =for a, b in zip(nums, nums[3:])=                                     |
-| Build a list                  | =dp = [1] + [0]*3=                                                    |
-| Sum a subarray                | =sum(nums[0:k])=                                                      |
-| Sort list in descending order | =sorted(nums, reverse=True)=                                          |
-| Dictionary with defaults      | =m = collections.defaultdict(lambda: 1)=                              |
-| Loop with single statement    | =while p.left: p = p.left=                                            |
-| Print multiple values         | =print(x, y)=                                                         |
-| Get both index and item       | =for i, ch in enumerate(["a", "b", "c"]): print(i, ch)=               |
-| Mod negative                  | =(-2)%5=                                                              |
-| Compare values                | =if 0<=i<n and 0<=j<m and grid[i][j]=                                 |
-| List comprehensive            | areas = [dfs(i, j) for i in range(m) for j in range(n) if grid[i][j]] |
+| Name                                | Comment                                                               |
+|-------------------------------------+-----------------------------------------------------------------------|
+| Return if.. else                    | =return val if i>0 else 0=                                            |
+| Multiple assignment                 | =l, r = 2, 3=                                                         |
+| Assign with check of none           | =a = b if b else 1=                                                   |
+| Assignments                         | =l[1]=l[0]=0=                                                         |
+| Swap values                         | =left, right = right, left=                                           |
+| List Comprehensions                 | =[x*x for x in range(1, 1001)]=                                       |
+| List Comprehensions                 | =l = [2, 3, 5]; [2*x for x in l if x>2]=                              |
+| Use zip                             | =for a, b in zip(nums, nums[3:])=                                     |
+| Build a list                        | =dp = [1] + [0]*3=                                                    |
+| Change interger to string in binary | =bin(num)=, =f'{num:b}'=, ="{0:b}".format(num)=                       |
+| Sum a subarray                      | =sum(nums[0:k])=                                                      |
+| Sort list in descending order       | =sorted(nums, reverse=True)=                                          |
+| Dictionary with defaults            | =m = collections.defaultdict(lambda: 1)=                              |
+| Loop with single statement          | =while p.left: p = p.left=                                            |
+| Print multiple values               | =print(x, y)=                                                         |
+| Get both index and item             | =for i, ch in enumerate(["a", "b", "c"]): print(i, ch)=               |
+| Mod negative                        | =(-2)%5=                                                              |
+| Compare values                      | =if 0<=i<n and 0<=j<m and grid[i][j]=                                 |
+| if ... return                       | if k == 0: return False                                               |
+| if... continue                      | if index == icol: continue                                            |
+| List comprehensive                  | areas = [dfs(i, j) for i in range(m) for j in range(n) if grid[i][j]] |
+| Python assertion                    | assert [1,2]==[1,2]                                                   |
+** Python Advanced: Concepts & Internals
+| Name                                      | Comment                                                                               |
+|-------------------------------------------+---------------------------------------------------------------------------------------|
+| [[https://realpython.com/python-gil/][Python Global Interpreter Lock]]            | For Garbage Collection. A mutex controls of the global Python interpreter             |
+| =Python tuples= VS =lists=                | tuple is immutable                                                                    |
+| =Python nonlocal= VS =global=             | [[https://github.com/dennyzhang/cheatsheet-python-A4/blob/master/code/varNonlocalGlobal.py#L14-L29][Github: cheatsheet-python-A4/code/varNonlocalGlobal.py]]                                |
+| Python =For= VS =While= Loops             | [[https://www.pythonforbeginners.com/control-flow-2/python-for-and-while-loops][The for statement is used to iterate over the elements of a sequence]]                  |
+| =subprocess.run= VS =os.system=           | [[https://www.python.org/dev/peps/pep-0324/][In Linux, launch processes through shell or os.execvp]]                                 |
+| =single quote= VS =double quote=          | [[https://www.geeksforgeeks.org/single-and-double-quotes-python/][Generally double quotes for string; single quotes for regexp, dict keys, or SQL]]       |
+| [[https://medium.com/zendesk-engineering/hunting-for-memory-leaks-in-python-applications-6824d0518774][Common reasons of python memory leak]]      | reference cycles, underly libaries/C extensions, lingering large objects not released |
+| Example: Python cycle reference           | [[https://github.com/dennyzhang/cheatsheet-python-A4/blob/master/code/exampleCycleReference.py#L14-L25][Github: cheatsheet-python-A4/code/exampleCycleReference.py]]                            |
+| Passing function as an argument in Python | [[https://github.com/dennyzhang/cheatsheet-python-A4/blob/master/code/exampleCycleReference.py#L14-L25][Github: cheatsheet-python-A4/code/funcAsParameter.py]]                                  |
+| lambda/an anonymous function              |                                                                                       |
+| [[https://stackoverflow.com/questions/675442/how-to-comment-out-a-block-of-code-in-python][Why no support for multi-line comments]]    | [[https://dbader.org/blog/python-multiline-comment][Link: Python Multi-line Comments]]                                                      |
+| [[https://www.geeksforgeeks.org/callable-in-python/][Python callable]]                           | =print(callable(1))=, =print(callable(lambda: 1))=                                    |
+| Python long                               |                                                                                       |
+| Python Constants vs Literals              |                                                                                       |
+| How [[https://docs.python.org/3.3/library/functools.html][functools.lru_cache]] works             |                                                                                       |
+| [[https://www.geeksforgeeks.org/use-yield-keyword-instead-return-keyword-python/][Python yield]]                              |                                                                                       |
+| Reference                                 | [[https://docs.python.org/3/faq/design.html][Link: Python Design and History FAQ]]                                                   |
 ** List & Tuples
-| Name                                        | Comment                                                     |
-|---------------------------------------------+-------------------------------------------------------------|
-| [[https://stackoverflow.com/questions/10617045/how-to-create-a-fix-size-list-in-python/10617340][Create a fixed size array]]                   | =[None]*5=                                                  |
-| Create a fixed size matrix                  | =[[sys.maxsize for j in range(2)] for i in range(3)]=       |
-| [[https://developers.google.com/edu/python/lists][Iterate over a list]]                         | =for v in l:=                                               |
-| [[https://www.geeksforgeeks.org/python-accessing-index-and-value-in-list/][Iterate over a list with index+val]]          | =for i, v in enumerate(l):=                                 |
-| zip two lists as one                        | l = sorted(zip(nums, range(len(nums))))                     |
-| Extact columns from multi-dimensional array | =[row[1] for row in l]=                                     |
-| sort in descending                          | l=sorted([8, 2, 5], reverse=True)                           |
-| sort list by a lambda key                   | l=sorted([('ebb',12),('abc',14)], key=lambda x: x[1])       |
-| sort list by a lambda function              | l.sort(lambda x,y: int(y['key'][0:8]) - int(x['key'][0:8])) |
-| In-place sort                               | =l.sort()=                                                  |
-| Return all but last                         | =list[:-1]=                                                 |
-| The second last item                        | =list[-2]= or =list[~1]=                                    |
-| Generate a-z                                | =map(chr, range(ord('a'), ord('z')+1))=                     |
-| Reverse a list                              | =["ab", "cd", "ef"][::-1]=                                  |
-| map                                         | =map(lambda x: str(x), [1, 2, 3])=                          |
-| Copy a range to another range               | nums1[:k+1] = nums2[:j+1]                                   |
-| append an element                           | =array.append(var)=                                         |
-| insert elements to head                     | =array.insert(0,var)=                                       |
-| delete element by index                     | =del a[1]=                                                  |
-| list as stack                               | =item = l.pop()=                                            |
-| map/reduce                                  | =functools.reduce((lambda x, y: "%s %s" % (x, y)), l)=      |
-| replace ith to jth                          | =list[i:j] = otherlist=                                     |
-| combine two list                            | =list1 + list2=                                             |
-| get sum                                     | =sum(list)=                                                 |
-| unique list                                 | =set(["Blah", "foo", "foo", 1, 1, 2, 3])=                   |
-| Insert to sorted list                       | =bisect.insort(l, 3)=                                       |
-| Reverse a list                              | =l[::-1]=                                                   |
-| Reference                                   | [[https://realpython.com/python-lists-tuples/][Link: Lists and Tuples in Python]]                            |
+| Name                                        | Comment                                                       |
+|---------------------------------------------+---------------------------------------------------------------|
+| [[https://stackoverflow.com/questions/10617045/how-to-create-a-fix-size-list-in-python/10617340][Create a fixed size array]]                   | =[None]*5=                                                    |
+| Create a fixed size matrix/2D array         | =[[sys.maxsize for j in range(2)] for i in range(3)]=         |
+| Flatten 2D array into 1D array              | =[a for r in matrix for a in r]=                              |
+| [[https://developers.google.com/edu/python/lists][Iterate over a list]]                         | =for v in l:=                                                 |
+| [[https://www.geeksforgeeks.org/python-accessing-index-and-value-in-list/][Iterate over a list with index+val]]          | =for i, v in enumerate(l):=                                   |
+| zip two lists as one                        | l = sorted(zip(nums, range(len(nums))))                       |
+| Convert int array to a string               | =' '.join([str(v) for v in [1, 2,3,4]])=                      |
+| Extact columns from multi-dimensional array | =[row[1] for row in l]=                                       |
+| Sort in descending                          | l=sorted([8, 2, 5], reverse=True)                             |
+| Sort list by a lambda key                   | l=sorted([('ebb',12),('abc',14)], key=lambda x: x[1])         |
+| Sort list by a function                     | sorted(logs, key=getKey), [[https://code.dennyzhang.com/reorder-data-in-log-files][LeetCode: Reorder Data in Log Files]] |
+| In-place sort                               | =l.sort()=                                                    |
+| Find the index of one item                  | =[1,2,5,3].index(2)=                                          |
+| Return all but last                         | =list[:-1]=                                                   |
+| The second last item                        | =list[-2]= or =list[~1]=                                      |
+| Generate a-z                                | =map(chr, range(ord('a'), ord('z')+1))=                       |
+| Convert from ascii to character             | =chr(ord('a'))=                                               |
+| Reverse a list                              | =["ab", "cd", "ef"][::-1]=                                    |
+| map                                         | =map(lambda x: str(x), [1, 2, 3])=                            |
+| Copy a range to another range               | nums1[:k+1] = nums2[:j+1]                                     |
+| append an element                           | =array.append(var)=                                           |
+| insert elements to head                     | =array.insert(0,var)=                                         |
+| delete element by index                     | =del a[1]=                                                    |
+| list as stack                               | =item = l.pop()=                                              |
+| map/reduce                                  | =functools.reduce((lambda x, y: "%s %s" % (x, y)), l)=        |
+| replace ith to jth                          | =list[i:j] = otherlist=                                       |
+| combine two list                            | =list1 + list2=                                               |
+| get sum                                     | =sum(list)=                                                   |
+| unique list                                 | =set(["Blah", "foo", "foo", 1, 1, 2, 3])=                     |
+| Insert to sorted list                       | =bisect.insort(l, 3)=                                         |
+| Reverse a list                              | =l[::-1]=                                                     |
+| Print zip array                             | =print(list(zip(l1, l2)))=                                    |
+| Reference                                   | [[https://realpython.com/python-lists-tuples/][Link: Lists and Tuples in Python]]                              |
 ** String
-| Name                              | Comment                             |
-|-----------------------------------+-------------------------------------|
-| Reverse string                    | 'hello world'[::-1]                 |
-| Array to string                   | ' '.join(['a', 'b'])                |
-| Split string to array             | "hello, python".split(",")          |
-| String to array                   | =list('abc')=                       |
-| Format to 2 digits                | =print "%02d" % (13)=               |
-| Capitalize string                 | 'hello world'.capitalize()          |
-| Upper/lower string                | 'aBc'.upper(), 'aBc'.lower()        |
-| Check if string represent integer | '123'.isdigit()                     |
-| Check if string alphabetic        | 'aBc'.isalpha()                     |
-| Check if string alphanumeric      | 'a1b'.isalnum()                     |
-| Count substring                   | '2-5g-3-J'.count('-')               |
-| Remove tailing '0'                | '0023'.rstrip('0')                  |
-| Remove leading '0'                | '0023'.lstrip('0')                  |
-| Trip a string                     | ' Hello '.strip()                   |
-| Find location of substring        | 'abc'.find('d')= (returns -1)       |
-| Find location of substring        | 'abc'.index('d')= (raise exception) |
-| Check whether substring           | "el" in "hello world"               |
-| Replace string                    | 'ab cd'.replace('=',='')            |
-| Padding leading zero              | '101'.zfill(10)                     |
-| Padding whitespace to the left    | 'a'.ljust(10,='=')                  |
-| Padding whitespace to the right   | 'a'.rjust(10,='=')                  |
-| Format string                     | "%s,%d,%s" % ("2012", 12, "12")     |
+| Name                              | Comment                               |
+|-----------------------------------+---------------------------------------|
+| Reverse string                    | 'hello world'[::-1]                   |
+| Array to string                   | ' '.join(['a', 'b'])                  |
+| Integer array to string           | ' '.join([str(v) for v in [1, 2, 3]]) |
+| Split string to array             | "hello, python".split(",")            |
+| String to array                   | =list('abc')=                         |
+| Format to 2 digits                | =print "%02d" % (13)=                 |
+| Capitalize string                 | 'hello world'.capitalize()            |
+| Upper/lower string                | 'aBc'.upper(), 'aBc'.lower()          |
+| Check if string represent integer | '123'.isdigit()                       |
+| Check if string alphabetic        | 'aBc'.isalpha()                       |
+| Check if string alphanumeric      | 'a1b'.isalnum()                       |
+| Count substring                   | '2-5g-3-J'.count('-')                 |
+| Remove tailing '0'                | '0023'.rstrip('0')                    |
+| Remove leading '0'                | '0023'.lstrip('0')                    |
+| Trip a string                     | ' Hello '.strip()                     |
+| Find location of substring        | 'abc'.find('d')= (returns -1)         |
+| Find location of substring        | 'abc'.index('d')= (raise exception)   |
+| Check whether substring           | "el" in "hello world"                 |
+| Replace string                    | 'ab cd'.replace('=',='')              |
+| Padding leading zero              | '101'.zfill(10)                       |
+| Padding whitespace to the left    | 'a'.ljust(10,'=')                     |
+| Padding whitespace to the right   | 'a'.rjust(10,'=')                     |
+| Format string                     | "%s,%d,%s" % ("2012", 12, "12")       |
+** Stack & Queue
+| Name                        | Comment                                                                     |
+|-----------------------------+-----------------------------------------------------------------------------|
+| [[https://www.geeksforgeeks.org/deque-in-python/][Python deque as a stack]]     | s = collections.deque(), s.append(x), s.pop(), s[-1]                        |
+| [[https://www.geeksforgeeks.org/deque-in-python/][Python deque as a queue]]     | s = collections.deque(), s.append(x), s.popleft(), s[0]                     |
+| Implement a stack in Python | [[https://www.geeksforgeeks.org/stack-in-python/][Link: Stack in Python]]. Leverage: list, collections.deque or queue.LifoQueue |
 ** Python Basic
-| Name                          | Comment                                                          |
-|-------------------------------+------------------------------------------------------------------|
-| [[https://linuxize.com/post/how-to-install-python-3-7-on-ubuntu-18-04/][Install python3 in Ubuntu]]     | =add-apt-repository ppa:deadsnakes/ppa=, =apt install python3.7= |
-| Python tuples vs lists        | tuple is immutable                                               |
-| Python constants              |                                                                  |
-| Python nonlocal vs global     | [[https://github.com/dennyzhang/cheatsheet-python-A4/blob/master/code/var-nonlocal-global.py#L14-L29][Github: cheatsheet-python-A4/code/var-nonlocal-global.py]]         |
-| Python nested function        | [[https://github.com/dennyzhang/cheatsheet-python-A4/blob/master/code/nested-function.py#L14-L25][Github: cheatsheet-python-A4/code/nested-function.py]]             |
-| Run python snippet from shell | python -c 'import sys; print(sys.getdefaultencoding())'          |
-| What's Python Literals        |                                                                  |
-** Python Concepts & Internals
-| Name                                    | Comment                                                                     |
-|-----------------------------------------+-----------------------------------------------------------------------------|
-| [[https://realpython.com/python-gil/][Python Global Interpreter Lock]]          | For Garbage Collection. A mutex controls of the global Python interpreter   |
-| Would enumerate hashmap/set make sense? | No. Use enumerate mainly when you care about index                          |
-| lambda/an anonymous function            |                                                                             |
-| How to check the type of one object?    | Use type function, e.g, =type(enumerate([1, 2, 3]))=                        |
-| [[https://stackoverflow.com/questions/675442/how-to-comment-out-a-block-of-code-in-python][Why no support for multi-line comments]]  | [[https://dbader.org/blog/python-multiline-comment][Link: Python Multi-line Comments]]                                            |
-| [[https://www.geeksforgeeks.org/callable-in-python/][Python callable]]                         | =print(callable(1))=, =print(callable(lambda: 1))=                          |
-| [[https://stackoverflow.com/questions/34439/finding-what-methods-a-python-object-has][List all methods of a python object]]     | [[https://www.geeksforgeeks.org/python-dir-function/][=dir(obj)=]]                                                                  |
-| Python =For= vs =While= Loops           | [[https://www.pythonforbeginners.com/control-flow-2/python-for-and-while-loops][The for statement is used to iterate over the elements of a sequence]]        |
-| Python Constants vs Literals            |                                                                             |
-| Implement a stack in Python             | [[https://www.geeksforgeeks.org/stack-in-python/][Link: Stack in Python]]. Leverage: list, collections.deque or queue.LifoQueue |
-| Reference                               | [[https://docs.python.org/3/faq/design.html][Link: Python Design and History FAQ]]                                         |
+| Name                                 | Comment                                                          |
+|--------------------------------------+------------------------------------------------------------------|
+| [[https://linuxize.com/post/how-to-install-python-3-7-on-ubuntu-18-04/][Install python3 in Ubuntu]]            | =add-apt-repository ppa:deadsnakes/ppa=, =apt install python3.7= |
+| Python constants                     |                                                                  |
+| Python nested function               | [[https://github.com/dennyzhang/cheatsheet-python-A4/blob/master/code/nestedFunction.py#L14-L25][Github: cheatsheet-python-A4/code/nestedFunction.py]]              |
+| Run python snippet from shell        | python -c 'import sys; print(sys.getdefaultencoding())'          |
+| What's Python Literals               |                                                                  |
+| [[https://stackoverflow.com/questions/34439/finding-what-methods-a-python-object-has][List all methods of a python object]]  | [[https://www.geeksforgeeks.org/python-dir-function/][=dir(obj)=]]                                                       |
+| How to check the type of one object? | Use type function, e.g, =type(enumerate([1, 2, 3]))=             |
 ** Common Errors
 | Name                                  | Comment                    |
 |---------------------------------------+----------------------------|
@@ -133,7 +153,9 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Error: b=true                         | OK: b=True                 |
 | Error: i<len(A) && j<len(B):          | OK: i<len(A) and j<len(B): |
 | Error: for i>=0 and j>=0:             | OK: while i>=0 and j>=0:   |
+| Error: ! f                            | OK: not f                  |
 | [[https://stackoverflow.com/questions/57505071/nameerror-name-list-is-not-defined][NameError: name 'List' is not defined]] | =from typing import List=  |
+| Python float with high resolution     |                            |
 ** Pip - Python Package Management 
 | Name                                    | Comment                                             |
 |-----------------------------------------+-----------------------------------------------------|
@@ -146,13 +168,14 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 |                                         | pip install -U simplejon                            |
 |                                         | pip install -i http://pypi.python.jp flask          |
 ** Integer
-| Name                    | Comment                       |
-|-------------------------+-------------------------------|
-| max, min                | =sys.maxsize, -sys.maxsize-1= |
-| min, max                | =min(2, 3), max(5, 6, 2)=     |
-| generate range          | =for num in range(10,20)=     |
-| get ascii               | =ord('a'), chr(97)=           |
-| print integer in binary | "{0:b}".format(10)            |
+| Name                            | Comment                              |
+|---------------------------------+--------------------------------------|
+| max, min                        | =sys.maxsize, -sys.maxsize-1=        |
+| min, max                        | =min(2, 3), max(5, 6, 2)=            |
+| min with customized comparision | =min(a, b, key=lambda x: x*x-2*x+1)= |
+| generate range                  | =for num in range(10,20)=            |
+| get ascii                       | =ord('a'), chr(97)=                  |
+| print integer in binary         | "{0:b}".format(10)                   |
 #+BEGIN_HTML
 <a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
 #+END_HTML
@@ -163,7 +186,10 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | [[https://www.programiz.com/python-programming/methods/dictionary/get][get by key with default value]]  | =m.get(x, -1)=                                             |
 | Dictionary with defaults       | =m = collections.defaultdict(lambda: 1)=                   |
 | Dictionary with tuple defaults | d=collections.defaultdict(lambda: (0, 0))), d[0, 1]=(2, 3) |
-| Check whether key in hashmap   | =if k in m:=                                               |
+| Use array as key in dictionary | Convert array to tuple: m[tuple(l)]=3                      |
+| Check whether key in hashmap   | =if k in m=                                                |
+| Loop dictionary by keys        | =for k in m=                                               |
+| Loop dictionary                | =for k,v in m.items()=, [[https://stackoverflow.com/questions/36244380/enumerate-for-dictionary-in-python][not for k,v in enumerate(m)]]        |
 | Intersection of two sets       | =list(set(l1).intersection(set(l2)))=                      |
 | List to set                    | =set(list1)=                                               |
 | Remove from set                | =s.remove(2)=                                              |
@@ -171,6 +197,7 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | Remove the first from set      | =s.pop()=                                                  |
 | Sort dict by values            | =sorted(dict1, key=dict1.get)=                             |
 | Convert a str to a dict        | =eval("{\"createtime\":\"2013-07-16\"}")=                  |
+| Delete an element from a dict  | =del d[key]=                                               |
 ** Bit Operator
 | Name                  | Comment             |
 |-----------------------+---------------------|
@@ -185,18 +212,19 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | binary format         | =bin(5)= (get 101)  |
 | count 1 inside binary | =bin(5).count('1')= |
 ** File
-| Name        | Comment                                           |
-|-------------+---------------------------------------------------|
-| Append file | =open("/tmp/test.txt", "ab").write("\ntest:")=    |
-| Write file  | =open("/tmp/test.txt", "wab").write("\ntest:")=   |
-| Read files  | =f.readlines()=                                   |
-| Check file  | =os.path.exists("/tmp/test.txt")=                 |
-| Reference   | [[https://github.com/dennyzhang/cheatsheet-python-A4/blob/master/code/example-file.py#L14-L29][Github: cheatsheet-python-A4/code/example-file.py]] |
+| Name        | Comment                                          |
+|-------------+--------------------------------------------------|
+| Append file | =open("/tmp/test.txt", "ab").write("\ntest:")=   |
+| Write file  | =open("/tmp/test.txt", "wab").write("\ntest:")=  |
+| Read files  | =f.readlines()=                                  |
+| Check file  | =os.path.exists("/tmp/test.txt")=                |
+| Reference   | [[https://github.com/dennyzhang/cheatsheet-python-A4/blob/master/code/exampleFile.py#L14-L29][Github: cheatsheet-python-A4/code/exampleFile.py]] |
 ** Math
 | Name        | Comment                                   |
 |-------------+-------------------------------------------|
 | sqrt        | =import math; math.sqrt(5)=               |
 | power       | =import math; math.pow(2, 3)=             |
+| log         | =import math; math.log(5, 2)=, =log2(5)=  |
 | random      | =random.randint(1, 10)= 1 and 10 included |
 | eval string | =eval("2-11*2")=                          |
 ** Networking
@@ -204,6 +232,13 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 |----------------------------+--------------------------------------------------------------------------------|
 | Send http REST call        | pip install requests; r = requests.get('https://XX/XX', auth=('user', 'pass')) |
 | Start a simple HTTP server | =python -m SimpleHTTPServer <port_number>=                                     |
+** Python Interoperate
+| Name                     | Comment                                                                 |
+|--------------------------+-------------------------------------------------------------------------|
+| [[https://www.programcreek.com/python/example/94463/subprocess.run][Run shell command]]        | output = subprocess.run(["ls", "-lt", "/tmp/"], stdout=subprocess.PIPE) |
+| Get shell command output | =output.stdout.decode('utf-8').split('\n')=                             |
+| Get shell return code    | =output.returncode=, =output.check_returncode()=                        |
+| Python trap linux signal | [[https://github.com/dennyzhang/cheatsheet-python-A4/blob/master/code/exampleSignal.py#L14-L29][Github: cheatsheet-python-A4/code/exampleSignal.py]]                      |
 ** Queue/heapq
 | Name                | Comment                                                   |
 |---------------------+-----------------------------------------------------------|
@@ -562,24 +597,6 @@ CLOSED: [2016-08-11 Thu 23:06]
 http://stackoverflow.com/questions/5143769/how-do-i-check-if-a-given-python-string-is-a-substring-of-another-one
 *** DONE replace: "abc123".replace("a", "b")
     CLOSED: [2017-01-26 Thu 13:02]
-** python list
-*** DONE python complex sort
-  CLOSED: [2013-05-27 Mon 16:32]
-#+begin_src python
->>> print data
-print data
-[{u'value': u'9', u'key': u'20130524_visit_count'}, {u'value': u'9', u'key': u'20130525_visit_count'}, {u'value': u'9', u'key': u'20130526_visit_count'}]
->>> data.sort(lambda x,y: int(y['key'][0:8]) - int(x['key'][0:8]))
-data.sort(lambda x,y: int(y['key'][0:8]) - int(x['key'][0:8]))
->>> print data
-print data
-[{u'value': u'9', u'key': u'20130526_visit_count'}, {u'value': u'9', u'key': u'20130525_visit_count'}, {u'value': u'9', u'key': u'20130524_visit_count'}]
->>> data
-data
-[{u'value': u'9', u'key': u'20130526_visit_count'}, {u'value': u'9', u'key': u'20130525_visit_count'}, {u'value': u'9', u'key': u'20130524_visit_count'}]
-#+end_src
-*** python join list: ",".join(["'%s'" % (k) for k in category_list])
-http://www.faqs.org/docs/diveintopython/odbchelper_join.html
 ** python dictionary
 *** simple example
 https://docs.python.org/2/tutorial/datastructures.html#dictionaries
@@ -852,21 +869,7 @@ UnicodeDecodeError: 'ascii' codec can't decode byte 0xe9 in position 0: ordinal 
 -->
 #+end_example
 ** python file
-*** read file
-#+begin_src python
-def convert_list(listfile, datafile):
-    with open(listfile,'r') as f:
-        for row in f:
-            Data = row.split('|')
-            print Data[2].strip()
-#+end_src
-*** append file: open("/tmp/test.txt", "ab").write("\ntest:")
 *** write file: open("/tmp/test.txt", "wab").write("\ntest:")
-*** write file
-http://stackoverflow.com/questions/6159900/correct-way-to-write-line-to-file-in-python
-f = open('myfile', 'w')
-f.write('hi there\n')  # python will convert \n to os.linesep
-f.close()  # you can omit in most cases as the destructor will call it
 *** loop a directory for certain files: glob.glob("./test_data/*.meta")
 http://stackoverflow.com/questions/3964681/find-all-files-in-directory-with-extension-txt-with-python
 *** DONE python read file to lines: f.readlines()
@@ -4919,3 +4922,53 @@ rmvirtualenv env_name
 * TODO Format json output                                          :noexport:
 cat output.json|python -m json.tool
 * TODO Learn machine learning python library: scikit-learn         :noexport:
+* TODO python set                                                  :noexport:
+seen = set()
+seen.add((ball[0], ball[1]))
+
+seen = set((ball[0], ball[1]))
+
+>>> set((4, 3))
+{3, 4}
+>>> set([4, 3])
+{3, 4}
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO python mixed array: values = [1,2,"abc"]                    :noexport:
+* HALF python read input and output                                :noexport:
+https://stackoverflow.com/questions/1450393/how-do-you-read-from-stdin
+
+cases = int(input().rstrip())
+
+#+BEGIN_SRC python
+def getVal(matrix):
+    n = len(matrix)
+    k = sum([matrix[i][i] for i in range(n)])
+    r = sum([len(set(matrix[i])) != n for i in range(n)])
+    c = 0
+    for j in range(n):
+        s = set()
+        for i in range(n):
+            s.add(matrix[i][j])
+        if len(s) != n: c += 1
+    return k, r, c
+
+cases = int(input().rstrip())
+for _ in range(cases):
+    n = int(input().rstrip())
+    m = []
+    for _ in range(n):
+        row = input().rstrip()
+        m.append([int(v) for v in row.split(' ')])
+    k, r, c = (getVal(m))
+    print("%d %d %d" % (k, r, c))
+#+END_SRC
+* HALF python return multiple type                                 :noexport:
+https://stackoverflow.com/questions/38854282/do-union-types-actually-exist-in-python
+* HALF [#A] python magicmock                                       :noexport:
+https://aaronlelevier.github.io/python-unit-testing-with-magicmock/
+
+* TODO [#A] python decorator                                       :noexport:
+#+BEGIN_EXAMPLE
+@memoize_forever
+def get_all_regions_map():
+#+END_EXAMPLE

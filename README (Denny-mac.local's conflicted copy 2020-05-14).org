@@ -1,0 +1,4888 @@
+* Python CheatSheet                                               :Languages:
+:PROPERTIES:
+:type:     language
+:export_file_name: cheatsheet-python-A4.pdf
+:END:
+
+#+BEGIN_HTML
+<a href="https://github.com/dennyzhang/cheatsheet-python-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<div id="the whole thing" style="overflow: hidden;">
+<div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://github.com/dennyzhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a></div>
+<div style="float: left; padding: 5px"><a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/slack.png" alt="slack"/></a></div>
+</div>
+
+<br/><br/>
+<a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
+#+END_HTML
+
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet-python-A4/blob/master/cheatsheet-python-A4.pdf][cheatsheet-python-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/languages][languages]]
+- Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-python-A4
+- Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-golang-A4][Golang CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-ruby-A4][Ruby CheatSheet]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+
+File me [[https://github.com/dennyzhang/cheatsheet-python-A4/issues][Issues]] or star [[https://github.com/dennyzhang/cheatsheet-python-A4][this repo]].
+
+See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
+** Python Compact Coding
+| Name                          | Comment                                                 |
+|-------------------------------+---------------------------------------------------------|
+| if ... return                 | if k == 0: return False                                 |
+| if... continue                | if index == icol: continue                              |
+| return if.. else              | =return val if i>0 else 0=                              |
+| multiple assignment           | =l, r = 2, 3=                                           |
+| assign with check of none     | =a = b if b else 1=                                     |
+| assignments                   | =l[1]=l[0]=0=                                           |
+| swap values                   | =left, right = right, left=                             |
+| list Comprehensions           | =[x*x for x in range(1, 1001)]=                         |
+| list Comprehensions           | =l = [2, 3, 5]; [2*x for x in l if x>2]=                |
+| use zip                       | =for a, b in zip(nums, nums[3:])=                       |
+| build a list                  | =dp = [1] + [0]*3=                                      |
+| sum a subarray                | =sum(nums[0:k])=                                        |
+| sort list in descending order | =sorted(nums, reverse=True)=                            |
+| dictionary with defaults      | =m = collections.defaultdict(lambda: 1)=                |
+| loop with single statement    | =while p.left: p = p.left=                              |
+| print multiple values         | =print(x, y)=                                           |
+| get both index and item       | =for i, ch in enumerate(["a", "b", "c"]): print(i, ch)= |
+| mod negative                  | =(-2)%5=                                                |
+** Python Common Algorithms
+| Name             | Comment                       |
+|------------------+-------------------------------|
+| bfs              | [[https://github.com/dennyzhang/cheatsheet-python-A4/blob/master/code/tree-bfs.py][code/tree-bfs.py]]              |
+| trie tree        | [[https://github.com/dennyzhang/cheatsheet-python-A4/blob/master/code/tree-trie.py][code/tree-trie.py]]             |
+| [[https://docs.python.org/2.0/lib/semaphore-objects.html][python Semaphore]] | [[https://code.dennyzhang.com/print-zero-even-odd][Leetcode: Print Zero Even Odd]] |
+** List
+| Name                    | Comment                                                |
+|-------------------------+--------------------------------------------------------|
+| return all but last     | =list[:-1]=                                            |
+| The second last item    | =list[-2]= or =list[~1]=                               |
+| map                     | =map(lambda x: str(x), [1, 2, 3])=                     |
+| create fixed size array | =l = [None] * 5=                                       |
+| insert elements to head | =array.insert(0,var)=                                  |
+| delete element by index | =del a[1]=                                             |
+| list as stack           | =item = l.pop()=                                       |
+| sort in descending      | l = sorted([8, 2, 5], reverse=True)                    |
+| sort by attribute       | l=sorted([('ebb',12),('abc',14)], key=lambda x: x[1])  |
+| in-place sort           | =l.sort()=                                             |
+| generate a-z            | =map(chr, range(ord('a'), ord('z')+1))=                |
+| map/reduce              | =functools.reduce((lambda x, y: "%s %s" % (x, y)), l)= |
+| replace ith to jth      | =list[i:j] = otherlist=                                |
+| combine two list        | =list1 + list2=                                        |
+| get sum                 | =sum(list)=                                            |
+| unique list             | =set(["Blah", "foo", "foo", 1, 1, 2, 3])=              |
+| Insert to sorted list   | =bisect.insort(l, 3)=                                  |
+| Reverse a list          | =l[::-1]=                                              |
+** String
+| Name                              | Comment                             |
+|-----------------------------------+-------------------------------------|
+| reverse string                    | 'hello world'[::-1]                 |
+| array to string                   | ' '.join(['a', 'b'])                |
+| split string to array             | "hello, python".split(",")          |
+| string to array                   | =list('abc')=                       |
+| format to 2 digits                | =print "%02d" % (13)=               |
+| capitalize string                 | 'hello world'.capitalize()          |
+| upper/lower string                | 'aBc'.upper(), 'aBc'.lower()        |
+| count substring                   | '2-5g-3-J'.count('-')               |
+| pad leading zero                  | '101'.zfill(10)                     |
+| string remove tailing '0'         | '0023'.rstrip('0')                  |
+| string remove leading '0'         | '0023'.lstrip('0')                  |
+| check if string represent integer | '123'.isdigit()                     |
+| check if string alphabetic        | 'aBc'.isalpha()                     |
+| Check if string alphanumeric      | 'a1b'.isalnum()                     |
+| find location of substring        | 'abc'.find('d')= (returns -1)       |
+| find location of substring        | 'abc'.index('d')= (raise exception) |
+| replace string                    | 'ab cd'.replace('=',='')            |
+| padd whitespace to the left       | 'a'.ljust(10,='=')                  |
+| padd whitespace to the right      | 'a'.rjust(10,='=')                  |
+** Integer
+| Name                    | Comment                       |
+|-------------------------+-------------------------------|
+| max, min                | =sys.maxsize, -sys.maxsize-1= |
+| min, max                | =min(2, 3), max(5, 6, 2)=     |
+| generate range          | =for num in range(10,20)=     |
+| get ascii               | =ord('a'), chr(97)=           |
+| print integer in binary | "{0:b}".format(10)            |
+#+BEGIN_HTML
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
+#+END_HTML
+** Dict & Set
+| Name                      | Comment                               |
+|---------------------------+---------------------------------------|
+| dict get first element    | =m[m.keys()[0]]=                      |
+| intersection              | =list(set(l1).intersection(set(l2)))= |
+| list to set               | =set(list1)=                          |
+| remove from set           | =s.remove(2)=                         |
+| remove the first from set | =s.pop()=                             |
+| sort dict by values       | =sorted(dict1, key=dict1.get)=        |
+| deep copy dict            | =import copy; m2=copy.deepcopy(m1)=   |
+** Bit Operator
+| Name                  | Comment             |
+|-----------------------+---------------------|
+| mod                   | =x % 2=             |
+| shift left            | =x << 1=; =a << 2=  |
+| shift righ            | =x >> 2=            |
+| and                   | =x & y=             |
+| complement            | =~x=                |
+| xor                   | =x ^ y=             |
+| power                 | =2 ** 3=            |
+| bool complement       | =not x=             |
+| binary format         | =bin(5)= (get 101)  |
+| count 1 inside binary | =bin(5).count('1')= |
+** File
+| Name        | Comment                                         |
+|-------------+-------------------------------------------------|
+| Append file | =open("/tmp/test.txt", "ab").write("\ntest:")=  |
+| Write file  | =open("/tmp/test.txt", "wab").write("\ntest:")= |
+| Read files  | =f.readlines()=                                 |
+| Check file  | =os.path.exists("/tmp/test.txt")=               |
+** Math
+| Name        | Comment                                   |
+|-------------+-------------------------------------------|
+| sqrt        | =import math; math.sqrt(5)=               |
+| power       | =import math; math.pow(2, 3)=             |
+| random      | =random.randint(1, 10)= 1 and 10 included |
+| eval string | =eval("2-11*2")=                          |
+** Networking
+| Name                       | Comment                                    |
+|----------------------------+--------------------------------------------|
+| Start a simple HTTP server | =python -m SimpleHTTPServer <port_number>= |
+** Queue/heapq
+| Name                | Comment                                                   |
+|---------------------+-----------------------------------------------------------|
+| Initialize min heap | =heapq.heapify(q)=                                        |
+| heappush a tuple    | =q=[]; heapq.heappush(q, (5, 'ab'))=                      |
+| pop                 | =print (heapq.heappop(q))=                                |
+| first item          | =q[0]=                                                    |
+| print heapq         | =print list(q)=                                           |
+| create a queue      | =from collections import deque; queue = deque([1,5,8,9])= |
+| append queue        | =queue.append(7)=                                         |
+| pop queue from head | =element = queue.popleft()=                               |
+
+[[https://code.dennyzhang.com/review-heap][Review: Heap Problems]]
+
+[[http://www.koderdojo.com/blog/binary-heap-and-heapq-in-python][Link: BINARY HEAP AND HEAPQ IN PYTHON]]
+*** minheap & maxheap
+#+BEGIN_SRC python
+import heapq
+
+# initializing list
+li = [5, 7, 9, 1, 3]
+
+# using heapify to convert list into heap
+heapq.heapify(li) # a minheap
+heapq._heapify_max(li) # for a maxheap!
+
+# printing created heap
+print (list(li))
+
+# using heappush() to push elements into heap
+# pushes 4
+heapq.heappush(li,4)
+
+# printing modified heap
+print (list(li))
+
+# using heappop() to pop smallest element
+print (heapq.heappop(li))
+
+print (list(li))
+#+END_SRC
+** Code snippets
+- Initialize Linkedlist from array
+#+BEGIN_SRC python
+    def initListNodeFromArray(self, nums):
+        head = ListNode(None)
+        prev, p = head, head
+        for num in nums:
+            pre = p
+            p.val = num
+            q = ListNode(None)
+            p.next = q
+            p = p.next
+        pre.next = None
+        return head
+#+END_SRC
+- Print linkedlist
+#+BEGIN_SRC python
+    def printListNode(self, head):
+        print("printListnode")
+        while head:
+            print("%d" % (head.val))
+            head = head.next
+#+END_SRC
+
+- Print Trie Tree in level order
+#+BEGIN_SRC python
+    def printTrieTreeLevelOrder(self, node):
+        print("printTrieTreeLevelOrder")
+        if node.is_word:
+            print("Node is a word")
+        queue = []
+        queue.append(node)
+        while len(queue) != 0:
+            s = ''
+            for i in range(len(queue)):
+                node = queue[0]
+                del queue[0]
+                for child_key in node.children:
+                    s = '%s %s' % (s, child_key)
+                    queue.append(node.children[child_key])
+            if s != '':
+                print 'print level children: %s' % (s)
+#+END_SRC
+
+- python sort with customized cmp function: -1 first
+#+BEGIN_SRC python
+    nums = [3, 2, 6]
+    def myCompare(v1, v2):
+        return -1
+    sorted_nums = sorted(nums, cmp=myCompare)
+    print nums # [3, 2, 6]
+    print sorted_nums # [6, 3, 2]
+#+END_SRC
+
+- Initialize m*n matrix
+#+BEGIN_SRC python
+    col_count, row_count = 3, 2
+    matrix = [[None for j in range(col_count)] for i in range(row_count)]
+    print matrix
+#+END_SRC
+** More Resources
+License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
+#+BEGIN_HTML
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
+<a href="https://cheatsheet.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/dennyzhang/cheatsheet.dennyzhang.com/master/images/cheatsheet_dns.png"></a>
+
+<a href="https://www.linkedin.com/in/dennyzhang001"><img align="bottom" src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a>
+<a href="https://github.com/dennyzhang"><img align="bottom"src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a>
+<a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img align="bottom" src="https://www.dennyzhang.com/wp-content/uploads/sns/slack.png" alt="slack"/></a>
+#+END_HTML
+* org-mode configuration                                           :noexport:
+#+STARTUP: overview customtime noalign logdone showall
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
+#+LaTeX_CLASS_OPTIONS: [8pt]
+#+LATEX_HEADER: \usepackage[english]{babel}
+#+LATEX_HEADER: \usepackage{lastpage}
+#+LATEX_HEADER: \usepackage{fancyhdr}
+#+LATEX_HEADER: \pagestyle{fancy}
+#+LATEX_HEADER: \fancyhf{}
+#+LATEX_HEADER: \rhead{Updated: \today}
+#+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
+#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet-python-A4}{GitHub: https://github.com/dennyzhang/cheatsheet-python-A4}}
+#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-python-A4}}
+#+AUTHOR: Denny Zhang
+#+EMAIL:  denny@dennyzhang.com
+#+TAGS: noexport(n)
+#+PRIORITIES: A D C
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+LINK_UP:
+#+LINK_HOME:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* [#A] Python                                      :noexport:Coding:Personal:
+:PROPERTIES:
+:type:   Language
+:END:
+- Python为程序员提供了丰富的编程范型,包括过程式`函数式与面向对象式
+- easy_install pymongo
+
+| Name                                                    | Summary                                                   |
+|---------------------------------------------------------+-----------------------------------------------------------|
+| Unicode to utf8                                         | print [u"\U0001F34E".encode('utf-8')]                     |
+| utf-8 to unicode                                        | unicode("\xf0\x9f\x8d\x9c", "utf-8")                      |
+| virtualenv                                              | an isolated working copy of Python for each project       |
+| easy_install PackageName==1.2.3                         | install a given version of one package                    |
+| easy_install --upgrade PyProtocols                      | Upgrade an already-installed package listed on PyPI       |
+| easy_install /my_downloads/OtherPackage-3.2.1-py2.3.egg | Install an already-downloaded .egg file                   |
+| easy_install -m [PACKAGE]                               | removes all dependencies of the package.                  |
+| rm -rf .../python2.X/site-packages/[PACKAGE].egg        |                                                           |
+|---------------------------------------------------------+-----------------------------------------------------------|
+| pip show simplejson                                     | Check on installed python package                         |
+| pip search simplejson                                   |                                                           |
+| pip install simplejson                                  |                                                           |
+| pip install -U simplejon                                |                                                           |
+| pip install -i http://pypi.python.jp flask              |                                                           |
+| pip uninstall simplejon                                 |                                                           |
+| pip freeze                                              | 查看                                                      |
+| pip install flake8==2.0                                 | install a module with specific version                    |
+|---------------------------------------------------------+-----------------------------------------------------------|
+| print module.__file__                                   | 查看某个module安装目录在哪里                              |
+| help(str)                                               | 查看module的on-line help                                  |
+| python -m compileall ./test.py                          | compile py to pyc                                         |
+| python -c 'import sys; print sys.getdefaultencoding()'  | python run command                                        |
+| reload(module1)                                         | 重新加载module                                            |
+| vars(obj1)                                              |                                                           |
+| dir(obj1)                                               |                                                           |
+| LD_LIBRARY_PATH, PATH; PYTHONPATH, PYTHONHOME           | python environments                                       |
+| repr(object)                                            | repr函数用来取得对象的规范字符串表示. representation      |
+| __repr__                                                | compute the "official" string representation of an object |
+| __str__                                                 | compute the "informal" string representation of an object |
+| eval("{\"createtime\":\"2013-07-16\"}")                 | python convert str to dictionary                          |
+** question
+*** [question] python MySQLdb reuse db connection
+- 交互式加载下面这个模块
+- 运行some_query('user1'),可以取出一些sql查询值
+- 手动通过sql语句, update一下test表中这条记录
+- 再次调用some_query('user1', 发现取出来的结果还是老的
+#+begin_src python
+# -*- coding: utf-8 -*-
+import MySQLdb
+import config
+conn = MySQLdb.connect("127.0.0.1", "dbusername", "dbpassword", \
+					   "dbtest", charset = 'utf8', port = 3306)
+
+def query_sql(sql, conn = None):
+	if conn is None:
+		conn = MySQLdb.connect("127.0.0.1", "dbusername", "dbpassword", \
+						   "dbtest", charset = 'utf8', port = 3306)
+	cursor = conn.cursor()
+	cursor.execute(sql)
+	out = cursor.fetchall()
+	cursor.close()
+	return out
+
+def some_query(username):
+	global conn
+	sql_format = "select * from test where username = '%s'" % (username)
+	print sql
+	out = query_sql(sql)
+	print out
+## File : util.py
+#+end_src
+*** [question] python auto dump class's member variables(both public and private)
+#+begin_src python
+# -*- coding: utf-8 -*-
+class DNA:
+    def __init__(self, name=None):
+        self.name = name
+
+    def setname(self, name):
+        self.name = name
+
+a = DNA("name")
+print a
+print repr(a)
+print str(a)
+## File : test.py
+#+end_src
+*** [question] python: 复杂的数据结构,　在debug程序时,　比较难构造小的测试
+** # --8<-------------------------- separator ------------------------>8--
+** python的各类包安装和包管理的优劣比较: pip; easy_install, apt-get, PyPI, python setup.py install
+- Easy_Install looks in the Python Package Index (PyPI) for the desired packages
+- Eggs are to Pythons as Jars are to Java...
+- setuptools is a collection of enhancements to the Python distutils to easily build and distribute Python packages
+- pip和easy_install的关系就像apt和dpkg的关系
+#+begin_example
+ virtualenv|
+           |           V S
+        pip <------------------------->buildout
+                        |
+                        |
+            ------------\-------------
+            |                        |
+            |                        |
+       +----\------+            +----\------+
+       |           |   evolve   |           |
+       | distutils >>>>>>>>>>>>>| setuptools|<<<<<<<<distribute
+       |           |            |           |       |
+       +----/------+            +-----/-----+       | wants to
+            |                         |             |  replace it
+            |                         |             |
+            |                         |
+            |                         |
+            \                         |
+       +-----------+            +-----\-----+
+       |           |            |           |
+       |source tar >>>>>>>>>>>>>>   eggs    |
+       |           |            |           |
+       +-----------+            +-----------+
+#+end_example
+** python交互式执行的常见问题:如何动态加载更新的模块; 定义函数等
+#+begin_example
+bash-3.2$  python
+Python 2.7.2 (default, Oct 11 2012, 20:14:37)
+[GCC 4.2.1 Compatible Apple Clang 4.0 (tags/Apple/clang-418.0.60)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import test
+import test
+>>> test.fun()
+test.fun()
+hello1
+>>> test.fun()
+test.fun()
+hello1
+>>> reload(test)
+reload(test)
+<module 'test' from 'test.py'>
+>>> test.fun()
+test.fun()
+hello2
+>>> def fun2():
+def fun2():
+... 	print "fun2"
+	print "fun2"
+...
+
+>>> fun2()
+fun2()
+fun2
+>>>
+#+end_example
+** # --8<-------------------------- separator ------------------------>8--
+** pypi ranking: http://pypi-ranking.info/alltime
+** useful link
+http://www.pythonforbeginners.com
+Python For Beginners
+http://docs.python.org/release/2.5.2/lib/lib.html\\
+Python Library Reference
+http://www.python.org/dev/peps/pep-0008/\\
+Style Guide for Python Code
+** [#B] python Object Oriented
+*** define class
+http://www.pasteur.fr/formation/infobio/python/ch18s03.html
+#+begin_src python
+
+class DNA:
+    def __init__(self, name=None, seq=None):
+        self.name = name
+        self.seq = lower(seq)
+
+    def gc(self):
+        count_c = self.seq.count('c')
+        count_g = self.seq.count('g')
+        return float(count_c + count_g) / len(self.seq)
+
+    def setname(self, name):
+        self.name = name
+#+end_src
+*** define class static method
+http://stackoverflow.com/questions/735975/static-methods-in-python
+#+begin_src python
+class MyClass(object):
+    @staticmethod
+    def the_static_method(x):
+        print x
+
+MyClass.the_static_method(2) # outputs 2
+#+end_src
+*** define class static variable
+http://stackoverflow.com/questions/68645/static-class-variables-in-python
+#+begin_example
+>>> class MyClass:
+...     i = 3
+...
+>>> MyClass.i
+3
+#+end_example
+** python 可变与不可变
+#+begin_example
+Python的类型有可变和不可变之分.可变与不可变的区分标准是是否可以改变其值.
+数字`字符串`元组`frozenset属于不可变类型
+列表`字典`集合(set)属于可变类型
+#+end_example
+** python string
+*** DONE python format: "%s,%d,%s" % ("2012", 12, "12")
+    CLOSED: [2012-12-14 Fri 16:55]
+*** DONE python convert string to lowercase: "Abc".lower()
+  CLOSED: [2016-08-02 Tue 13:41]
+http://stackoverflow.com/questions/6797984/how-to-convert-string-to-lowercase-in-python
+*** DONE python trim a string: ' Hello '.strip()
+    CLOSED: [2014-03-25 Tue 16:34]
+*** DONE python string match substring: 'll' in 'hello'
+CLOSED: [2016-08-11 Thu 23:06]
+http://stackoverflow.com/questions/5143769/how-do-i-check-if-a-given-python-string-is-a-substring-of-another-one
+*** DONE replace: "abc123".replace("a", "b")
+    CLOSED: [2017-01-26 Thu 13:02]
+** python list
+*** DONE python complex sort
+  CLOSED: [2013-05-27 Mon 16:32]
+#+begin_src python
+>>> print data
+print data
+[{u'value': u'9', u'key': u'20130524_visit_count'}, {u'value': u'9', u'key': u'20130525_visit_count'}, {u'value': u'9', u'key': u'20130526_visit_count'}]
+>>> data.sort(lambda x,y: int(y['key'][0:8]) - int(x['key'][0:8]))
+data.sort(lambda x,y: int(y['key'][0:8]) - int(x['key'][0:8]))
+>>> print data
+print data
+[{u'value': u'9', u'key': u'20130526_visit_count'}, {u'value': u'9', u'key': u'20130525_visit_count'}, {u'value': u'9', u'key': u'20130524_visit_count'}]
+>>> data
+data
+[{u'value': u'9', u'key': u'20130526_visit_count'}, {u'value': u'9', u'key': u'20130525_visit_count'}, {u'value': u'9', u'key': u'20130524_visit_count'}]
+#+end_src
+*** python join list: ",".join(["'%s'" % (k) for k in category_list])
+http://www.faqs.org/docs/diveintopython/odbchelper_join.html
+** python dictionary
+*** simple example
+https://docs.python.org/2/tutorial/datastructures.html#dictionaries
+
+>>> tel = {'jack': 4098, 'sape': 4139}
+>>> tel['guido'] = 4127
+>>> tel
+{'sape': 4139, 'guido': 4127, 'jack': 4098}
+>>> tel['jack']
+4098
+>>> del tel['sape']
+>>> tel['irv'] = 4127
+>>> tel
+{'guido': 4127, 'irv': 4127, 'jack': 4098}
+>>> tel.keys()
+['guido', 'irv', 'jack']
+>>> 'guido' in tel
+True
+*** DONE python deeep copy a dict: d2 = copy.deepcopy(d)
+  CLOSED: [2014-03-25 Tue 17:36]
+http://stackoverflow.com/questions/5105517/deep-copy-of-a-dict-in-python
+#+begin_src python
+import copy
+d = { ... }
+d2 = copy.deepcopy(d)
+#+end_src
+*** DONE python loop dictionary keys
+  CLOSED: [2016-07-12 Tue 08:07]
+http://www.mkyong.com/python/python-how-to-loop-a-dictionary/
+http://stackoverflow.com/questions/3294889/iterating-over-dictionaries-using-for-loops-in-python
+for k in list.keys():
+    print k
+
+for k, v in dict.items():
+    print(k,v)
+*** DONE python read cfg file to dictionary
+  CLOSED: [2015-06-30 Tue 12:23]
+https://docs.python.org/3/library/configparser.html
+#+BEGIN_SRC python
+def load_cfg_to_dict(cfg_file):
+    print "load_cfg_to_dict: %s" % (cfg_file)
+    config = ConfigParser.RawConfigParser()
+    # avoid converts the name to lowercase
+    config.optionxform = lambda option: option
+    config.read(cfg_file)
+    env_dict = dict(config.items('DEFAULT')).copy()
+    print "env_dict:" + str(env_dict)
+    return env_dict
+#+END_SRC
+** python Unicode
+*** mysql连接, 指定charset
+#+begin_src python
+def get_post(postid):
+    # TODO: reuse mysql connection
+    conn = MySQLdb.connect(db_host, db_username, db_pwd, db_name, charset='utf8')
+    c=conn.cursor()
+    c.execute("select postid, category, title, summary from posts where postid ='%s'" % postid)
+    out = c.fetchall();
+    # TODO: defensive check
+    ## TODO: get post content
+    return POST.list_to_post(out[0])
+
+#+end_src
+*** http返回时content-type指定charset为utf-8
+#+begin_example
+## sample: http://127.0.0.1:5000/api_list_user_post?userid=denny&date=2013-01-24
+@app.route("/api_list_user_post", methods=['GET'])
+def list_user_post():
+    userid = request.args.get('userid', '')
+    date = request.args.get('date', '')
+    posts = data.list_user_post(userid, date)
+    resp = make_response(render_template('list_user_post.json', posts=posts), 200)
+    resp.headers['Content-type'] = 'application/json; charset=utf-8'
+    return resp
+
+#+end_example
+*** 字符串使用decode("utf-8")
+    tempEntry[1] = tempEntry[1].decode("utf-8")
+*** DONE python set defaultencoding
+  CLOSED: [2013-01-28 Mon 12:04]
+sudo vim /usr/lib/python2.7/site.py
+
+import sys
+
+import os
+
+sys.setdefaultencoding('utf-8')
+
+http://gpiot.com/python-set-character-encoding-to-utf-8-for-deploy-cms/
+http://www.evanjones.ca/python-utf8.html
+#+begin_example
+>>>
+markfilebat@li237-47:/home/repository/xiaozibao/code/bcode/webserver$ python -c 'import sys; print sys.getdefaultencoding()'
+ascii
+markfilebat@li237-47:/home/repository/xiaozibao/code/bcode/webserver$ python2.7
+Python 2.7.3 (default, May 14 2012, 12:17:44)
+[GCC 4.4.3] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import sys
+>>> print sys.getdefaultencoding()
+ascii
+>>> sys.setdefaultencoding('utf-8')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'module' object has no attribute 'setdefaultencoding'
+>>> sys.setdefaultencoding('utf-8')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'module' object has no attribute 'setdefaultencoding'
+>>>
+#+end_example
+*** python -c "print u'\u6570\u636e\u683c\u5f0f\u9519\u8bef'"
+*** DONE python中文乱码 UnicodeDecodeError: 'ascii' codec can't decode byte
+  CLOSED: [2013-04-22 Mon 18:07]
+import sys
+default_encoding = 'utf-8'
+if sys.getdefaultencoding() != default_encoding:
+    reload(sys)
+    sys.setdefaultencoding(default_encoding)
+**** console                                                       :noexport:
+#+begin_example
+bash-3.2$ ./test.sh
+curl "http://0.0.0.0:8082/add_expense?userid=denny&expense=37,超大杯星巴克焦糖玛奇朵"
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <title>UnicodeDecodeError: 'ascii' codec can't decode byte 0xe9 in position 0: ordinal not in range(128) // Werkzeug Debugger</title>
+    <link rel="stylesheet" href="?__debugger__=yes&amp;cmd=resource&amp;f=style.css" type="text/css">
+    <script type="text/javascript" src="?__debugger__=yes&amp;cmd=resource&amp;f=jquery.js"></script>
+    <script type="text/javascript" src="?__debugger__=yes&amp;cmd=resource&amp;f=debugger.js"></script>
+    <script type="text/javascript">
+      var TRACEBACK = 4406579600,
+          CONSOLE_MODE = false,
+          EVALEX = true,
+          SECRET = "9XR3UOLadNqo95HLFXYi";
+    </script>
+  </head>
+  <body>
+    <div class="debugger">
+<h1>UnicodeDecodeError</h1>
+<div class="detail">
+  <p class="errormsg">UnicodeDecodeError: 'ascii' codec can't decode byte 0xe9 in position 0: ordinal not in range(128)</p>
+</div>
+<h2 class="traceback">Traceback <em>(most recent call last)</em></h2>
+<div class="traceback">
+
+  <ul><li><div class="frame" id="frame-4406579536">
+  <h4>File <cite class="filename">"/Library/Python/2.7/site-packages/Flask-0.9-py2.7.egg/flask/app.py"</cite>,
+      line <em class="line">1701</em>,
+      in <code class="function">__call__</code></h4>
+  <pre>return self.wsgi_app(environ, start_response)</pre>
+</div>
+
+<li><div class="frame" id="frame-4406579664">
+  <h4>File <cite class="filename">"/Library/Python/2.7/site-packages/Flask-0.9-py2.7.egg/flask/app.py"</cite>,
+      line <em class="line">1689</em>,
+      in <code class="function">wsgi_app</code></h4>
+  <pre>response = self.make_response(self.handle_exception(e))</pre>
+</div>
+
+<li><div class="frame" id="frame-4406579728">
+  <h4>File <cite class="filename">"/Library/Python/2.7/site-packages/Flask-0.9-py2.7.egg/flask/app.py"</cite>,
+      line <em class="line">1687</em>,
+      in <code class="function">wsgi_app</code></h4>
+  <pre>response = self.full_dispatch_request()</pre>
+</div>
+
+<li><div class="frame" id="frame-4406579792">
+  <h4>File <cite class="filename">"/Library/Python/2.7/site-packages/Flask-0.9-py2.7.egg/flask/app.py"</cite>,
+      line <em class="line">1360</em>,
+      in <code class="function">full_dispatch_request</code></h4>
+  <pre>rv = self.handle_user_exception(e)</pre>
+</div>
+
+<li><div class="frame" id="frame-4406579856">
+  <h4>File <cite class="filename">"/Library/Python/2.7/site-packages/Flask-0.9-py2.7.egg/flask/app.py"</cite>,
+      line <em class="line">1358</em>,
+      in <code class="function">full_dispatch_request</code></h4>
+  <pre>rv = self.dispatch_request()</pre>
+</div>
+
+<li><div class="frame" id="frame-4406579920">
+  <h4>File <cite class="filename">"/Library/Python/2.7/site-packages/Flask-0.9-py2.7.egg/flask/app.py"</cite>,
+      line <em class="line">1344</em>,
+      in <code class="function">dispatch_request</code></h4>
+  <pre>return self.view_functions[rule.endpoint](**req.view_args)</pre>
+</div>
+
+<li><div class="frame" id="frame-4406579984">
+  <h4>File <cite class="filename">"/Users/mac/backup/essential/Dropbox/private_data/code/lettuce/weixin/server.py"</cite>,
+      line <em class="line">37</em>,
+      in <code class="function">add_expense</code></h4>
+  <pre>if data.insert_expense(userid, "000", amount, category, date, comment):</pre>
+</div>
+
+<li><div class="frame" id="frame-4406580048">
+  <h4>File <cite class="filename">"/Users/mac/backup/essential/Dropbox/private_data/code/lettuce/weixin/data.py"</cite>,
+      line <em class="line">53</em>,
+      in <code class="function">insert_expense</code></h4>
+  <pre>category = category.encode('utf-8', 'ignore')</pre>
+</div>
+</ul>
+  <blockquote>UnicodeDecodeError: 'ascii' codec can't decode byte 0xe9 in position 0: ordinal not in range(128)</blockquote>
+</div>
+
+<div class="plain">
+  <form action="http://paste.pocoo.org/" method="post">
+    <p>
+      <input type="hidden" name="language" value="pytb">
+      This is the Copy/Paste friendly version of the traceback.  <span
+      class="pastemessage">You can also paste this traceback into LodgeIt:
+      <input type="submit" value="create paste"></span>
+    </p>
+    <textarea cols="50" rows="10" name="code" readonly>Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/Flask-0.9-py2.7.egg/flask/app.py", line 1701, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Python/2.7/site-packages/Flask-0.9-py2.7.egg/flask/app.py", line 1689, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Library/Python/2.7/site-packages/Flask-0.9-py2.7.egg/flask/app.py", line 1687, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Python/2.7/site-packages/Flask-0.9-py2.7.egg/flask/app.py", line 1360, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Python/2.7/site-packages/Flask-0.9-py2.7.egg/flask/app.py", line 1358, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Python/2.7/site-packages/Flask-0.9-py2.7.egg/flask/app.py", line 1344, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/mac/backup/essential/Dropbox/private_data/code/lettuce/weixin/server.py", line 37, in add_expense
+    if data.insert_expense(userid, "000", amount, category, date, comment):
+  File "/Users/mac/backup/essential/Dropbox/private_data/code/lettuce/weixin/data.py", line 53, in insert_expense
+    category = category.encode('utf-8', 'ignore')
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xe9 in position 0: ordinal not in range(128)</textarea>
+  </form>
+</div>
+<div class="explanation">
+  The debugger caught an exception in your WSGI application.  You can now
+  look at the traceback which led to the error.  <span class="nojavascript">
+  If you enable JavaScript you can also use additional features such as code
+  execution (if the evalex feature is enabled), automatic pasting of the
+  exceptions and much more.</span>
+</div>
+      <div class="footer">
+        Brought to you by <strong class="arthur">DON'T PANIC</strong>, your
+        friendly Werkzeug powered traceback interpreter.
+      </div>
+    </div>
+  </body>
+</html>
+
+<!--
+
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/Flask-0.9-py2.7.egg/flask/app.py", line 1701, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Python/2.7/site-packages/Flask-0.9-py2.7.egg/flask/app.py", line 1689, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Library/Python/2.7/site-packages/Flask-0.9-py2.7.egg/flask/app.py", line 1687, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Python/2.7/site-packages/Flask-0.9-py2.7.egg/flask/app.py", line 1360, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Python/2.7/site-packages/Flask-0.9-py2.7.egg/flask/app.py", line 1358, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Python/2.7/site-packages/Flask-0.9-py2.7.egg/flask/app.py", line 1344, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/mac/backup/essential/Dropbox/private_data/code/lettuce/weixin/server.py", line 37, in add_expense
+    if data.insert_expense(userid, "000", amount, category, date, comment):
+  File "/Users/mac/backup/essential/Dropbox/private_data/code/lettuce/weixin/data.py", line 53, in insert_expense
+    category = category.encode('utf-8', 'ignore')
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xe9 in position 0: ordinal not in range(128)
+-->
+#+end_example
+** python file
+*** read file
+#+begin_src python
+def convert_list(listfile, datafile):
+    with open(listfile,'r') as f:
+        for row in f:
+            Data = row.split('|')
+            print Data[2].strip()
+#+end_src
+*** append file: open("/tmp/test.txt", "ab").write("\ntest:")
+*** write file: open("/tmp/test.txt", "wab").write("\ntest:")
+*** write file
+http://stackoverflow.com/questions/6159900/correct-way-to-write-line-to-file-in-python
+f = open('myfile', 'w')
+f.write('hi there\n')  # python will convert \n to os.linesep
+f.close()  # you can omit in most cases as the destructor will call it
+*** loop a directory for certain files: glob.glob("./test_data/*.meta")
+http://stackoverflow.com/questions/3964681/find-all-files-in-directory-with-extension-txt-with-python
+*** DONE python read file to lines: f.readlines()
+  CLOSED: [2014-03-25 Tue 15:39]
+with open(fname) as f:
+    content = f.readlines()
+*** check whether file exists: os.path.exists(FLAGFILE)
+*** DONE python remove a file- current.org
+    CLOSED: [2014-03-26 Wed 00:47]
+http://stackoverflow.com/questions/6996603/how-do-i-delete-a-file-or-folder-in-python
+os.remove() will remove a file.
+
+os.rmdir() will remove an empty directory.
+shutil.rmtree() will delete a directory and all its contents.
+*** DONE python make directory if missing
+  CLOSED: [2016-08-03 Wed 12:47]
+#+BEGIN_SRC python
+newpath = r'C:\Program Files\arbitrary'
+if not os.path.exists(newpath):
+    os.makedirs(newpath)
+#+END_SRC
+*** DONE python check whether file is empty: os.stat("file").st_size == 0
+  CLOSED: [2017-03-20 Mon 15:33]
+http://stackoverflow.com/questions/2507808/python-how-to-check-file-empty-or-not
+** python logging
+*** logging to console
+#+begin_example
+import sys
+import logging
+log = logging.getLogger("update_post_feedback")
+format = "%(asctime)s %(filename)s:%(lineno)d - %(levelname)s: %(message)s"
+formatter = logging.Formatter(format)
+stream_handler = logging.StreamHandler(sys.stdout)
+stream_handler.setFormatter(formatter)
+log.addHandler(stream_handler)
+log.setLevel(logging.INFO)
+#+end_example
+*** logging file
+#+begin_example
+import sys
+import logging
+logger = logging.getLogger("endlesscode")
+formatter = logging.Formatter('%(name)-12s %(asctime)s %(levelname)-8s %(message)s', '%a, %d %b %Y %H:%M:%S',)
+file_handler = logging.FileHandler("test.log")
+file_handler.setFormatter(formatter)
+stream_handler = logging.StreamHandler(sys.stderr)
+logger.addHandler(file_handler)
+logger.addHandler(stream_handler)
+#logger.setLevel(logging.ERROR)
+logger.error("fuckgfw\ntest")
+logger.removeHandler(stream_handler)
+logger.error("fuckgov")
+#+end_example
+*** python logrotate
+#+begin_src python
+#!/usr/bin/python
+##-------------------------------------------------------------------
+## @copyright 2013 ShopEx Network Technology Co,.Ltd
+## File : test.py
+## Author : filebat <denny.zhang001@gmail.com>
+## Description :
+## --
+## Created : <2013-04-15>
+## Updated: Time-stamp: <2013-04-15 14:21:42>
+##-------------------------------------------------------------------
+from logging.handlers import RotatingFileHandler
+import logging
+import sys
+
+format = "%(asctime)s %(filename)s:%(lineno)d - %(levelname)s: %(message)s"
+formatter = logging.Formatter(format)
+
+log = logging.getLogger('myapp')
+
+Rthandler = RotatingFileHandler('woojuu_weixin.log', maxBytes=5*1024*1024,backupCount=5)
+Rthandler.setLevel(logging.INFO)
+Rthandler.setFormatter(formatter)
+
+consoleHandler = logging.StreamHandler()
+consoleHandler.setLevel(logging.INFO)
+consoleHandler.setFormatter(formatter)
+
+log.setLevel(logging.INFO)
+#log.setLevel(logging.WARNING)
+log.addHandler(consoleHandler)
+log.addHandler(Rthandler)
+
+if __name__=='__main__':
+  log.info("test")
+
+#+end_src
+*** DONE python print without a new line: sys.stdout.write("Hello ")
+  CLOSED: [2013-02-19 Tue 15:54]
+http://codingrecipes.com/print-without-a-new-line-or-space-in-python
+** python binary
+*** pac binary
+#+begin_src python
+from struct import *
+def main():
+    data = pack('6s1h2s', '@class', 10, "ab")
+    data = pack('<1b6s1h2s', 6,'@class', 10, "ab")
+    for ch in bytearray(data):
+        print ch
+
+if __name__ == "__main__":
+    main()
+#+end_src
+*** sample python binary
+#+begin_src python
+# -*- coding: utf-8 -*-
+#!/usr/bin/python
+##-------------------------------------------------------------------
+## @copyright 2013 ShopEx Network Technology Co,.Ltd
+## File : test.py
+## Author : filebat <denny.zhang001@gmail.com>
+## Description :
+## --
+## Created : <2013-05-23>
+## Updated: Time-stamp: <2013-05-23 10:14:18>
+##-------------------------------------------------------------------
+import sys
+default_encoding = 'utf-8'
+if sys.getdefaultencoding() != default_encoding:
+    reload(sys)
+    sys.setdefaultencoding(default_encoding)
+
+import struct
+def test():
+    # open("./test.txt", "wb").write("\ntest:")
+    # open("./test.txt", "wb").write("abc")
+    # open("./test.txt", "wb").write(struct.pack("h",65))
+    open("./test.txt", "wb").write(struct.pack("h",1024))
+    # open("./test.txt", "wb").write(u"中")
+    # open("./test.txt", "wb").write(u"中".encode('gbk'))
+
+if __name__=='__main__':
+	test()
+## File : hello ends
+
+#+end_src
+** python time
+| Name             | Summary                                                                                                               | Comment                           |
+|------------------+-----------------------------------------------------------------------------------------------------------------------+-----------------------------------|
+| get current time | datetime.now().strftime('%Y-%m-%d %H:%M:%S')                                                                          | from datetime import datetime     |
+| time to string   | time.strftime("%Y-%m-%d %H:%M:%S",time.gmtime(time.mktime(time.strptime("2008-09-17 14:04:00","%Y-%m-%d %H:%M:%S")))) |                                   |
+| time to seconds  | time.mktime(time.strptime("2012-11-17 00:00:00","%Y-%m-%d %H:%M:%S"))                                                 |                                   |
+| get gmtime       | strftime("%Y-%m-%d %H:%M:%S", gmtime())                                                                               | from time import gmtime, strftime |
+| datetimeoffset   | datetime.datetime.now() + datetime.timedelta(seconds=10)                                                              |                                   |
+| seconds to time  | datetime.datetime.fromtimestamp(1369456098).strftime('%Y-%m-%d %H:%M:%S')                                             |                                   |
+| get seconds      | int(round(time.time()))                                                                                               |                                   |
+*** DONE python convert string to datetime
+  CLOSED: [2013-05-03 Fri 23:24]
+#+begin_example
+bash-3.2$ python
+python
+Python 2.7.2 (default, Oct 11 2012, 20:14:37)
+[GCC 4.2.1 Compatible Apple Clang 4.0 (tags/Apple/clang-418.0.60)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from datetime import datetime
+from datetime import datetime
+>>> date_object = datetime.strptime('Jun 1 2005  1:33PM', '%b %d %Y %I:%M%p')
+date_object = datetime.strptime('Jun 1 2005  1:33PM', '%b %d %Y %I:%M%p')
+>>> from datetime import timedelta
+from datetime import timedelta
+>>> print date_object + timedelta(days=1)
+print date_object + timedelta(days=1)
+2005-06-02 13:33:00
+>>>
+#+end_example
+*** DONE python datetime apache format: datetime.datetime.utcnow().strftime("%d/%b/%Y:%H:%M:%S")
+    CLOSED: [2016-10-04 Tue 20:15]
+** python help
+*** DONE get version for a given python module
+  CLOSED: [2012-03-10 六 18:30]
+http://stackoverflow.com/questions/710609/checking-python-module-version-at-runtime\\
+import pkg_resources
+pkg_resources.get_distribution("MySQL-python").version
+pkg_resources.get_distribution("MySQLdb").version
+http://stackoverflow.com/questions/3524168/how-do-i-get-a-python-modules-version-number-through-code\\
+*** DONE [#B] python查找目录结构                                  :IMPORTANT:
+  CLOSED: [2013-02-03 Sun 16:35]
+#+begin_src python
+def get_post_filename(post):
+    for root, dirnames, filenames in os.walk("%s/%s/" % (config.DATA_BASEDIR, post.category)):
+        for filename in fnmatch.filter(filenames, post.title+".data"):
+            return "%s/%s" % (root, post.title)
+    return ""
+#+end_src
+*** DONE python find package location: module.__file__
+  CLOSED: [2013-04-23 Tue 11:07]
+#+begin_example
+bash-3.2$  ython
+bash: ython: command not found
+bash-3.2$ python
+Python 2.7.2 (default, Oct 11 2012, 20:14:37)
+[GCC 4.2.1 Compatible Apple Clang 4.0 (tags/Apple/clang-418.0.60)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import MySQLdb
+import MySQLdb
+>>> find("MySQLdb")
+find("MySQLdb")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'find' is not defined
+>>> MySQLdb.__file__
+MySQLdb.__file__
+'/Library/Python/2.7/site-packages/MySQL_python-1.2.4-py2.7-macosx-10.8-intel.egg/MySQLdb/__init__.pyc'
+>>>
+#+end_example
+*** python probe object
+#+begin_example
+bash-3.2$ python
+python
+Python 2.7.2 (default, Oct 11 2012, 20:14:37)
+[GCC 4.2.1 Compatible Apple Clang 4.0 (tags/Apple/clang-418.0.60)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> class DNA:
+	def __init__(self, name=None, seq=None):
+		self.name = name
+		self.seq = seq
+
+a = DNA("denny", "countg1")
+print a
+class DNA:
+...     def __init__(self, name=None, seq=None):
+...             self.name = name
+...             self.seq = seq
+...
+>>> a = DNA("denny", "countg1")
+>>> print a
+<__main__.DNA instance at 0x109d65488>
+>>> dir(a)
+dir(a)
+['__doc__', '__init__', '__module__', 'name', 'seq']
+>>> vars(a)
+vars(a)
+{'name': 'denny', 'seq': 'countg1'}
+>>>
+#+end_example
+** python exception
+*** DONE python raise error directly
+  CLOSED: [2014-01-17 Fri 16:38]
+raise Exception("I know python!")
+*** TODO python catch exception
+  :PROPERTIES:
+  :ID:       59276E11-ED57-4458-B4A9-4A19310BE92D
+  :END:
+/Users/mac/backup/essential/Dropbox/private_data/code/dataplatform/dctable/dctable/dctable/models/table.py
+#+begin_src python
+    def colunm_drop(self,tablename,columnname,db=None,**kw):
+        db = db if db else self.dbkey
+        dbconn = self.database(db, False)
+        result = False
+        try:
+            # 删除字典表
+            deldic = "DELETE FROM dictionary WHERE  `tablename`='%s' AND `field`='%s';" % (tablename,columnname)
+            dbconn.query(deldic)
+            # 删除多值关系表
+            if self.istableexists('%s_mulval_rel' % tablename,db):
+                delmulval = "DELETE FROM %s_mulval_rel WHERE `field`='%s';" % (tablename,columnname)
+                dbconn.query(delmulval)
+            # 删除字段
+            dropcolumn = 'ALTER TABLE %s DROP COLUMN %s;' % (tablename,columnname)
+            dbconn.query(dropcolumn)
+            result = True
+        except:
+            errmsg = traceback.format_exc()
+            kw['internal']['exception'] = errmsg
+            debug.log(errmsg)
+        dbconn.commit() if result else dbconn.rollback()
+        # 修改mongo的表结构
+        self.create_table_schema(tablename,db)
+        # 修改sphinx配置文件
+        return result
+
+#+end_src
+** #  --8<-------------------------- separator ------------------------>8--
+** python smarty: template/json/xml
+***** DONE python template: jinja
+  CLOSED: [2012-12-14 Fri 10:58]
+  easy_install Jinja2
+
+>>> from jinja2 import Template
+>>> template = Template('Hello {{ name }}!')
+>>> template.render(name='John Doe')
+u'Hello John Doe!'
+
+#+begin_example
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+    <title>My Webpage</title>
+</head>
+<body>
+    <ul id="navigation">
+    {% for item in navigation %}
+        <li><a href="{{ item.href }}">{{ item.caption }}</a></li>
+    {% endfor %}
+    </ul>
+
+    <h1>My Webpage</h1>
+    {{ a_variable }}
+</body>
+</html>
+#+end_example
+***** DONE python markdown
+  CLOSED: [2013-02-03 Sun 17:59]
+sudo pip install markdown
+****** 常见操作
+#+begin_example
+Emphasized text
+ *emphasis* or _emphasis_  (e.g., italics)
+ **strong emphasis** or __strong emphasis__ (e.g., boldface)
+
+#+end_example
+****** useful link
+http://zh.wikipedia.org/wiki/Markdown
+    http://en.wikipedia.org/wiki/Markdown
+    http://daringfireball.net/projects/markdown/syntax
+    http://blog.chinaunix.net/uid-7414207-id-2056022.html
+    http://packages.python.org/Markdown/
+***** DONE python escape characters for json
+   CLOSED: [2013-05-07 Tue 11:35]
+http://stackoverflow.com/questions/5997029/escape-double-quotes-for-json-in-python
+#+begin_example
+You should be using the json module. json.dumps(string). It can also serialize other python data types.
+
+>>> s = 'my string with "double quotes" blablabla'
+
+>>> json.dumps(s)
+<<< '"my string with \\"double quotes\\" blablabla"'
+#+end_example
+*** DONE python install web.py
+  CLOSED: [2013-06-17 Mon 15:22]
+http://webpy.org/install
+http://webpy.org/static/web.py-0.37.tar.gz
+*** Tornado即是一个webserve,同时又是一个类web.py的micro-framework
+#+begin_example
+Tornado即是一个webserve(r对此本文不作详述),同时又是一个类web.py的micro-framework,作为框架Tornado 的思想主要来源于 web.py,大家在 web.py 的网站首页也可以看到 Tornado 的大佬 Bret Taylor 的这么一段话(他 这里说的 FriendFeed 用的框架跟 Tornado 可以看作是一个东西):
+"[web.py inspired the] web framework we use at FriendFeed [and] the webapp framework that ships with App Engine..."
+￼
+因为有这层关系,后面不再单独讨论 Tornado.
+web.py 的设计理念力求精简(Keep it simple and powerful),总共就没多少行代码,也不像 Pylons 那样依赖大量 的第三方模块,而是只提供的一个框架所必须的一些东西,如:URL 路由`Template`数据库访问,其它的就交 给用户自己去做好了.
+一个框架精简的好处在于你可以聚焦在业务逻辑上,而不用太多的去关心框架本身或受框架的干扰,同时缺点也很 明显,许多事情你得自己操刀上. 我个人比较偏好这种精简的框架,因为你很容易通过阅读源码弄明白整个框架的工作机制,如果框架那一块不是很 合意的话,我完全可以 Monkey patch 一下按自己的要求来.
+早期的 reddit 是用 web.py 写的,Tornado 的案例有 friendfeed.com`bit.ly`quora.com 和我的开源站点 poweredsites.org 等.
+#+end_example
+*** Bottle 和 Flask 作为新生一代 Python 框架的代表,挺有意思的是都采用了 decorator 的方式配置 URL 路由
+#+begin_example
+Bottle 和 Flask 作为新生一代 Python 框架的代表,挺有意思的是都采用了 decorator 的方式配置 URL 路由,如:
+from bottle import route, run
+@route('/:name')
+def index(name='World'):
+return '&lt;b&gt;Hello %s!&lt;/b&gt;' % name run(host='localhost', port=8080)
+
+Bottle`Flask 跟 web.py 一样,都非常精简,Bottle 甚至所有的代码都在那一个两千来行的.py 文件里.另外 Flask 和 Pylons 一样,可以跟 Jinja2`SQLAlchemy 之类结合的很好.
+不过目前不管是 Bottle 还是 Flask 成功案例都还很少.
+#+end_example
+*** python http request
+#+begin_src python
+#!/bin/bash
+##-------------------------------------------------------------------
+## @copyright 2013
+## File : xzb_update_user_html.sh
+## Author : filebat <denny.zhang001@gmail.com>
+## Description : Update posts info to mysql
+## --
+## Created : <2013-01-31>
+## Updated: Time-stamp: <2013-02-01 10:51:47>
+##-------------------------------------------------------------------
+. /usr/bin/utility_xzb.sh
+
+BIN_NAME="$(basename $0 .sh)"
+VERSION=0.1
+
+function update_user_html() {
+    user_dir=${1?"user website directory is required"}
+    userid=${2?"userid is required"}
+    date=${3?"date is required"}
+    index_html="$user_dir/$(echo $date | tr -d -).html"
+    if [ -f $index_html ] && [ -z "$force_build" ]; then
+        log "[$BIN_NAME.sh] $index_html exists, skip the following generating work."
+        log "[$BIN_NAME.sh] To enforce re-build, please use --force option."
+        exit 0
+    fi
+
+    # copy resource file
+    /bin/cp -r $XZB_HOME/code/smarty_html/templates/resource $user_dir
+
+    # update main page
+    python_script="import jinja_html; jinja_html.generate_list_user_post(\"$userid\", \"$date\", \"$index_html\")"
+
+    command="(cd $XZB_HOME/code/smarty_html; python -c '${python_script}')"
+    eval $command
+    if [ $? -ne 0 ]; then
+        log "[$BIN_NAME.sh] Generate $index_html failed."
+        exit 1
+    else
+        log "[$BIN_NAME.sh] Generate $index_html is done."
+    fi
+
+    # update portal page
+    main_html=$(ls -lt $vhostdir/*.html | awk -F':' '{print $2}' | awk -F' ' '{print $2}' | grep '[0-9][0-9][0-9][0-9][0-9][0-9].html' | sort | tail -n 1)
+    cat > $vhostdir/index.php <<EOF
+<?php
+\$htmlFile = file("$main_html");
+echo(implode('',\$htmlFile));
+EOF
+    # update posts page
+    python_script="import jinja_html; jinja_html.generate_user_all_posts(\"$userid\", \"$date\", \"$user_dir\")"
+    command="(cd $XZB_HOME/code/smarty_html; python -c '${python_script}')"
+    eval $command
+    if [ $? -ne 0 ]; then
+        log "[$BIN_NAME.sh] Generate html files of user posts failed."
+        exit 1
+    else
+        log "[$BIN_NAME.sh] Generate html files of user posts is done."
+    fi
+}
+
+help()
+{
+cat <<EOF
+Usage: ${BIN_NAME}.sh [OPTION]
+
+Sample: sudo ${BIN_NAME}.sh --user denny --date 2013-01-24 --vhostdir /home/wwwroot/denny.youwen.im
++----------------------+   +--------------------+   +------------------------------+
+|                      |   |                    |   |                              |
+| generate index.php   +---+ generate main page +---+ generate html files of posts |
+|                      |   |                    |   |                              |
++----------------------+   +--------------------+   +------------------------------+
+
+${BIN_NAME} is a shell script to generate a user's html files for a given date
+
+Mandatory arguments:
+  --user                   username
+  --date                   date
+  --vhostdir               root directory for the vhost
+
+Optional arguments:
+  --force                  force to rebuild html files, even if it exist
+  -h, --help               display this help
+  -v, --version            output version information
+EOF
+    exit 0
+}
+
+ensure_variable_isset
+ensure_is_root
+
+ARGS=`getopt -a -o hv -l user:,date:,vhostdir:,force,version,help -- "$@"`
+[ $? -ne 0 ] && help
+eval set -- "${ARGS}"
+
+while true
+do
+    case "$1" in
+        --force)
+            force_build="t"
+            ;;
+        -v|--version)
+            echo "${BIN_NAME} version ${VERSION}"
+            shift
+            exit 0
+            ;;
+        -h|--help)
+            help
+            shift
+            exit 0
+            ;;
+        --user)
+            userid="$2"
+            shift
+            ;;
+        --date)
+            date="$2"
+            shift
+            ;;
+        --vhostdir)
+            vhostdir="$2"
+            shift
+            ;;
+        --)
+            shift
+            break
+            ;;
+    esac
+    shift
+done
+
+if [ -z $vhostdir ]; then
+    echo "vhostdir is a mandatory option"
+    help
+    exit 1
+fi
+
+if [ -z $userid ]; then
+    echo "userid is a mandatory option"
+    help
+    exit 1
+fi
+
+if [ -z $date ]; then
+    echo "date is a mandatory option"
+    help
+    exit 1
+fi
+
+update_user_html "$vhostdir" $userid $date
+
+## File : xzb_update_user_html.sh ends
+#+end_src
+** python test
+*** unittest
+http://hi.baidu.com/hellosim/item/4f2b62e3fe6258296cabb8f2
+#+begin_src python
+# -*- coding: utf-8 -*-
+##-------------------------------------------------------------------
+## @copyright 2013
+## File : weixin_unittest.py
+## Author : filebat <denny.zhang001@gmail.com>
+## Description :
+## --
+## Created : <2013-04-11 00:00:00>
+## Updated: Time-stamp: <2013-04-28 20:55:21>
+##-------------------------------------------------------------------
+import sys
+import unittest
+
+from data import add_expense, view_history
+
+class WeixinTestCase(unittest.TestCase):
+    def setUp(self):
+        self.userid = "unittest"
+
+    def tearDown(self):
+        i = 1
+
+    def testAddExpense(self):
+        print add_expense(self.userid, u"30 永和大王")
+        self.assertEqual((40,40), (40, 40))
+
+    def testReSize(self):
+        self.assertEqual((40,40), (40, 40))
+
+def suite():
+    suite = unittest.TestSuite()
+    suite.addTest(WeixinTestCase("testAddExpense"))
+    return suite
+
+if __name__ == "__main__":
+    unittest.TextTestRunner().run(suite())
+#+end_src
+*** [#B] mail: 通过pylint来对python代码做检查                      :noexport:
+[[gnus:shopex.zabbix#m2y5cbyurp.fsf@126.com][Email from Denny Zhang (Mon, 22 Apr 2013 13:55:06 +0800): 通过pylint来对python代码做检查]]
+#+begin_example
+From: Denny Zhang <denny.zhang001@gmail.com>
+Subject: 通过pylint来对python代码做检查
+To: 潘金杰 <panjinjie@shopex.cn>, 叶宁 <yening@shopex.cn>
+CC: 邹富星 <zoufuxing@shopex.cn>, 樊宗龙 <fanzonglong@shopex.cn>, 老八 <flaboy@shopex.cn>, "Denny Zhang" <zhangwei@shopex.cn>
+Date: Mon, 22 Apr 2013 13:55:06 +0800
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/24.3 (darwin)
+
+hi 金杰
+
+python项目加一个makefile来支持hudson做每日的静态代码检查吧.
+
+,-----------
+| 通过pylint我们可以对python代码做一些静态代码检查.
+| 写一个makefile来对项目工程所有python代码调用pylint.
+|
+| 这样,hudson就能很方便地每天帮我们做代码检查.
+|
+| 1. pylint的安装: sudo easy_install pylint
+| 2. 试用pylint: pylint -e ./data.py
+| 3. makefile的示例
+|    下面代码中,有一个makefile的示例
+|     https://github.com/dennyzhang/xiaozibao/tree/master/cheatsheet-python-A4][challenges-leetcode-interesting]]
+`-----------
+
+--
+Denny Zhang(张巍)
+邮箱: markfilebat@126. com
+微博: http://weibo.com/dennyzhang001
+博客: http://blog.ec-ae.com/
+
+Don't attend meeting without preparation!
+
+                                  .       .
+                                 / `.   .' "
+                         .---.  <    > <    >  .---.
+                         |    \\  \\ - ~ ~ - /  /    |
+     _____          ..-~             ~-..-~
+    |     |   \\~~~\\.'                    `./~~~/
+   ---------   \\__/                        \\__/
+  .'  O    \\     /               /       \\  "
+ (_____,    `._.'               |         }  \\/~~~/
+  `----.          /       }     |        /    \\__/
+        `-.      |       /      |       /      `. ,~~|
+            ~-.__|      /_ - ~ ^|      /- _      `..-'
+                 |     /        |     /     ~-.     `-. _  _  _
+                 |_____|        |_____|         ~ - . _ _ _ _ _>
+
+#+end_example
+** python package management
+*** [#B] python upgrade: source code install python2.7            :IMPORTANT:
+yum install sqlite
+yum install sqlite-devel
+
+wget http://www.python.org/ftp/python/2.7.3/Python-2.7.3.tar.bz2
+tar jxvf Python-2.7.3.tar.bz2
+cd Python-2.7.3
+./configure
+make && make install
+
+mv /usr/bin/python /usr/bin/python.bak
+ln -s /usr/local/bin/python2.7 /usr/bin/python
+
+vim /usr/bin/yum
+将首行显示的 !#/usr/bin/python 修改为 !#/usr/bin/python2.4
+
+curl -O http://python-distribute.org/distribute_setup.py
+python distribute_setup.py
+*** DONE upgrade python-setuptools
+  CLOSED: [2013-04-25 Thu 15:59]
+http://zhongwei-leg.iteye.com/blog/813753
+
+wget http://pypi.python.org/packages/2.6/s/setuptools/setuptools-0.6c11-py2.6.egg#md5=bfa92100bd772d5a213eedd356d64086
+
+sh setuptools-0.6c11-py2.6.egg
+#+begin_example
+[root@datacenter01.shopex]  eth0 = 192.168.65.251;
+[15:51:17] PWD => /home/zhangwei/Python-2.7.3
+46># easy_install update python-setuptools
+Traceback (most recent call last):
+  File "/usr/bin/easy_install", line 5, in <module>
+    from pkg_resources import load_entry_point
+  File "/usr/local/lib/python2.7/site-packages/setuptools-0.6c11-py2.7.egg/pkg_resources.py", line 2607, in <module>
+  File "/usr/local/lib/python2.7/site-packages/setuptools-0.6c11-py2.7.egg/pkg_resources.py", line 565, in resolve
+pkg_resources.DistributionNotFound: setuptools==0.6c5
+---------------------------------------------------------------------------------------------
+
+[root@datacenter01.shopex]  eth0 = 192.168.65.251;
+[15:51:34] PWD => /home/zhangwei/Python-2.7.3
+47># yum install python-setuptools
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+Setting up Install Process
+Package python-setuptools-0.6c5-2.el5.noarch already installed and latest version
+Nothing to do
+---------------------------------------------------------------------------------------------
+
+[root@datacenter01.shopex]  eth0 = 192.168.65.251;
+[15:51:40] PWD => /home/zhangwei/Python-2.7.3
+48># yum update python-setuptools
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+Setting up Update Process
+No Packages marked for Update
+#+end_example
+*** DONE upgrade python easy_install
+  CLOSED: [2013-04-25 Thu 15:59]
+#+begin_example
+61># cat /usr/bin/easy_install
+#!/usr/bin/python
+# EASY-INSTALL-ENTRY-SCRIPT: 'setuptools==0.6c5','console_scripts','easy_install'
+__requires__ = 'setuptools==0.6c5'
+import sys
+from pkg_resources import load_entry_point
+
+sys.exit(
+   load_entry_point('setuptools==0.6c5', 'console_scripts', 'easy_install')()
+)
+---------------------------------------------------------------------------------------------
+
+[root@datacenter01.shopex]  eth0 = 192.168.65.251;
+[15:56:39] PWD => /home/zhangwei
+62># easy_install --help
+Traceback (most recent call last):
+  File "/usr/bin/easy_install", line 5, in <module>
+    from pkg_resources import load_entry_point
+  File "/usr/local/lib/python2.7/site-packages/setuptools-0.6c11-py2.7.egg/pkg_resources.py", line 2607, in <module>
+  File "/usr/local/lib/python2.7/site-packages/setuptools-0.6c11-py2.7.egg/pkg_resources.py", line 565, in resolve
+pkg_resources.DistributionNotFound: setuptools==0.6c5
+---------------------------------------------------------------------------------------------
+
+[root@datacenter01.shopex]  eth0 = 192.168.65.251;
+[15:56:52] PWD => /home/zhangwei
+63># easy_install -V
+Traceback (most recent call last):
+  File "/usr/bin/easy_install", line 5, in <module>
+    from pkg_resources import load_entry_point
+  File "/usr/local/lib/python2.7/site-packages/setuptools-0.6c11-py2.7.egg/pkg_resources.py", line 2607, in <module>
+  File "/usr/local/lib/python2.7/site-packages/setuptools-0.6c11-py2.7.egg/pkg_resources.py", line 565, in resolve
+pkg_resources.DistributionNotFound: setuptools==0.6c5
+---------------------------------------------------------------------------------------------
+
+[root@datacenter01.shopex]  eth0 = 192.168.65.251;
+[15:56:55] PWD => /home/zhangwei
+64># easy_install --version
+Traceback (most recent call last):
+  File "/usr/bin/easy_install", line 5, in <module>
+    from pkg_resources import load_entry_point
+  File "/usr/local/lib/python2.7/site-packages/setuptools-0.6c11-py2.7.egg/pkg_resources.py", line 2607, in <module>
+  File "/usr/local/lib/python2.7/site-packages/setuptools-0.6c11-py2.7.egg/pkg_resources.py", line 565, in resolve
+pkg_resources.DistributionNotFound: setuptools==0.6c5
+---------------------------------------------------------------------------------------------
+
+[root@datacenter01.shopex]  eth0 = 192.168.65.251;
+[15:57:00] PWD => /home/zhangwei
+65># which easy_install-2.7
+/usr/local/bin/easy_install-2.7
+---------------------------------------------------------------------------------------------
+
+[root@datacenter01.shopex]  eth0 = 192.168.65.251;
+[15:57:44] PWD => /home/zhangwei
+67># mv /usr/bin/easy_install /usr/bin/easy_install.bak
+---------------------------------------------------------------------------------------------
+
+[root@datacenter01.shopex]  eth0 = 192.168.65.251;
+[15:58:14] PWD => /home/zhangwei
+70># ln -s /usr/local/bin/easy_install-2.7 /usr/bin/easy_install
+
+#+end_example
+*** DONE python fail after ugprade: ImportError: No module named pkg_resources
+  CLOSED: [2013-05-15 Wed 17:17]
+http://stackoverflow.com/questions/1756721/what-is-causing-importerror-no-module-named-pkg-resources-after-upgrade-of-pyth
+
+curl -O http://python-distribute.org/distribute_setup.py
+python distribute_setup.py
+#+begin_example
+[magic@DataCenter-V02-vm01.shopex.cn]  eth1 = 60.191.142.251;
+[17:09:43] PWD => ~/mongodb-linux-x86_64-2.4.3/Python-2.7.3
+79>$ easy_install pip
+Traceback (most recent call last):
+  File "/usr/bin/easy_install", line 5, in <module>
+    from pkg_resources import load_entry_point
+ImportError: No module named pkg_resources
+
+#+end_example
+
+#+begin_example
+[UPDATE] TL;DR pkg_resources is provided by either Distribute or setuptools. Try this:
+
+curl -O http://python-distribute.org/distribute_setup.py
+python distribute_setup.py
+[Longer answer for OP's specific problem]:
+
+You don't say in your question but I'm assuming you upgraded from the Apple-supplied Python (2.5 on 10.5 or 2.6.1 on 10.6) or that you upgraded from a python.org Python 2.5. In any of those cases, the important point is that each Python instance has its own library, including its own site-packages library, which is where additional packages are installed. (And none of them use /usr/local/lib by default, by the way.) That means you'll need to install those additional packages you need for your new python 2.6. The easiest way to do this is to first ensure that the new python2.6 appears first on your search $PATH (that is, typing python2.6 invokes it as expected); the python2.6 installer should have modified your .bash_profile to put its framework bin directory at the front of $PATH. Then install easy_install using either Distribute or setuptools following the instructions there. The pkg_resources module is also automatically installed by this step.
+
+Then use the newly-installed version of easy_install to install ipython.
+
+easy_install ipython
+It should automatically get installed to the correct site-packages location for that python instance and you should be good to go.
+
+#+end_example
+** python message queue
+*** DONE insert into mq by command line
+  CLOSED: [2013-02-14 Thu 21:29]
+sudo pip install pika
+#+begin_src python
+#!/usr/bin/env python
+import pika
+import sys
+import time
+
+def insert_message(queue_name, message):
+    print "Insert into queue(" + queue_name + "). msg:" + message
+    connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
+    channel = connection.channel()
+
+    channel.queue_declare(queue=queue_name, durable=True)
+
+    channel.basic_publish(exchange='',
+                          routing_key=queue_name,
+                          body=message,
+                          properties=pika.BasicProperties(
+                              delivery_mode = 2, # make message persistent
+                          ))
+    print " [x] Sent %r" % (message,)
+    connection.close()
+
+def get_message(queue_name):
+    connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
+    channel = connection.channel()
+
+    channel.queue_declare(queue=queue_name, durable=True)
+    print ' [*] Waiting for messages. To exit press CTRL+C'
+
+    channel.basic_qos(prefetch_count=1)
+    channel.basic_consume(callback, queue=queue_name)
+
+    channel.start_consuming()
+
+def callback(ch, method, properties, body):
+    print " [x] Received %r" % (body,)
+    time.sleep( body.count('.') )
+    print " [x] Done"
+    ch.basic_ack(delivery_tag = method.delivery_tag)
+
+def get_queue_name(message):
+    list_t = message.split("/")
+    host = list_t[2]
+    return "snake_worker-shell#1#d1#" + host
+
+# xzb_insert_mq.py insert http://haowenz.com/a/bl/2012/784.html
+# xzb_insert_mq.py get snake_worker-shell#1#d1#haowenz.com
+if __name__ == "__main__":
+    if len(sys.argv) != 3:
+        print "Error invalid argument: " + str(sys.argv)
+        sys.exit(-1)
+    if sys.argv[1] == "insert":
+        message = sys.argv[2]
+        queue_name = get_queue_name(message)
+        insert_message(queue_name, message)
+    else:
+        queue_name = sys.argv[2]
+        get_message(queue_name)
+
+#+end_src
+*** python pika for rabbitmq
+**** DONE No handlers could be found for logger "pika.adapters.base_connection"
+  CLOSED: [2013-06-09 Sun 16:12]
+https://github.com/pika/pika/issues/264
+
+import logging
+logging.getLogger('pika').setLevel(logging.DEBUG)
+** python lambda
+*** DONE index_key_list = map(lambda x: "%s_%s" % (x, index_name), date_list)
+    CLOSED: [2013-05-27 Mon 18:16]
+** DONE python get linux date command to datetime
+  CLOSED: [2017-03-14 Tue 15:20]
+print datetime.now().strftime('%a %b %d %H:%M:%S %Y')
+https://www.cyberciti.biz/faq/howto-get-current-date-time-in-python/
+
+
+Directive	Meaning
+%a	Weekday name.
+%A	Full weekday name.
+%b	Abbreviated month name.
+%B	Full month name.
+%c	Appropriate date and time representation.
+%d	Day of the month as a decimal number [01,31].
+%H	Hour (24-hour clock) as a decimal number [00,23].
+%I	Hour (12-hour clock) as a decimal number [01,12].
+%j	Day of the year as a decimal number [001,366].
+%m	Month as a decimal number [01,12].
+%M	Minute as a decimal number [00,59].
+%p	Equivalent of either AM or PM.
+%S	Second as a decimal number [00,61].
+%U	Week number of the year (Sunday as the first day of the week) as a decimal number [00,53]. All days in a new year preceding the first Sunday are considered to be in week 0.
+%w	Weekday as a decimal number [0(Sunday),6].
+%W	Week number of the year (Monday as the first day of the week) as a decimal number [00,53]. All days in a new year preceding the first Monday are considered to be in week 0.
+%x	Appropriate date representation.
+%X	Apropriate time representation.
+%y	Year without century as a decimal number [00,99].
+%Y	Year with century as a decimal number.
+%Z	Time zone name (no characters if no time zone exists).
+%%	A literal '%' character.
+** python funcy features
+*** DONE python把字符串当代码执行
+  CLOSED: [2013-06-05 Wed 22:18]
+http://blog.csdn.net/fanshengchong/article/details/7052328
+#+begin_example
+bash-3.2$ python
+Python 2.7.2 (default, Oct 11 2012, 20:14:37)
+[GCC 4.2.1 Compatible Apple Clang 4.0 (tags/Apple/clang-418.0.60)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> eval('3+4')
+eval('3+4')
+7
+>>> str = "for i in range(0,10): print i"
+str = "for i in range(0,10): print i"
+>>> c = compile(str,'','exec')
+c = compile(str,'','exec')
+>>> exec c
+exec c
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+#+end_example
+*** CANCELED python的return if: 将下面fun1的第两行和第三行,改成一行: 不支持
+    CLOSED: [2013-06-20 Thu 10:22]
+#+begin_src python
+def fun1():
+	a ="option"
+	if a == "option1" or a == "option2":
+		return True
+	...
+	...
+	return False
+
+def fun2():
+	a ="option"
+	return True if a == "option1" or a == "option2" else False
+
+if __name__ == '__main__':
+	print fun1()
+	print fun2()
+#+end_src
+** python xml
+** python json
+*** DONE python Jinja template renders double quotes or single quotes as &#39; &#34;
+  CLOSED: [2013-06-01 Sat 20:05]
+http://stackoverflow.com/questions/9005823/jinja-template-renders-double-quotes-or-single-quotes-as-39-43
+Use the safe template filter:
+
+dataTable.addRows( {{ answerjson1 | safe }} );
+*** DONE python load json file
+  CLOSED: [2017-01-25 Wed 17:11]
+http://stackoverflow.com/questions/2835559/parsing-values-from-a-json-file-using-python
+
+import json
+from pprint import pprint
+
+with open('data.json') as data_file: current.org
+    data = json.load(data_file)
+
+pprint(data)
+data["maps"][0]["id"]
+data["masks"]["id"]
+data["om_points"]
+*** DONE python parse json: json.loads('["foo", {"bar":["baz", null, 1.0, 2]}]')
+  CLOSED: [2017-01-26 Thu 13:31]
+https://docs.python.org/2/library/json.html
+>>> import json
+>>> json.loads('["foo", {"bar":["baz", null, 1.0, 2]}]')
+[u'foo', {u'bar': [u'baz', None, 1.0, 2]}]
+*** DONE python print json in a beautiful way
+  CLOSED: [2017-04-10 Mon 16:50]
+http://stackoverflow.com/questions/12943819/how-to-python-prettyprint-a-json-file
+>>> import json
+>>>
+>>> your_json = '["foo", {"bar":["baz", null, 1.0, 2]}]'
+>>> parsed = json.loads(your_json)
+>>> print json.dumps(parsed, indent=4, sort_keys=True)
+[
+    "foo",
+    {
+        "bar": [
+            "baz",
+            null,
+            1.0,
+            2
+        ]
+    }
+]
+** python decorator
+*** mail: Python decorator可以大大减少代码冗余                     :noexport:
+[[gnus:nnfolder%2Barchive:mail.sent.mail#m2hagtzceq.fsf@126.com][Email from Denny Zhang (Thu, 20 Jun 2013 11:30:53 +0800): Python decorator可以大大减少代]]
+#+begin_example
+From: Denny Zhang <denny.zhang001@gmail.com>
+Subject: Python decorator可以大大减少代码冗余
+To: 小溪 <liuxiaoxi@shopex.cn>, 优优
+ <liyouyou@shopex.cn>, 丁进 <dingjin@shopex.cn>,
+ 万宝 <wangwanbao@shopex.cn>, 叶宁
+ <yening@shopex.cn>, 潘金杰 <panjinjie@shopex.cn>,
+ 樊宗龙 <fanzonglong@shopex.cn>
+Date: Thu, 20 Jun 2013 11:30:53 +0800
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/24.3 (darwin)
+
+http://www.cnblogs.com/Jerry-Chou/archive/2012/05/23/python-decorator-explain.html
+
+,----------- python
+| def printdebug(func):
+|     def __decorator():
+|         print('enter the login')
+|         func()
+|         print('exit the login')
+|     return __decorator
+|
+| @printdebug  #combine the printdebug and login
+| def login():
+|     print('in login')
+|
+| login()  #make the calling point more intuitive
+`-----------
+
+这个机制蛮不错的.与lisp的defadivce相似.
+,----------- lisp
+| (defadvice org-meta-return (after cond activate)
+|   (when (= 1 (org-current-level))
+|     (insert "TODO "))
+|   )
+`-----------
+
+不过python这里,login是作为一个整体传进来的.只能在它前后加一些额外功能
+而lisp中,可以在login这函数内部任何代码中插入一些额外功能.
+
+--
+Denny Zhang(张巍)
+邮箱: markfilebat@126. com
+微博: http://weibo.com/dennyzhang001
+博客: http://blog.ec-ae.com/
+
+The questions you ask determine the quality of your life.
+
+ ╭(╯^╰)╮
+
+#+end_example
+*** python decorator sample
+#+begin_src py
+import time
+import functools
+def  timeit_wrapper(func):
+    @functools.wraps(func)
+    def  wrapper(*args, **kw):
+        begin = time.time()
+        result = func(*args, **kw)
+        end =time.time()
+        collector = { 'begin': begin, 'end': end, 'spend': end - begin}
+        print collector
+        return result
+    return wrapper
+@timeit_wrapper
+def cost(s, **kw):
+    time.sleep(s)
+    return s
+cost(2)
+#+end_src
+** python misc
+*** DONE python enforce 32 bit: export VERSIONER_PYTHON_PREFER_32_BIT=yes
+    CLOSED: [2012-03-17 六 00:33]
+*** python hashlib/md5
+http://stackoverflow.com/questions/7829499/using-hashlib-to-compute-md5-digest-of-a-file-in-python3
+#+begin_src python
+import hashlib
+from functools import partial
+
+def md5sum(filename):
+    with open(filename, mode='rb') as f:
+        d = hashlib.md5()
+        for buf in iter(partial(f.read, 128), b''):
+            d.update(buf)
+    return d.hexdigest()
+
+print(md5sum('utils.py'))
+#+end_src
+** python的各类框架介绍
+*** [#B] python Django框架的是与非
+#+begin_example
+Python 框架虽然说是百花齐放,但仍然有那么一家是最大的,它就是 Django.要说 Django 是 Python 框架里最好 的,有人同意也有人坚决反对,但说 Django 的文档最完善`市场占有率最高`招聘职位最多估计大家都没什么意 见.Django 为人所称道的地方主要有:
+ 完美的文档,Django 的成功,我觉得很大一部分原因要归功于 Django 近乎完美的官方文档(包括 Django book).
+ 全套的解决方案,Django 象 Rails 一样,提供全套的解决方案(full-stack framework + batteries included),基 本要什么有什么(比如:cache`session`feed`orm`geo`auth),而且全部 Django 自己造,开发网站应手 的工具 Django 基本都给你做好了,因此开发效率是不用说的,出了问题也算好找,不在你的代码里就在 Django
+的源码里.
+ 强大的 URL 路由配置,Django 让你可以设计出非常优雅的 URL,在 Django 里你基本可以跟丑陋的 GET 参数
+说拜拜.
+ 自助管理后台,admin interface 是 Django 里比较吸引眼球的一项 contrib,让你几乎不用写一行代码就拥有一
+个完整的后台管理界面.
+而 Django 的缺点主要源自 Django 坚持自己造所有的轮子,整个系统相对封闭,Django 最为人诟病的地方有:
+ 系统紧耦合,如果你觉得 Django 内置的某项功能不是很好,想用喜欢的第三方库来代替是很难的,比如下面 将要说的 ORM`Template.要在 Django 里用 SQLAlchemy 或 Mako 几乎是不可能,即使打了一些补丁用上了 也会让你觉得非常非常别扭.
+ Django 自带的 ORM 远不如 SQLAlchemy 强大,除了在 Django 这一亩三分地,SQLAlchemy 是 Python 世界
+￼
+里事实上的 ORM 标准,其它框架都支持 SQLAlchemy 了,唯独 Django 仍然坚持自己的那一套.Django 的开 发人员对 SQLAlchemy 的支持也是有过讨论和尝试的,不过最终还是放弃了,估计是代价太高且跟 Django 其 它的模块很难合到一块.
+ Template 功能比较弱,不能插入 Python 代码,要写复杂一点的逻辑需要另外用 Python 实现 Tag 或 Filter.关 于模板这一点,一直以来争论比较多,最近有两篇关于 Python 模板的比较有意思的文章可供参考:
+1. http://pydanny.blogspot.com/2010/12/stupid-template-languages.html(需翻墙)
+2. http://techspot.zzzeek.org/2010/12/04/in-response-to-stupid-template-languages/
+ URL 配置虽然强大,但全部要手写,这一点跟 Rails 的 Convention over configuration 的理念完全相左,高手
+￼￼和初识 Django 的人配出来的 URL 会有很大差异.
+
+ 让人纠结的 auth 模块,Django 的 auth 跟其它模块结合紧密,功能也挺强的,就是做的有点过了,用户的数据 库 schema 都给你定好了,这样问题就来了,比如很多网站要求 email 地址唯一,可 schema 里这个字段的值 不是唯一的,纠结是必须的了.
+ Python 文件做配置文件,而不是更常见的 ini`xml 或 yaml 等形式.这本身不是什么问题,可是因为理论上来 说 settings 的值是能够动态的改变的(虽然大家不会这么干),但这不是最佳实践的体现.
+总的来说,Django 大包大揽,用它来快速开发一些 Web 运用是很不错的.如果你顺着 Django 的设计哲学来,你 会觉得 Django 很好用,越用越爽;相反,你如果不能融入或接受 Django 的设计哲学,你用 Django 一定会很痛苦, 趁早放弃的好.所以说在有些人眼里 Django 无异于仙丹,但对有一些人来说它又是毒药且剧毒. Django
+Python 框架虽然说是百花齐放,但仍然有那么一家是最大的,它就是 Django.要说 Django 是 Python 框架里最好 的,有人同意也有人坚决反对,但说 Django 的文档最完善`市场占有率最高`招聘职位最多估计大家都没什么意 见.Django 为人所称道的地方主要有:
+ 完美的文档,Django 的成功,我觉得很大一部分原因要归功于 Django 近乎完美的官方文档(包括 Django book).
+ 全套的解决方案,Django 象 Rails 一样,提供全套的解决方案(full-stack framework + batteries included),基 本要什么有什么(比如:cache`session`feed`orm`geo`auth),而且全部 Django 自己造,开发网站应手 的工具 Django 基本都给你做好了,因此开发效率是不用说的,出了问题也算好找,不在你的代码里就在 Django
+的源码里.
+ 强大的 URL 路由配置,Django 让你可以设计出非常优雅的 URL,在 Django 里你基本可以跟丑陋的 GET 参数
+说拜拜.
+ 自助管理后台,admin interface 是 Django 里比较吸引眼球的一项 contrib,让你几乎不用写一行代码就拥有一
+个完整的后台管理界面.
+而 Django 的缺点主要源自 Django 坚持自己造所有的轮子,整个系统相对封闭,Django 最为人诟病的地方有:
+ 系统紧耦合,如果你觉得 Django 内置的某项功能不是很好,想用喜欢的第三方库来代替是很难的,比如下面 将要说的 ORM`Template.要在 Django 里用 SQLAlchemy 或 Mako 几乎是不可能,即使打了一些补丁用上了 也会让你觉得非常非常别扭.
+ Django 自带的 ORM 远不如 SQLAlchemy 强大,除了在 Django 这一亩三分地,SQLAlchemy 是 Python 世界
+￼
+里事实上的 ORM 标准,其它框架都支持 SQLAlchemy 了,唯独 Django 仍然坚持自己的那一套.Django 的开 发人员对 SQLAlchemy 的支持也是有过讨论和尝试的,不过最终还是放弃了,估计是代价太高且跟 Django 其 它的模块很难合到一块.
+ Template 功能比较弱,不能插入 Python 代码,要写复杂一点的逻辑需要另外用 Python 实现 Tag 或 Filter.关 于模板这一点,一直以来争论比较多,最近有两篇关于 Python 模板的比较有意思的文章可供参考:
+1. http://pydanny.blogspot.com/2010/12/stupid-template-languages.html(需翻墙)
+2. http://techspot.zzzeek.org/2010/12/04/in-response-to-stupid-template-languages/
+ URL 配置虽然强大,但全部要手写,这一点跟 Rails 的 Convention over configuration 的理念完全相左,高手
+￼￼和初识 Django 的人配出来的 URL 会有很大差异.
+
+ 让人纠结的 auth 模块,Django 的 auth 跟其它模块结合紧密,功能也挺强的,就是做的有点过了,用户的数据 库 schema 都给你定好了,这样问题就来了,比如很多网站要求 email 地址唯一,可 schema 里这个字段的值 不是唯一的,纠结是必须的了.
+ Python 文件做配置文件,而不是更常见的 ini`xml 或 yaml 等形式.这本身不是什么问题,可是因为理论上来 说 settings 的值是能够动态的改变的(虽然大家不会这么干),但这不是最佳实践的体现.
+总的来说,Django 大包大揽,用它来快速开发一些 Web 运用是很不错的.如果你顺着 Django 的设计哲学来,你 会觉得 Django 很好用,越用越爽;相反,你如果不能融入或接受 Django 的设计哲学,你用 Django 一定会很痛苦, 趁早放弃的好.所以说在有些人眼里 Django 无异于仙丹,但对有一些人来说它又是毒药且剧毒.
+#+end_example
+*** Pylons 就是一个用胶水语言设计的胶水框架
+#+begin_example
+除了 Django 另一个大头就是 Pylons 了,因为 TurboGears2.x 是基于 Pylons 来做的,而 repoze.bfg 也已经并入 Pylons project 里这个大的项目里,后面不再单独讨论 TurboGears 和 repoze.bfg 了.
+Pylons 和 Django 的设计理念完全不同,Pylons 本身只有两千行左右的 Python 代码,不过它还附带有一些几乎就 是 Pylons 御用的第三方模块.Pylons 只提供一个架子和可选方案,你可以根据自己的喜好自由的选择 Template` ORM`form`auth 等组件,系统高度可定制.我们常说 Python 是一个胶水语言(glue language),那么我们完全可 以说 Pylons 就是一个用胶水语言设计的胶水框架:)
+选择 Pylons 多是选择了它的自由,选择了自由的同时也预示着你选择了噩梦:
+ 学习噩梦,Pylons 依赖于许多第三方库,它们并不是 Pylons 造,你学 Pylons 的同时还得学这些库怎么使用, 关键有些时候你都不知道你要学什么.Pylons 的学习曲线相对比 Django 要高的多,而之前 Pylons 的官方文档 也一直是人批评的对象,好在后来出了 The Definitive Guide to Pylons 这本书,这一局面有所改观.因为这个 原因,Pylons 一度被誉为只适合高手使用的 Python 框架.
+ 调试噩梦,因为牵涉到的模块多,一旦有错误发生就比较难定位问题处在哪里.可能是你写的程序的错`也可 能是 Pylons 出错了`再或是 SQLAlchemy 出错了`搞不好是 formencode 有 bug,反正很凌乱了.这个只有用 的很熟了才能解决这个问题.
+ 升级噩梦,安装 Pylons 大大小小共要安装近 20 个 Python 模块,各有各自的版本号,要升级 Pylons 的版本, 哪个模块出了不兼容的问题都有可能,升级基本上很难很难.至今 reddit 的 Pylons 还停留在古董的 0.9.6 上, SQLAlchemy 也还是 0.5.3 的版本,应该跟这条有关系.所以大家玩 Pylons 一定要结合 virtualenv 来玩,给自 己留条后路,不然会死得很惨.
+Pylons 和 repoze.bfg 的融合可能会催生下一个能挑战 Django 地位的框架. Pylons 的案例有 reddit.com`dropbox.com`quora.com 等.
+#+end_example
+** # --8<-------------------------- separator ------------------------>8--
+** python generator
+关键字 yield
+
+生成器也可迭代,但只能取一次,它没有把所有值加载到内存中.
+
+示例-1（表达式形式）:print (i * 10 for i in range(12) if i%2)
+
+示例-2:
+
+#+begin_src py
+def generator():
+	for i in range(10):
+		yield i
+g = generator()
+print id(g)
+for k in g:
+	print k
+#+end_src
+** [question] python多版本的区别和注意事项
+** [question] python的多线程和协程
+** [question] python传值和传引用的区别
+** TODO python的生成器
+** python function arguments
+#+begin_src python
+def func1(x, y, z):
+    print x
+    print y
+    print z
+
+def func2(*args):
+    print args[0]
+    func1(*args)
+
+func2('Goodbye', 'cruel', 'world!')
+#+end_src
+** pymongo
+#+begin_src python
+import pymongo
+mongo_conn = pymongo.Connection("127.0.0.1", 27017)
+db = mongo_conn.db1
+collection = db.collection1
+print list(collection.find())
+#+end_src
+** jinjia
+*** python
+#+begin_src pythong
+from flask import render_template, make_response
+
+@app.route("/api_list_user_post", methods=['GET'])
+def list_user_post():
+	# TODO defensive code
+	userid = request.args.get('userid', '')
+	date = request.args.get('date', '')
+	posts = data.list_user_post(userid, date)
+	content = render_template('list_user_post.json', posts=posts)
+	content = smarty_remove_extra_comma(content)
+	resp = make_response(content, 200)
+	resp.headers['Content-type'] = 'application/json; charset=utf-8'
+	return resp
+
+def smarty_remove_extra_comma(content):
+    if content[-2] == ',':
+        content = content[0:-2] + content[-1]
+    return content
+#+end_src
+*** templates
+#+begin_example
+[{% for post in posts %}
+{"id":"{{ post.id }}","category":"{{ post.category }}","title":"{{ post.title }}","summary":"{{ post.summary }}"},{% endfor %}]
+#+end_example
+** while...break...
+#+begin_src python
+def start(self):
+    url = '/cluster/%s/services/%s/commands/start' % (
+        self.cluster_name, self.service)
+
+    self.rest.post(url)
+
+    timeout = 120
+    cur_time = 0
+    while cur_time < timeout:
+        context.sleep(2)
+        if self.status() == 'running':
+            break
+        else:
+            cur_time += 2
+    else:
+        raise RuntimeError("%s start failed" % self.service)
+#+end_src
+** TODO [#A] python多线程,来把串行的操作改成并行操作             :IMPORTANT:
+** TODO [#B] python协程
+** [#A] Major differences for python 2 and python 3
+- Some functions(apply, long) are removed
+- Some functions(input, except, exec) are revised
+- Some new add-ed functionalities
+| Name                  | Python2              | Python3                      |
+|-----------------------+----------------------+------------------------------|
+| input                 | evaluated expression | string                       |
+| apply                 |                      | Removed in python3           |
+| Integer division: 1/2 | 0                    | 0.5                          |
+| filter()              | return list          | return an iterator           |
+| next iterator         | XX.next() function   | built-in next()              |
+| print                 | statement            | function                     |
+| raise                 | raise E, V, T        | raise E(V).with_traceback(T) |
+| round                 | round(2.5) -> 3      | round(2.5) -> 2              |
+*** Parameter unpacking
+#+begin_example
+In Python 2 you have parameter unpacking:
+
+>>> def unpacks(a, (b, c)):
+...     return a,b,c
+
+>>> unpacks(1, (2,3))
+(1, 2, 3)
+Python 3 does not support this, so you need to do your own unpacking:
+
+>>> def unpacks(a, b):
+...     return a,b[0],b[1]
+
+>>> unpacks(1, (2,3))
+(1, 2, 3)
+#+end_example
+*** # --8<-------------------------- separator ------------------------>8--
+*** TODO python2 apply(): It's removed in python3
+*** TODO python2 buffer(): --> memoryview
+*** TODO python coerce()
+*** TODO python exec
+#+begin_src python
+>>> g_dict={}
+g_dict={}
+>>> l_dict={}
+l_dict={}
+>>> exec "v = 3" in g_dict, l_dict
+exec "v = 3" in g_dict, l_dict
+>>> l_dict['v']
+l_dict['v']
+3
+#+end_src
+*** TODO python statement VS python function
+*** [#A] [quesiton] python six module
+** DONE python function最后如果没有显示return, 默认行为是return None
+  CLOSED: [2013-12-07 Sat 12:38]
+#+begin_src python
+def test():
+    if 1==2:
+        return "abc"
+
+print test()
+#+end_src
+** DONE [#B] python yield: 将loop操作的本身在外面传进来
+  CLOSED: [2013-12-16 Mon 12:05]
+http://www.ibm.com/developerworks/cn/opensource/os-cn-python-yield/
+http://www.jb51.net/article/15717.htm
+*** function generator
+#+begin_src python
+def fab(max):
+    n, a, b = 0, 0, 1
+    while n < max:
+        yield b
+        # print b
+        a, b = b, a + b
+        n = n + 1
+
+for n in fab(5):
+    print "hello, world: %d" % (n)
+#+end_src
+*** read file
+/Users/mac/backup/tech/large_sourcecode/openstack/openstack/glance/glance/api/middleware/cache.py
+#+begin_src python
+    def get_from_cache(self, image_id):
+        """Called if cache hit"""
+        with self.cache.open_for_read(image_id) as cache_file:
+            chunks = utils.chunkiter(cache_file)
+            for chunk in chunks:
+                yield chunk
+
+#+end_src
+
+/Users/mac/backup/tech/large_sourcecode/openstack/openstack/glance/glance/cmd/control.py
+#+begin_src python
+def pid_files(server, pid_file):
+    pid_files = []
+    if pid_file:
+        if os.path.exists(os.path.abspath(pid_file)):
+            pid_files = [os.path.abspath(pid_file)]
+    else:
+        if os.path.exists('/var/run/glance/%s.pid' % server):
+            pid_files = ['/var/run/glance/%s.pid' % server]
+    for pid_file in pid_files:
+        pid = int(open(pid_file).read().strip())
+        yield pid_file, pid
+#+end_src
+** TODO [#A] flymake for python
+
+source code install pylint, pyflakes, pep8
+which pyflakes
+
+cp /usr/local/bin//pep8 /usr/local/bin//pep8.py
+
+~/backup/essential/Dropbox/private_data/emacs_stuff/emacs_data/python_lint.py -p pylint,pyflakes,pep8 /Users/mac/test.py
+** DONE python built-in error: NotImplementedError()
+  CLOSED: [2013-12-26 Thu 13:05]
+#+begin_example
+    def start_consumers(self, msg_runner):
+        """Start any consumers the driver may need."""
+        raise NotImplementedError()
+#+end_example
+** DONE python decode: u'\u767b\u5165'
+  CLOSED: [2014-01-14 Tue 18:46]
+#+begin_example
+#encoding=utf-8
+print(u'\u767b\u5165')
+#encoding=utf-8
+... print(u'\u767b\u5165')
+#+end_example
+** DONE python: export PYTHONPATH=$PYTHONPATH:/usr/lib/python2.6/site-packages
+   CLOSED: [2014-01-24 Fri 09:49]
+** DONE python @property
+  CLOSED: [2014-01-03 Fri 12:07]
+#+begin_src python
+class RequestContext(object):
+    @property
+    def prop(self):
+        return 1
+
+requestcontext = RequestContext()
+print requestcontext.prop
+#+end_src
+** pip installation fail
+#+begin_example
+[root@localhost smarty_html]# pip install markdown
+pip install markdown
+Downloading/unpacking markdown
+
+  Cannot fetch index base URL https://pypi.python.org/simple/
+  Could not find any downloads that satisfy the requirement markdown
+No distributions at all found for markdown
+Storing complete log in /root/.pip/pip.log
+[root@localhost smarty_html]#
+[root@localhost smarty_html]# pip install -i http://pypi.python.jp markdown
+pip install -i http://pypi.python.jp markdown
+Downloading/unpacking markdown
+#+end_example
+** DONE urllib2.URLError: <urlopen error unknown url type: https>: recompile Python with SSL
+  CLOSED: [2014-03-10 Mon 17:27]
+
+yum install openssl
+yum install openssl-devel
+
+http://elliott-shi.iteye.com/blog/1955408
+http://www.xinotes.net/notes/note/628/
+
+#+begin_example
+[root@unknown9494260198c6 Python-2.7.3]# python distribute_setup.py
+python distribute_setup.py
+Downloading http://pypi.python.org/packages/source/d/distribute/distribute-0.6.49.tar.gz
+Traceback (most recent call last):
+  File "distribute_setup.py", line 556, in <module>
+    sys.exit(main())
+  File "distribute_setup.py", line 552, in main
+    tarball = download_setuptools(download_base=options.download_base)
+  File "distribute_setup.py", line 211, in download_setuptools
+    src = urlopen(url)
+  File "/usr/local/lib/python2.7/urllib2.py", line 126, in urlopen
+    return _opener.open(url, data, timeout)
+  File "/usr/local/lib/python2.7/urllib2.py", line 406, in open
+    response = meth(req, response)
+  File "/usr/local/lib/python2.7/urllib2.py", line 519, in http_response
+    'http', request, response, code, msg, hdrs)
+  File "/usr/local/lib/python2.7/urllib2.py", line 438, in error
+    result = self._call_chain(*args)
+  File "/usr/local/lib/python2.7/urllib2.py", line 378, in _call_chain
+    result = func(*args)
+  File "/usr/local/lib/python2.7/urllib2.py", line 625, in http_error_302
+    return self.parent.open(new, timeout=req.timeout)
+  File "/usr/local/lib/python2.7/urllib2.py", line 400, in open
+    response = self._open(req, data)
+  File "/usr/local/lib/python2.7/urllib2.py", line 423, in _open
+    'unknown_open', req)
+  File "/usr/local/lib/python2.7/urllib2.py", line 378, in _call_chain
+    result = func(*args)
+  File "/usr/local/lib/python2.7/urllib2.py", line 1240, in unknown_open
+    raise URLError('unknown url type: %s' % type)
+urllib2.URLError: <urlopen error unknown url type: https>
+[root@unknown9494260198c6 Python-2.7.3]#
+#+end_example
+** DONE python get environment: os.environ.get('XZB_HOME')
+   CLOSED: [2014-03-17 Mon 01:06]
+** DONE python get hostname
+  CLOSED: [2014-03-17 Mon 01:03]
+http://stackoverflow.com/questions/4271740/how-can-i-use-python-to-get-the-system-hostname
+import socket
+print(socket.gethostname())
+** DONE [#B] python db connection pool
+  CLOSED: [2014-03-19 Wed 16:44]
+
+for((i=0; i< 10; i++)); do { curl "http://127.0.0.1:9080/api_list_topic?uid=denny&topic=algorithm&start_num=0&count=10" ;}; done
+
+netstat -an | grep 3306
+#+begin_example
+from sqlalchemy import create_engine
+import sqlalchemy.pool as pool
+
+db = create_engine('mysql://user_2013:ilovechina@localhost/xzb')
+for i in range(1,1000):
+    conn = db.connect()
+    #some simple data operations
+    out = conn.execute("select * from posts limit 1;")
+    print out.fetchall()
+    conn.close()
+db.dispose()
+#+end_example
+** DONE [#A] python check whether a variable is string: isinstance("s", str)
+   CLOSED: [2014-03-25 Tue 16:06]
+** DONE str.startswith( 'this' );
+  CLOSED: [2014-04-14 Mon 13:40]
+http://www.tutorialspoint.com/python/string_startswith.htm
+#+begin_example
+#!/usr/bin/python
+
+str = "this is string example....wow!!!";
+print str.startswith( 'this' );
+print str.startswith( 'is', 2, 4 );
+print str.startswith( 'this', 2, 4 );
+#+end_example
+** DONE python Days between two dates in Python
+  CLOSED: [2014-04-14 Mon 23:46]
+http://stackoverflow.com/questions/8258432/days-between-two-dates-in-python
+#+begin_example
+from datetime import date
+delta = date(2013, 9, 5) - date(2014, 1, 1)
+print delta.days
+
+#+end_example
+** [question] python竟然不支持同名函数但参数个数不相同的情况
+#+begin_src python
+def post_check_list():
+    postid_list = db_check.get_postid_list()
+    return post_check_list(postid_list)
+
+def post_check_list(postid_list):
+    for postid in postid_list:
+        if post_check(postid) is False:
+            return False
+    return True
+#+end_src
+** [question] 下面的python代码有些ugly, 有啥更grace的解决方案吗
+#+begin_src python
+def fs_check():
+    log.info("Check the validation of post files")
+    status, obj = check_duplicate_file()
+    if status is False:
+        log.error("There are some duplicate files, msg: %s" % obj)
+        return False
+
+    status, obj = check_metafile_datafile()
+    if status is False:
+        log.error("Datafile and metafile are not matched, msg: %s" % obj)
+        return False
+
+def check_duplicate_file():
+    return (True, True)
+
+def check_metafile_datafile():
+    return (True, True)
+
+#+end_src
+** [#A] [question] python查找离线manual, 类似man -erl lists       :IMPORTANT:
+** TODO python block coding
+  :PROPERTIES:
+  :ID:       F07F7D07-AC66-4279-9F59-515CB9017F67
+  :END:
+/Users/mac/backup/essential/Dropbox/private_data/code/dataplatform/dctable/dctable/dctable/models/table.py
+#+begin_src python
+    def colunm_drop(self,tablename,columnname,db=None,**kw):
+        db = db if db else self.dbkey
+        dbconn = self.database(db, False)
+        result = False
+        try:
+            # 删除字典表
+            deldic = "DELETE FROM dictionary WHERE  `tablename`='%s' AND `field`='%s';" % (tablename,columnname)
+            dbconn.query(deldic)
+            # 删除多值关系表
+            if self.istableexists('%s_mulval_rel' % tablename,db):
+                delmulval = "DELETE FROM %s_mulval_rel WHERE `field`='%s';" % (tablename,columnname)
+                dbconn.query(delmulval)
+            # 删除字段
+            dropcolumn = 'ALTER TABLE %s DROP COLUMN %s;' % (tablename,columnname)
+            dbconn.query(dropcolumn)
+            result = True
+        except:
+            errmsg = traceback.format_exc()
+            kw['internal']['exception'] = errmsg
+            debug.log(errmsg)
+        dbconn.commit() if result else dbconn.rollback()
+        # 修改mongo的表结构
+        self.create_table_schema(tablename,db)
+        # 修改sphinx配置文件
+        return result
+
+#+end_src
+** TODO python rety mechanism
+/Users/mac/backup/tech/large_sourcecode/openstack/openstack/nova/nova/virt/docker/driver.py
+#+begin_src python
+    def _find_container_pid(self, container_id):
+        cgroup_path = self._find_cgroup_devices_path()
+        lxc_path = os.path.join(cgroup_path, 'lxc')
+        tasks_path = os.path.join(lxc_path, container_id, 'tasks')
+        n = 0
+        while True:
+            # NOTE(samalba): We wait for the process to be spawned inside the
+            # container in order to get the the "container pid". This is
+            # usually really fast. To avoid race conditions on a slow
+            # machine, we allow 10 seconds as a hard limit.
+            if n > 20:
+                return
+            try:
+                with open(tasks_path) as f:
+                    pids = f.readlines()
+                    if pids:
+                        return int(pids[0].strip())
+            except IOError:
+                pass
+            time.sleep(0.5)
+            n += 1
+
+#+end_src
+** TODO python uwsgi
+  :PROPERTIES:
+  :ID:       FC372D99-A993-4D23-A2B4-710BDEC21297
+  :END:
+http://blackgu.blogbus.com/logs/171363164.html
+http://www.cnblogs.com/Jerryshome/archive/2011/07/20/2111683.html
+http://www.yucoat.com/linux_opensource/uwsgi_nginx_web-py.html
+** TODO Behaviour of increment and decrement operators in Python
+http://stackoverflow.com/questions/1485841/behaviour-of-increment-and-decrement-operators-in-python
+** TODO What's the difference between list and tuples in Python?
+http://stackoverflow.com/questions/626759/whats-the-difference-between-list-and-tuples-in-python
+** TODO [#A] python多线程,来把串行的操作改成并行操作             :IMPORTANT:
+** TODO The Python yield keyword explained
+http://stackoverflow.com/questions/231767/the-python-yield-keyword-explained
+** TODO What is a metaclass in Python?
+http://stackoverflow.com/questions/100003/what-is-a-metaclass-in-python
+** TODO Using global variables in a function other than the one that created them
+http://stackoverflow.com/questions/423379/using-global-variables-in-a-function-other-than-the-one-that-created-them
+** TODO What is the difference between @staticmethod and @classmethod in Python?
+http://stackoverflow.com/questions/136097/what-is-the-difference-between-staticmethod-and-classmethod-in-python
+** TODO python: import a module from a folder
+http://stackoverflow.com/questions/279237/python-import-a-module-from-a-folder
+** TODO How does this lambda/yield/generator comprehension work?
+http://stackoverflow.com/questions/15955948/how-does-this-lambda-yield-generator-comprehension-work
+** TODO [#A] 用python生成一个快速mvc的查询界面, 自适应的
+   :PROPERTIES:
+   :ID:       00F3C19C-2F09-42CB-BD92-87DB8762B492
+   :END:
+** DONE python random number: random.randint(1, 10)
+   CLOSED: [2014-07-25 Fri 14:02]
+** DONE python parse command parameter: old way: getopt
+  CLOSED: [2014-07-25 Fri 14:20]
+http://www.tutorialspoint.com/python/python_command_line_arguments.htm
+#+begin_example
+usage: test.py -i <inputfile> -o <outputfile>
+Here is the following script to test.py:
+
+#!/usr/bin/python
+
+import sys, getopt
+
+def main(argv):
+   inputfile = ''
+   outputfile = ''
+   try:
+      opts, args = getopt.getopt(argv,"hi:o:",["ifile=","ofile="])
+   except getopt.GetoptError:
+      print 'test.py -i <inputfile> -o <outputfile>'
+      sys.exit(2)
+   for opt, arg in opts:
+      if opt == '-h':
+         print 'test.py -i <inputfile> -o <outputfile>'
+         sys.exit()
+      elif opt in ("-i", "--ifile"):
+         inputfile = arg
+      elif opt in ("-o", "--ofile"):
+         outputfile = arg
+   print 'Input file is "', inputfile
+   print 'Output file is "', outputfile
+
+if __name__ == "__main__":
+   main(sys.argv[1:])
+Now, run above script as follows:
+
+$ test.py -h
+usage: test.py -i <inputfile> -o <outputfile>
+
+$ test.py -i BMP -o
+usage: test.py -i <inputfile> -o <outputfile>
+
+$ test.py -i inputfile
+Input file is " inputfile
+Output file is "
+#+end_example
+** DONE python get how long a function call take
+  CLOSED: [2014-07-25 Fri 14:42]
+time.clock
+http://stackoverflow.com/questions/889900/accurate-timing-of-functions-in-python
+http://stackoverflow.com/questions/85451/python-time-clock-vs-time-time-accuracy
+
+timeit
+https://docs.python.org/2/library/timeit.html
+
+cProfile
+http://stackoverflow.com/questions/889900/accurate-timing-of-functions-in-python
+
+#+begin_src python
+	start_clock = time.clock()
+	status = adsync_login(driver, domain_name, username, password)
+	end_clock = time.clock()
+
+	driver.close()
+
+	elapsed_seconds = ((end_clock - start_clock) * 1000)
+	print "end_clock:%f, start_clock:%f" % (start_clock, end_clock)
+
+#+end_src
+** DONE python format float: print "{:10.2f}".format(23.23145)
+   CLOSED: [2014-07-25 Fri 14:46]
+** DONE python try catch
+  CLOSED: [2014-07-25 Fri 16:03]
+#+begin_src python
+try:
+	display = Display(visible=0, size=(1024, 768))
+	display.start()
+	driver = webdriver.Firefox() # time consuming
+	start_clock = time.clock()
+	status = adsync_login(driver, domain_name, username, password)
+	end_clock = time.clock()
+	driver.close()
+	display.stop()
+except Exception as e:
+	print "Unexpected error:%s, %s" % (sys.exc_info()[0], e)
+#+end_src
+
+#+begin_src python
+	try:
+		status = adsync_login(driver, domain_name, username, password)
+	except:
+		print "Unexpected error:", sys.exc_info()[0]
+#+end_src
+** TODO python add time out mechanism for a certain operation
+http://stackoverflow.com/questions/3733270/python-subprocess-timeout
+** DONE python check whether variable is float: isinstance(12.0, float)
+  CLOSED: [2014-08-05 Tue 17:10]
+http://stackoverflow.com/questions/4541155/check-if-a-number-is-int-or-float
+#+begin_example
+>>> x = 12
+>>> isinstance(x, int)
+True
+>>> y = 12.0
+>>> isinstance(y, float)
+True
+
+#+end_example
+** DONE mac install pylint: sudo easy_install pylint
+   CLOSED: [2015-06-23 Tue 14:49]
+** DONE python change current directory: os.chdir(path)
+   CLOSED: [2015-06-23 Tue 23:04]
+** DONE python private class method member
+  CLOSED: [2015-06-24 Wed 07:48]
+http://stackoverflow.com/questions/1301346/the-meaning-of-a-single-and-a-double-underscore-before-an-object-name-in-python
+#+BEGIN_EXAMPLE
+Python doesn't have real private methods, so one underline in the start of a method or attribute means you shouldn't access this method, because it's not part of the API.
+
+class BaseForm(StrAndUnicode):
+
+    def _get_errors(self):
+        "Returns an ErrorDict for the data provided for the form"
+        if self._errors is None:
+            self.full_clean()
+        return self._errors
+
+    errors = property(_get_errors)
+#+END_EXAMPLE
+** DONE python static class member
+  CLOSED: [2015-06-24 Wed 08:11]
+http://stackoverflow.com/questions/68645/static-class-variables-in-python
+#+BEGIN_EXAMPLE
+class C:
+    @staticmethod
+    def f(arg1, arg2, ...): ...
+#+END_EXAMPLE
+** DONE python run class function specified by string
+  CLOSED: [2015-06-30 Tue 13:32]
+http://stackoverflow.com/questions/5792798/run-specific-method-of-the-class-defined-by-string
+#+BEGIN_SRC python
+   # TODO: refine code later to avoid code duplicate
+   if action == "start":
+      vm.start()
+
+   if action == "provision":
+      vm.provision()
+
+   if action == "stop":
+      vm.stop()
+
+   if action == "destroy":
+      vm.destroy()
+
+   if action == "status":
+      vm.status()
+
+   if action == "verify":
+      vm.verify()
+#+END_SRC
+
+#+BEGIN_EXAMPLE
+Don't. There's rarely a reason to deal with the issues (security, cleaness, performance, arguably readability, ...) that this approach introduces. Just use command = aaa.method.
+
+If you have to use a string (hopefully for a good reason), you can use getattr but you propably should use an explicit mapping specifying all valid names (this also makes the code future-proof against internal renaming/refactoring):
+
+methods = {
+    'method': aaa.method,
+    'method2': aaa.method2,
+}
+methods[command]()
+The case "no method for this string" can be handled like this:
+
+method = methods.get(command)
+if method is None:
+    ... # handle error/bail out
+#+END_EXAMPLE
+** #  --8<-------------------------- separator ------------------------>8--
+** DONE pip list packages: pip list
+  CLOSED: [2016-01-04 Mon 20:53]
+#+BEGIN_EXAMPLE
+root@aio:/# pip list
+chardet (2.0.1)
+click (6.2)
+colorama (0.2.5)
+elasticsearch (2.0.0)
+elasticsearch-curator (3.4.0)
+html5lib (0.999)
+pip (7.1.2)
+pycrypto (2.6.1)
+python-apt (0.9.3.5ubuntu2)
+python-debian (0.1.21-nmu2ubuntu2)
+requests (2.2.1)
+setuptools (19.2)
+six (1.5.2)
+ssh-import-id (3.21)
+urllib3 (1.14)
+wheel (0.24.0)
+#+END_EXAMPLE
+** DONE python get package version
+  CLOSED: [2016-01-04 Mon 20:52]
+import nose   # Nose is a test utility.  Replace with your desired package here.
+nose.__version__
+** DONE flask example
+   CLOSED: [2016-05-29 Sun 21:28]
+#+BEGIN_SRC python
+from flask import Flask
+from flask import request
+app = Flask(__name__)
+
+# curl -v -F upload=@/etc/hosts  http://127.0.0.1:5000/protractor_request/request_002
+@app.route("/protractor_request/<request_id>", methods=['POST'])
+def protractor_request(request_id):
+    print "Accept request_id: %s" % (request_id)
+    f = request.files['upload']
+    working_dir = 'opt/protractor'
+    f.save("%s/%s.js" % (working_dir, request_id))
+    return "request_id: %s" % (request_id)
+
+if __name__ == "__main__":
+    app.run()
+#+END_SRC
+** DONE flask list directory
+  CLOSED: [2016-05-30 Mon 09:18]
+http://stackoverflow.com/questions/10961378/how-to-generate-an-html-directory-list-using-python
+
+#+BEGIN_SRC python
+import os, commands
+from datetime import datetime
+
+from flask import Flask
+from flask import request, send_file, render_template
+
+app = Flask(__name__)
+
+WORKING_DIR = '/opt/protractor'
+
+#################################################################################
+def get_conf_js_content(request_js_file):
+    return '''exports.config = {
+    seleniumAddress: 'http://localhost:4444/wd/hub',
+    specs: ['%s']
+    };''' % (request_js_file)
+
+def make_tree(path):
+    tree = dict(name=os.path.basename(path), children=[])
+    try: lst = os.listdir(path)
+    except OSError:
+        pass #ignore errors
+    else:
+        for name in lst:
+            fn = os.path.join(path, name)
+            if os.path.isdir(fn):
+                tree['children'].append(make_tree(fn))
+            else:
+                tree['children'].append(dict(name=name))
+    return tree
+#################################################################################
+# curl -v -F upload=@/etc/hosts  http://127.0.0.1:5000/protractor_request
+@app.route("/protractor_request", methods=['POST'])
+def protractor_request():
+    print "Accept request"
+    if os.path.exists(WORKING_DIR) is False:
+        os.mkdir(WORKING_DIR)
+
+    tmp_request_id = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
+    protractor_js = "%s/%s.js" % (WORKING_DIR, tmp_request_id)
+    conf_js = "%s/%s-conf.js" % (WORKING_DIR, tmp_request_id)
+
+    f = request.files['upload']
+    f.save(protractor_js)
+
+    open(conf_js, "wab").write(get_conf_js_content(protractor_js))
+    # Run command: protractor conf.js
+    cmd = "protractor %s" % (conf_js)
+    # cmd = "cat %s" % (conf_js)
+    print cmd
+    os.chdir(WORKING_DIR)
+    status, output = commands.getstatusoutput(cmd)
+
+    # remove temporarily files
+    os.remove(conf_js)
+    os.remove(protractor_js)
+
+    # TODO: return http code
+    return output
+
+@app.route('/get_image/<filename>', methods=['GET'])
+def get_image(filename):
+    if filename == "all":
+        # If filename is not given, list images under working_dir
+        return render_template("%s/dirtree.html" % (WORKING_DIR), tree = make_tree(WORKING_DIR))
+    else:
+        return send_file("%s/%s" % (WORKING_DIR, filename), mimetype='image/png')
+
+if __name__ == "__main__":
+    flask_port = "4445"
+    app.run(host="0.0.0.0", port=int(flask_port))
+#+END_SRC
+** DONE python regexp replacement
+  CLOSED: [2016-05-30 Mon 11:43]
+http://stackoverflow.com/questions/16720541/python-string-replace-regular-expression
+#+BEGIN_SRC python
+str.replace() does not recognize regular expressions, to perform a substitution using regular expressions use re.sub().
+
+For example:
+
+import re
+line = re.sub(r"(?i)^.*interfaceOpDataFile.*$", "interfaceOpDataFile %s" % fileIn, line)
+If you are doing this in a loop it would be better to compile the regular expression first:
+
+import re
+regex = re.compile(r"^.*interfaceOpDataFile.*$", re.IGNORECASE)
+for line in some_file:
+    line = regex.sub("interfaceOpDataFile %s" % fileIn, line)
+    # do something with the updated line
+#+END_SRC
+** DONE python loop in one line
+  CLOSED: [2016-07-15 Fri 16:20]
+https://wiki.python.org/moin/Powerful%20Python%20One-Liners
+** DONE pip check whether a given module has been installed: pip show [options] <package>
+  CLOSED: [2016-08-05 Fri 09:50]
+pip show [options] <package>
+python -c "import math"
+
+http://askubuntu.com/questions/588390/how-do-i-check-whether-a-module-is-installed-or-not-in-python
+
+http://stackoverflow.com/questions/6600878/find-all-packages-installed-with-easy-install-pip
+** DONE python map reduce
+  CLOSED: [2016-08-12 Fri 08:06]
+http://book.pythontips.com/en/latest/map_filter.html
+port_list = ["48080", "18080"]
+
+l = list(map(lambda x: "T:%s" % (x), port_list))
+ports = reduce((lambda x, y: "%s %s" % (x, y)), l)
+print ports
+** DONE python list union: list(set(a) | set(b))
+  CLOSED: [2016-08-12 Fri 08:11]
+http://www.saltycrane.com/blog/2008/01/how-to-find-intersection-and-union-of/
+def unique(a):
+    """ return the list with duplicate elements removed """
+    return list(set(a))
+
+def intersect(a, b):
+    """ return the intersection of two lists """
+    return list(set(a) & set(b))
+
+def union(a, b):
+    """ return the union of two lists """
+    return list(set(a) | set(b))
+
+if __name__ == "__main__":
+    a = [0,1,2,0,1,2,3,4,5,6,7,8,9]
+    b = [5,6,7,8,9,10,11,12,13,14]
+    print unique(a)
+    print intersect(a, b)
+    print union(a, b)
+** DONE python length: item count of list: len(["23", "25"])
+  CLOSED: [2016-08-12 Fri 08:19]
+http://stackoverflow.com/questions/1712227/how-to-get-the-size-of-a-list
+http://www.tutorialspoint.com/python/list_len.htm
+** TODO python show folder size
+** DONE python list shadow copy and deep copy: copy.deepcopy(d)
+  CLOSED: [2016-08-15 Mon 16:08]
+http://stackoverflow.com/questions/5105517/deep-copy-of-a-dict-in-python
+#+BEGIN_SRC python
+# -*- coding: utf-8 -*-
+import copy
+l1 = [1, 2, 4]
+l2 = l1
+l3 = copy.deepcopy(l1)
+print l1
+print l2
+print l3
+
+l2.remove(2)
+print l1
+print l2
+print l3
+#+END_SRC
+** DONE python regexp match: m = re.search('(?<=abc)def', 'abcdef')
+  CLOSED: [2016-08-20 Sat 13:25]
+>>> import re
+>>> m = re.search('(?<=abc)def', 'abcdef')
+>>> m is None
+>>> m.group(0)
+'def'
+** [#B] python upgrade: source code install python2.7             :IMPORTANT:
+yum install sqlite
+yum install sqlite-devel
+
+yum groupinstall "Development tools"
+
+wget http://www.python.org/ftp/python/2.7.3/Python-2.7.3.tar.bz2
+tar jxvf Python-2.7.3.tar.bz2
+cd Python-2.7.3
+./configure
+make && make install
+
+mv /usr/bin/python /usr/bin/python.bak
+ln -s /usr/local/bin/python2.7 /usr/bin/python
+
+vim /usr/bin/yum
+将首行显示的 !#/usr/bin/python 修改为 !#/usr/bin/python2.4
+
+curl -O http://python-distribute.org/distribute_setup.py
+python distribute_setup.py
+*** [#B] web page: python---linux下升级python的版本 - 左瞧瞧右瞧瞧 - 开源中国社区
+http://my.oschina.net/zhangdapeng89/blog/53644
+**** webcontent                                                    :noexport:
+#+begin_example
+Location: http://my.oschina.net/zhangdapeng89/blog/53644
+开源中国社区
+JetBrains 开发工具全场3折,详情»
+
+  * 软件
+  * 讨论
+  * 代码
+  * 资讯
+  * 翻译
+  * 博客
+  * Android
+  * 招聘
+
+当前访客身份:游客 [ 登录 | 加入开源中国 ] 你有0新留言
+[在 25250 款开源软件 ]
+[软件  ]
+软件
+
+  * 软件
+  * 代码
+  * 讨论区
+  * 新闻
+  * 博客
+
+ 搜索
+张大鹏张大鹏 [men]
+关注(11) 粉丝(42) 积分(76)
+完善每一个细节
+.发送留言 .请教问题
+博客分类
+
+  * 心情随笔(11)
+  * Regex(2)
+  * 工作日志(36)
+  * 转贴的文章(2)
+  * 日常记录(14)
+  * Linux-Redhat分类(1)
+  * Linux-Centos分类(26)
+  * Linux-Ubuntu分类(64)
+  * 数据库-MySql分类(17)
+  * 数据库-Oracle分类(0)
+  * 数据库-Mongodb(1)
+  * 数据库-MSSql分类(0)
+  * 数据库-Sqlite分类(0)
+  * DIV+CSS分类(1)
+  * PHP分类(79)
+  * JAVA分类(38)
+  * Python分类(49)
+  * IDE分类(27)
+  * Object-C(8)
+  * JavaScript分类(35)
+  * C/CPP(4)
+  * 服务器(31)
+  * 服务器-Nginx(2)
+  * 服务器-Apache(0)
+
+阅读排行
+
+ 1. 1. python---解决"Unable to find vcvarsall.bat"错误
+ 2. 2. 在 Ubuntu 12.04 安装 Sun Java
+ 3. 3. python---linux下升级python的版本
+ 4. 4. windows下nodejs开发环境的安装与配置
+ 5. 5. IDE---Gvim之ubuntu下配置php的ide开发工具
+ 6. 6. IDE---ubuntu下Gvim常用插件大全
+ 7. 7. 正则表达式匹配电话号码
+ 8. 8. php生成批量插入数据sql语句
+
+最新评论
+
+  * @yinheli:然后继续报这个错误: gcc: error: unrecognized... 查看»
+  * @张大鹏:引用来自"choose0or7"的评论关于必须要装vs2... 查看»
+  * @choose0or7:关于必须要装vs2008这一点不是必要的,毕竟vs占地... 查看»
+  * @张大鹏:引用来自"老杜还在"的评论如何实现每个线程使... 查看»
+  * @老杜还在:如何实现每个线程使用不同的代理？给个思路谢谢！查看»
+  * @LL:如果安装了VS2010或是VS2012可以使用下面的方法解... 查看»
+  * @张大鹏:引用来自"根号2"的评论我也是提示这个问题,好... 查看»
+  * @根号2:我也是提示这个问题,好像是说给的网站地址变更了... 查看»
+  * @张大鹏:引用来自"zhangyou1010"的评论引用来自"张大... 查看»
+  * @programtic:引用来自"张大鹏"的评论引用来自"zhangyou1... 查看»
+
+访客统计
+
+  * 今日访问:62
+  * 昨日访问:90
+  * 本周访问:359
+  * 本月访问:2227
+  * 所有访问:56494
+
+空间 » 博客 » Python分类 » 博客正文
+
+[b4] python---linux下升级python的版本
+
+0人收藏此文章, 发表于1年前(2012-04-15 20:29) , 已有1650次阅读,共0个评论
+
+我的linux系统:centos5.5
+
+我要升级的版本是:2.7.3（目前我更新操作的最新版本【是在2这个系列中的,你也可以安装3系列的】）
+
+升级python的步骤
+
+参考资料如下:
+
+http://liluo.org/2010/08/centos-5-5-% E4% B8% AD-python-% E5%8D%87% E7% BA% A7% E5%88% B0-2-6-5/
+
+1`下载
+
+wget http://www.python.org/ftp/python/2.7.3/Python-2.7.3.tar.bz2
+2`解压
+tar jxvf Python-2.7.3.tar.bz2
+3`编译安装
+cd Python-2.7.3
+./configure
+make && make install
+Python 默认安装目录在/usr/local/lib/python2.7
+查看一下刚才安装的版本 /usr/local/bin/python -V,看到了 2.7.3 吧
+4`更改系统默认版本
+之前查看版本使用 /usr/local/lib/python2.7 -V,现在来把系统默认的Python指向刚才安装的Python2.6.
+(如果有人问为什么不把2.4.3卸载呢？呃,貌似网上有讲yum是基于2.4.3,所以我也就没那样折腾)
+mv /usr/bin/python /usr/bin/python.bak
+ln -s /usr/local/bin/python2.7 /usr/bin/python
+敲入 python -V 查看是否成功.
+5`修复不能正常工作的yum
+在完成了上面4步之后,如果有使用yum的话会发现出错,这是因为yum 依赖2.4.3而现在默认的 Python 版本是
+2.7.3 .
+vim /usr/bin/yum
+将首行显示的 !#/usr/bin/python 修改为 !#/usr/bin/python2.4
+
+我的建议是:无需这样做,如果需要同时使用多个版本的话,就不得不进行多次设置,我的建议是,根据不同的
+版本在python加上对应的版本号（原因是:我是用来学习python和测试用的）
+
+原文地址:http://liluo.org/2010/08/centos-5-5-% E4% B8% AD-python-% E5%8D%87% E7% BA% A7% E5%88% B0-2-6-5/
+
+  * « python beautifulsoup多线程分析抓取网页
+  * python---练习---即时标记 »
+
+开源中国-程序员在线工具:API文档大全(120+) JS在线编辑演示二维码更多>>
+分享到: 顶已有 0人顶
+
+共有 0 条网友评论
+
+尚无网友评论
+
+[                    ]
+ 回复  关闭   文明上网,理性发言
+[                    ]
+ 发表评论  [loading] 文明上网,理性发言
+回到页首 | 回到评论列表
+关闭相关文章阅读
+
+  * 2012/08/21 ubuntu升级出错
+  * 2012/10/16 Alfresco 升级指南（中文）
+  * 2011/10/06 升级fedora16beta遇到的问题...
+  * 2012/07/11 ubuntu版本升级-桌面版
+  * 2012/09/11 CentOS内核升级
+
+© 开源中国(OsChina.NET) | 关于我们 | 广告联系 | @新浪微博 | 开源中国 开源中国手机客户端: Android
+手机版 | 粤ICP备12009483号-3                                           iPhone WP7
+
+#+end_example
+** DONE ubuntu install easy_install: apt-get install -y python-setuptools; which easy_install
+  CLOSED: [2017-10-10 Tue 21:34]
+https://askubuntu.com/questions/27519/can-i-use-easy-install
+** DONE install pip: easy_install pip
+   CLOSED: [2017-10-10 Tue 21:35]
+** DONE mac install pip: sudo easy_install pip
+  CLOSED: [2015-01-25 Sun 08:16]
+http://stackoverflow.com/questions/17271319/installing-pip-on-mac-os-x
+
+easy_install pip
+** DONE python: simple http server: python -m SimpleHTTPServer 8000
+  CLOSED: [2015-03-02 Mon 21:04]
+https://docs.python.org/2/library/simplehttpserver.html
+** DONE python: no need for scientific notation: '{0:20f}'.format(1/10**8)
+  CLOSED: [2016-10-13 Thu 07:35]
+http://stackoverflow.com/questions/658763/how-do-i-suppress-scientific-notation-in-python
+http://stackoverflow.com/questions/8345795/force-python-to-not-output-a-float-in-standard-form-scientific-notation-expo
+
+record_cost = (float("2000") * float("0.7")) / int("1439357512323")
+'{:.20f}'.format(record_cost)
+
+a = 7.1855143557448603e-17
+'{:.20f}'.format(a)
+** DONE python: get current folder for python script
+  CLOSED: [2016-11-29 Tue 12:22]
+http://stackoverflow.com/questions/5137497/find-current-directory-and-files-directory
+
+import os
+dir_path = os.path.dirname(os.path.realpath(__file__))
+** DONE python directory path: os.path.dirname("/Users/mac/tmp/abc.txt") -> /Users/mac/tmp/
+  CLOSED: [2016-11-29 Tue 18:53]
+https://docs.python.org/2/library/os.path.html
+** #  --8<-------------------------- separator ------------------------>8--
+** python curl get
+http://stackoverflow.com/questions/25491090/how-to-use-python-to-execute-a-curl-command
+import requests
+r = requests.get('https://github.com/timeline.json')
+r.json()
+** DONE [#A] python curl post
+  CLOSED: [2017-01-01 Sun 21:06]
+http://stackoverflow.com/questions/25491090/how-to-use-python-to-execute-a-curl-command
+http://docs.python-requests.org/en/latest/index.html
+import requests, json
+url = 'https://www.googleapis.com/qpxExpress/v1/trips/search?key=mykeyhere'
+payload = json.load(open("request.json"))
+headers = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8'}
+r = requests.post(url, data=json.dumps(payload), headers=headers)
+** DONE python print table with proper indent
+  CLOSED: [2017-01-02 Mon 14:23]
+https://docs.python.org/2.7/library/string.html#format-specification-mini-language
+http://stackoverflow.com/questions/6200288/pretty-printing-a-list-in-a-tabular-format
+
+vm_list = []
+vm_list.append("{0:16} {1:25} {2:20} {3:10}".\
+    format('LINODEID', 'LABEL', 'IPADDRESS', 'Price'))
+** DONE python sort list with tuple elements: sorted(l, key=lambda x: x[1])
+  CLOSED: [2017-01-04 Wed 23:12]
+http://stackoverflow.com/questions/10695139/sort-a-list-of-tuples-by-2nd-item-integer-value
+
+sorted([('abc', 121),('abc', 231),('abc', 148), ('abc',221)], key=lambda x: x[1])
+** DONE python curl requests --data-binary
+  CLOSED: [2017-01-26 Thu 13:16]
+http://stackoverflow.com/questions/31108726/equivalent-of-curl-data-binary-in-python
+http://stackoverflow.com/questions/11444257/pycurl-equivalent-of-curl-data-binary
+http://stackoverflow.com/questions/15551968/url-request-emulating-curl-data-binary
+
+    headers = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8'}
+    url = "http://api.fastthread.io/fastthread-api?apiKey=%s" % (apikey)
+    res = requests.post(url, data = open(jstack_logfile, "r"), headers = headers)
+
+    if res.status_code != "200":
+        print "ERROR: http response is not 200 OK"
+        return False
+
+    content = res.content
+    if '"isProblem":true' in content:
+        print "ERROR: problem is found"
+        return False
+** DONE python display float in percentage: print "{0:.2f}%".format(0.332443*100)
+  CLOSED: [2017-01-26 Thu 13:52]
+http://stackoverflow.com/questions/5306756/how-to-show-percentage-in-python
+** DONE python module: devopsprecheck package
+  CLOSED: [2017-01-26 Thu 17:18]
+- get all bash scripts absorted in python
+
+import devopsprecheck
+http://gpiot.com/blog/creating-a-python-package-and-publish-it-to-pypi/
+https://packaging.python.org/distributing/#configuring-your-project
+
+vim ~/.pypirc
+
+pip install pypandoc
+
+sudo pip install twine
+
+python setup.py register
+python setup.py sdist
+twine upload dist/*
+
+https://pypi.python.org/pypi?%3Aaction=pkg_edit&name=devopsprecheck
+
+/usr/local/lib/python2.7/dist-packages/devopsprecheck/
+*** DONE classifier: https://testpypi.python.org/pypi?%3Aaction=list_classifiers
+    CLOSED: [2017-01-26 Thu 16:53]
+*** useful link
+https://packaging.python.org/distributing/#uploading-your-project-to-pypi
+https://pypi.python.org/pypi
+https://docs.djangoproject.com/en/1.10/intro/reusable-apps/
+https://medium.freecodecamp.com/how-to-publish-a-pyton-package-on-pypi-a89e9522ce24#.wsx7i67nt
+https://www.digitalocean.com/community/tutorials/how-to-package-and-distribute-python-applications
+
+http://peterdowns.com/posts/first-time-with-pypi.html
+https://medium.freecodecamp.com/how-to-publish-a-pyton-package-on-pypi-a89e9522ce24#.z7ys3bwag
+http://peterdowns.com/posts/first-time-with-pypi.html
+** DONE [#A] python: how to manage test code: run unittest with typical test directory structure
+  CLOSED: [2017-01-27 Fri 11:07]
+python -m unittest discover
+python -m unittest test.test_devopsprecheck
+
+http://stackoverflow.com/questions/1896918/running-unittest-with-typical-test-directory-structure
+
+https://docs.python.org/2/library/unittest.html#command-line-interface
+
+The best solution in my opinion is to use the unittest command line interface which will add the directory to the sys.path so you don't have to (done in the TestLoader class).
+
+For example for a directory structure like this:
+
+new_project
+├── antigravity.py
+└── test_antigravity.py
+You can just run:
+
+$ cd new_project
+$ python -m unittest test_antigravity
+For a directory structure like yours:
+
+new_project
+├── antigravity
+│   ├── __init__.py         # make it a package
+│   └── antigravity.py
+└── test
+    ├── __init__.py         # also make test a package
+    └── test_antigravity.py
+And in the test modules inside the test package, you can import the antigravity package and its modules as usual:
+
+# import the package
+import antigravity
+
+# import the antigravity module
+from antigravity import antigravity
+
+# or an object inside the antigravity module
+from antigravity.antigravity import my_object
+Running a single test module:
+
+To run a single test module, in this case test_antigravity.py:
+
+$ cd new_project
+$ python -m unittest test.test_antigravity
+Just reference the test module the same way you import it.
+
+Running a single test case or test method:
+
+Also you can run a single TestCase or a single test method:
+
+$ python -m unittest test.test_antigravity.GravityTestCase
+$ python -m unittest test.test_antigravity.GravityTestCase.test_method
+Running all tests:
+
+You can also use test discovery which will discover and run all the tests for you, they must be modules or packages named test*.py (can be changed with the -p, --pattern flag):
+
+$ cd new_project
+$ python -m unittest discover
+This will run all the test*.py modules inside the test package.
+** DONE python check string is valid ip
+  CLOSED: [2017-01-27 Fri 11:45]
+http://stackoverflow.com/questions/3462784/check-if-a-string-matches-an-ip-address-pattern-in-python
+
+#+BEGIN_EXAMPLE
+Install netaddr package
+
+sudo pip install netaddr
+And then you can do this
+
+>>> from netaddr import valid_ipv4
+>>> valid_ipv4('11.1.1.2')
+True
+>>> valid_ipv4('11.1.1.a')
+False
+#+END_EXAMPLE
+
+#+BEGIN_SRC python
+def validate_ip(s):
+    a = s.split('.')
+    if len(a) != 4:
+        return False
+    for x in a:
+        if not x.isdigit():
+            return False
+        i = int(x)
+        if i < 0 or i > 255:
+            return False
+    return True
+#+END_SRC
+** DONE python strip whitespace: strip()
+  CLOSED: [2017-01-27 Fri 11:57]
+http://stackoverflow.com/questions/8270092/python-remove-all-whitespace-in-a-string
+** DONE python regexp get all matched items: regexp.findall(s)
+  CLOSED: [2017-01-27 Fri 17:41]
+http://stackoverflow.com/questions/15340582/python-extract-pattern-matches
+>>> import re
+>>> p = re.compile('name (.*) is valid')
+>>> s = """
+... someline abc
+... someother line
+... name my_user_name is valid
+... some more lines"""
+>>> p.findall(s)
+['my_user_name']
+** DONE python list uniq: mylist = list(set(mylist))
+  CLOSED: [2017-01-27 Fri 17:42]
+http://stackoverflow.com/questions/12897374/get-unique-values-from-a-list-in-python
+** DONE python get file mode
+  CLOSED: [2017-01-27 Fri 17:56]
+http://stackoverflow.com/questions/5337070/how-can-i-get-a-files-permission-mask
+Here's an example case, given regular file "testfile" and symlink to the latter, "testlink":
+
+import stat
+import os
+
+print oct(stat.S_IMODE(os.lstat("testlink").st_mode))
+print oct(stat.S_IMODE(os.stat("testlink").st_mode))
+This script outputs the following for me:
+
+0777
+0666
+** DONE python check whether port is listening
+  CLOSED: [2017-01-27 Fri 18:08]
+http://stackoverflow.com/questions/19196105/python-how-to-check-if-a-network-port-is-open-on-linux
+sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+result = sock.connect_ex(('127.0.0.1',80))
+if result == 0:
+   print "Port is open"
+else:
+   print "Port is not open"
+** DONE python check http return 200 ok
+  CLOSED: [2017-01-27 Fri 18:20]
+
+http://stackoverflow.com/questions/1949318/checking-if-a-website-is-up-via-python
+
+print urllib.urlopen("http://www.stackoverflow.com").getcode()
+
+>>> 200
+
+ret = urllib.urlopen("https://www.google.com").getcode()
+** DONE python remove folder: shutil.rmtree('/tmp/folder_name')
+  CLOSED: [2017-02-24 Fri 22:31]
+- os.remove() will remove a file.
+- os.rmdir() will remove an empty directory.
+- shutil.rmtree() will delete a directory and all its contents.
+
+http://stackoverflow.com/questions/303200/how-do-i-remove-delete-a-folder-that-is-not-empty-with-python
+http://stackoverflow.com/questions/6996603/delete-a-file-or-folder-in-python
+import shutil
+
+shutil.rmtree('/tmp/folder_name')
+** DONE python create folder if missing
+  CLOSED: [2017-03-03 Fri 17:48]
+http://stackoverflow.com/questions/273192/how-to-check-if-a-directory-exists-and-create-it-if-necessary
+if not os.path.exists(directory):
+    os.makedirs(directory)
+** DONE python list directory with file size
+  CLOSED: [2017-03-03 Fri 17:48]
+http://stackoverflow.com/questions/3207219/how-to-list-all-files-of-a-directory
+import os
+os.listdir("somedirectory")
+** #  --8<-------------------------- separator ------------------------>8--
+** DONE python remove files older than several days
+  CLOSED: [2017-03-04 Sat 10:53]
+http://stackoverflow.com/questions/37399210/delete-files-that-are-older-than-7-days
+http://pp19dd.com/2013/10/python-script-to-remove-tmp-files-older-than-7-days/
+import os
+import time
+
+current_time = time.time()
+
+for f in os.listdir():
+    creation_time = os.path.getctime(f)
+    if (current_time - creation_time) // (24 * 3600) >= 7:
+        os.unlink(f)
+        print('{} removed'.format(f))
+** DONE python check string as postfix of another string: str.endswith(suffix)
+  CLOSED: [2017-03-04 Sat 10:55]
+https://www.tutorialspoint.com/python/string_endswith.htm
+** DONE python replace multiple whitespace with one: ' '.join(mystring.split())
+  CLOSED: [2017-03-13 Mon 15:32]
+http://stackoverflow.com/questions/2077897/substitute-multiple-whitespace-with-single-whitespace-in-python
+** DONE python get ip of eth0
+  CLOSED: [2017-03-13 Mon 15:52]
+http://stackoverflow.com/questions/24196932/how-can-i-get-the-ip-address-of-eth0-in-python
+import socket
+def get_ip_address():
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    s.connect(("8.8.8.8", 80))
+    return s.getsockname()[0]
+** DONE python get OS version: platform.linux_distribution()
+  CLOSED: [2017-03-14 Tue 14:58]
+http://stackoverflow.com/questions/110362/how-can-i-find-the-current-os-in-python
+** DONE python get current python file directory: os.path.dirname(os.path.abspath(__file__))
+  CLOSED: [2017-03-21 Tue 16:03]
+http://stackoverflow.com/questions/3430372/how-to-get-full-path-of-current-files-directory-in-python
+If you mean the directory of the script being run:
+
+import os
+os.path.dirname(os.path.abspath(__file__))
+If you mean the current working directory:
+
+import os
+os.getcwd()
+Note that before and after file is two underscores, not just one.
+** DONE python remove duplicate whitespace in string: " ".join(' hello  apple'.split())
+  CLOSED: [2017-04-02 Sun 21:42]
+http://stackoverflow.com/questions/8270092/python-remove-all-whitespace-in-a-string
+** DONE python get current fillename: import os,os.path.basename(__file__)
+  CLOSED: [2017-04-09 Sun 22:19]
+http://stackoverflow.com/questions/4152963/get-the-name-of-current-script-with-python
+** DONE python print timestamp
+  CLOSED: [2017-04-10 Mon 18:07]
+http://stackoverflow.com/questions/28330317/print-timestamp-for-logging-in-python
+
+def setup_custom_logger(name):
+    import logging
+    formatter = logging.Formatter(fmt='%(asctime)s %(levelname)-8s %(message)s',
+                                  datefmt='%Y-%m-%d %H:%M:%S')
+    log_fname = "/var/log/%s.log" % (name)
+    handler = logging.FileHandler(log_fname, mode='w')
+    handler.setFormatter(formatter)
+    screen_handler = logging.StreamHandler(stream=sys.stdout)
+    screen_handler.setFormatter(formatter)
+    logger = logging.getLogger(name)
+    logger.setLevel(logging.DEBUG)
+    logger.addHandler(handler)
+    logger.addHandler(screen_handler)
+    return logger
+
+>>> logger = setup_custom_logger('myapp')
+>>> logger.info('This is a message!')
+2015-02-04 15:07:12 INFO     This is a message!
+>>> logger.error('Here is another')
+2015-02-04 15:07:30 ERROR    Here is another
+** #  --8<-------------------------- separator ------------------------>8--
+** DONE python How to convert ~/. path to absolute path: os.path.expanduser('~/.config.txt')
+  CLOSED: [2017-04-19 Wed 14:47]
+http://stackoverflow.com/questions/27849003/how-to-convert-path-to-absolute-path
+** DONE How to find the real user home directory using python?: os.path.expanduser('~user')
+  CLOSED: [2017-04-19 Wed 14:47]
+http://stackoverflow.com/questions/2668909/how-to-find-the-real-user-home-directory-using-python
+** DONE python debug mode: python -m pdb myscript.py
+  CLOSED: [2017-04-19 Wed 14:53]
+https://docs.python.org/2/library/pdb.html
+** DONE python remove trailing characters: my_string.rstrip('\\')
+  CLOSED: [2017-04-24 Mon 13:37]
+http://stackoverflow.com/questions/6584871/remove-last-character-if-its-a-backslash
+** DONE python add logging
+  CLOSED: [2017-05-05 Fri 13:12]
+https://docs.python.org/3/howto/logging.html
+https://docs.python.org/2/howto/logging.html
+https://docs.python.org/3/howto/logging-cookbook.html
+
+Logging to a file
+
+A very common situation is that of recording logging events in a file, so let's look at that next. Be sure to try the following in a newly-started Python interpreter, and don't just continue from the session described above:
+
+import logging
+logging.basicConfig(filename='example.log',level=logging.DEBUG, format='%(asctime)s %(message)s')
+logging.debug('This message should go to the log file')
+logging.info('So should this')
+logging.warning('And this, too')
+** DONE python glob loop files by create time
+  CLOSED: [2017-05-05 Fri 13:26]
+http://stackoverflow.com/questions/23430395/glob-search-files-in-date-order
+To sort files by date:
+
+import glob
+import os
+
+files = glob.glob("*cycle*.log")
+files.sort(key=os.path.getmtime)
+print("\n".join(files))
+** DONE python: os.path.isdir, isfile
+   CLOSED: [2017-05-05 Fri 13:18]
+     isabs(s)
+         Test whether a path is absolute
+
+     isdir(s)
+         Return true if the pathname refers to an existing directory.
+
+     isfile(path)
+         Test whether a path is a regular file
+** DONE python get filesize
+  CLOSED: [2017-05-05 Fri 13:23]
+http://stackoverflow.com/questions/2104080/how-to-check-file-size-in-python
+Use os.stat, and use the st_size member of the resulting object:
+
+>>> import os
+>>> statinfo = os.stat('somefile.txt')
+>>> statinfo
+(33188, 422511L, 769L, 1, 1032, 100, 926L, 1105022698,1105022732, 1105022732)
+>>> statinfo.st_size
+926L
+
+# Output is in bytes.
+** DONE python log to both logfile and terminal
+  CLOSED: [2017-05-08 Mon 17:19]
+http://stackoverflow.com/questions/13733552/logger-configuration-to-log-to-file-and-print-to-stdout
+import logging
+log_file = "/var/log/cleanup_old_files.log"
+
+logging.basicConfig(filename=log_file, level=logging.DEBUG, format='%(asctime)s %(message)s')
+logging.getLogger().addHandler(logging.StreamHandler())
+logging.warning("Directory(%s) doesn't exists." % (working_dir))
+** DONE python catch exception and re-raise it: Using raise with no arguments re-raises the last exception
+  CLOSED: [2017-05-10 Wed 15:22]
+https://nedbatchelder.com/blog/200711/rethrowing_exceptions_in_python.html
+http://www.ianbicking.org/blog/2007/09/re-raising-exceptions.html
+
+try:
+    some_code()
+except:
+    revert_stuff()
+    raise
+** DONE python check whether duplicate entries in the list: len(your_list) != len(set(your_list))
+  CLOSED: [2017-05-10 Wed 16:38]
+http://stackoverflow.com/questions/1541797/check-for-duplicates-in-a-flat-list
+** DONE python round float: round(13.949999999999999, 2)
+  CLOSED: [2017-05-10 Wed 17:00]
+http://stackoverflow.com/questions/455612/limiting-floats-to-two-decimal-points
+** DONE python create folder recursively: os.makedirs(path)
+  CLOSED: [2017-05-15 Mon 12:07]
+http://stackoverflow.com/questions/6004073/how-can-i-create-directories-recursively
+** DONE python glob.glob use regexp, instead shell-style pattern
+  CLOSED: [2017-05-15 Mon 14:38]
+http://stackoverflow.com/questions/13031989/regular-expression-using-in-glob-glob-of-python
+https://docs.python.org/2/library/fnmatch.html
+import os
+import re
+res = [f for f in os.listdir(path) if re.search(r'(abc|123|a1b).*\.txt$', f)]
+for f in res:
+    print f
+** DONE python delete file: os.remove("ChangedFile.csv")
+  CLOSED: [2017-05-15 Mon 15:09]
+http://www.dummies.com/programming/python/how-to-delete-a-file-in-python/
+** DONE python list folder size
+  CLOSED: [2017-05-15 Mon 13:58]
+def get_size_mb(start_path = '.'):
+    total_size = 0
+    for dirpath, dirnames, filenames in os.walk(start_path):
+        for f in filenames:
+            fp = os.path.join(dirpath, f)
+            total_size += os.path.getsize(fp)
+    return total_size/(1000*1000)
+** DONE python print table with proper indent
+  CLOSED: [2017-05-19 Fri 16:08]
+http://stackoverflow.com/questions/10623727/python-spacing-and-aligning-strings
+#+BEGIN_SRC python
+# -*- coding: utf-8 -*-
+#!/usr/bin/python
+print "{0:40} {1}".format("IMAGE_TAG", "SIZE")
+print "{0:40} {1}".format("deployaiopenroztest_db:latest", str(399.57) + "MB")
+print "{0:40} {1}".format("denny/selenium:v1", str(845.74)+"MB")
+print "{0:40} {1}MB".format("jenkins_soteria_jenkins:latest", str(9845.74))
+#+END_SRC
+** #  --8<-------------------------- separator ------------------------>8--
+** DONE [#A] paramiko: python run ssh command
+  CLOSED: [2017-05-23 Tue 00:01]
+https://stackoverflow.com/questions/946946/how-to-execute-a-process-remotely-using-python
+https://stackoverflow.com/questions/3586106/perform-commands-over-ssh-with-python
+
+I will refer you to paramiko
+
+see this question
+
+ssh = paramiko.SSHClient()
+ssh.connect(server, username=username, password=password)
+ssh_stdin, ssh_stdout, ssh_stderr = ssh.exec_command(cmd_to_execute)
+*** DONE paramiko does not automatically add unknown hosts
+   CLOSED: [2017-05-22 Mon 23:57]
+https://github.com/onyxfish/relay/issues/11
+
+You have to use:
+
+ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+*** DONE paramiko.ssh_exception.PasswordRequiredException: Private key file is encrypted
+   CLOSED: [2017-05-23 Tue 00:00]
+https://stackoverflow.com/questions/15579117/paramiko-using-encrypted-private-key-file-on-os-x
+key = paramiko.RSAKey.from_private_key_file("/Users/mac/.ssh/id_rsa", password="MYPASSWORD")
+client.connect("45.33.87.74", username="root", port=2702, pkey=key)
+stdin, stdout, stderr = client.exec_command('ls /tmp/')
+stdout.readlines()
+** DONE python BaseHTTPServer
+   CLOSED: [2017-05-24 Wed 20:28]
+#!/usr/bin/python
+##-------------------------------------------------------------------
+## File : query_cluster_info.py
+## Author : Denny <denny.zhang@totvs.com>
+## Description :
+## --
+## Created : <2017-05-24>
+## Updated: Time-stamp: <2017-05-24 20:20:37>
+##-------------------------------------------------------------------
+import os, sys
+import argparse
+
+from BaseHTTPServer import BaseHTTPRequestHandler,HTTPServer
+from os import curdir, sep
+
+WORKING_DIR = "/opt/devops/node_cfg"
+
+#This class will handles any incoming request from
+#the browser
+class myHandler(BaseHTTPRequestHandler):
+
+    #Handler for the GET requests
+    def do_GET(self):
+        if self.path=="/":
+                self.path="/all"
+
+        try:
+            #Check the file extension required and
+            #set the right mime type
+            #Open the static file requested and send it
+            mimetype='text'
+            f = open("%s/%s" % (WORKING_DIR, self.path))
+            self.send_response(200)
+            self.send_header('Content-type',mimetype)
+            self.end_headers()
+            self.wfile.write(f.read())
+            f.close()
+            return
+        except IOError:
+            self.send_error(404,'File Not Found: %s' % self.path)
+
+################################################################################
+if __name__ == '__main__':
+    # get parameters from users
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--port', required=False, default=8000, \
+                        help="What tcp port to listen", type=int)
+    parser.add_argument('--working_dir', required=False, \
+                        help="working directory for the http web server", type=str)
+
+    l = parser.parse_args()
+    port = l.port
+    working_dir = l.working_dir
+
+    if working_dir is not None:
+        WORKING_DIR = working_dir
+
+    try:
+        #Create a web server and define the handler to manage the
+        #incoming request
+        server = HTTPServer(('', port), myHandler)
+        print 'Started httpserver on port' , port
+
+        #Wait forever for incoming htto requests
+        server.serve_forever()
+    except KeyboardInterrupt:
+        print '^C received, shutting down the web server'
+        server.socket.close()
+## File : query_cluster_info.py ends
+** DONE python get current function name
+  CLOSED: [2017-06-02 Fri 13:04]
+https://stackoverflow.com/questions/5067604/determine-function-name-from-within-that-function-without-using-traceback
+import inspect
+
+def foo():
+   print inspect.stack()[0][3]
+** DONE Converting Dictionary to JSON in python
+  CLOSED: [2017-06-02 Fri 15:37]
+https://stackoverflow.com/questions/26745519/converting-dictionary-to-json-in-python
+json.dumps() converts a dictionary to str object,not a json(dict) object!so you have to load your str into a dict to use it by using json.loads() method!
+see json.dumps() a save method and json.loads() as a retrieve method!
+this is the code sample which might help you understand it more
+
+import json
+
+r = {'is_claimed': 'True', 'rating': 3.5}
+r = json.dumps(r)
+loaded_r = json.loads(r)
+loaded_r['rating'] #Output 3.5
+type(r) #Output str
+type(loaded_r) #Output dict
+** python trace function
+http://pymotw.com/2/sys/tracing.html
+#+begin_src python
+import sys
+
+def fun1():
+	fun2()
+	print "hello, world"
+	return True
+
+def fun2():
+	a=3;
+	return a+3
+
+def trace_calls(frame, event, arg):
+	if event != 'call':
+		return
+	co = frame.f_code
+	func_name = co.co_name
+	if func_name == 'write':
+		# Ignore write() calls from print statements
+		return
+	func_line_no = frame.f_lineno
+	func_filename = co.co_filename
+	caller = frame.f_back
+	caller_line_no = caller.f_lineno
+	caller_filename = caller.f_code.co_filename
+	print 'Call to %s on line %s of %s from line %s of %s' % \
+		(func_name, func_line_no, func_filename,
+		 caller_line_no, caller_filename)
+	return
+
+if __name__=='__main__':
+	sys.settrace(trace_calls)
+	fun1()
+
+#+end_src
+** DONE python program set ulimit
+  CLOSED: [2015-01-08 Thu 15:50]
+ulimit -n
+*** python: test.py
+# -*- coding: utf-8 -*-
+#!/usr/bin/python
+##-------------------------------------------------------------------
+## @copyright 2014 DennyZhang.com
+## File : test.py
+## Author : Denny <denny.zhang001@gmail.com>
+## Description :
+## --
+## Created : <2015-01-08>
+## Updated: Time-stamp: <2015-01-08 15:46:58>
+##-------------------------------------------------------------------
+# python ./test.py
+# ls -lth /tmp/test_*
+# grep 'file' /proc/$(ps -ef | grep test.py | grep -v grep  | awk -F' ' '{print $2}')/limits
+# lsof -p $(ps -ef | grep test.py | grep -v grep  | awk -F' ' '{print $2}') | wc -l
+import time
+def test():
+    print "open files"
+    count = 3020
+
+    fd_list = []
+
+    for i in range(0, count):
+        fd_list.append(open("/tmp/test_" + str(i), "w"))
+
+    print "sleep several seconds"
+    time.sleep(200)
+
+if __name__=='__main__':
+    test()
+## File : linux.org ends
+** DONE python pass a function name as an argument in a function
+  CLOSED: [2017-06-05 Mon 20:00]
+https://stackoverflow.com/questions/3349157/python-passing-a-function-name-as-an-argument-in-a-function
+https://stackoverflow.com/questions/706721/how-do-i-pass-a-method-as-a-parameter-in-python
+Don't pass the name of a function.
+
+Pass the function.
+
+fun = dork1
+ned = doIt(3, fun, 4, 9)
+print (ned)
+** TODO [#A] 用python生成一个快速mvc的查询界面, 自适应的
+  :PROPERTIES:
+  :ID:       00F3C19C-2F09-42CB-BD92-87DB8762B492
+  :END:
+** TODO python performance tuning
+| Name    | Comment                                                                       |
+|---------+-------------------------------------------------------------------------------|
+| timeit  | a crude but effective way to see the impact of optimizations on a macro level |
+| hotshot | true profiler, logging function entry/exit                                    |
+*** timeit
+#+begin_src python
+import timeit
+timeit.Timer('neknek_1.solve(neknek_1.Puzzle("9x9.txt"))', 'import neknek_1').timeit(number=10)/10
+#+end_src
+*** hotshot
+#+begin_src python
+import hotshot
+import neknek_1
+prof = hotshot.Profile('hotshot_nn_stats')
+prof.run('neknek_1.solve(neknek_1.Puzzle("9x9.txt"))').close()
+
+
+import hotshot.stats
+hotshot.stats.load('hotshot_nn_stats').strip_dirs().sort_stats('time').print_stats()
+
+#+end_src
+*** useful link
+http://www.mlsite.net/blog/?p=97
+
+http://stackoverflow.com/questions/1913906/python-performance-characteristics
+** DONE python3 convert bytes to string: b"abcde".decode("utf-8")
+  CLOSED: [2017-07-11 Tue 19:47]
+https://stackoverflow.com/questions/606191/convert-bytes-to-a-python-string
+** DONE Get last n lines of a file with Python, similar to tail
+  CLOSED: [2017-07-13 Thu 17:22]
+https://stackoverflow.com/questions/136168/get-last-n-lines-of-a-file-with-python-similar-to-tail
+https://stackoverflow.com/questions/260273/most-efficient-way-to-search-the-last-x-lines-of-a-file-in-python
+
+with open(log_file,'r') as f:
+    message = tail(f, tail_log_num)
+
+#+BEGIN_SRC python
+def tail(f, lines=20):
+    total_lines_wanted = lines
+
+    BLOCK_SIZE = 1024
+    f.seek(0, 2)
+    block_end_byte = f.tell()
+    lines_to_go = total_lines_wanted
+    block_number = -1
+    blocks = [] # blocks of size BLOCK_SIZE, in reverse order starting
+                # from the end of the file
+    while lines_to_go > 0 and block_end_byte > 0:
+        if (block_end_byte - BLOCK_SIZE > 0):
+            # read the last block we haven't yet read
+            f.seek(block_number*BLOCK_SIZE, 2)
+            blocks.append(f.read(BLOCK_SIZE))
+        else:
+            # file too small, start from begining
+            f.seek(0,0)
+            # only read what was not read
+            blocks.append(f.read(block_end_byte))
+        lines_found = blocks[-1].count('\n')
+        lines_to_go -= lines_found
+        block_end_byte -= BLOCK_SIZE
+        block_number -= 1
+    all_read_text = ''.join(reversed(blocks))
+    return '\n'.join(all_read_text.splitlines()[-total_lines_wanted:])
+#+END_SRC
+** HALF python escape string for json
+https://stackoverflow.com/questions/5997029/escape-double-quotes-for-json-in-python
+https://msftstack.wordpress.com/2016/01/18/convert-json-to-escaped-string-in-python/
+
+json.dumps(s)
+
+outstr = jsonstr.replace('"', '\\"').replace('\n', '\\n')
+** TODO python paramiko upload a file by ssh
+** TODO paramiko SSHClient connect less verbose output
+        ssh = paramiko.SSHClient()
+        ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+        key = paramiko.RSAKey.from_private_key_file(ssh_key_file, password=key_passphrase)
+        ssh.connect(server_ip, username=username, port=ssh_port, pkey=key)
+        stdin, stdout, stderr = ssh.exec_command(ssh_command)
+        output = "\n".join(stdout.readlines())
+** DONE python: Convert a string to preexisting variable names: print eval('self.post.id')
+  CLOSED: [2017-08-15 Tue 18:42]
+https://stackoverflow.com/questions/295058/convert-a-string-to-preexisting-variable-names
+** DONE python pdb set a break point at a given line of code: b 3
+  CLOSED: [2017-08-15 Tue 19:34]
+https://stackoverflow.com/questions/5769382/can-i-put-a-breakpoint-in-a-running-python-program-that-drops-to-the-interactive
+** DONE python pdb add breakpoint for function: b hosts_origin.remove_all_matching
+  CLOSED: [2017-08-15 Tue 22:51]
+** DONE python requests query socket file
+  CLOSED: [2017-08-27 Sun 15:18]
+curl -XGET --unix-socket "/var/run/docker.sock" \
+    http://localhost/containers/json | jq '.[].Names[], .[].Status'
+
+https://pypi.python.org/pypi/requests-unixsocket
+#+BEGIN_EXAMPLE
+import requests_unixsocket
+
+session = requests_unixsocket.Session()
+
+# Access /path/to/page from /tmp/profilesvc.sock
+r = session.get('http+unix://%2Ftmp%2Fprofilesvc.sock/path/to/page')
+assert r.status_code == 200
+#+END_EXAMPLE
+** DONE python send slack message
+  CLOSED: [2017-08-27 Sun 17:33]
+https://github.com/slackapi/python-slackclient
+** TODO python argparse require argument not empty string
+** DONE SSH Paramiko get return code
+  CLOSED: [2017-09-07 Thu 17:14]
+https://stackoverflow.com/questions/3562403/how-can-you-get-the-ssh-return-code-using-paramiko
+stdin, stdout, stderr = client.exec_command("uptime")
+print stdout.channel.recv_exit_status()    # status is 0
+** DONE python2 install paramiko: ImportError: No module named cryptography.hazmat.backends
+  CLOSED: [2017-09-08 Fri 17:45]
+https://stackoverflow.com/questions/31569339/importerror-no-module-named-cryptography-hazmat-backends-boxsdk-on-mac
+apt-get install libffi-dev
+
+pip install cryptography==2.0.3
+pip install paramiko==2.1.2
+** DONE python print is buffered IO
+  CLOSED: [2017-09-11 Mon 18:47]
+Python's standard out is buffered (meaning that it collects some of the data "written" to standard out before it writes it to the terminal). Calling sys.stdout.flush() forces it to "flush" the buffer, meaning that it will write everything in the buffer to the terminal, even if normally it would wait before doing so.
+https://stackoverflow.com/questions/10019456/usage-of-sys-stdout-flush-method
+
+https://www.turnkeylinux.org/blog/unix-buffering
+
+#+BEGIN_EXAMPLE
+Since Python 3.3, you can force the normal print() function to flush without the need to use sys.stdout.flush(); just set the "flush" keyword argument to true. From the documentation:
+
+print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False)
+#+END_EXAMPLE
+** DONE python get current filename: os.path.basename(__file__).strip(".py")
+  CLOSED: [2017-09-13 Wed 11:02]
+https://stackoverflow.com/questions/4152963/get-the-name-of-current-script-with-python
+** DONE python get current pid: os.getpid()
+  CLOSED: [2017-09-13 Wed 11:02]
+https://stackoverflow.com/questions/3761639/how-do-you-get-the-process-id-of-a-program-in-unix-or-linux-using-python
+** TODO paramiko copy file via ssh
+https://stackoverflow.com/questions/250283/how-to-scp-in-python
+You could also check out paramiko. There's no scp module (yet), but it fully supports sftp.
+https://stackoverflow.com/questions/250283/how-to-scp-in-python
+** TODO [#A] python unit testing: coverage.py
+https://coverage.readthedocs.io/en/coverage-4.4.1/
+
+https://stackoverflow.com/questions/36517137/how-to-properly-use-coverage-py-in-python
+coverage report -m
+
+| Name            | Summary |
+|-----------------+---------|
+| coverage run    |         |
+| coverage report |         |
+| coverage html   |         |
+*** TODO python coverage run: no tests
+#+BEGIN_EXAMPLE
+Denny-mac:remote-commands-servers mac$ coverage run --source=remote-commands-servers setup.py test
+running test
+running egg_info
+writing pbr to remote_commands_servers.egg-info/pbr.json
+writing requirements to remote_commands_servers.egg-info/requires.txt
+writing remote_commands_servers.egg-info/PKG-INFO
+writing top-level names to remote_commands_servers.egg-info/top_level.txt
+writing dependency_links to remote_commands_servers.egg-info/dependency_links.txt
+reading manifest file 'remote_commands_servers.egg-info/SOURCES.txt'
+writing manifest file 'remote_commands_servers.egg-info/SOURCES.txt'
+running build_ext
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.000s
+
+OK
+Coverage.py warning: No data was collected. (no-data-collected)
+#+END_EXAMPLE
+** DONE __init__.py file makes Python treat directories containing it as modules.
+  CLOSED: [2017-09-13 Wed 17:23]
+https://stackoverflow.com/questions/448271/what-is-init-py-for
+** DONE python setup.py: Python's answer to a multi-platform installer and make file.
+  CLOSED: [2017-09-13 Wed 17:31]
+https://stackoverflow.com/questions/1471994/what-is-setup-py
+** TODO paramiko ssh command get realtime output
+https://stackoverflow.com/questions/35944912/using-paramiko-how-could-i-get-the-stdout-of-exec-command-in-real-time-instea
+https://stackoverflow.com/questions/31834743/get-output-from-a-paramiko-ssh-exec-command-continuously
+https://stackoverflow.com/questions/37857859/printing-real-time-ssh-output-using-python-3-x
+
+python /usr/sbin/jenkins/scripts/remote-commands-servers.py --server_list 138.197.215.132:2702,165.227.5.192:2702,165.227.17.43:2702,138.68.46.170:2702,165.227.21.77:2702,165.227.21.128:2702,138.68.30.61:2702,138.197.221.191:2702,138.197.221.161:2702,138.197.200.214:2702,165.227.27.184:2702,138.68.23.132:2702,138.68.230.220:2702,165.227.13.42:2702,165.227.31.102:2702,165.227.25.149:2702,138.197.205.85:2702,165.227.24.213:2702,138.68.246.50:2702,165.227.22.228:2702,138.68.21.77:2702,138.68.233.86:2702,165.227.19.254:2702,138.197.208.182:2702,165.227.30.31:2702 --command_list 'date
+hostname
+' --ssh_username root --ssh_key_file /var/jenkins_home/.ssh/tmp_id_rsa --key_passphrase sophia1
+** TODO python print the output of multiple return value
+#+BEGIN_EXAMPLE
+    def get_element_from_stack(self, stack):
+        print("get_element_from_stack: stack: %s" % stack)
+        if len(stack) == 0:
+            return (None, [])
+
+        if stack[-1] in self.uppercase_list:
+            return (str(stack[-1]), stack[:-2])
+
+        for i in range(len(stack)-1, -1,-1):
+            if stack[i] in self.lowercase_list:
+                continue
+            else:
+                break
+
+        return (str(stack[i:]), stack[:i-1])
+#+END_EXAMPLE
+** DONE python ListNode: p.next, p.val
+#!/usr/bin/env python
+##-------------------------------------------------------------------
+## @copyright 2017 DennyZhang.com
+## Licensed under MIT
+##   https://www.dennyzhang.com/wp-content/mit_license.txt
+##
+## File: test.py
+## Author : Denny <contact@dennyzhang.com>
+## Description:
+##     https://leetcode.com/problems/cheatsheet-python-A4/description/][leetcode.com]]
+## Tags:
+## --
+## Created : <2017-10-16>
+## Updated: Time-stamp: <2017-10-23 22:57:20>
+##-------------------------------------------------------------------
+class Solution(object):
+    def mergeTwoLists(self, l1, l2):
+        """
+        :type l1: ListNode
+        :type l2: ListNode
+        :rtype: ListNode
+        """
+        ## Basic Idea:
+        ##    l1: 1 -> 3 -> 5
+        ##        p   r
+        ##    l2: 2 -> 3 -> 6 -> 7
+        ##        q   s
+        ## Complexity:
+        ## recursive
+        if l1 is None:
+            return l2
+
+        if l2 is None:
+            return l1
+
+        if l1.val < l2.val:
+            head = l1
+            p = l1
+            q = l2
+        else:
+            head = l2
+            p = l2
+            q = l1
+
+        while (p.next is not None) and (q is not None):
+            r = p.next
+            s = q.next
+            if q.val <= r.val:
+                p.next = q
+                q.next = r
+                p = q
+                q = s
+            else:
+                p = r
+
+        if p.next is None:
+            p.next = q
+
+        return head
+## File: test.py ends
+** DONE python math
+  CLOSED: [2017-10-27 Fri 18:46]
+https://docs.python.org/2/library/math.html
+#+BEGIN_EXAMPLE
+math.ceil(x)
+Return the ceiling of x as a float, the smallest integer value greater than or equal to x.
+
+math.copysign(x, y)
+Return x with the sign of y. On a platform that supports signed zeros, copysign(1.0, -0.0) returns -1.0.
+
+New in version 2.6.
+
+math.fabs(x)
+Return the absolute value of x.
+
+math.factorial(x)
+Return x factorial. Raises ValueError if x is not integral or is negative.
+
+New in version 2.6.
+
+math.floor(x)
+Return the floor of x as a float, the largest integer value less than or equal to x.
+
+math.fmod(x, y)
+Return fmod(x, y), as defined by the platform C library. Note that the Python expression x % y may not return the same result. The intent of the C standard is that fmod(x, y) be exactly (mathematically; to infinite precision) equal to x - n*y for some integer n such that the result has the same sign as x and magnitude less than abs(y). Python's x % y returns a result with the sign of y instead, and may not be exactly computable for float arguments. For example, fmod(-1e-100, 1e100) is -1e-100, but the result of Python's -1e-100 % 1e100 is 1e100-1e-100, which cannot be represented exactly as a float, and rounds to the surprising 1e100. For this reason, function fmod() is generally preferred when working with floats, while Python's x % y is preferred when working with integers.
+
+math.frexp(x)
+Return the mantissa and exponent of x as the pair (m, e). m is a float and e is an integer such that x == m * 2**e exactly. If x is zero, returns (0.0, 0), otherwise 0.5 <= abs(m) < 1. This is used to "pick apart" the internal representation of a float in a portable way.
+
+math.fsum(iterable)
+
+#+END_EXAMPLE
+** DONE python create const: CONST_NAME
+  CLOSED: [2017-10-22 Sun 22:28]
+** DONE python str(['a', 'b']) is different from ''.join(['a', 'b'])
+  CLOSED: [2017-11-12 Sun 15:43]
+** DONE python print line number
+  CLOSED: [2017-11-12 Sun 18:05]
+http://code.activestate.com/recipes/145297-grabbing-the-current-line-number-easily/
+import inspect
+def lineno():
+    return inspect.currentframe().f_back.f_lineno
+
+print("[L: %s] " % (lineno()))
+** DONE [#A] python 6/132 = 0, 6/(-132) = -1, -6/123: -1
+  CLOSED: [2018-01-14 Sun 16:24]
+** DONE python dict vs defaultdict
+  CLOSED: [2018-01-19 Fri 11:57]
+https://www.accelebrate.com/blog/using-defaultdict-python/
+http://stupidpythonideas.blogspot.com/2013/08/defaultdict-vs-setdefault.html
+
+defaultdict: If I don't have the key in the dict, it will create a new item with default value.
+             Instead of throwing an exception
+
+#+BEGIN_SRC python
+from collections import defaultdict
+>>> ice_cream = defaultdict(lambda: 'Vanilla')
+>>>
+>>> ice_cream = defaultdict(lambda: 'Vanilla')
+>>> ice_cream['Sarah'] = 'Chunky Monkey'
+>>> ice_cream['Abdul'] = 'Butter Pecan'
+>>> print ice_cream['Sarah']
+Chunky Monkey
+>>> print ice_cream['Joe']
+Vanilla
+#+END_SRC
+** DONE python deep copy a dict
+  CLOSED: [2018-01-19 Fri 15:37]
+https://stackoverflow.com/questions/5105517/deep-copy-of-a-dict-in-python
+- reference copy
+#+BEGIN_SRC python
+m = {}
+m['a'] = 2
+m2 = m
+m2['a'] = 1
+print m['a'] # 1
+print m2['a'] # 1
+#+END_SRC
+
+- deep copy
+#+BEGIN_SRC python
+import copy
+m = {}
+m['a'] = 2
+m2 = copy.deepcopy(m)
+m2['a'] = 1
+print m['a'] # 2
+print m2['a'] # 1
+#+END_SRC
+** DONE python heapq
+  CLOSED: [2018-01-25 Thu 22:03]
+*** 2 attributes
+import heapq
+li = []
+heapq._heapify_max(li)
+heapq.heappush(li, (5, 'write code'))
+heapq.heappush(li, (7, 'release product'))
+heapq.heappush(li, (1, 'write spec'))
+heapq.heappush(li, (3, 'create tests'))
+print (list(li))
+
+heapq.heappop(li)
+*** more sample
+#+BEGIN_SRC python
+import heapq
+
+heap = [12, 19, 88, 62, 2, 14, 92]
+
+heapq.heapify(heap)
+
+heapq.heappush(heap, 3)
+
+while len(heap) > 0:
+    print(heapq.heappop(heap), end=' ')
+
+# 2 3 12 14 19 62 88 92
+#+END_SRC
+** DONE [#B] elasticsearch python libary
+  CLOSED: [2018-02-07 Wed 11:12]
+172.17.0.2
+
+from elasticsearch import Elasticsearch
+
+es_ip="172.17.0.2"
+es_port="9200"
+es_instance = Elasticsearch(["%s:%s"%(es_ip, es_port)])
+
+es_instance.indices.close(index="config-index-8cd6e43115e9416eb23609486fa053e3")
+
+es_instance.client.IndicesClient.close(index="config-index-8cd6e43115e9416eb23609486fa053e3")
+*** close index
+output = es_instance.indices.close(index="staging-index-13a1f8adbec032ed68f3d035449ef48d")
+print output # {u'acknowledged': True}
+*** delete index
+output = es_instance.indices.delete(index="master-index-46078234297e400a1648d9c427dc8c4b")
+print output
+*** list all closed index
+es_instance.indices.get(index='*', expand_wildcards='closed')
+es_instance.indices.get(index='*', expand_wildcards='closed', include_defaults=False)
+*** check whether index exists
+es_instance.indices.exists(index='staging-index-13a1f8adbec032ed68f3d035449ef48d')
+*** get health status
+es_instance.cluster.health()
+es_instance.cluster.state()
+*** get status
+es_instance.indices.stats(index='staging-index-13a1f8adbec032ed68f3d035449ef48d')
+*** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+*** TODO check whether index is open
+es_instance.indices.get(index='staging-index-13a1f8adbec032ed68f3d035449ef48d', expand_wildcards='open')
+*** TODO get index without mapping and setting, since it's too big
+** DONE python http json request: http://docs.python-requests.org/en/master/
+  CLOSED: [2018-02-15 Thu 16:21]
+** DONE python check http exit code and output
+  CLOSED: [2018-02-15 Thu 16:40]
+#+BEGIN_SRC python
+        r = requests.get(url)
+        if r.status_code != 200:
+            print("Error: url(%s) runs into error. errms: %s" % (url, r.text))
+            err_list.append(url)
+#+END_SRC
+** DONE python bisect: insert into a sorted list with binary search
+  CLOSED: [2018-03-02 Fri 11:28]
+https://www.cnblogs.com/beiluowuzheng/p/8452671.html
+http://www.jb51.net/article/55543.htm
+** DONE [#A] python zip: two lists don't need to have equal items
+  CLOSED: [2018-03-02 Fri 11:28]
+def medianSlidingWindow(self, nums, k):
+    window = sorted(nums[:k])
+    medians = []
+    for a, b in zip(nums, nums[k:] + [0]):
+        medians.append((window[k/2] + window[~(k/2)]) / 2.)
+        window.remove(a)
+        bisect.insort(window, b)
+    return medians
+** DONE python Python WSGI HTTP Server for UNIX
+  CLOSED: [2018-03-07 Wed 18:46]
+http://gunicorn.org/
+https://github.com/svenstaro/flamejam
+** DONE Creating a python logger to stdout
+  CLOSED: [2018-03-08 Thu 16:36]
+https://coderwall.com/p/_fg97w/creating-a-python-logger-to-stdout
+#+BEGIN_SRC python
+import logging
+import sys
+log = logging.getLogger(__name__)
+out_hdlr = logging.StreamHandler(sys.stdout)
+out_hdlr.setFormatter(logging.Formatter('%(asctime)s %(message)s'))
+out_hdlr.setLevel(logging.INFO)
+log.addHandler(out_hdlr)
+log.setLevel(logging.INFO)
+Then you can do:
+
+log.debug("NO")
+log.error("THIS IS AN ERROR")
+#+END_SRC
+** TODO gunicorn reload
+** DONE python requests.post
+  CLOSED: [2018-03-09 Fri 15:59]
+http://docs.python-requests.org/en/master/user/quickstart/
+r = requests.post('http://httpbin.org/post', data = {'key':'value'})
+** DONE python sleep
+  CLOSED: [2018-03-09 Fri 16:10]
+https://stackoverflow.com/questions/510348/how-can-i-make-a-time-delay-in-python
+import time
+time.sleep(5)   # delays for 5 seconds. You can Also Use Float Value.
+** HALF [#A] flask_restplus
+http://michal.karzynski.pl/blog/2016/06/19/building-beautiful-restful-apis-using-flask-swagger-ui-flask-restplus/
+*** DONE change http://localhost:8080/api/projects/ to http://localhost:8080/api/projects
+   CLOSED: [2018-03-19 Mon 11:02]
+*** DONE from flask_restplus import Api
+   CLOSED: [2018-03-19 Mon 11:15]
+*** DONE add real logic
+  CLOSED: [2018-03-19 Mon 10:47]
+curl -H "content-type: application/json" -d "{\"summary\": \"summary1\", \"description\": \"description1\", \"budget\": 1000, \"seller_id\": 1, \"deadline\": \"2017-01-01\"}" "http://localhost:8080/v1/projects"
+
+curl -H "content-type: application/json" -d "{\"summary\": \"summary1\", \"description\": \"description1\", \"budget\": 1000, \"seller_id\": 1, \"deadline\": \"2017-01-01\"}" "http://localhost:8080/api/projects"
+
+{"summary": "summary1", "description": "description1", "budget": 1000, "seller_id": 1, "deadline": "2017-01-01"}
+
+curl -H "content-type: application/json" "http://localhost:8080/api/projects/1"
+*** DONE GET /projects/{id}: return not found
+   CLOSED: [2018-03-19 Mon 11:21]
+*** DONE bid project
+  CLOSED: [2018-03-19 Mon 11:26]
+curl -H "content-type: application/json" -d "{\"buyer_id\": 1, \"amount\": 400}" "http://localhost:8080/api/projects/1/bid"
+{
+  "message": "'dict' object is not callable"
+}
+
+{"buyer_id": 1, "amount": 400}
+
+curl -H "content-type: application/json" -d "{\"buyer_id\": 1, \"amount\": 400}" "http://localhost:8080/api/projects/1/bid"
+*** DONE [#A] python use swagger
+  CLOSED: [2018-03-19 Mon 11:35]
+https://medium.com/@ssola/building-microservices-with-python-part-i-5240a8dcc2fb
+https://github.com/elgris/microservice-app-example
+
+http://michal.karzynski.pl/blog/2016/06/19/building-beautiful-restful-apis-using-flask-swagger-ui-flask-restplus/
+
+     75:@app.route('/<string:protocol_version>/projects/<int:id>/bid', methods=['POST'])
+    100:@app.route('/<string:protocol_version>/projects', methods=['GET'])
+
+curl -H "content-type: application/json" "http://localhost:8080/v1/projects/id=1"
+*** DONE for post requests, add marshal with
+   CLOSED: [2018-03-19 Mon 11:35]
+*** flask Blueprint
+http://flask.pocoo.org/docs/0.12/blueprints/
+http://exploreflask.com/en/latest/blueprints.html
+*** DONE [#A] move files into directories; add __init__.py
+   CLOSED: [2018-03-19 Mon 15:16]
+*** DONE list projects with paging
+   CLOSED: [2018-03-19 Mon 17:34]
+*** DONE paging doesn't work
+  CLOSED: [2018-03-19 Mon 17:34]
+Denny-Laptop:~ DennyZhang$  curl -H "content-type: application/json" "http://localhost:8080/api/projects?page=2&per_page=2"
+{
+    "message": "The browser (or proxy) sent a request that this server could not understand."
+}
+Denny-Laptop:~ DennyZhang$ curl -X GET --header 'Accept: application/json' 'http://localhost:8080/api/projects?per_page=10&page=1&bool=true'
+{
+    "projects": null,
+    "pages": 1,
+    "total": 6,
+    "per_page": 10,
+    "page": 1
+}
+*** DONE change back the endpoint bash
+   CLOSED: [2018-03-19 Mon 17:35]
+*** DONE Update README.md for the sample output
+   CLOSED: [2018-03-19 Mon 17:40]
+*** DONE flask add a hello world page
+   CLOSED: [2018-03-19 Mon 17:59]
+*** DONE add api version: update blog
+   CLOSED: [2018-03-20 Tue 07:26]
+** DONE bfs: https://code.dennyzhang.com/binary-tree-level-order-traversal
+  CLOSED: [2018-07-03 Tue 16:52]
+class Solution(object):
+    def levelOrder(self, root):
+        """
+        :type root: TreeNode
+        :rtype: List[List[int]]
+        """
+
+        if root is None: return []
+        res = []
+        queue = collections.deque()
+        queue.append(root)
+        while len(queue) != 0:
+            level_elements = []
+            for i in range(len(queue)):
+                element = queue.popleft()
+                level_elements.append(element.val)
+                if element.left:
+                    queue.append(element.left)
+                if element.right:
+                    queue.append(element.right)
+            res.append(level_elements)
+        return res
+** DONE python get current work directory: os.getcwd()
+  CLOSED: [2018-07-03 Tue 16:47]
+** DONE python list files and folders: os.listdir()
+  CLOSED: [2018-07-03 Tue 16:47]
+** DONE python check whether it's a file or a folder: os.path.isfile("bob.txt")
+  CLOSED: [2018-07-03 Tue 17:20]
+** DONE python loop a folder: os.listdir("/tmp/")
+  CLOSED: [2017-06-30 Fri 16:44]
+** DONE python check if a path is a file or folder: os.path.isfile("/tmp/Dockerfile_rubocop_1_0")
+  CLOSED: [2017-06-30 Fri 16:46]
+** DONE convert epoch to human readable date in elasticsearch
+  CLOSED: [2017-06-30 Fri 22:52]
+https://stackoverflow.com/questions/21787496/converting-epoch-time-with-milliseconds-to-datetime
+
+https://stackoverflow.com/questions/41465038/convert-milliseconds-since-the-epoch-to-human-readable-date-in-json
+https://stackoverflow.com/questions/10716435/elasticsearch-index-unix-timestamp
+https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-date-format.html
+
+#+BEGIN_EXAMPLE
+>>> import datetime
+>>> s = 1236472051807 / 1000.0
+>>> datetime.datetime.fromtimestamp(s).strftime('%Y-%m-%d %H:%M:%S.%f')
+'2009-03-08 09:27:31.807000'
+#+END_EXAMPLE
+* [#A] Python Multi-Threading and Multi-Processing                 :noexport:
+** DONE python multi-threading use queue: python2
+  CLOSED: [2017-06-06 Tue 22:51]
+https://docs.python.org/2/library/queue.html
+#+BEGIN_SRC python
+def worker():
+    while True:
+        item = q.get()
+        do_work(item)
+        q.task_done()
+
+q = Queue()
+for i in range(num_worker_threads):
+     t = Thread(target=worker)
+     t.daemon = True
+     t.start()
+
+for item in source():
+    q.put(item)
+
+q.join()       # block until all tasks are done
+#+END_SRC
+** DONE python multiple threading: python3
+  CLOSED: [2017-06-03 Sat 16:14]
+https://stackoverflow.com/questions/2846653/how-to-use-threading-in-python
+#+BEGIN_SRC python
+import Queue
+import threading
+import urllib2
+
+# called by each thread
+def get_url(q, url):
+    q.put(urllib2.urlopen(url).read())
+
+theurls = ["http://google.com", "http://yahoo.com"]
+
+q = Queue.Queue()
+
+for u in theurls:
+    t = threading.Thread(target=get_url, args = (q,u))
+    t.daemon = True
+    t.start()
+
+s = q.get()
+print s
+#+END_SRC
+** TODO python Multiprocessing vs Threading Python
+https://stackoverflow.com/questions/3044580/multiprocessing-vs-threading-python
+* [#A] python virtualenv                                 :noexport:IMPORTANT:
+https://github.com/slackapi/Slack-Python-Onboarding-Tutorial
+
+If you're using virtualenv run the following commands from the root of your project directory:
+
+virtualenv env
+Then activate your new virtual environment:
+
+source env/bin/activate
+After that, you can install all the Python packages this project will need with this command:
+
+pip install -r requirements.txt
+
+deactive
+** install virtualenv: pip install virtualenv
+https://virtualenv.pypa.io/en/latest/installation/
+
+apt-get install -y python-setuptools
+
+easy_install pip
+
+pip install virtualenv
+** Python virtualenv: 多虚拟环境
+http://blackgu.blogbus.com/logs/170014223.html
+http://teckoo.com/blog/django/virtualenv.html
+http://blogs.360.cn/blog/how-360-uses-python-1-virtualenv/
+** DONE homebrew install virtualenv
+  CLOSED: [2017-10-16 Mon 22:20]
+https://github.com/registerguard/registerguard.github.io/wiki/Install-python,-virtualenv,-virtualenvwrapper-in-a-brew-environment
+$ brew install python
+$ pip install virtualenv
+$ pip install virtualenvwrapper
+
+virtualenv -p /usr/local/Cellar/python3/3.6.3/bin/python3 env
+* Python parse command arguemnt: argparse                          :noexport:
+  CLOSED: [2016-08-06 Sat 08:58]
+#+BEGIN_SRC python
+# -*- coding: utf-8 -*-
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--bucket_list', default='mdm-master,mdm-staging',
+      required=True, help="what bucket to backup", type=str)
+
+parser.add_argument('--examine_only', dest='examine_only', action='store_true', default=False, \
+                        help="Only list delete candidates, instead perform the actual removal")
+
+l = parser.parse_args()
+examine_only = l.examine_only
+print "bucket_list: " + l.bucket_list
+
+# python ./test.py --bucket_list bucket1 -h
+# python ./test.py --bucket_list bucket1
+#+END_SRC
+** DONE argparse get boolen argument: Boolean argument for script
+  CLOSED: [2017-05-08 Mon 17:16]
+http://stackoverflow.com/questions/9183936/boolean-argument-for-script
+http://stackoverflow.com/questions/15008758/parsing-boolean-values-with-argparse
+
+    parser.add_argument('--examine_only', dest='examine_only', action='store_true', default=False, \
+                        help="Only list delete candidates, instead perform the actual removal")
+
+    examine_only = l.examine_only
+
+        if examine_only is True:
+            logging.info("Below files/directories are selected to be removed: %s.\n"\
+                         "Skip following removal, since --examine_only has already been given." \
+                         % ",".join(l))
+
+#+BEGIN_EXAMPLE
+> /var/log/cleanup_old_files.log
+python /tmp/cleanup_old_files.py --working_dir "/var/www/repo" --filename_pattern "1.[0-9][0-9]" \
+                    --cleanup_type directory --min_copies 2 --examine_only
+tail /var/log/cleanup_old_files.log
+#+END_EXAMPLE
+* Python concurrency & Interoperability                            :noexport:
+** python run command
+https://stackoverflow.com/questions/23420990/subprocess-check-output-return-code
+#+BEGIN_SRC python
+    command = "docker exec selenium python /home/seluser/scripts/selenium_load_page.py --page_url '%s' --username '%s' --password '%s' --max_load_seconds '%d'" % (test_url, username, password, max_load_seconds)
+
+    if should_save_screenshot is True:
+        command = "%s --should_save_screenshot" % (command)
+
+    print("Run GUI login for: %s" % (test_url))
+
+    try:
+        command_output = subprocess.check_output(command, shell = True, stderr=subprocess.STDOUT)
+        print(command_output)
+    except subprocess.CalledProcessError as grepexc:
+        print("Error. code: %d, errmsg: %s" % (grepexc.returncode, grepexc.output))
+        return False
+#+END_SRC
+** DONE [#A] python genevent
+  CLOSED: [2013-06-19 Wed 15:28]
+#+begin_src python
+# -*- coding: utf-8 -*-
+#!/usr/bin/python
+import gevent
+import gevent.monkey
+from gevent.pywsgi import WSGIServer
+gevent.monkey.patch_all()
+
+import leveldb
+
+from flask import Flask
+from flask import render_template
+from flask import make_response
+from flask import request
+
+app = Flask(__name__)
+
+
+db = leveldb.LevelDB('./db')
+
+@app.route("/test", methods=["GET","POST"])
+def test():
+	global db
+	print db.Get('hello')
+	db.Put('hello', 'world')
+	return "{\"resp\": \"insert succ\"}"
+
+if __name__ == "__main__":
+	http_server = WSGIServer(('0.0.0.0', 8990), app)
+	http_server.serve_forever()
+
+#+end_src
+** DONE python3 run bash commands and get output
+  CLOSED: [2017-07-13 Thu 16:53]
+https://stackoverflow.com/questions/4760215/running-shell-command-from-python-and-capturing-the-output
+subprocess.check_output(['ls', '-l'])
+subprocess.check_output("service docker status".split(" "))
+bytes = subprocess.check_output(["service", "docker", "status"])
+bytes.decode("utf-8")
+** DONE [#A] python run command line
+   CLOSED: [2015-06-23 Tue 23:05]
+command = "KITCHEN_YAML=%s kitchen destroy" % (self.env_dict["kitchen_yml"])
+print command
+p = subprocess.Popen(command, shell=True, stderr=subprocess.PIPE)
+while True:
+    out = p.stderr.read(1)
+    if out == '' and p.poll() != None:
+        break
+    if out != '':
+        sys.stdout.write(out)
+        sys.stdout.flush()
+** CANCELED python run command line
+   CLOSED: [2013-02-14 Thu 21:30]
+#+begin_src python
+    cmd =  "/sbin/runlevel | cut -d ' ' -f2"
+    status, output = commands.getstatusoutput(cmd)
+    if(status == 0):
+        runlevel = output.strip()
+    else:
+        msg = "Failed to get runlevel.\n"
+        msg = msg + cmd + "\n"
+        msg = msg + output + "\n"
+        raise Exception(msg)
+#+end_src
+** [#A] python subprocess: run command
+#+BEGIN_SRC python
+def get_service_status(output_dict, service_command):
+    try:
+        command_output = \
+                         subprocess.check_output(service_command.split(" "), \
+                                                 shell = True, stderr=subprocess.STDOUT)
+    except subprocess.CalledProcessError as grepexc:
+        command_output = "Error. code: %d, errmsg: %s" % (grepexc.returncode, grepexc.output)
+    output_dict["service_status"] = "%s:\n%s" % (service_command, command_output.decode("utf-8"))
+#+END_SRC
+*** DONE python subprocess get shell return code
+  CLOSED: [2016-08-09 Tue 11:53]
+https://docs.python.org/2/library/subprocess.html
+#+BEGIN_SRC python
+    returncode = subprocess.call(backup_command, shell=True)
+    if returncode != 0:
+        log.error("Backup fails for %s" % (bucket))
+        sys.exit(errcode)
+#+END_SRC
+*** DONE python subprocess get exit code
+  CLOSED: [2016-11-29 Tue 16:53]
+http://stackoverflow.com/questions/5631624/how-to-get-exit-code-when-using-python-subprocess-communicate-method
+def build_docker_image(docker_file, image_name):
+    command = "docker build -f %s -t %s --rm=true ." % (docker_file, image_name)
+    print "\n============ Run: %s" % (command)
+    p = subprocess.Popen(command, shell=True, stderr=subprocess.PIPE)
+    while True:
+        out = p.stderr.read(1)
+        if out == '' and p.poll() != None:
+            break
+        if out != '':
+            sys.stdout.write(out)
+            sys.stdout.flush()
+
+    if p.returncode != 0:
+        FAILED_BUILD_LIST.append(docker_file)
+* Python git                                                       :noexport:
+http://gitpython.readthedocs.io/en/stable/tutorial.html
+** DONE python run git pull: git.cmd.Git(code_dir), g.pull()
+   CLOSED: [2017-03-24 Fri 16:27]
+http://gitpython.readthedocs.io/en/stable/tutorial.html
+http://masnun.com/2012/01/22/fetching-remote-git-repo-with-python-in-a-few-lines-of-codes.html
+** DONE GitPython create and push tags
+  CLOSED: [2017-05-20 Sat 00:47]
+http://stackoverflow.com/questions/35845733/gitpython-create-and-push-tags
+
+The following code seems doing the right thing:
+
+    new_tag = repo.create_tag(tag, message='Automatic tag "{0}"'.format(tag))
+
+    repo.remotes.origin.push(new_tag)
+* [#A] python uwsgi                                      :noexport:IMPORTANT:
+** DONE chatops server stucks: Flask: Server becomes unresponsive after some time
+  CLOSED: [2017-06-02 Fri 12:22]
+https://uwsgi-docs.readthedocs.io/en/latest/Install.html
+http://stackoverflow.com/questions/25641854/flask-server-becomes-unresponsive-after-some-time
+
+When you're done with it and want to release, you should put it behind a wsgi/uwsgi + apache/nginx and your problem will go away.
+
+pip install uwsgi
+
+uwsgi -s /tmp/uwsgi.sock --callable app
+#+BEGIN_EXAMPLE
+63.143.42.246 - - [06/May/2017 06:20:47] "HEAD /about HTTP/1.1" 200 -
+63.143.42.246 - - [06/May/2017 06:25:48] "HEAD /about HTTP/1.1" 200 -
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/threading.py", line 810, in __bootstrap_inner
+    self.run()
+  File "/usr/lib/python2.7/threading.py", line 763, in run
+    self.__target(*self.__args, **self.__kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 659, in inner
+    srv.serve_forever()
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 499, in serve_forever
+    HTTPServer.serve_forever(self)
+  File "/usr/lib/python2.7/SocketServer.py", line 238, in serve_forever
+    self._handle_request_noblock()
+  File "/usr/lib/python2.7/SocketServer.py", line 297, in _handle_request_noblock
+    self.handle_error(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 295, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 321, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 216, in handle
+    rv = BaseHTTPRequestHandler.handle(self)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 340, in handle
+    self.handle_one_request()
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 247, in handle_one_request
+    self.raw_requestline = self.rfile.readline()
+IOError: [Errno 104] Connection reset by peer
+#+END_EXAMPLE
+** DONE [#A] python convert flask to uwsgi
+  CLOSED: [2017-06-02 Fri 12:13]
+https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uwsgi-and-nginx-on-ubuntu-14-04
+http://uwsgi-docs.readthedocs.io/en/latest/WSGIquickstart.html
+
+uwsgi --http :8081 --wsgi-file ./wsgi.py
+
+uwsgi --socket 0.0.0.0:8081 --protocol=http -w wsgi
+
+uwsgi --ini wsgi.ini
+* [#B] docker python sdk                                           :noexport:
+https://docker-py.readthedocs.io/en/stable/
+** basic installation
+# Install python pip
+apt install python-pip
+
+# Install docker python package
+pip uninstall docker-py
+pip install docker==2.0.0
+
+pip list | grep docker
+
+python
+
+import docker
+
+client = docker.from_env()
+client.images.list()
+** DONE python docker-py conflict with docker package
+  CLOSED: [2017-05-15 Mon 20:39]
+https://github.com/docker/docker-py/issues/1353
+
+You may need to uninstall the docker-py package as it may be conflicting with the new docker package.
+
+pip uninstall docker docker-py
+pip install docker
+Let me know if it helps.
+* [#A] python flask                                                :noexport:
+** flask json
+http://flask-json.readthedocs.io/en/latest/
+** flask hello world
+#+BEGIN_SRC python
+# -*- coding: utf-8 -*-
+#!/usr/bin/python
+from flask import Flask
+from flask import make_response
+app = Flask(__name__)
+
+@app.route("/api_list_user_post", methods=['GET'])
+def list_user_post():
+    content = "{k1:v1}"
+    resp = make_response(content, 200)
+    resp.headers['Content-type'] = 'application/json; charset=utf-8'
+    return resp
+
+if __name__ == '__main__':
+    app.debug = True
+    print "hello"
+    print "world"
+    app.run(host="0.0.0.0", port=int(8080))
+#+END_SRC
+** flask http post/get
+#+begin_src python
+@app.route("/api_list_user_post", methods=['GET'])
+def list_user_post():
+    # TODO defensive code
+    userid = request.args.get('userid', '')
+    date = request.args.get('date', '')
+    posts = data.list_user_post(userid, date)
+    content = render_template('list_user_post.json', posts=posts)
+    content = smarty_remove_extra_comma(content)
+    resp = make_response(content, 200)
+    resp.headers['Content-type'] = 'application/json; charset=utf-8'
+    return resp
+
+@app.route("/weibo_revoke", methods=['POST'])
+def weibo_revoke():
+    print "==== request.form:" + str(request.form)
+    print "==== request.values:" + str(request.values)
+    print "==== request.args:" + str(request.args)
+
+    if data.delete_user(request.values["userid"], request.values["accesstoken"],\
+                      request.values["expirationdate"], request.values["refresh_token"]) \
+        is False:
+        return handle_error("500", "server error")
+    else:
+        resp = make_response(content, 200)
+        resp.headers['Content-type'] = 'application/json; charset=utf-8'
+        return resp
+#+end_src
+*** list_user_post.json
+#+begin_example
+[{% for post in posts %}
+{"id":"{{ post.id }}","category":"{{ post.category }}","title":"{{ post.title }}","summary":"{{ post.summary }}"},{% endfor %}]
+#+end_example
+** flask return image
+http://stackoverflow.com/questions/8637153/how-to-return-images-in-flask-response
+#+begin_src python
+from flask import send_file
+
+@app.route('/get_image')
+def get_image():
+    if request.args.get('type') == '1':
+       filename = 'ok.gif'
+    else:
+       filename = 'error.gif'
+    return send_file(filename, mimetype='image/gif')
+#+end_src
+** DONE python http request
+  CLOSED: [2013-05-27 Mon 16:27]
+#+begin_src python
+import json
+import urllib2
+
+def request_http_json(url):
+	data = json.load(urllib2.urlopen(url))
+	print data
+	return data
+#+end_src
+** DONE flask reload
+  CLOSED: [2013-05-30 Thu 10:52]
+#+begin_src python
+# -*- coding: utf-8 -*-
+#!/usr/bin/python
+
+from flask import Flask
+from flask import render_template
+from flask import make_response
+from flask import request
+
+app = Flask(__name__)
+
+if __name__ == '__main__':
+    app.debug = True
+    print "hello"
+    print "world"
+    app.run(host="0.0.0.0", port=int(8080))
+#+end_src
+
+#+begin_example
+28 >#python ./s.py
+hello
+world
+ * Running on http://0.0.0.0:8080/
+ * Restarting with reloader
+hello
+world
+#+end_example
+** HALF flask make sessions timeout
+http://stackoverflow.com/questions/11783025/is-there-an-easy-way-to-make-sessions-timeout-in-flask
+http://runnable.com/UiIEmfuGwAlQAAAI/how-to-timeout-expire-a-flask-session-for-python
+*** DONE the session is unavailable because no secret key was set: app.secret_key = os.urandom(24)
+   CLOSED: [2014-04-12 Sat 09:36]
+#+begin_example
+  File "/usr/local/lib/python2.7/site-packages/flask/sessions.py", line 37, in _set_permanent
+    self['_permanent'] = bool(value)
+  File "/usr/local/lib/python2.7/site-packages/flask/sessions.py", line 126, in _fail
+    raise RuntimeError('the session is unavailable because no secret '
+RuntimeError: the session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+
+-->
+
+#+end_example
+** HALF flask set server to multiple thread
+http://stackoverflow.com/questions/14814201/can-i-serve-multiple-clients-using-just-flask-app-run-as-standalone
+#+begin_example
+[root@centos-vm1 ~]# lsof -i tcp:9180
+lsof -i tcp:9180
+COMMAND   PID USER   FD   TYPE   DEVICE SIZE/OFF NODE NAME
+python  13602 root    3u  IPv4 18030508      0t0  TCP 10.0.1.16:9180->183.17.85.245:7137 (ESTABLISHED)
+python  13602 root    8u  IPv4 17917178      0t0  TCP *:9180 (LISTEN)
+#+end_example
+** DONE python flask get client ip: request.remote_addr
+   CLOSED: [2014-03-29 Sat 09:09]
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** DONE flask response json with customize status code
+  CLOSED: [2018-03-07 Wed 23:47]
+jsonify serializes the data you pass it to JSON. If you want to
+serialize the data yourself, do what jsonify does by building a
+response with status=200 and mimetype='application/json'.
+
+https://stackoverflow.com/questions/13081532/return-json-response-from-flask-view
+** DONE avoid duplicate bids
+   CLOSED: [2018-03-08 Thu 12:15]
+** DONE URI issue
+  CLOSED: [2018-03-07 Wed 19:13]
+#+BEGIN_EXAMPLE
+curl -H "content-type: application/json" "http://localhost:8000/v1/projects?page=2&per_page=2"
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>405 Method Not Allowed</title>
+<h1>Method Not Allowed</h1>
+<p>The method is not allowed for the requested URL.</p>
+
+
+curl -H "content-type: application/json" "http://localhost:8000/v1/projects"
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>405 Method Not Allowed</title>
+<h1>Method Not Allowed</h1>
+<p>The method is not allowed for the requested URL.</p>
+#+END_EXAMPLE
+** DONE add functional test: CRUD test
+   CLOSED: [2018-03-07 Wed 19:14]
+** DONE [#A] jsonify({"Error" : "Access restricted"}), 403
+  CLOSED: [2018-03-08 Thu 15:22]
+https://stackoverflow.com/questions/13081532/return-json-response-from-flask-view
+http://blog.luisrei.com/articles/flaskrest.html
+#+BEGIN_SRC python
+# GET /${protocol_version}/projects/id=${id}
+@app.route('/<string:protocol_version>/projects/id=<int:id>', methods=['GET'])
+def get_project(protocol_version, id):
+    project = Project.find_by_id(id)
+    if project: return jsonify(project.json())
+    else: return jsonify({'message': "Item not found"}), 404
+#+END_SRC
+** DONE [#A] flask enable try.. catch, and log exceptions
+  CLOSED: [2018-03-08 Thu 17:35]
+http://flask.pocoo.org/docs/0.12/patterns/errorpages/
+
+http://flask-restplus.readthedocs.io/en/stable/errors.html
+
+#+BEGIN_SRC python
+logging.basicConfig(filename='./myapp.log', level=logging.INFO, \
+                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
+# Add 5XX error handle for all unexpected server exceptions
+@app.errorhandler(Exception)
+def handle_bad_request(e):
+    # Default error handler
+    logging.exception("Unexpected error: %s" % str(e))
+    return jsonify({'message': str(e)}), 500
+#+END_SRC
+* [#A] SQLAlchemy                                                  :noexport:
+https://www.codementor.io/sheena/understanding-sqlalchemy-cheat-sheet-du107lawl
+http://flask-sqlalchemy.pocoo.org/2.3/queries/
+** DONE SQLAlchemy check whether a table exists
+   CLOSED: [2018-03-07 Wed 18:15]
+** DONE pylint error: E: 17, 0: No name 'sqlalchemy' in module 'flask.ext' (no-name-in-module)
+  CLOSED: [2018-03-07 Wed 18:06]
+https://stackoverflow.com/questions/16061514/pylint-pylint-unable-to-import-flask-ext-wtf
+#+BEGIN_EXAMPLE
+Denny-mac:app mac$ make
+No config file found, using default configuration
+
+   ************* Module app
+E: 17, 0: No name 'sqlalchemy' in module 'flask.ext' (no-name-in-module)
+No config file found, using default configuration
+#+END_EXAMPLE
+** DONE create foregin key
+  CLOSED: [2018-03-08 Thu 18:09]
+https://www.codementor.io/sheena/understanding-sqlalchemy-cheat-sheet-du107lawl
+#+BEGIN_SRC python
+class Book(Base):  #<-------------------------
+    __tablename__  = "books"    #matches the name of the actual database table
+    id             = Column(Integer,Sequence('book_seq'),primary_key=True) # plays nice with all major database engines
+    name           = Column(String(50))                                    # string column need lengths
+    author_id      = Column(Integer,ForeignKey('authors.id'))              # assumes there is a table in the database called 'authors' that has an 'id' column
+    price          = Column(Float)
+    date_added     = Column(DateTime, default=datetime.datetime.now)       # defaults can be specified as functions
+    promote        = Column(Boolean,default=False)
+#+END_SRC
+** TODO SqlAlchemy: filter() vs filter_by()
+https://stackoverflow.com/questions/24762664/sqlalchemy-typeerror-filter-by-takes-exactly-1-argument-2-given
+* DevOps choose language: Python vs Golang                         :noexport:
+http://odino.org/things-i-ask-during-interviews/
+* TODO Role Model                                                  :noexport:
+https://awesome-python.com/
+* more content                                                     :noexport:
+** python
+# Desc: Python is a high-level programming language.
+
+# Basic example of server with python
+# Will start a Web Server in the current directory on port 8000
+# go to http://127.0.0.1:8000
+
+# Python v2.7
+python -m SimpleHTTPServer
+# Python 3
+python -m http.server 8000
+
+# SMTP-Server for debugging, messages will be discarded, and printed on stdout.
+python -m smtpd -n -c DebuggingServer localhost:1025
+
+# Pretty print a json
+python -mjson.tool
+** pip
+# Search for packages
+pip search SomePackage
+
+# Install some packages
+pip install SomePackage
+
+# Install some package in user space
+pip install --user SomePackage
+
+# Upgrade some package
+pip install --upgrade SomePackage
+
+# Output and install packages in a requirement file
+pip freeze > requirements.txt
+pip install -r requirements.txt
+
+# Show details of a package
+pip show SomePackage
+
+# List outdated packages
+pip list --outdated
+
+# Upgrade all outdated packages, thanks to http://stackoverflow.com/a/3452888
+pip freeze --local | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip install -U
+
+# Upgrade outdated packages on latest version of pip
+pip list --outdated --format=freeze | cut -d = -f 1 | xargs -n1 pip install -U
+
+# Install specific version of a package
+pip install -I SomePackage1==1.1.0 'SomePackage2>=1.0.4'
+** virtualenv
+# Create new environment
+virtualenv /path/to/project/env_name
+
+# Create new environment and inherit already installed Python libraries
+virtualenv --system-site-package /path/to/project/env_name
+
+# Create new environment with a given Python interpreter
+virtualenv /path/to/project/env_name -p /usr/bin/python/3.4
+
+# Activate environnment
+source /path/to/project/env_name/bin/activate
+
+# Quit environment
+deactivate
+
+
+# virtualenvwrapper (wrapper for virtualenv)
+# installation
+pip install --user virtualenvwrapper
+# configuration
+# add in ~/.bashrc or similar
+export WORKON_HOME=~/.virtualenvs
+mkdir -p $WORKON_HOME
+source ~/.local/bin/virtualenvwrapper.sh
+
+# Create new environmment (with virtualenvwrapper)
+mkvirtualenv env_name
+# new environmment is stored in ~/.virtualenvs
+
+# Activate environmment (with virtualenvwrapper)
+workon env_name
+
+# Quit environmment (with virtualenvwrapper)
+deactivate
+
+# Delete environmment (with virtualenvwrapper)
+rmvirtualenv env_name
+* TODO Use virtualenv to install Python3                           :noexport:
+* TODO Format json output                                          :noexport:
+cat output.json|python -m json.tool
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* HALF ubuntu 16.04 install python 3.7                             :noexport:
+https://websiteforstudents.com/installing-the-latest-python-3-7-on-ubuntu-16-04-18-04/
+
+#+BEGIN_EXAMPLE
+sudo apt update
+sudo apt install software-properties-common
+After that run the commands to add the PPA..
+
+sudo add-apt-repository ppa:deadsnakes/ppa
+
+Finally, run the commands below to install Python 3.7
+
+sudo apt update
+sudo apt install python3.7
+#+END_EXAMPLE
+* HALF doc: python nested function                                 :noexport:
+https://realpython.com/primer-on-python-decorators/
+
+Because of the first-class nature of functions in Python, you can define functions inside other functions. Such functions are called nested functions.
+
+#+BEGIN_SRC python
+def parent():
+    print("Printing from the parent() function.")
+
+    def first_child():
+        return "Printing from the first_child() function."
+
+    def second_child():
+        return "Printing from the second_child() function."
+
+    print(first_child())
+    print(second_child())
+#+END_SRC
