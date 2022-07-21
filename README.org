@@ -88,7 +88,7 @@ See more CheatSheets from Denny: [[https://github.com/topics/denny-cheatsheets][
 | The second last item                        | =list[-2]= or =list[~1]=                                      |
 | Generate a-z                                | =map(chr, range(ord('a'), ord('z')+1))=                       |
 | Convert from ascii to character             | =chr(ord('a'))=                                               |
-| Reverse a list                              | =["ab", "cd", "ef"][::-1]=                                    |
+| [[https://www.scaler.com/topics/how-to-reverse-a-list-in-python/][Reverse a list]]                              | =["ab", "cd", "ef"][::-1]=                                    |
 | map                                         | =map(lambda x: str(x), [1, 2, 3])=                            |
 | Copy a range to another range               | nums1[:k+1] = nums2[:j+1]                                     |
 | append an element                           | =array.append(var)=                                           |
